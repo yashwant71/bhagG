@@ -1,0 +1,634 @@
+.verse-page {
+  min-height: 100vh;
+  position: relative;
+  padding: 1.5rem 2rem;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.verse-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 50% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.verse-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  justify-content: flex-start;
+  padding-top: 0.25rem;
+}
+
+/* Pretext Section */
+.pretext-section {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 1rem auto;
+  padding: 0.5rem 1.25rem;
+  background: rgba(26, 26, 26, 0.4);
+  border-left: 3px solid rgba(212, 175, 55, 0.5);
+  border-radius: 8px;
+  animation: fadeInUp 0.5s ease-out 0.1s both;
+}
+
+.pretext-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-accent);
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* Sanskrit Section - Primary Focus, No Card - Fixed Position */
+.sanskrit-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Navigation arrows - Visible on all screen sizes */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(26, 26, 26, 0.5);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-accent);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-arrow:hover {
+  opacity: 1;
+  background: rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.5);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+}
+
+.nav-arrow:active {
+  opacity: 1;
+  transform: translateY(-50%) scale(0.95);
+  background: rgba(212, 175, 55, 0.3);
+}
+
+.nav-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.nav-arrow-left {
+  left: 0.75rem;
+}
+
+.nav-arrow-right {
+  right: 0.75rem;
+}
+
+/* Static circle behind Sanskrit text */
+.sanskrit-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 50%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.sanskrit-words-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.sanskrit-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 1.5;
+}
+
+.sanskrit-word {
+  font-family: 'Noto Sans Devanagari', serif;
+  font-size: 2.8rem;
+  font-weight: 500;
+  display: inline-block;
+  position: relative;
+  -webkit-text-stroke: 1.5px #b8941f;
+  -webkit-text-fill-color: var(--text-secondary);
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.4), 0 0 30px rgba(212, 175, 55, 0.2);
+  background: transparent;
+  opacity: 0;
+  transform: translateY(-150px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Glowing trail effect during fall - golden hue/blur trail */
+.sanskrit-word::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 120%;
+  background: linear-gradient(
+    to bottom,
+    rgba(212, 175, 55, 0.6) 0%,
+    rgba(212, 175, 55, 0.4) 30%,
+    rgba(212, 175, 55, 0.2) 60%,
+    transparent 100%
+  );
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(15px);
+  border-radius: 50%;
+}
+
+.sanskrit-word::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(212, 175, 55, 0.5) 0%,
+    rgba(212, 175, 55, 0.3) 40%,
+    transparent 70%
+  );
+  opacity: 0;
+  pointer-events: none;
+  z-index: -2;
+  filter: blur(20px);
+}
+
+.sanskrit-word.animate-in {
+  animation: fallFromAbove 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: var(--animation-delay, 0s);
+}
+
+.sanskrit-word.animate-in::before {
+  animation: glowTrail1 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: var(--animation-delay, 0s);
+}
+
+.sanskrit-word.animate-in::after {
+  animation: glowTrail2 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: var(--animation-delay, 0s);
+}
+
+@keyframes fallFromAbove {
+  0% {
+    opacity: 0;
+    transform: translateY(-120px) scale(0.9);
+    text-shadow: 
+      0 0 25px rgba(212, 175, 55, 0.8), 
+      0 0 50px rgba(212, 175, 55, 0.6),
+      0 0 75px rgba(212, 175, 55, 0.4);
+  }
+  60% {
+    opacity: 1;
+    text-shadow: 
+      0 0 20px rgba(212, 175, 55, 0.7), 
+      0 0 40px rgba(212, 175, 55, 0.5),
+      0 0 60px rgba(212, 175, 55, 0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.4), 0 0 30px rgba(212, 175, 55, 0.2);
+  }
+}
+
+@keyframes glowTrail1 {
+  0% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) translateY(-80px) scaleY(1.5);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) translateY(-40px) scaleY(1.2);
+  }
+  80% {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) translateY(-10px) scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(0) scaleY(0.8);
+  }
+}
+
+@keyframes glowTrail2 {
+  0% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) translateY(-100px) scale(1.3);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) translateY(-50px) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-20px) scale(0.9);
+  }
+}
+
+.sanskrit-word:hover,
+.sanskrit-word.hovered {
+  -webkit-text-stroke: 2px #e5c84a;
+  text-shadow: 
+    0 0 25px rgba(212, 175, 55, 0.8), 
+    0 0 50px rgba(212, 175, 55, 0.6),
+    0 0 75px rgba(212, 175, 55, 0.4);
+  transform: translateY(-3px);
+}
+
+.sanskrit-word:hover::before,
+.sanskrit-word:hover::after,
+.sanskrit-word.hovered::before,
+.sanskrit-word.hovered::after {
+  opacity: 0;
+}
+
+/* Word tooltip */
+.word-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: rgba(24, 24, 24, 0.9);
+  color: var(--text-primary);
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  z-index: 1000;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  font-family: 'Inter', sans-serif;
+  opacity: 0;
+  animation: tooltipFadeIn 0.2s ease-out forwards;
+  backdrop-filter: blur(10px);
+  font-weight: 200;
+  text-shadow: none;
+}
+
+/* Tooltip with Hindi text styling */
+.word-tooltip.hindi-text {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+@keyframes tooltipFadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
+.verse-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--text-accent);
+  letter-spacing: 1px;
+  font-weight: 400;
+  opacity: 0.7;
+  text-align: center;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+/* Translation Section */
+.translation-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.translation-toggle-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.translation-toggle-compact {
+  display: flex;
+  gap: 0.3rem;
+  background: rgba(26, 26, 26, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 6px;
+  padding: 0.2rem;
+  backdrop-filter: blur(10px);
+}
+
+.toggle-compact {
+  padding: 0.35rem 0.8rem;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+  font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+}
+
+.toggle-compact:hover {
+  opacity: 1;
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--text-secondary);
+}
+
+.toggle-compact.active {
+  background: rgba(212, 175, 55, 0.3);
+  color: var(--text-secondary);
+  opacity: 1;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+}
+
+.translation-card {
+  background: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.6s ease-out 0.3s both;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+}
+
+/* Ensure card maintains max-width on larger screens */
+@media (min-width: 901px) {
+  .translation-card {
+    min-width: 900px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.translation-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+.translation-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  font-weight: 400;
+  text-align: justify;
+  font-family: 'Inter', sans-serif;
+  flex: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+/* Copy button */
+.copy-button {
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 6px;
+  padding: 0.4rem;
+  cursor: pointer;
+  color: var(--text-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+}
+
+.copy-button:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.5);
+  color: var(--text-secondary);
+  transform: scale(1.05);
+}
+
+.copy-button:active {
+  transform: scale(0.95);
+}
+
+.copy-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.translation-meaning {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-accent);
+  font-style: italic;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(212, 175, 55, 0.4);
+  font-weight: 300;
+}
+
+/* Hindi font styling */
+.translation-text.hindi-text,
+.translation-meaning.hindi-text,
+.pretext-text.hindi-text {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .verse-page {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .verse-container {
+    gap: 1.5rem;
+  }
+
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+  }
+
+  .nav-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .nav-arrow-left {
+    left: 0.5rem;
+  }
+
+  .nav-arrow-right {
+    right: 0.5rem;
+  }
+
+  .sanskrit-word {
+    font-size: 2rem;
+    -webkit-text-stroke: 1.2px #b8941f;
+  }
+  
+  .sanskrit-word:hover {
+    -webkit-text-stroke: 1.5px #e5c84a;
+  }
+
+  .sanskrit-line {
+    gap: 0.35rem;
+  }
+
+  .translation-card {
+    padding: 1.2rem;
+  }
+
+  .translation-header {
+    margin-bottom: 1rem;
+  }
+
+  .translation-text {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .translation-meaning {
+    font-size: 0.82rem;
+    padding-left: 0.9rem;
+  }
+
+  .toggle-compact {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.7rem;
+  }
+
+  .verse-number {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .verse-page {
+    padding: 1rem;
+  }
+
+  .verse-container {
+    gap: 1.2rem;
+  }
+
+  .nav-arrow {
+    width: 36px;
+    height: 36px;
+    opacity: 0.75;
+  }
+
+  .nav-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .nav-arrow-left {
+    left: 0.25rem;
+  }
+
+  .nav-arrow-right {
+    right: 0.25rem;
+  }
+
+  .sanskrit-word {
+    font-size: 1.6rem;
+    -webkit-text-stroke: 1px #b8941f;
+  }
+  
+  .sanskrit-word:hover {
+    -webkit-text-stroke: 1.3px #e5c84a;
+  }
+
+  .translation-card {
+    padding: 1rem;
+    max-width: 100%;
+    min-width: unset;
+  }
+
+  .translation-text {
+    font-size: 0.95rem;
+  }
+
+  .translation-meaning {
+    font-size: 0.85rem;
+  }
+
+  .verse-number {
+    font-size: 0.75rem;
+  }
+}

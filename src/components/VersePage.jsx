@@ -115,20 +115,56 @@ const VersePage = () => {
     )
   }
 
-  // Handle word hover for tooltip - using word position/index (1-based indexing)
+  // Handle word hover for tooltip - supports bracket format with IDs
   const handleWordHover = (lineIndex, wordIndex) => {
-    if (verse.wordTranslations) {
-      // Convert 0-based array indices to 1-based keys (lineIndex 0 -> line 1, wordIndex 0 -> word 1)
+    if (!verse.wordTranslations) return
+    
+    const wordKey = `${lineIndex}-${wordIndex}`
+    const segment = sanskritLines[lineIndex]?.[wordIndex]
+    
+    if (!segment) return
+    
+    // Check if wordTranslations is an array with id field (chapter1 bracket format)
+    if (Array.isArray(verse.wordTranslations) && segment.ids && segment.ids.length > 0) {
+      // Get translations for all IDs in this word
+      const translations = segment.ids
+        .map(id => {
+          const wordData = verse.wordTranslations.find(wt => wt.id === id)
+          if (wordData) {
+            return wordData[translation] || wordData.english || null
+          }
+          return null
+        })
+        .filter(t => t !== null)
+      
+      if (translations.length > 0) {
+        // Combine multiple meanings with bullet separator
+        const translationText = translations.join(' • ')
+        setHoveredWord(wordKey)
+        setHoveredWordTranslation(translationText)
+      }
+    } else if (!Array.isArray(verse.wordTranslations)) {
+      // Object format (chapter2+ format) - use position-based keys
       const lineKey = lineIndex + 1
       const wordKeyNum = wordIndex + 1
-      const wordKey = `${lineKey}-${wordKeyNum}`
+      const key = `${lineKey}-${wordKeyNum}`
       
-      // Get translation using the position key and current language
-      const wordData = verse.wordTranslations[wordKey]
-      
+      const wordData = verse.wordTranslations[key]
       if (wordData) {
-        const translationText = wordData[translation] || wordData.english || null
-        if (translationText) {
+        const translationValue = wordData[translation] || wordData.english || null
+        
+        if (translationValue) {
+          let translationText = translationValue
+          
+          // If it's an array, join with bullet separator
+          if (Array.isArray(translationValue)) {
+            translationText = translationValue.join(' • ')
+          }
+          // If it's a string but contains slash separators, convert to bullets
+          else if (typeof translationValue === 'string' && translationValue.includes(' / ')) {
+            translationText = translationValue.replace(/\s*\/\s*/g, ' • ')
+          }
+          
           setHoveredWord(wordKey)
           setHoveredWordTranslation(translationText)
         }
@@ -155,15 +191,66 @@ const VersePage = () => {
     }
   }
 
-  // Split Sanskrit text into words
-  const splitSanskritIntoWords = (sanskritText) => {
+  // Parse Sanskrit text with brackets - remove brackets from display but track IDs
+  const parseSanskritWithBrackets = (sanskritText) => {
     const lines = sanskritText.split('\n')
     return lines.map(line => {
-      return line.split(/\s+/).filter(word => word.length > 0)
+      const words = line.split(/\s+/).filter(w => w.length > 0)
+      return words.map(word => {
+        // Extract bracket IDs and remove brackets from display text
+        const ids = []
+        let displayText = ''
+        let i = 0
+        
+        while (i < word.length) {
+          if (word[i] === '[') {
+            // Find closing bracket
+            let j = i + 1
+            while (j < word.length && word[j] !== ']') {
+              j++
+            }
+            
+            if (j < word.length) {
+              // Extract ID
+              const idStr = word.substring(i + 1, j)
+              const id = parseInt(idStr, 10)
+              if (!isNaN(id)) {
+                ids.push(id)
+              }
+              i = j + 1
+            } else {
+              displayText += word[i]
+              i++
+            }
+          } else {
+            displayText += word[i]
+            i++
+          }
+        }
+        
+        return { text: displayText, ids }
+      })
     })
   }
 
-  const sanskritLines = splitSanskritIntoWords(verse.sanskrit)
+  // Split Sanskrit text into words (for non-bracket format)
+  const splitSanskritIntoWords = (sanskritText) => {
+    const lines = sanskritText.split('\n')
+    return lines.map(line => {
+      return line.split(/\s+/).filter(word => word.length > 0).map(word => ({
+        text: word,
+        ids: []
+      }))
+    })
+  }
+
+  // Check if text has brackets (chapter1 format)
+  const hasBrackets = verse.sanskrit && verse.sanskrit.includes('[')
+  const isArrayFormat = Array.isArray(verse.wordTranslations) && verse.wordTranslations[0]?.id
+  
+  const sanskritLines = (hasBrackets && isArrayFormat) 
+    ? parseSanskritWithBrackets(verse.sanskrit)
+    : splitSanskritIntoWords(verse.sanskrit)
 
   // Calculate delays: each word in a line gets a small delay, 
   // then next line starts right after the previous line's last word finishes
@@ -241,26 +328,25 @@ const VersePage = () => {
           <div className="sanskrit-words-container">
             {sanskritLines.map((line, lineIndex) => (
               <div key={lineIndex} className="sanskrit-line">
-                {line.map((word, wordIndex) => {
+                {line.map((segment, wordIndex) => {
                   const delay = getWordDelay(lineIndex, wordIndex, line.length)
-                  // Convert 0-based array indices to 1-based keys for word translations
-                  const lineKey = lineIndex + 1
-                  const wordKeyNum = wordIndex + 1
-                  const wordKey = `${lineKey}-${wordKeyNum}`
+                  const wordKey = `${lineIndex}-${wordIndex}`
                   const isHovered = hoveredWord === wordKey
+                  const wordText = segment.text || segment
+                  const hasTranslation = segment.ids && segment.ids.length > 0
                   
                   return (
                     <span
                       key={`${chapterVerseKey}-${lineIndex}-${wordIndex}`}
-                      className={`sanskrit-word ${isLoaded ? 'animate-in' : ''}`}
-                      data-word={word}
+                      className={`sanskrit-word ${isLoaded ? 'animate-in' : ''} ${hasTranslation ? 'has-translation' : ''}`}
+                      data-word={wordText}
                       style={{
                         ['--animation-delay']: `${delay}s`
                       }}
                       onMouseEnter={() => handleWordHover(lineIndex, wordIndex)}
                       onMouseLeave={handleWordLeave}
                     >
-                      {word}
+                      {wordText}
                       {isHovered && hoveredWordTranslation && (
                         <span className={`word-tooltip ${translation === 'hindi' ? 'hindi-text' : ''}`}>{hoveredWordTranslation}</span>
                       )}

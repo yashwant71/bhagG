@@ -22,8 +22,11 @@ const VersePage = () => {
   const [clickedWord, setClickedWord] = useState(null) // Track clicked word for persistent tooltip
   const [wordData, setWordData] = useState(null) // Store word data (translations + Sanskrit)
   const [toggledMeanings, setToggledMeanings] = useState({}) // Track which meanings show Sanskrit vs translation
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState(false) // For translation copy
+  const [copiedSanskrit, setCopiedSanskrit] = useState(false) // For Sanskrit copy
   const [showNavMenu, setShowNavMenu] = useState(false) // Track navigation menu visibility
+  const [hoveredWord, setHoveredWord] = useState(null) // Track hovered word for temporary tooltip
+  const [hoveredWordData, setHoveredWordData] = useState(null) // Store hovered word data
   
   // Bookmark management
   const getBookmarks = () => {
@@ -79,6 +82,8 @@ const VersePage = () => {
     setClickedWord(null)
     setWordData(null)
     setToggledMeanings({})
+    setHoveredWord(null)
+    setHoveredWordData(null)
     
     // Trigger animation after a brief delay to ensure DOM is ready
     const timer = setTimeout(() => {
@@ -91,15 +96,30 @@ const VersePage = () => {
   // Close tooltip when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
+      // Close static tooltip if clicking outside
       if (clickedWord && !e.target.closest('.sanskrit-word') && !e.target.closest('.word-tooltip') && !e.target.closest('.tooltip-meaning')) {
         setClickedWord(null)
         setWordData(null)
         setToggledMeanings({})
       }
+      
+      // Also close hover tooltip when clicking anywhere
+      if (hoveredWord) {
+        setHoveredWord(null)
+        setHoveredWordData(null)
+      }
     }
     
-    document.addEventListener('click', handleClickOutside)
-    return () => document.removeEventListener('click', handleClickOutside)
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [clickedWord, hoveredWord])
+  
+  // Clear hover state when word is clicked (becomes static)
+  useEffect(() => {
+    if (clickedWord) {
+      setHoveredWord(null)
+      setHoveredWordData(null)
+    }
   }, [clickedWord])
 
   const verse = getVerse(chapterNum, chapterVerseKey)
@@ -164,24 +184,12 @@ const VersePage = () => {
     )
   }
 
-  // Handle word click for persistent tooltip
-  const handleWordClick = (lineIndex, wordIndex, e) => {
-    e.stopPropagation()
+  // Get word data helper function
+  const getWordData = (lineIndex, wordIndex) => {
+    if (!verse.wordTranslations) return null
     
-    if (!verse.wordTranslations) return
-    
-    const wordKey = `${lineIndex}-${wordIndex}`
     const segment = sanskritLines[lineIndex]?.[wordIndex]
-    
-    if (!segment) return
-    
-    // Toggle tooltip - if already open, close it; otherwise open it
-    if (clickedWord === wordKey) {
-      setClickedWord(null)
-      setWordData(null)
-      setToggledMeanings({})
-      return
-    }
+    if (!segment) return null
     
     // Check if wordTranslations is an array with id field (chapter1 bracket format)
     if (Array.isArray(verse.wordTranslations) && segment.ids && segment.ids.length > 0) {
@@ -193,11 +201,7 @@ const VersePage = () => {
         })
         .filter(w => w !== null)
       
-      if (wordsData.length > 0) {
-        setClickedWord(wordKey)
-        setWordData(wordsData)
-        setToggledMeanings({}) // Reset toggles for new word
-      }
+      return wordsData.length > 0 ? wordsData : null
     } else if (!Array.isArray(verse.wordTranslations)) {
       // Object format (chapter2+ format) - use position-based keys
       const lineKey = lineIndex + 1
@@ -206,12 +210,100 @@ const VersePage = () => {
       
       const data = verse.wordTranslations[key]
       if (data) {
-        setClickedWord(wordKey)
         // For chapter2 format, use key as id for toggling
-        setWordData([{ id: key, key, ...data }])
-        setToggledMeanings({})
+        return [{ id: key, key, ...data }]
       }
     }
+    return null
+  }
+
+  // Handle word hover for temporary tooltip (desktop only)
+  const handleWordHover = (lineIndex, wordIndex, e) => {
+    const wordKey = `${lineIndex}-${wordIndex}`
+    const wordsData = getWordData(lineIndex, wordIndex)
+    
+    // If hovering over a different word, close any existing static tooltip
+    if (clickedWord && clickedWord !== wordKey) {
+      setClickedWord(null)
+      setWordData(null)
+      setToggledMeanings({})
+    }
+    
+    // Set new hover state immediately (no delay) for smooth transition between words
+    if (wordsData) {
+      setHoveredWord(wordKey)
+      setHoveredWordData(wordsData)
+    }
+  }
+
+  // Handle word leave (hide hover tooltip)
+  const handleWordLeave = (e) => {
+    // Only hide hover tooltip if word is not clicked (static)
+    if (!clickedWord) {
+      const relatedTarget = e.relatedTarget
+      // Check if mouse is moving to tooltip or another word
+      const isMovingToTooltip = relatedTarget && relatedTarget.closest('.word-tooltip')
+      const isMovingToWord = relatedTarget && relatedTarget.closest('.sanskrit-word')
+      
+      // Only hide if not moving to tooltip or another word
+      if (!isMovingToTooltip && !isMovingToWord) {
+        // Small delay to allow smooth transition
+        setTimeout(() => {
+          // Double-check that we're not hovering over tooltip or another word now
+          const tooltipElement = document.querySelector('.word-tooltip:hover')
+          const wordElement = document.querySelector('.sanskrit-word.has-translation:hover')
+          if (!clickedWord && !tooltipElement && !wordElement) {
+            setHoveredWord(null)
+            setHoveredWordData(null)
+          }
+        }, 100)
+      }
+    }
+  }
+
+  // Handle tooltip hover - convert hover tooltip to static when mouse enters tooltip
+  const handleTooltipEnter = (lineIndex, wordIndex) => {
+    // If hovering and mouse enters tooltip, make it static
+    if (hoveredWord && !clickedWord) {
+      const wordKey = `${lineIndex}-${wordIndex}`
+      const wordsData = getWordData(lineIndex, wordIndex)
+      
+      if (wordsData) {
+        setClickedWord(wordKey)
+        setWordData(wordsData)
+        setToggledMeanings({})
+        setHoveredWord(null)
+        setHoveredWordData(null)
+      }
+    }
+  }
+
+  // Handle word click for persistent tooltip
+  const handleWordClick = (lineIndex, wordIndex, e) => {
+    e.stopPropagation()
+    
+    const wordKey = `${lineIndex}-${wordIndex}`
+    const wordsData = getWordData(lineIndex, wordIndex)
+    
+    if (!wordsData) return
+    
+    // Toggle tooltip - if already open, close it; otherwise open it
+    if (clickedWord === wordKey) {
+      setClickedWord(null)
+      setWordData(null)
+      setToggledMeanings({})
+      setHoveredWord(null)
+      setHoveredWordData(null)
+      return
+    }
+    
+    // Set clicked word (static tooltip)
+    setClickedWord(wordKey)
+    setWordData(wordsData)
+    setToggledMeanings({}) // Reset toggles for new word
+    // Clear hover state when clicking
+    setHoveredWord(null)
+    setHoveredWordData(null)
   }
 
   // Toggle between translation and Sanskrit for a specific meaning
@@ -224,6 +316,20 @@ const VersePage = () => {
   }
 
   // Handle copy to clipboard
+  const handleCopySanskrit = async () => {
+    try {
+      // Get the Sanskrit text, removing brackets if present
+      let sanskritText = verse.sanskrit || ''
+      // Remove bracket IDs for cleaner copy (e.g., "धृतराष्ट्र[1]" -> "धृतराष्ट्र")
+      sanskritText = sanskritText.replace(/\[(\d+)\]/g, '')
+      await navigator.clipboard.writeText(sanskritText)
+      setCopiedSanskrit(true)
+      setTimeout(() => setCopiedSanskrit(false), 2000)
+    } catch (error) {
+      console.error('Failed to copy Sanskrit text:', error)
+    }
+  }
+
   const handleCopy = async () => {
     const textToCopy = translation === 'english' ? verse.english.text : verse.hindi.text
     const fullText = `${textToCopy} (${chapterVerseKey})`
@@ -436,38 +542,48 @@ const VersePage = () => {
                   const delay = getWordDelay(lineIndex, wordIndex, line.length)
                   const wordKey = `${lineIndex}-${wordIndex}`
                   const isClicked = clickedWord === wordKey
+                  const isHovered = hoveredWord === wordKey && !clickedWord
                   const wordText = segment.text || segment
                   const hasTranslation = segment.ids && segment.ids.length > 0
+                  const tooltipData = isClicked ? wordData : (isHovered ? hoveredWordData : null)
                   
                   return (
                     <span
                       key={`${chapterVerseKey}-${lineIndex}-${wordIndex}`}
-                      className={`sanskrit-word ${isLoaded ? 'animate-in' : ''} ${hasTranslation ? 'has-translation' : ''} ${isClicked ? 'tooltip-active' : ''}`}
+                      className={`sanskrit-word ${isLoaded ? 'animate-in' : ''} ${hasTranslation ? 'has-translation' : ''} ${isClicked ? 'tooltip-active' : ''} ${isHovered ? 'tooltip-hover' : ''}`}
                       data-word={wordText}
                       style={{
                         ['--animation-delay']: `${delay}s`
                       }}
+                      onMouseEnter={(e) => hasTranslation && handleWordHover(lineIndex, wordIndex, e)}
+                      onMouseLeave={(e) => hasTranslation && handleWordLeave(e)}
                       onClick={(e) => hasTranslation && handleWordClick(lineIndex, wordIndex, e)}
                     >
                       {wordText}
-                      {isClicked && wordData && (
-                        <span className={`word-tooltip ${translation === 'hindi' ? 'hindi-text' : ''}`}>
-                          {wordData.map((word, idx) => {
+                      {tooltipData && (
+                        <span 
+                          className={`word-tooltip ${isClicked ? 'tooltip-static' : 'tooltip-hover'} ${translation === 'hindi' ? 'hindi-text' : ''}`}
+                          onMouseEnter={() => handleTooltipEnter(lineIndex, wordIndex)}
+                        >
+                          {tooltipData.map((word, idx) => {
                             const wordId = word.id || word.key
                             const showSanskrit = toggledMeanings[wordId]
                             const displayText = showSanskrit 
                               ? (word.sanskrit || word.key || '')
                               : (word[translation] || word.english || '')
                             
+                            // Make meanings clickable when static (either from click or hover-to-tooltip)
+                            // isClicked will be true when tooltip becomes static from hover-to-tooltip too
                             return (
                               <span key={wordId || idx}>
                                 <span 
-                                  className="tooltip-meaning"
-                                  onClick={(e) => handleMeaningClick(wordId, e)}
+                                  className={isClicked ? "tooltip-meaning" : ""}
+                                  onClick={isClicked ? (e) => handleMeaningClick(wordId, e) : undefined}
+                                  style={isClicked ? { cursor: 'pointer' } : {}}
                                 >
                                   {displayText}
                                 </span>
-                                {idx < wordData.length - 1 && <span className="tooltip-separator"> • </span>}
+                                {idx < tooltipData.length - 1 && <span className="tooltip-separator"> • </span>}
                               </span>
                             )
                           })}
@@ -482,6 +598,24 @@ const VersePage = () => {
           
           {/* Verse Number and Navigation Controls */}
           <div className="verse-number-container">
+            {/* Bookmark button - on the left */}
+            <button 
+              className="verse-bookmark-button"
+              onClick={toggleBookmark}
+              aria-label={isBookmarked ? "Remove bookmark" : "Add bookmark"}
+            >
+              <svg 
+                width="20" 
+                height="20" 
+                viewBox="0 0 24 24" 
+                fill={isBookmarked ? "currentColor" : "none"} 
+                stroke="currentColor" 
+                strokeWidth="2"
+              >
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+              </svg>
+            </button>
+            
             <button 
               className="verse-nav-button verse-nav-prev"
               onClick={handlePrevVerse}
@@ -510,21 +644,22 @@ const VersePage = () => {
               </svg>
             </button>
             
+            {/* Copy button for Sanskrit text - next to the right arrow */}
             <button 
-              className="verse-bookmark-button"
-              onClick={toggleBookmark}
-              aria-label={isBookmarked ? "Remove bookmark" : "Add bookmark"}
+              className="verse-copy-button"
+              onClick={handleCopySanskrit}
+              aria-label={copiedSanskrit ? "Copied!" : "Copy Sanskrit text"}
             >
-              <svg 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill={isBookmarked ? "currentColor" : "none"} 
-                stroke="currentColor" 
-                strokeWidth="2"
-              >
-                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
-              </svg>
+              {copiedSanskrit ? (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+              ) : (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+              )}
             </button>
           </div>
         </div>
@@ -556,7 +691,7 @@ const VersePage = () => {
               <button 
                 className="copy-button"
                 onClick={handleCopy}
-                title={copied ? 'Copied!' : 'Copy verse'}
+                title={copied ? 'Copied!' : 'Copy translation'}
               >
                 {copied ? (
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

@@ -27,6 +27,8 @@ const VersePage = () => {
   const [showNavMenu, setShowNavMenu] = useState(false) // Track navigation menu visibility
   const [hoveredWord, setHoveredWord] = useState(null) // Track hovered word for temporary tooltip
   const [hoveredWordData, setHoveredWordData] = useState(null) // Store hovered word data
+  const [showLanguageDropdown, setShowLanguageDropdown] = useState(false) // Track language dropdown visibility
+  const [animationKey, setAnimationKey] = useState(0) // Force animation restart on verse change
   
   // Bookmark management
   const getBookmarks = () => {
@@ -76,6 +78,7 @@ const VersePage = () => {
   useEffect(() => {
     // Reset animation state when verse changes
     setIsLoaded(false)
+    setAnimationKey(prev => prev + 1) // Force animation restart
     window.scrollTo(0, 0)
     
     // Reset tooltip state when verse changes
@@ -96,23 +99,42 @@ const VersePage = () => {
   // Close tooltip when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
-      // Close static tooltip if clicking outside
-      if (clickedWord && !e.target.closest('.sanskrit-word') && !e.target.closest('.word-tooltip') && !e.target.closest('.tooltip-meaning')) {
+      // Check if click is on Sanskrit word or tooltip
+      const isClickOnSanskritWord = e.target.closest('.sanskrit-word')
+      const isClickOnTooltip = e.target.closest('.word-tooltip')
+      const isClickOnTooltipMeaning = e.target.closest('.tooltip-meaning')
+      
+      // Close static tooltip if clicking outside Sanskrit word and tooltip
+      if (clickedWord && !isClickOnSanskritWord && !isClickOnTooltip && !isClickOnTooltipMeaning) {
         setClickedWord(null)
         setWordData(null)
         setToggledMeanings({})
       }
       
-      // Also close hover tooltip when clicking anywhere
-      if (hoveredWord) {
+      // Also close hover tooltip when clicking anywhere (except on Sanskrit word or tooltip)
+      if (hoveredWord && !isClickOnSanskritWord && !isClickOnTooltip) {
         setHoveredWord(null)
         setHoveredWordData(null)
       }
+      
+      // Close language dropdown if clicking outside
+      if (showLanguageDropdown) {
+        const isClickInside = e.target.closest('.language-selector-container') || 
+                              e.target.closest('.language-selector-button') ||
+                              e.target.closest('.language-dropdown')
+        if (!isClickInside) {
+          setShowLanguageDropdown(false)
+        }
+      }
     }
     
+    // Always add the event listener to handle tooltip closing
     document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [clickedWord, hoveredWord])
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [clickedWord, hoveredWord, showLanguageDropdown])
   
   // Clear hover state when word is clicked (becomes static)
   useEffect(() => {
@@ -518,12 +540,64 @@ const VersePage = () => {
       <div className="verse-container">
         {/* Pretext/Context Section */}
         {verse.pretext && (
-          <div className="pretext-section">
-            <div className={`pretext-text ${translation === 'hindi' ? 'hindi-text' : ''}`}>
-              {typeof verse.pretext === 'string' 
-                ? verse.pretext 
-                : (translation === 'english' ? verse.pretext.english : verse.pretext.hindi)
-              }
+          <div className="pretext-wrapper" key={`pretext-${chapterVerseKey}-${animationKey}`}>
+            <div className="pretext-section">
+              <div className={`pretext-text ${translation === 'hindi' ? 'hindi-text' : ''}`}>
+                {typeof verse.pretext === 'string' 
+                  ? verse.pretext 
+                  : (translation === 'english' ? verse.pretext.english : verse.pretext.hindi)
+                }
+              </div>
+            </div>
+            <div className="language-selector-container">
+              <button
+                className="language-selector-button"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setShowLanguageDropdown(!showLanguageDropdown)
+                }}
+                aria-label="Select language"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </button>
+              {showLanguageDropdown && (
+                <div className="language-dropdown">
+                  <button
+                    className={`language-option ${translation === 'english' ? 'active' : ''}`}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      updateTranslation('english')
+                      setShowLanguageDropdown(false)
+                    }}
+                  >
+                    <span>English</span>
+                    {translation === 'english' && (
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                      </svg>
+                    )}
+                  </button>
+                  <button
+                    className={`language-option ${translation === 'hindi' ? 'active' : ''}`}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      updateTranslation('hindi')
+                      setShowLanguageDropdown(false)
+                    }}
+                  >
+                    <span>हिंदी</span>
+                    {translation === 'hindi' && (
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                      </svg>
+                    )}
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -665,24 +739,8 @@ const VersePage = () => {
         </div>
 
         {/* Translation Section - In Card */}
-        <div className="translation-wrapper">
-          <div className="translation-toggle-container">
-            <div className="translation-toggle-compact">
-              <button
-                className={`toggle-compact ${translation === 'english' ? 'active' : ''}`}
-                onClick={() => updateTranslation('english')}
-              >
-                English
-              </button>
-              <button
-                className={`toggle-compact ${translation === 'hindi' ? 'active' : ''}`}
-                onClick={() => updateTranslation('hindi')}
-              >
-                हिंदी
-              </button>
-            </div>
-          </div>
-
+        <div className="translation-wrapper" key={`translation-${chapterVerseKey}-${animationKey}`}>
+          <div className="translation-label">Translation</div>
           <div className="translation-card">
             <div className="translation-header">
               <div className={`translation-text ${translation === 'hindi' ? 'hindi-text' : ''}`}>

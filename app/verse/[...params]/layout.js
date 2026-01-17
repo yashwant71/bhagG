@@ -1,18 +1,26 @@
 import { getVerse, getChapter } from '../../../src/data/utils'
 
 export async function generateMetadata({ params }) {
-  const chapter = params?.params?.[0]
-  const verse = params?.params?.[1]
-  
-  if (!chapter || !verse) {
-    return {
-      title: 'Bhagavad Gita - Verse',
-      description: 'Read the Bhagavad Gita verse',
-    }
-  }
-
   try {
+    const chapter = params?.params?.[0]
+    const verse = params?.params?.[1]
+    
+    if (!chapter || !verse) {
+      return {
+        title: 'Bhagavad Gita - Verse',
+        description: 'Read the Bhagavad Gita verse',
+      }
+    }
+
     const chapterNum = parseInt(chapter)
+    // Only process chapter 1 to avoid issues
+    if (isNaN(chapterNum) || chapterNum !== 1) {
+      return {
+        title: `Bhagavad Gita Chapter ${chapter} Verse ${verse}`,
+        description: 'Read the Bhagavad Gita verse with Sanskrit text and translations',
+      }
+    }
+
     const verseNum = verse
     const verseData = getVerse(chapterNum, verseNum)
     const chapterData = getChapter(chapterNum)
@@ -44,8 +52,9 @@ export async function generateMetadata({ params }) {
       },
     }
   } catch (error) {
+    console.error('Error generating metadata:', error)
     return {
-      title: `Bhagavad Gita Chapter ${chapter} Verse ${verse}`,
+      title: 'Bhagavad Gita - Verse',
       description: 'Read the Bhagavad Gita verse',
     }
   }

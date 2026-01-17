@@ -16,7 +16,11 @@ export const metadata = {
     title: 'Bhagavad Gita Experience',
     description: 'An immersive experience reading the Bhagavad Gita',
   },
-  viewport: 'width=device-width, initial-scale=1',
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
   themeColor: '#0a0a0a',
 }
 

@@ -336,17 +336,17 @@
 }
 
 .sanskrit-word.animate-in {
-  animation: fallFromAbove 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: fallFromAbove 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   animation-delay: var(--animation-delay, 0s);
 }
 
 .sanskrit-word.animate-in::before {
-  animation: glowTrail1 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: glowTrail1 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   animation-delay: var(--animation-delay, 0s);
 }
 
 .sanskrit-word.animate-in::after {
-  animation: glowTrail2 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: glowTrail2 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   animation-delay: var(--animation-delay, 0s);
 }
 

@@ -729,14 +729,15 @@ const VersePage = () => {
   // Calculate delays: each word in a line gets a small delay, 
   // then next line starts right after the previous line's last word finishes
   const getWordDelay = (lineIndex, wordIndex, lineLength) => {
-    // First line: each word has a small delay (0.12s apart)
+    // First line: each word has a small delay (0.06s apart - faster)
     if (lineIndex === 0) {
-      return wordIndex * 0.12
+      return wordIndex * 0.06
     }
     
-    // For lines after the first: calculate when previous lines finish
-    // Each line's end time = last word start time + animation duration (1s)
-    // Last word start time = first word start time + (wordCount - 1) * 0.12
+    // For lines after the first: start next line before previous line fully finishes
+    // Each line's end time = last word start time + animation duration (0.7s)
+    // Last word start time = first word start time + (wordCount - 1) * 0.06
+    // Start next line when previous line is 60% done (overlap for faster feel)
     
     let previousLinesEndTime = 0
     
@@ -744,14 +745,15 @@ const VersePage = () => {
     for (let i = 0; i < lineIndex; i++) {
       const prevLineWordCount = sanskritLines[i].length
       const prevLineFirstWordDelay = i === 0 ? 0 : previousLinesEndTime
-      const prevLineLastWordStartTime = prevLineFirstWordDelay + (prevLineWordCount - 1) * 0.12
-      const prevLineEndTime = prevLineLastWordStartTime + 1 // animation duration is 1s
-      previousLinesEndTime = prevLineEndTime
+      const prevLineLastWordStartTime = prevLineFirstWordDelay + (prevLineWordCount - 1) * 0.06
+      // Start next line when previous line is 60% done (0.6 * 0.7s = 0.42s)
+      const prevLineStartNextLineTime = prevLineLastWordStartTime + 0.42
+      previousLinesEndTime = prevLineStartNextLineTime
     }
     
-    // Current line starts after previous lines finish
-    // Each word in current line has 0.12s delay from the previous word
-    return previousLinesEndTime + (wordIndex * 0.12)
+    // Current line starts after previous lines are 60% done
+    // Each word in current line has 0.06s delay from the previous word
+    return previousLinesEndTime + (wordIndex * 0.06)
   }
 
   // Calculate when all animations complete (last word delay + animation duration)
@@ -768,8 +770,8 @@ const VersePage = () => {
       }
     }
     
-    // Animation duration is 1s, so total time = last word delay + 1s
-    return (lastWordDelay + 1) * 1000 // Convert to milliseconds
+    // Animation duration is 0.7s, so total time = last word delay + 0.7s
+    return (lastWordDelay + 0.7) * 1000 // Convert to milliseconds
   }
 
   // Set animations complete after all words have finished animating

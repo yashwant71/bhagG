@@ -128,20 +128,27 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - very subtle, narrow, overlay style */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--text-secondary);
-  border-radius: 4px;
+  background: rgba(150, 150, 150, 0.3);
+  border-radius: 2px;
+  border: none;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gold-hover);
+  background: rgba(150, 150, 150, 0.5);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(150, 150, 150, 0.3) transparent;
 }

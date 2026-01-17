@@ -16,11 +16,41 @@
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 50% 30%, var(--gold-15) 0%, transparent 60%),
-    radial-gradient(circle at 50% 70%, var(--gold-10) 0%, transparent 60%);
+    /* Deep night sky base with very subtle color variation */
+    radial-gradient(ellipse at 20% 30%, #0a0a1a 0%, #0a0a15 30%, #000000 100%),
+    radial-gradient(ellipse at 80% 70%, #0a0a18 0%, #0a0a12 25%, #000000 100%),
+    radial-gradient(ellipse at 50% 50%, #0a0a16 0%, #000000 100%),
+    /* Very subtle divine fire glow at bottom - no animation */
+    radial-gradient(ellipse at 50% 100%, rgba(255, 140, 0, 0.12) 0%, rgba(212, 175, 55, 0.08) 30%, transparent 70%);
   z-index: var(--z-background);
   pointer-events: none;
+  overflow: hidden;
 }
+
+
+/* Static fire glow at bottom - no animation */
+.verse-background::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: 
+    /* Static fire base - no animation */
+    radial-gradient(ellipse at 30% 100%, rgba(255, 100, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 100%, rgba(255, 140, 0, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(212, 175, 55, 0.12) 0%, transparent 60%);
+  /* Remove animation - static color only */
+  animation: none;
+  filter: blur(40px);
+}
+
+
+
+
+
+
 
 .verse-container {
   position: relative;
@@ -194,21 +224,25 @@
 
 /* Navigation arrows - Removed, now using verse-number-container controls */
 
-/* Static circle behind Sanskrit text */
+/* Very subtle, light, blended background behind Sanskrit text */
 .sanskrit-section::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 50%, transparent 100%);
-  border-radius: 50%;
-  filter: blur(60px);
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  background: 
+    radial-gradient(ellipse at center, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.04) 40%, transparent 70%),
+    radial-gradient(ellipse at 30% 50%, rgba(255, 200, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 50%, rgba(255, 180, 0, 0.04) 0%, transparent 45%);
+  border-radius: var(--radius-lg);
+  filter: blur(50px);
   z-index: -1;
   pointer-events: none;
-  opacity: 0.75;
+  opacity: 1;
 }
 
 .sanskrit-words-container {
@@ -231,7 +265,7 @@
 
 .sanskrit-word {
   font-family: 'Noto Sans Devanagari', serif;
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   font-weight: 500;
   display: inline-block;
   position: relative;
@@ -1142,7 +1176,7 @@
   
 
   .sanskrit-word {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     -webkit-text-stroke: 1px #b8941f;
   }
   

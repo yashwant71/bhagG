@@ -1012,7 +1012,7 @@ const VersePage = () => {
                                   
                                   return (
                                     <span key={wordId || idx} className="tooltip-explanation-item">
-                                      <span className="tooltip-explanation-term">{explanation.term}:</span> {explanation.desc}
+                                      <span className="tooltip-explanation-term">{(translation === 'hindi' && explanation.termHindi) ? explanation.termHindi : explanation.term}:</span> {translation === 'hindi' && explanation.descHindi ? explanation.descHindi : explanation.desc}
                                       {idx < tooltipData.length - 1 && tooltipData.slice(idx + 1).some(w => {
                                         const nextWordId = w.id || w.key
                                         return chapterData?.explanations?.find(e => e.id === nextWordId)
@@ -1151,7 +1151,7 @@ const VersePage = () => {
                               )}
                               {translationWordData.explanation && (
                                 <div className="tooltip-word-explanation">
-                                  <strong>{translationWordData.explanation.term}:</strong> {translationWordData.explanation.desc}
+                                  <strong>{(translation === 'hindi' && translationWordData.explanation.termHindi) ? translationWordData.explanation.termHindi : translationWordData.explanation.term}:</strong> {translation === 'hindi' && translationWordData.explanation.descHindi ? translationWordData.explanation.descHindi : translationWordData.explanation.desc}
                                 </div>
                               )}
                             </div>

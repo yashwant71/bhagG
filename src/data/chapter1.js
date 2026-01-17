@@ -3,30 +3,30 @@ export const chapter1 = {
   chapterName: "Arjuna Vishada Yoga",
   chapterNameSanskrit: "अर्जुनविषादयोगः",
   explanations: [
-    { "id": "1.1.1", "term": "Dhritarashtra", "desc": "The blind King and father of the Kauravas. He represents the attached human mind that is blind to spiritual truth." },
-    { "id": "1.1.4", "term": "Kurukshetra", "desc": "A historical holy place in India. Symbolically, it represents the world as a 'field of action' where the battle between good and evil takes place." },
-    { "id": "1.1.8", "term": "Pandavas", "desc": "The five sons of King Pandu. They represent the forces of righteousness (Dharma) and virtue." },
-    { "id": "1.1.13", "term": "Sanjaya", "desc": "The assistant of Dhritarashtra who was blessed with divine vision to see and hear everything happening on the distant battlefield." },
-    { "id": "1.2.8", "term": "Duryodhana", "desc": "The eldest son of Dhritarashtra and the leader of the Kaurava army. He represents ego, greed, and worldly desire." },
-    { "id": "1.2.10", "term": "Dronacharya", "desc": "The great military teacher (Acharya) who trained both the Pandavas and Kauravas in the art of war." },
-    { "id": "1.3.8", "term": "Son of Drupada", "desc": "Dhrishtadyumna, who was born specifically to slay Drona, yet became Drona's pupil to learn the art of warfare." },
-    { "id": "1.4.4", "term": "Bhima", "desc": "The second Pandava brother, known for his immense physical strength and expertise with the mace." },
-    { "id": "1.4.5", "term": "Arjuna", "desc": "The third Pandava and the supreme archer. He is the central figure who receives the message of the Gita." },
-    { "id": "1.4.13", "term": "Maharathi", "desc": "A warrior capable of fighting 10,000 archers simultaneously." },
-    { "id": "1.6.7", "term": "Son of Subhadra", "desc": "Abhimanyu, the son of Arjuna and Subhadra, known for his extraordinary bravery at a young age." },
-    { "id": "1.6.8", "term": "Sons of Draupadi", "desc": "The five sons born to the Pandavas by Draupadi, representing the next generation of heroes." },
-    { "id": "1.7.6", "term": "Best of Brahmanas", "desc": "Duryodhana addresses Drona as the best of the priestly class, acknowledging his wisdom and authority while being a military instructor." },
-    { "id": "1.8.2", "term": "Bhishma", "desc": "The grand-uncle of both Pandavas and Kauravas. He was the commander-in-chief of the Kaurava army and a symbol of duty." },
-    { "id": "1.8.4", "term": "Karna", "desc": "A legendary archer and Duryodhana's closest friend, known for his immense bravery and loyalty." },
-    { "id": "1.8.6", "term": "Kripa", "desc": "A great teacher and one of the immortal souls (Chiranjivi) who fought on the side of the Kauravas." },
-    { "id": "1.12.8", "term": "Conch", "desc": "A large seashell (Shankha) used as a ritual instrument and a martial trumpet to signal the start of battle." },
-    { "id": "1.14.8", "term": "Madhava", "desc": "A name for Lord Krishna, meaning the husband of the Goddess of Fortune, Lakshmi. It signifies His divine and all-powerful nature." },
-    { "id": "1.15.2", "term": "Hrishikesha", "desc": "A name for Lord Krishna meaning 'Master of the Senses'. It indicates His control over the internal and external world." },
-    { "id": "1.15.9", "term": "Vrikodara", "desc": "A name for Bhima meaning 'wolf-bellied', referring to his voracious appetite and superhuman strength." },
-    { "id": "1.20.5", "term": "Kapidhwaja", "desc": "Arjuna, whose flag bore the emblem of Lord Hanuman (the divine monkey hero). Hanuman's presence on the flag signifies victory and strength." },
-    { "id": "1.21.15", "term": "Achyuta", "desc": "A name for Krishna meaning 'the infallible' or 'one who never fails His devotees'. It shows Arjuna's absolute trust." },
-    { "id": "1.24.5", "term": "Gudakesha", "desc": "A name for Arjuna meaning 'one who has conquered sleep'. It signifies his intense focus and self-discipline." },
-    { "id": "1.25.6", "term": "Partha", "desc": "A name for Arjuna, meaning 'the son of Pritha' (Kunti). It reminds him of his noble lineage." }
+    { "id": "1.1.1", "term": "Dhritarashtra", "termHindi": "धृतराष्ट्र", "desc": "The blind King and father of the Kauravas. He represents the attached human mind that is blind to spiritual truth.", "descHindi": "कौरवों के अंधे राजा और पिता। वे उस मानव मन का प्रतिनिधित्व करते हैं जो आध्यात्मिक सत्य के प्रति अंधा है।" },
+    { "id": "1.1.4", "term": "Kurukshetra", "termHindi": "कुरुक्षेत्र", "desc": "A historical holy place in India. Symbolically, it represents the world as a 'field of action' where the battle between good and evil takes place.", "descHindi": "भारत का एक ऐतिहासिक पवित्र स्थान। प्रतीकात्मक रूप से, यह संसार को 'कर्मक्षेत्र' के रूप में दर्शाता है जहाँ अच्छाई और बुराई के बीच युद्ध होता है।" },
+    { "id": "1.1.8", "term": "Pandavas", "termHindi": "पाण्डव", "desc": "The five sons of King Pandu. They represent the forces of righteousness (Dharma) and virtue.", "descHindi": "राजा पाण्डु के पाँच पुत्र। वे धर्म और सदाचार की शक्तियों का प्रतिनिधित्व करते हैं।" },
+    { "id": "1.1.13", "term": "Sanjaya", "termHindi": "सञ्जय", "desc": "The assistant of Dhritarashtra who was blessed with divine vision to see and hear everything happening on the distant battlefield.", "descHindi": "धृतराष्ट्र के सहायक जिन्हें दिव्य दृष्टि का वरदान मिला था जिससे वे दूर के युद्धक्षेत्र में होने वाली हर बात को देख और सुन सकते थे।" },
+    { "id": "1.2.8", "term": "Duryodhana", "termHindi": "दुर्योधन", "desc": "The eldest son of Dhritarashtra and the leader of the Kaurava army. He represents ego, greed, and worldly desire.", "descHindi": "धृतराष्ट्र के सबसे बड़े पुत्र और कौरव सेना के नेता। वे अहंकार, लोभ और सांसारिक इच्छाओं का प्रतिनिधित्व करते हैं।" },
+    { "id": "1.2.10", "term": "Dronacharya", "termHindi": "द्रोणाचार्य", "desc": "The great military teacher (Acharya) who trained both the Pandavas and Kauravas in the art of war.", "descHindi": "महान सैन्य गुरु (आचार्य) जिन्होंने पाण्डवों और कौरवों दोनों को युद्ध कला में प्रशिक्षित किया।" },
+    { "id": "1.3.8", "term": "Son of Drupada", "termHindi": "द्रुपद पुत्र", "desc": "Dhrishtadyumna, who was born specifically to slay Drona, yet became Drona's pupil to learn the art of warfare.", "descHindi": "धृष्टद्युम्न, जो विशेष रूप से द्रोण को मारने के लिए पैदा हुए थे, फिर भी युद्ध कला सीखने के लिए द्रोण के शिष्य बने।" },
+    { "id": "1.4.4", "term": "Bhima", "termHindi": "भीम", "desc": "The second Pandava brother, known for his immense physical strength and expertise with the mace.", "descHindi": "दूसरे पाण्डव भाई, जो अपनी अत्यधिक शारीरिक शक्ति और गदा में निपुणता के लिए जाने जाते हैं।" },
+    { "id": "1.4.5", "term": "Arjuna", "termHindi": "अर्जुन", "desc": "The third Pandava and the supreme archer. He is the central figure who receives the message of the Gita.", "descHindi": "तीसरे पाण्डव और सर्वश्रेष्ठ धनुर्धर। वे वह केंद्रीय व्यक्ति हैं जिन्हें गीता का संदेश मिलता है।" },
+    { "id": "1.4.13", "term": "Maharathi", "termHindi": "महारथी", "desc": "A warrior capable of fighting 10,000 archers simultaneously.", "descHindi": "एक योद्धा जो एक साथ 10,000 धनुर्धरों से लड़ने में सक्षम है।" },
+    { "id": "1.6.7", "term": "Son of Subhadra", "termHindi": "सुभद्रा पुत्र", "desc": "Abhimanyu, the son of Arjuna and Subhadra, known for his extraordinary bravery at a young age.", "descHindi": "अभिमन्यु, अर्जुन और सुभद्रा के पुत्र, जो कम उम्र में असाधारण वीरता के लिए जाने जाते हैं।" },
+    { "id": "1.6.8", "term": "Sons of Draupadi", "termHindi": "द्रौपदी के पुत्र", "desc": "The five sons born to the Pandavas by Draupadi, representing the next generation of heroes.", "descHindi": "द्रौपदी से पाण्डवों के पाँच पुत्र, जो नायकों की अगली पीढ़ी का प्रतिनिधित्व करते हैं।" },
+    { "id": "1.7.6", "term": "Best of Brahmanas", "termHindi": "ब्राह्मणों में श्रेष्ठ", "desc": "Duryodhana addresses Drona as the best of the priestly class, acknowledging his wisdom and authority while being a military instructor.", "descHindi": "दुर्योधन द्रोण को ब्राह्मण वर्ग में सर्वश्रेष्ठ कहकर संबोधित करता है, उनकी बुद्धिमत्ता और अधिकार को स्वीकार करते हुए जबकि वे एक सैन्य प्रशिक्षक भी हैं।" },
+    { "id": "1.8.2", "term": "Bhishma", "termHindi": "भीष्म", "desc": "The grand-uncle of both Pandavas and Kauravas. He was the commander-in-chief of the Kaurava army and a symbol of duty.", "descHindi": "पाण्डवों और कौरवों दोनों के परदादा। वे कौरव सेना के सेनापति थे और कर्तव्य के प्रतीक थे।" },
+    { "id": "1.8.4", "term": "Karna", "termHindi": "कर्ण", "desc": "A legendary archer and Duryodhana's closest friend, known for his immense bravery and loyalty.", "descHindi": "एक महान धनुर्धर और दुर्योधन के सबसे करीबी मित्र, जो अपनी असाधारण वीरता और निष्ठा के लिए जाने जाते हैं।" },
+    { "id": "1.8.6", "term": "Kripa", "termHindi": "कृपा", "desc": "A great teacher and one of the immortal souls (Chiranjivi) who fought on the side of the Kauravas.", "descHindi": "एक महान गुरु और अमर आत्माओं (चिरंजीवी) में से एक जिन्होंने कौरवों के पक्ष में युद्ध किया।" },
+    { "id": "1.12.8", "term": "Conch", "termHindi": "शंख", "desc": "A large seashell (Shankha) used as a ritual instrument and a martial trumpet to signal the start of battle.", "descHindi": "एक बड़ा समुद्री कौड़ी (शंख) जिसका उपयोग एक अनुष्ठानिक वाद्य यंत्र और युद्ध की शुरुआत का संकेत देने के लिए एक सैन्य तुरही के रूप में किया जाता है।" },
+    { "id": "1.14.8", "term": "Madhava", "termHindi": "माधव", "desc": "A name for Lord Krishna, meaning the husband of the Goddess of Fortune, Lakshmi. It signifies His divine and all-powerful nature.", "descHindi": "भगवान कृष्ण का एक नाम, जिसका अर्थ है धन की देवी लक्ष्मी के पति। यह उनकी दिव्य और सर्वशक्तिमान प्रकृति को दर्शाता है।" },
+    { "id": "1.15.2", "term": "Hrishikesha", "termHindi": "हृषीकेश", "desc": "A name for Lord Krishna meaning 'Master of the Senses'. It indicates His control over the internal and external world.", "descHindi": "भगवान कृष्ण का एक नाम जिसका अर्थ है 'इंद्रियों के स्वामी'। यह आंतरिक और बाहरी दुनिया पर उनके नियंत्रण को दर्शाता है।" },
+    { "id": "1.15.9", "term": "Vrikodara", "termHindi": "वृकोदर", "desc": "A name for Bhima meaning 'wolf-bellied', referring to his voracious appetite and superhuman strength.", "descHindi": "भीम का एक नाम जिसका अर्थ है 'भेड़िया-पेट वाला', जो उनकी अत्यधिक भूख और अलौकिक शक्ति को दर्शाता है।" },
+    { "id": "1.20.5", "term": "Kapidhwaja", "termHindi": "कपिध्वज", "desc": "Arjuna, whose flag bore the emblem of Lord Hanuman (the divine monkey hero). Hanuman's presence on the flag signifies victory and strength.", "descHindi": "अर्जुन, जिनके ध्वज पर भगवान हनुमान (दिव्य वानर नायक) का प्रतीक था। ध्वज पर हनुमान की उपस्थिति विजय और शक्ति का प्रतीक है।" },
+    { "id": "1.21.15", "term": "Achyuta", "termHindi": "अच्युत", "desc": "A name for Krishna meaning 'the infallible' or 'one who never fails His devotees'. It shows Arjuna's absolute trust.", "descHindi": "कृष्ण का एक नाम जिसका अर्थ है 'अच्युत' या 'जो अपने भक्तों को कभी निराश नहीं करता'। यह अर्जुन के पूर्ण विश्वास को दर्शाता है।" },
+    { "id": "1.24.5", "term": "Gudakesha", "termHindi": "गुडाकेश", "desc": "A name for Arjuna meaning 'one who has conquered sleep'. It signifies his intense focus and self-discipline.", "descHindi": "अर्जुन का एक नाम जिसका अर्थ है 'जिसने नींद पर विजय प्राप्त की है'। यह उनकी तीव्र एकाग्रता और आत्म-अनुशासन को दर्शाता है।" },
+    { "id": "1.25.6", "term": "Partha", "termHindi": "पार्थ", "desc": "A name for Arjuna, meaning 'the son of Pritha' (Kunti). It reminds him of his noble lineage.", "descHindi": "अर्जुन का एक नाम, जिसका अर्थ है 'पृथा का पुत्र' (कुंती)। यह उन्हें उनके महान वंश की याद दिलाता है।" }
   ],
   verses: {
       "1": {
@@ -440,7 +440,7 @@ export const chapter1 = {
             "hindi": "सञ्जय अब पाण्डवों के पक्ष की बात सुनाते हैं कि उन्होंने कैसे उत्तर दिया—"
           },
           "explanations": [
-            { "id": "1.14.8", "term": "Madhava", "desc": "A name for Lord Krishna, meaning the husband of the Goddess of Fortune, Lakshmi. It signifies His divine and all-powerful nature." }
+            { "id": "1.14.8", "term": "Madhava", "termHindi": "माधव", "desc": "A name for Lord Krishna, meaning the husband of the Goddess of Fortune, Lakshmi. It signifies His divine and all-powerful nature.", "descHindi": "भगवान कृष्ण का एक नाम, जिसका अर्थ है धन की देवी लक्ष्मी के पति। यह उनकी दिव्य और सर्वशक्तिमान प्रकृति को दर्शाता है।" }
           ]
         },
         "15": {
@@ -641,7 +641,7 @@ export const chapter1 = {
             "hindi": "अर्जुन श्रीकृष्ण से रथ खड़ा करने को कहते हैं (श्लोक २० का क्रम) ।"
           },
           "explanations": [
-            { "id": "1.21.15", "term": "Achyuta", "desc": "A name for Krishna meaning 'the infallible' or 'one who never fails His devotees'. It shows Arjuna's absolute trust." }
+            { "id": "1.21.15", "term": "Achyuta", "termHindi": "अच्युत", "desc": "A name for Krishna meaning 'the infallible' or 'one who never fails His devotees'. It shows Arjuna's absolute trust.", "descHindi": "कृष्ण का एक नाम जिसका अर्थ है 'अच्युत' या 'जो अपने भक्तों को कभी निराश नहीं करता'। यह अर्जुन के पूर्ण विश्वास को दर्शाता है।" }
           ]
         },
         "22": {

@@ -16,10 +16,10 @@
   width: 100%;
   height: 100%;
   background: 
-    /* Deep night sky base with very subtle color variation */
-    radial-gradient(ellipse at 20% 30%, #0a0a1a 0%, #0a0a15 30%, #000000 100%),
-    radial-gradient(ellipse at 80% 70%, #0a0a18 0%, #0a0a12 25%, #000000 100%),
-    radial-gradient(ellipse at 50% 50%, #0a0a16 0%, #000000 100%),
+    /* Pure dark background - no blue tones */
+    radial-gradient(ellipse at 20% 30%, #000000 0%, #000000 30%, #000000 100%),
+    radial-gradient(ellipse at 80% 70%, #000000 0%, #000000 25%, #000000 100%),
+    radial-gradient(ellipse at 50% 50%, #000000 0%, #000000 100%),
     /* Very subtle divine fire glow at bottom - no animation */
     radial-gradient(ellipse at 50% 100%, rgba(255, 140, 0, 0.12) 0%, rgba(212, 175, 55, 0.08) 30%, transparent 70%);
   z-index: var(--z-background);

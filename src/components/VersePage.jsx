@@ -1,11 +1,17 @@
+'use client'
+
 import React, { useState, useEffect, useRef } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useRouter } from 'next/navigation'
 import { getVerse, getNextVerseNumber, getPrevVerseNumber, getAllChapterNumbers, getVerseNumbers, getChapter } from '../data/utils'
 import './VersePage.css'
 
 const VersePage = () => {
-  const { chapter, verse: verseParam } = useParams()
-  const navigate = useNavigate()
+  const params = useParams()
+  const router = useRouter()
+  
+  // Handle both catch-all route format and direct params
+  const chapter = Array.isArray(params?.params) ? params.params[0] : (params?.chapter || params?.params?.[0])
+  const verseParam = Array.isArray(params?.params) ? params.params[1] : (params?.verse || params?.params?.[1])
   
   // Load language preference from localStorage, default to 'english'
   const getStoredLanguage = () => {
@@ -304,7 +310,7 @@ const VersePage = () => {
     if (nextVerse) {
       // Parse the result (e.g., "2.48" -> ["2", "48"])
       const [nextChapter, nextVerseNum] = nextVerse.split('.')
-      navigate(`/verse/${nextChapter}/${nextVerseNum}`)
+      router.push(`/verse/${nextChapter}/${nextVerseNum}`)
     }
   }
 
@@ -313,7 +319,7 @@ const VersePage = () => {
     if (prevVerse) {
       // Parse the result (e.g., "2.46" -> ["2", "46"])
       const [prevChapter, prevVerseNum] = prevVerse.split('.')
-      navigate(`/verse/${prevChapter}/${prevVerseNum}`)
+      router.push(`/verse/${prevChapter}/${prevVerseNum}`)
     }
   }
 
@@ -774,7 +780,7 @@ const VersePage = () => {
 
   // Handle navigation to a specific chapter/verse
   const handleNavigateToVerse = (chNum, verseNum) => {
-    navigate(`/verse/${chNum}/${verseNum}`)
+    router.push(`/verse/${chNum}/${verseNum}`)
     setShowNavMenu(false)
   }
 

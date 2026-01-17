@@ -5,13 +5,109 @@
 }
 
 :root {
+  /* Background Colors */
   --bg-primary: #0a0a0a;
   --bg-secondary: #1a1a1a;
+  --bg-card: rgba(26, 26, 26, 0.4);
+  --bg-card-hover: rgba(26, 26, 26, 0.6);
+  --bg-tooltip: rgba(30, 25, 15, 0.95);
+  --bg-tooltip-static: rgba(30, 25, 15, 0.98);
+  --bg-overlay: rgba(26, 26, 26, 0.7);
+  
+  /* Golden/Yellow Colors - Primary Theme */
+  --gold-primary: #d4af37;
+  --gold-primary-rgb: 212, 175, 55;
+  --gold-bright: #ffd700;
+  --gold-yellow: #f4d03f;
+  --gold-yellow-rgb: 244, 208, 63;
+  --gold-hover: #b8941f;
+  
+  /* Golden Opacity Variants */
+  --gold-10: rgba(212, 175, 55, 0.1);
+  --gold-15: rgba(212, 175, 55, 0.15);
+  --gold-20: rgba(212, 175, 55, 0.2);
+  --gold-25: rgba(212, 175, 55, 0.25);
+  --gold-30: rgba(212, 175, 55, 0.3);
+  --gold-40: rgba(212, 175, 55, 0.4);
+  --gold-50: rgba(212, 175, 55, 0.5);
+  --gold-60: rgba(212, 175, 55, 0.6);
+  --gold-70: rgba(212, 175, 55, 0.7);
+  --gold-80: rgba(212, 175, 55, 0.8);
+  --gold-85: rgba(212, 175, 55, 0.85);
+  --gold-90: rgba(212, 175, 55, 0.9);
+  
+  /* Yellow Opacity Variants */
+  --yellow-70: rgba(244, 208, 63, 0.7);
+  --yellow-75: rgba(244, 208, 63, 0.75);
+  --yellow-90: rgba(244, 208, 63, 0.9);
+  
+  /* Text Colors */
   --text-primary: #f5f5f5;
   --text-secondary: #d4af37;
   --text-accent: #e8d5b7;
+  --text-translation: #E8E6E3;
+  --text-translation-hindi: #E8E0D0;
+  --text-meaning: rgba(232, 224, 200, 0.9);
+  --text-meaning-hindi: rgba(232, 220, 195, 0.95);
+  --text-tooltip: #f4d03f;
+  --text-tooltip-sanskrit: #ffd700;
+  
+  /* Border Colors */
   --border-gold: #d4af37;
+  --border-gold-light: rgba(212, 175, 55, 0.3);
+  --border-gold-medium: rgba(212, 175, 55, 0.4);
+  --border-gold-strong: rgba(212, 175, 55, 0.5);
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.25rem;
+  --spacing-2xl: 1.5rem;
+  --spacing-3xl: 2rem;
+  
+  /* Font Sizes */
+  --font-xs: 0.7rem;
+  --font-sm: 0.75rem;
+  --font-md: 0.85rem;
+  --font-base: 0.9rem;
+  --font-lg: 1rem;
+  --font-xl: 1.1rem;
+  --font-2xl: 1.5rem;
+  --font-3xl: 2rem;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 5px 14px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --shadow-gold: 0 4px 12px rgba(212, 175, 55, 0.3);
+  --shadow-glow-sm: 0 0 15px rgba(212, 175, 55, 0.4), 0 0 30px rgba(212, 175, 55, 0.2);
+  --shadow-glow-lg: 0 0 25px rgba(212, 175, 55, 0.8), 0 0 50px rgba(212, 175, 55, 0.6), 0 0 75px rgba(212, 175, 55, 0.4);
+  
+  /* Transitions */
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s ease;
+  --transition-medium: all 0.3s ease;
+  
+  /* Z-Index */
+  --z-background: 0;
+  --z-base: 1;
+  --z-tooltip: 1000;
+  --z-tooltip-high: 2000;
+  --z-dropdown: 1500;
+  
+  /* Backdrop Blur */
+  --blur-sm: blur(10px);
+  --blur-md: blur(12px);
+  --blur-lg: blur(20px);
 }
 
 body {
@@ -47,5 +143,5 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b8941f;
+  background: var(--gold-hover);
 }

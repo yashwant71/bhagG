@@ -57,6 +57,9 @@ const VersePage = () => {
   const [showSwipeTutorial, setShowSwipeTutorial] = useState(false)
   const [swipeOffset, setSwipeOffset] = useState(0) // For swipe animation
   const [isSwiping, setIsSwiping] = useState(false)
+  const [swipeDirection, setSwipeDirection] = useState(null) // 'left' | 'right' | null
+  const [isTransitioning, setIsTransitioning] = useState(false) // For card transition animation
+  const [isEntering, setIsEntering] = useState(false) // For new card entering animation
 
   const touchStartX = useRef(null)
   const touchEndX = useRef(null)
@@ -129,6 +132,20 @@ const VersePage = () => {
   }, [])
 
   useEffect(() => {
+    // Check if we're entering from a swipe transition
+    const storedDirection = sessionStorage.getItem('bg-swipe-direction')
+    if (storedDirection) {
+      setIsEntering(true)
+      setSwipeDirection(storedDirection)
+      sessionStorage.removeItem('bg-swipe-direction')
+      
+      // Animate card sliding in from opposite side
+      setTimeout(() => {
+        setIsEntering(false)
+        setSwipeDirection(null)
+      }, 300)
+    }
+    
     // Reset animation state when verse changes
     setIsLoaded(false)
     setAnimationsComplete(false) // Reset animations complete state
@@ -146,10 +163,14 @@ const VersePage = () => {
     setSanskritTooltipPosition(null)
     setTranslationTooltipPosition(null)
     
+    // Reset swipe transition state when verse changes
+    setIsTransitioning(false)
+    setSwipeOffset(0)
+    
     // Trigger animation after a brief delay to ensure DOM is ready
     const timer = setTimeout(() => {
       setIsLoaded(true)
-    }, 50)
+    }, isEntering ? 50 : 50)
     
     return () => clearTimeout(timer)
   }, [chapter, verseParam])
@@ -561,21 +582,39 @@ const VersePage = () => {
 
     if (distance > minSwipeDistance) {
       // Swipe left - next verse
-      // Animate whole content sliding left before navigation
+      // Start transition: current card slides left, new card comes from right
+      setIsTransitioning(true)
+      setSwipeDirection('left')
       setSwipeOffset(-window.innerWidth)
+      
+      // Navigate after animation starts
       setTimeout(() => {
         handleNextVerse()
-        setSwipeOffset(0)
-        setIsSwiping(false)
+        // Reset after navigation completes
+        setTimeout(() => {
+          setSwipeOffset(0)
+          setIsSwiping(false)
+          setIsTransitioning(false)
+          setSwipeDirection(null)
+        }, 50)
       }, 300)
     } else if (distance < -minSwipeDistance) {
       // Swipe right - previous verse
-      // Animate whole content sliding right before navigation
+      // Start transition: current card slides right, new card comes from left
+      setIsTransitioning(true)
+      setSwipeDirection('right')
       setSwipeOffset(window.innerWidth)
+      
+      // Navigate after animation starts
       setTimeout(() => {
         handlePrevVerse()
-        setSwipeOffset(0)
-        setIsSwiping(false)
+        // Reset after navigation completes
+        setTimeout(() => {
+          setSwipeOffset(0)
+          setIsSwiping(false)
+          setIsTransitioning(false)
+          setSwipeDirection(null)
+        }, 50)
       }, 300)
     } else {
       // Not enough swipe distance, reset
@@ -1023,14 +1062,29 @@ const VersePage = () => {
         </>
       )}
       
-      <div 
-        ref={verseContainerRef}
-        className="verse-container"
-        style={{
-          transform: swipeOffset !== 0 ? `translateX(${swipeOffset}px)` : 'none',
-          transition: isSwiping ? 'none' : 'transform 0.3s ease-out'
-        }}
-      >
+      <div className="verse-carousel-wrapper">
+        <div 
+          ref={verseContainerRef}
+          className={`verse-container ${isTransitioning ? `swipe-${swipeDirection}` : ''} ${isEntering ? `enter-${swipeDirection}` : ''}`}
+          style={{
+            transform: isTransitioning 
+              ? swipeDirection === 'left' 
+                ? `translateX(-100%)` 
+                : swipeDirection === 'right'
+                ? `translateX(100%)`
+                : 'none'
+              : isEntering
+              ? swipeDirection === 'left'
+                ? 'translateX(0%)' // Slide in from right (starts at 100%, animates to 0%)
+                : swipeDirection === 'right'
+                ? 'translateX(0%)' // Slide in from left (starts at -100%, animates to 0%)
+                : 'none'
+              : swipeOffset !== 0 
+                ? `translateX(${swipeOffset}px)` 
+                : 'none',
+            transition: isSwiping ? 'none' : (isTransitioning || isEntering ? 'transform 0.3s ease-out' : 'transform 0.3s ease-out')
+          }}
+        >
         {/* Pretext/Context Section */}
         {verse.pretext && (
           <div className="pretext-wrapper" key={`pretext-${chapterVerseKey}-${animationKey}`}>
@@ -1366,6 +1420,7 @@ const VersePage = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   )

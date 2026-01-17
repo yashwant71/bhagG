@@ -7,6 +7,8 @@
   flex-direction: column;
   width: 100%;
   box-sizing: border-box;
+  /* Enable touch events for swipe */
+  touch-action: pan-y pinch-zoom;
 }
 
 .verse-background {
@@ -63,6 +65,8 @@
   flex: 1;
   justify-content: flex-start;
   padding-top: 0.25rem;
+  transition: transform 0.3s ease-out;
+  will-change: transform;
 }
 
 /* Pretext Section */
@@ -1441,5 +1445,157 @@
   .nav-menu-panel {
     width: 100%;
     max-width: 100%;
+  }
+}
+
+/* Mobile Swipe Tutorial - App-like Banner */
+.swipe-tutorial {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-tooltip-high);
+  pointer-events: none;
+  animation: swipeTutorialFadeIn 0.6s ease-out, swipeTutorialFadeOut 0.6s ease-out 4.4s forwards;
+}
+
+.swipe-tutorial-banner {
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(30, 25, 15, 0.98) 0%, rgba(25, 20, 12, 0.95) 100%);
+  backdrop-filter: blur(15px);
+  border-bottom: 2px solid var(--border-gold-medium);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.2);
+  padding: 1rem 1.5rem;
+}
+
+.swipe-tutorial-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  gap: 1rem;
+}
+
+.swipe-tutorial-arrow-container {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swipe-arrow-left,
+.swipe-arrow-right {
+  color: var(--gold-primary);
+  opacity: 0.9;
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+}
+
+.swipe-arrow-left {
+  animation: swipeArrowPulse 1.2s ease-in-out infinite;
+}
+
+.swipe-arrow-right {
+  animation: swipeArrowPulseReverse 1.2s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.swipe-tutorial-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.swipe-tutorial-hand-icon {
+  color: var(--gold-primary);
+  opacity: 0.95;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+  animation: swipeHandPulse 2s ease-in-out infinite;
+}
+
+.swipe-tutorial-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: var(--text-tooltip);
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes swipeTutorialFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes swipeTutorialFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes swipeHandPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes swipeArrowPulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(8px);
+  }
+}
+
+@keyframes swipeArrowPulseReverse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-8px);
+  }
+}
+
+@keyframes swipeHandPulse {
+  0%, 100% {
+    transform: scale(1) translateX(0);
+    opacity: 0.9;
+  }
+  25% {
+    transform: scale(1.05) translateX(-3px);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1.05) translateX(3px);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 769px) {
+  .swipe-tutorial {
+    display: none;
   }
 }

@@ -54,9 +54,14 @@ const VersePage = () => {
   }
   
   const [bookmarks, setBookmarks] = useState(getBookmarks)
+  const [showSwipeTutorial, setShowSwipeTutorial] = useState(false)
+  const [swipeOffset, setSwipeOffset] = useState(0) // For swipe animation
+  const [isSwiping, setIsSwiping] = useState(false)
 
   const touchStartX = useRef(null)
   const touchEndX = useRef(null)
+  const touchStartY = useRef(null)
+  const verseContainerRef = useRef(null)
 
   const chapterNum = parseInt(chapter || '1')
   // Only allow chapter 1, redirect if other chapter is accessed
@@ -92,6 +97,36 @@ const VersePage = () => {
       console.error('Failed to save language preference:', error)
     }
   }
+
+  // Check if swipe tutorial should be shown on first visit
+  useEffect(() => {
+    const checkSwipeTutorial = () => {
+      try {
+        const tutorialShown = localStorage.getItem('bg-swipe-tutorial-shown')
+        const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window
+        
+        // Show tutorial if never shown and on mobile
+        if (!tutorialShown && isMobile) {
+          setShowSwipeTutorial(true)
+          // Auto-hide after 5 seconds
+          setTimeout(() => {
+            setShowSwipeTutorial(false)
+            try {
+              localStorage.setItem('bg-swipe-tutorial-shown', Date.now().toString())
+            } catch (err) {
+              console.error('Error saving tutorial:', err)
+            }
+          }, 5000)
+        }
+      } catch (error) {
+        console.error('Error checking swipe tutorial:', error)
+      }
+    }
+    
+    // Check after a delay to ensure page is loaded
+    const timer = setTimeout(checkSwipeTutorial, 2000)
+    return () => clearTimeout(timer)
+  }, [])
 
   useEffect(() => {
     // Reset animation state when verse changes
@@ -240,11 +275,18 @@ const VersePage = () => {
     return (
       <div className="verse-page">
         <div className="verse-background"></div>
-        <div className="verse-container">
-          <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-primary)' }}>
-            Verse not found
-          </div>
+      <div 
+        ref={verseContainerRef}
+        className="verse-container"
+        style={{
+          transform: swipeOffset !== 0 ? `translateX(${swipeOffset}px)` : 'none',
+          transition: isSwiping ? 'none' : 'transform 0.3s ease-out'
+        }}
+      >
+        <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-primary)' }}>
+          Verse not found
         </div>
+      </div>
       </div>
     )
   }
@@ -351,31 +393,90 @@ const VersePage = () => {
     }
   }
 
-  // Swipe handlers for mobile
+  // Swipe handlers for mobile - works on whole screen
   const handleTouchStart = (e) => {
+    // Don't interfere with tooltip clicks or other interactions
+    if (e.target.closest('.word-tooltip') || e.target.closest('.translation-word-tooltip') || e.target.closest('button')) {
+      return
+    }
+    
     touchStartX.current = e.touches[0].clientX
+    setIsSwiping(true)
+    setSwipeOffset(0)
+    
+    // Hide tutorial when user starts swiping
+    if (showSwipeTutorial) {
+      setShowSwipeTutorial(false)
+      try {
+        localStorage.setItem('bg-swipe-tutorial-shown', Date.now().toString())
+      } catch (error) {
+        console.error('Error saving tutorial state:', error)
+      }
+    }
   }
 
   const handleTouchMove = (e) => {
+    if (!touchStartX.current) return
+    
+    // Don't interfere with tooltip interactions
+    if (e.target.closest('.word-tooltip') || e.target.closest('.translation-word-tooltip')) {
+      return
+    }
+    
     touchEndX.current = e.touches[0].clientX
+    const distance = touchEndX.current - touchStartX.current
+    
+    // Only prevent default if swiping horizontally (not vertically)
+    if (Math.abs(distance) > Math.abs(e.touches[0].clientY - (touchStartX.current ? 0 : 0))) {
+      e.preventDefault()
+    }
+    
+    // Update swipe offset for visual feedback (limit to prevent too much movement)
+    const maxOffset = 150
+    const offset = Math.max(-maxOffset, Math.min(maxOffset, distance))
+    setSwipeOffset(offset)
   }
 
   const handleTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return
+    if (!touchStartX.current || !touchEndX.current) {
+      setIsSwiping(false)
+      setSwipeOffset(0)
+      touchStartX.current = null
+      touchEndX.current = null
+      touchStartY.current = null
+      return
+    }
     
     const distance = touchStartX.current - touchEndX.current
     const minSwipeDistance = 50
 
     if (distance > minSwipeDistance) {
       // Swipe left - next verse
-      handleNextVerse()
+      // Animate whole content sliding left before navigation
+      setSwipeOffset(-window.innerWidth)
+      setTimeout(() => {
+        handleNextVerse()
+        setSwipeOffset(0)
+        setIsSwiping(false)
+      }, 300)
     } else if (distance < -minSwipeDistance) {
       // Swipe right - previous verse
-      handlePrevVerse()
+      // Animate whole content sliding right before navigation
+      setSwipeOffset(window.innerWidth)
+      setTimeout(() => {
+        handlePrevVerse()
+        setSwipeOffset(0)
+        setIsSwiping(false)
+      }, 300)
+    } else {
+      // Not enough swipe distance, reset
+      setSwipeOffset(0)
+      setIsSwiping(false)
     }
 
     touchStartX.current = null
     touchEndX.current = null
+    touchStartY.current = null
   }
   
 
@@ -818,8 +919,43 @@ const VersePage = () => {
   }
 
   return (
-    <div className="verse-page">
+    <div 
+      className="verse-page"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div className="verse-background"></div>
+      
+      {/* Mobile Swipe Tutorial - App-like Banner */}
+      {showSwipeTutorial && (
+        <div className="swipe-tutorial">
+          <div className="swipe-tutorial-banner">
+            <div className="swipe-tutorial-content">
+              <div className="swipe-tutorial-arrow-container">
+                <svg className="swipe-arrow-left" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M15 18l-6-6 6-6"/>
+                </svg>
+              </div>
+              <div className="swipe-tutorial-center">
+                <div className="swipe-tutorial-hand-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 12h18M3 12l4-4M3 12l4 4M21 12l-4-4M21 12l-4 4"/>
+                    <circle cx="6" cy="12" r="1.5" fill="currentColor"/>
+                    <circle cx="18" cy="12" r="1.5" fill="currentColor"/>
+                  </svg>
+                </div>
+                <span className="swipe-tutorial-text">Swipe to navigate</span>
+              </div>
+              <div className="swipe-tutorial-arrow-container">
+                <svg className="swipe-arrow-right" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       
       {/* Navigation Menu Overlay */}
       {showNavMenu && (
@@ -882,7 +1018,14 @@ const VersePage = () => {
         </>
       )}
       
-      <div className="verse-container">
+      <div 
+        ref={verseContainerRef}
+        className="verse-container"
+        style={{
+          transform: swipeOffset !== 0 ? `translateX(${swipeOffset}px)` : 'none',
+          transition: isSwiping ? 'none' : 'transform 0.3s ease-out'
+        }}
+      >
         {/* Pretext/Context Section */}
         {verse.pretext && (
           <div className="pretext-wrapper" key={`pretext-${chapterVerseKey}-${animationKey}`}>
@@ -948,12 +1091,7 @@ const VersePage = () => {
         )}
         
         {/* Sanskrit Words Section - Primary Focus */}
-        <div 
-          className="sanskrit-section"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
+        <div className="sanskrit-section">
           <div className="sanskrit-words-container">
             {sanskritLines.map((line, lineIndex) => (
               <div key={lineIndex} className="sanskrit-line">

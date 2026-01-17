@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { getVerse, getNextVerseNumber, getPrevVerseNumber, getAllChapterNumbers, getVerseNumbers, getChapter } from '../data/utils'
 import './VersePage.css'
@@ -260,36 +260,145 @@ const VersePage = () => {
     }
   }, [chapterNum, router])
   
-  const verse = getVerse(validChapterNum, chapterVerseKey)
-  
-  // If verse not found, return null early
-  if (!verse) {
-    // Try to redirect to first verse of chapter 1
-    useEffect(() => {
+  // Handle redirect if verse not found - must be before conditional return
+  useEffect(() => {
+    const verse = getVerse(validChapterNum, chapterVerseKey)
+    if (!verse) {
       const verseNumbers = getVerseNumbers(1)
       if (verseNumbers.length > 0) {
         router.replace(`/verse/1/${verseNumbers[0]}`)
       }
-    }, [router])
-    
-    return (
-      <div className="verse-page">
-        <div className="verse-background"></div>
-      <div 
-        ref={verseContainerRef}
-        className="verse-container"
-        style={{
-          transform: swipeOffset !== 0 ? `translateX(${swipeOffset}px)` : 'none',
-          transition: isSwiping ? 'none' : 'transform 0.3s ease-out'
-        }}
-      >
-        <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-primary)' }}>
-          Verse not found
-        </div>
-      </div>
-      </div>
-    )
+    }
+  }, [validChapterNum, chapterVerseKey, router])
+  
+  const verse = getVerse(validChapterNum, chapterVerseKey)
+  
+  // Parse Sanskrit text - safe even if verse is null
+  const parseSanskritWithBrackets = (sanskritText) => {
+    if (!sanskritText) return []
+    const lines = sanskritText.split('\n')
+    return lines.map(line => {
+      const words = line.split(/\s+/).filter(w => w.length > 0)
+      return words.map(word => {
+        // Extract bracket IDs and remove brackets from display text
+        // Support both numeric IDs [1] and dot notation IDs [1.1.1]
+        const ids = []
+        let displayText = ''
+        let i = 0
+        
+        while (i < word.length) {
+          if (word[i] === '[') {
+            // Find closing bracket
+            let j = i + 1
+            while (j < word.length && word[j] !== ']') {
+              j++
+            }
+            
+            if (j < word.length) {
+              // Extract ID - can be numeric or dot notation like "1.1.1"
+              const idStr = word.substring(i + 1, j)
+              // Store as string to support dot notation IDs
+              if (idStr.length > 0) {
+                ids.push(idStr)
+              }
+              i = j + 1
+            } else {
+              displayText += word[i]
+              i++
+            }
+          } else {
+            displayText += word[i]
+            i++
+          }
+        }
+        
+        return { text: displayText, ids }
+      })
+    })
   }
+
+  // Split Sanskrit text into words (for non-bracket format)
+  const splitSanskritIntoWords = (sanskritText) => {
+    if (!sanskritText) return []
+    const lines = sanskritText.split('\n')
+    return lines.map(line => {
+      return line.split(/\s+/).filter(word => word.length > 0).map(word => ({
+        text: word,
+        ids: []
+      }))
+    })
+  }
+
+  // Check if text has brackets (chapter1 format) - safe even if verse is null
+  const hasBrackets = verse?.sanskrit && verse.sanskrit.includes('[')
+  const isArrayFormat = Array.isArray(verse?.wordTranslations) && verse.wordTranslations[0]?.id
+  
+  const sanskritLines = verse ? ((hasBrackets && isArrayFormat) 
+    ? parseSanskritWithBrackets(verse.sanskrit)
+    : splitSanskritIntoWords(verse.sanskrit)) : []
+
+  // Calculate delays: each word in a line gets a small delay, 
+  // then next line starts right after the previous line's last word finishes
+  const getWordDelay = (lineIndex, wordIndex, lineLength) => {
+    // First line: each word has a small delay (0.06s apart - faster)
+    if (lineIndex === 0) {
+      return wordIndex * 0.06
+    }
+    
+    // For lines after the first: start next line before previous line fully finishes
+    // Each line's end time = last word start time + animation duration (0.7s)
+    // Last word start time = first word start time + (wordCount - 1) * 0.06
+    // Start next line when previous line is 60% done (overlap for faster feel)
+    
+    let previousLinesEndTime = 0
+    
+    // Calculate end time of all previous lines
+    for (let i = 0; i < lineIndex; i++) {
+      const prevLineWordCount = sanskritLines[i]?.length || 0
+      const prevLineFirstWordDelay = i === 0 ? 0 : previousLinesEndTime
+      const prevLineLastWordStartTime = prevLineFirstWordDelay + (prevLineWordCount - 1) * 0.06
+      // Start next line when previous line is 60% done (0.6 * 0.7s = 0.42s)
+      const prevLineStartNextLineTime = prevLineLastWordStartTime + 0.42
+      previousLinesEndTime = prevLineStartNextLineTime
+    }
+    
+    // Current line starts after previous lines are 60% done
+    // Each word in current line has 0.06s delay from the previous word
+    return previousLinesEndTime + (wordIndex * 0.06)
+  }
+
+  // Calculate when all animations complete (last word delay + animation duration)
+  const calculateAnimationCompletionTime = useCallback(() => {
+    if (sanskritLines.length === 0) return 0
+    
+    let lastWordDelay = 0
+    // Find the last word's delay
+    for (let lineIndex = 0; lineIndex < sanskritLines.length; lineIndex++) {
+      const line = sanskritLines[lineIndex]
+      for (let wordIndex = 0; wordIndex < line.length; wordIndex++) {
+        const delay = getWordDelay(lineIndex, wordIndex, line.length)
+        lastWordDelay = Math.max(lastWordDelay, delay)
+      }
+    }
+    
+    // Animation duration is 0.7s, so total time = last word delay + 0.7s
+    return (lastWordDelay + 0.7) * 1000 // Convert to milliseconds
+  }, [sanskritLines])
+
+  // Set animations complete after all words have finished animating
+  useEffect(() => {
+    if (!isLoaded || sanskritLines.length === 0) {
+      setAnimationsComplete(false)
+      return
+    }
+    
+    const completionTime = calculateAnimationCompletionTime()
+    const timer = setTimeout(() => {
+      setAnimationsComplete(true)
+    }, completionTime)
+    
+    return () => clearTimeout(timer)
+  }, [isLoaded, animationKey, sanskritLines, calculateAnimationCompletionTime])
 
   // Parse translation text to extract word references and make them clickable
   const parseTranslationText = (text) => {
@@ -765,130 +874,26 @@ const VersePage = () => {
     }
   }
 
-  // Parse Sanskrit text with brackets - remove brackets from display but track IDs
-  const parseSanskritWithBrackets = (sanskritText) => {
-    const lines = sanskritText.split('\n')
-    return lines.map(line => {
-      const words = line.split(/\s+/).filter(w => w.length > 0)
-      return words.map(word => {
-        // Extract bracket IDs and remove brackets from display text
-        // Support both numeric IDs [1] and dot notation IDs [1.1.1]
-        const ids = []
-        let displayText = ''
-        let i = 0
-        
-        while (i < word.length) {
-          if (word[i] === '[') {
-            // Find closing bracket
-            let j = i + 1
-            while (j < word.length && word[j] !== ']') {
-              j++
-            }
-            
-            if (j < word.length) {
-              // Extract ID - can be numeric or dot notation like "1.1.1"
-              const idStr = word.substring(i + 1, j)
-              // Store as string to support dot notation IDs
-              if (idStr.length > 0) {
-                ids.push(idStr)
-              }
-              i = j + 1
-            } else {
-              displayText += word[i]
-              i++
-            }
-          } else {
-            displayText += word[i]
-            i++
-          }
-        }
-        
-        return { text: displayText, ids }
-      })
-    })
+  // If verse not found, return null early (after all hooks)
+  if (!verse) {
+    return (
+      <div className="verse-page">
+        <div className="verse-background"></div>
+      <div 
+        ref={verseContainerRef}
+        className="verse-container"
+        style={{
+          transform: swipeOffset !== 0 ? `translateX(${swipeOffset}px)` : 'none',
+          transition: isSwiping ? 'none' : 'transform 0.3s ease-out'
+        }}
+      >
+        <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-primary)' }}>
+          Verse not found
+        </div>
+      </div>
+      </div>
+    )
   }
-
-  // Split Sanskrit text into words (for non-bracket format)
-  const splitSanskritIntoWords = (sanskritText) => {
-    const lines = sanskritText.split('\n')
-    return lines.map(line => {
-      return line.split(/\s+/).filter(word => word.length > 0).map(word => ({
-        text: word,
-        ids: []
-      }))
-    })
-  }
-
-  // Check if text has brackets (chapter1 format)
-  const hasBrackets = verse.sanskrit && verse.sanskrit.includes('[')
-  const isArrayFormat = Array.isArray(verse.wordTranslations) && verse.wordTranslations[0]?.id
-  
-  const sanskritLines = (hasBrackets && isArrayFormat) 
-    ? parseSanskritWithBrackets(verse.sanskrit)
-    : splitSanskritIntoWords(verse.sanskrit)
-
-  // Calculate delays: each word in a line gets a small delay, 
-  // then next line starts right after the previous line's last word finishes
-  const getWordDelay = (lineIndex, wordIndex, lineLength) => {
-    // First line: each word has a small delay (0.06s apart - faster)
-    if (lineIndex === 0) {
-      return wordIndex * 0.06
-    }
-    
-    // For lines after the first: start next line before previous line fully finishes
-    // Each line's end time = last word start time + animation duration (0.7s)
-    // Last word start time = first word start time + (wordCount - 1) * 0.06
-    // Start next line when previous line is 60% done (overlap for faster feel)
-    
-    let previousLinesEndTime = 0
-    
-    // Calculate end time of all previous lines
-    for (let i = 0; i < lineIndex; i++) {
-      const prevLineWordCount = sanskritLines[i].length
-      const prevLineFirstWordDelay = i === 0 ? 0 : previousLinesEndTime
-      const prevLineLastWordStartTime = prevLineFirstWordDelay + (prevLineWordCount - 1) * 0.06
-      // Start next line when previous line is 60% done (0.6 * 0.7s = 0.42s)
-      const prevLineStartNextLineTime = prevLineLastWordStartTime + 0.42
-      previousLinesEndTime = prevLineStartNextLineTime
-    }
-    
-    // Current line starts after previous lines are 60% done
-    // Each word in current line has 0.06s delay from the previous word
-    return previousLinesEndTime + (wordIndex * 0.06)
-  }
-
-  // Calculate when all animations complete (last word delay + animation duration)
-  const calculateAnimationCompletionTime = () => {
-    if (sanskritLines.length === 0) return 0
-    
-    let lastWordDelay = 0
-    // Find the last word's delay
-    for (let lineIndex = 0; lineIndex < sanskritLines.length; lineIndex++) {
-      const line = sanskritLines[lineIndex]
-      for (let wordIndex = 0; wordIndex < line.length; wordIndex++) {
-        const delay = getWordDelay(lineIndex, wordIndex, line.length)
-        lastWordDelay = Math.max(lastWordDelay, delay)
-      }
-    }
-    
-    // Animation duration is 0.7s, so total time = last word delay + 0.7s
-    return (lastWordDelay + 0.7) * 1000 // Convert to milliseconds
-  }
-
-  // Set animations complete after all words have finished animating
-  useEffect(() => {
-    if (!isLoaded || sanskritLines.length === 0) {
-      setAnimationsComplete(false)
-      return
-    }
-    
-    const completionTime = calculateAnimationCompletionTime()
-    const timer = setTimeout(() => {
-      setAnimationsComplete(true)
-    }, completionTime)
-    
-    return () => clearTimeout(timer)
-  }, [isLoaded, animationKey, sanskritLines])
 
   // Get all chapters and verses for navigation menu
   const allChapters = getAllChapterNumbers()

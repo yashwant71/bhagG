@@ -19,14 +19,14 @@ const ContextPage = ({ onNext }) => {
             </p>
             <p className="context-body">
               Seeing his own teachers, relatives, and friends ready for battle, 
-              Arjuna's heart sinks. His bow slips from his hands. Overwhelmed by 
+              Arjuna&apos;s heart sinks. His bow slips from his hands. Overwhelmed by 
               compassion and confusion, he questions the righteousness of war.
             </p>
             <p className="context-climax">
               In this moment of inner turmoil, Lord Krishna, his friend and guide, 
               reveals His divine form and begins to impart the eternal wisdom of 
               the Bhagavad Gita. The teachings that follow transform not just 
-              Arjuna's understanding, but resonate through the ages as a guide 
+              Arjuna&apos;s understanding, but resonate through the ages as a guide 
               for all humanity.
             </p>
           </div>

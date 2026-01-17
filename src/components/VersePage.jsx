@@ -58,20 +58,22 @@ const VersePage = () => {
   const touchStartX = useRef(null)
   const touchEndX = useRef(null)
 
-  const chapterNum = parseInt(chapter || '2')
-  const verseNum = verseParam || '47'
-  const chapterVerseKey = `${chapterNum}.${verseNum}`
+  const chapterNum = parseInt(chapter || '1')
+  // Only allow chapter 1, redirect if other chapter is accessed
+  const validChapterNum = chapterNum === 1 ? 1 : 1
+  const verseNum = verseParam || '1'
+  const chapterVerseKey = `${validChapterNum}.${verseNum}`
   
-  const currentVerseKey = `${chapterNum}.${verseParam}`
+  const currentVerseKey = `${validChapterNum}.${verseParam}`
   const isBookmarked = bookmarks.includes(currentVerseKey)
   
   // Get chapter data for centralized explanations
-  const chapterData = getChapter(chapterNum)
+  const chapterData = getChapter(validChapterNum)
   
   // Update bookmarks when verse changes
   useEffect(() => {
     setBookmarks(getBookmarks())
-  }, [chapterNum, verseParam])
+  }, [validChapterNum, verseParam])
   
   const toggleBookmark = () => {
     const newBookmarks = isBookmarked
@@ -177,23 +179,23 @@ const VersePage = () => {
     }
   }, [clickedWord])
   
-  // Update tooltip positions on scroll/resize/window resize for both tooltips
+  // Update tooltip positions on scroll/resize only - NOT when content changes
   useEffect(() => {
     const updateTooltipPositions = () => {
-      // Update Sanskrit tooltip position
+      // Update Sanskrit tooltip position - always above
       if (clickedWord && sanskritTooltipRef.current) {
         const wordElement = document.querySelector(`.sanskrit-word.tooltip-active`)
         if (wordElement) {
-          const position = calculateTooltipPosition(wordElement, sanskritTooltipRef.current)
+          const position = calculateTooltipPosition(wordElement, sanskritTooltipRef.current, true)
           setSanskritTooltipPosition(position)
         }
       }
       
-      // Update translation tooltip position
+      // Update translation tooltip position - can be below if needed
       if (clickedTranslationWord && translationTooltipRef.current) {
         const wordElement = document.querySelector(`.translation-word-reference.active`)
         if (wordElement) {
-          const position = calculateTooltipPosition(wordElement, translationTooltipRef.current)
+          const position = calculateTooltipPosition(wordElement, translationTooltipRef.current, false)
           setTranslationTooltipPosition(position)
         }
       }
@@ -203,6 +205,7 @@ const VersePage = () => {
     window.addEventListener('resize', updateTooltipPositions)
     
     // Initial position calculation with a small delay to ensure DOM is ready
+    // Only calculate when tooltip first opens, not when content changes
     const timeoutId = setTimeout(updateTooltipPositions, 10)
     
     return () => {
@@ -210,12 +213,30 @@ const VersePage = () => {
       window.removeEventListener('resize', updateTooltipPositions)
       clearTimeout(timeoutId)
     }
-  }, [clickedWord, clickedTranslationWord, wordData, translationWordData])
+  }, [clickedWord, clickedTranslationWord]) // Removed wordData and translationWordData - only recalculate on scroll/resize
 
-  const verse = getVerse(chapterNum, chapterVerseKey)
+  // Redirect to chapter 1 if trying to access other chapters
+  useEffect(() => {
+    if (chapterNum !== 1) {
+      const verseNumbers = getVerseNumbers(1)
+      if (verseNumbers.length > 0) {
+        router.replace(`/verse/1/${verseNumbers[0]}`)
+      }
+    }
+  }, [chapterNum, router])
+  
+  const verse = getVerse(validChapterNum, chapterVerseKey)
   
   // If verse not found, return null early
   if (!verse) {
+    // Try to redirect to first verse of chapter 1
+    useEffect(() => {
+      const verseNumbers = getVerseNumbers(1)
+      if (verseNumbers.length > 0) {
+        router.replace(`/verse/1/${verseNumbers[0]}`)
+      }
+    }, [router])
+    
     return (
       <div className="verse-page">
         <div className="verse-background"></div>
@@ -290,15 +311,16 @@ const VersePage = () => {
     setTranslationWordData({ wordData, explanation })
     
     // Calculate position after state update
+    // Translation tooltips can be below if needed
     setTimeout(() => {
       const wordElement = e.currentTarget
       const tooltipElement = translationTooltipRef.current
       if (wordElement && tooltipElement) {
-        const position = calculateTooltipPosition(wordElement, tooltipElement)
+        const position = calculateTooltipPosition(wordElement, tooltipElement, false)
         setTranslationTooltipPosition(position)
       } else {
         // Fallback if tooltip not yet rendered
-        const position = calculateTooltipPosition(wordElement, null)
+        const position = calculateTooltipPosition(wordElement, null, false)
         setTranslationTooltipPosition(position)
       }
     }, 0)
@@ -306,20 +328,26 @@ const VersePage = () => {
   
   // Navigation handlers
   const handleNextVerse = () => {
-    const nextVerse = getNextVerseNumber(chapterNum, chapterVerseKey)
+    const nextVerse = getNextVerseNumber(validChapterNum, chapterVerseKey)
     if (nextVerse) {
-      // Parse the result (e.g., "2.48" -> ["2", "48"])
+      // Parse the result (e.g., "1.2" -> ["1", "2"])
       const [nextChapter, nextVerseNum] = nextVerse.split('.')
-      router.push(`/verse/${nextChapter}/${nextVerseNum}`)
+      // Only allow chapter 1
+      if (parseInt(nextChapter) === 1) {
+        router.push(`/verse/${nextChapter}/${nextVerseNum}`)
+      }
     }
   }
 
   const handlePrevVerse = () => {
-    const prevVerse = getPrevVerseNumber(chapterNum, chapterVerseKey)
+    const prevVerse = getPrevVerseNumber(validChapterNum, chapterVerseKey)
     if (prevVerse) {
-      // Parse the result (e.g., "2.46" -> ["2", "46"])
+      // Parse the result (e.g., "1.1" -> ["1", "1"])
       const [prevChapter, prevVerseNum] = prevVerse.split('.')
-      router.push(`/verse/${prevChapter}/${prevVerseNum}`)
+      // Only allow chapter 1
+      if (parseInt(prevChapter) === 1) {
+        router.push(`/verse/${prevChapter}/${prevVerseNum}`)
+      }
     }
   }
 
@@ -469,7 +497,8 @@ const VersePage = () => {
   }
 
   // Calculate optimal tooltip position to avoid screen cutoff
-  const calculateTooltipPosition = (triggerElement, tooltipElement) => {
+  // For Sanskrit word tooltips, always position above
+  const calculateTooltipPosition = (triggerElement, tooltipElement, alwaysAbove = true) => {
     if (!triggerElement) return { bottom: '100%', left: '50%', transform: 'translateX(-50%)', marginBottom: '8px' }
     
     const triggerRect = triggerElement.getBoundingClientRect()
@@ -488,7 +517,7 @@ const VersePage = () => {
     const spaceLeft = triggerRect.left
     const spaceRight = viewportWidth - triggerRect.right
     
-    // Default: try above first
+    // Always position above for Sanskrit word tooltips
     let position = {
       bottom: '100%',
       left: '50%',
@@ -501,8 +530,9 @@ const VersePage = () => {
       marginRight: '0'
     }
     
-    // If not enough space above, try below
-    if (spaceAbove < tooltipHeight + spacing && spaceBelow > spaceAbove) {
+    // Only allow below positioning if explicitly allowed (for translation tooltips)
+    // Sanskrit word tooltips always stay above
+    if (!alwaysAbove && spaceAbove < tooltipHeight + spacing && spaceBelow > spaceAbove) {
       position = {
         top: '100%',
         left: '50%',
@@ -584,11 +614,12 @@ const VersePage = () => {
     setHoveredWordData(null)
     
     // Calculate position after state update (using setTimeout to ensure DOM is updated)
+    // Always position Sanskrit tooltips above
     setTimeout(() => {
       const wordElement = e.target.closest('.sanskrit-word')
       const tooltipElement = sanskritTooltipRef.current
       if (wordElement && tooltipElement) {
-        const position = calculateTooltipPosition(wordElement, tooltipElement)
+        const position = calculateTooltipPosition(wordElement, tooltipElement, true)
         setSanskritTooltipPosition(position)
       }
     }, 0)
@@ -601,17 +632,7 @@ const VersePage = () => {
       ...prev,
       [wordId]: !prev[wordId] // Toggle: true = show transliteration, false = show translation
     }))
-    
-    // Recalculate position after content change
-    setTimeout(() => {
-      if (clickedWord && sanskritTooltipRef.current) {
-        const wordElement = document.querySelector(`.sanskrit-word.tooltip-active`)
-        if (wordElement) {
-          const position = calculateTooltipPosition(wordElement, sanskritTooltipRef.current)
-          setSanskritTooltipPosition(position)
-        }
-      }
-    }, 10)
+    // Do NOT recalculate position - keep the same position when toggling content
   }
 
   // Handle copy to clipboard
@@ -780,6 +801,16 @@ const VersePage = () => {
 
   // Handle navigation to a specific chapter/verse
   const handleNavigateToVerse = (chNum, verseNum) => {
+    // Only allow navigation to chapter 1
+    if (chNum !== 1) {
+      // Redirect to chapter 1 if trying to access other chapters
+      const verseNumbers = getVerseNumbers(1)
+      if (verseNumbers.length > 0) {
+        router.push(`/verse/1/${verseNumbers[0]}`)
+      }
+      setShowNavMenu(false)
+      return
+    }
     router.push(`/verse/${chNum}/${verseNum}`)
     setShowNavMenu(false)
   }
@@ -815,7 +846,7 @@ const VersePage = () => {
                   </div>
                   <div className="nav-menu-verses">
                     {chapter.verses.map(verseNum => {
-                      const isActive = chapterNum === chapter.number && verseNum === verseParam
+                      const isActive = validChapterNum === chapter.number && verseNum === verseParam
                       const verseKey = `${chapter.number}.${verseNum}`
                       const isVerseBookmarked = bookmarks.includes(verseKey)
                       return (

@@ -1,17 +1,11 @@
 // Common utility functions for all chapters
 
-// Import all chapters
+// Import chapter 1 only
 import { chapter1 } from './chapter1'
-import { chapter2 } from './chapter2'
-import { chapter3 } from './chapter3'
-import { chapter4 } from './chapter4'
 
-// Chapter registry - automatically includes all chapters
+// Chapter registry - only chapter 1 available
 const chapters = {
-  1: chapter1,
-  2: chapter2,
-  3: chapter3,
-  4: chapter4
+  1: chapter1
 }
 
 // Helper function to get a chapter by number
@@ -52,32 +46,7 @@ export const getNextVerseNumber = (chapterNumber, currentVerseNumber) => {
     return `${chapterNumber}.${verseNumbers[currentIndex + 1]}`
   }
   
-  // If last verse, go to first verse of next chapter
-  const allChapters = getAllChapterNumbers()
-  const currentChapterIndex = allChapters.indexOf(chapterNumber)
-  
-  if (currentChapterIndex === -1) {
-    // Current chapter not found, return first verse of current chapter
-    return `${chapterNumber}.${verseNumbers[0]}`
-  }
-  
-  // If not the last chapter, go to first verse of next chapter
-  if (currentChapterIndex < allChapters.length - 1) {
-    const nextChapter = allChapters[currentChapterIndex + 1]
-    const nextChapterVerses = getVerseNumbers(nextChapter)
-    if (nextChapterVerses.length > 0) {
-      return `${nextChapter}.${nextChapterVerses[0]}`
-    }
-  }
-  
-  // If last chapter, loop to first verse of first chapter
-  const firstChapter = allChapters[0]
-  const firstChapterVerses = getVerseNumbers(firstChapter)
-  if (firstChapterVerses.length > 0) {
-    return `${firstChapter}.${firstChapterVerses[0]}`
-  }
-  
-  // Fallback: loop to first verse of current chapter
+  // If last verse, loop to first verse of current chapter (only chapter 1 available)
   return `${chapterNumber}.${verseNumbers[0]}`
 }
 
@@ -96,34 +65,7 @@ export const getPrevVerseNumber = (chapterNumber, currentVerseNumber) => {
     return `${chapterNumber}.${verseNumbers[currentIndex - 1]}`
   }
   
-  // If first verse, go to last verse of previous chapter
-  const allChapters = getAllChapterNumbers()
-  const currentChapterIndex = allChapters.indexOf(chapterNumber)
-  
-  if (currentChapterIndex === -1) {
-    // Current chapter not found, return first verse of current chapter
-    return `${chapterNumber}.${verseNumbers[0]}`
-  }
-  
-  // If not the first chapter, go to last verse of previous chapter
-  if (currentChapterIndex > 0) {
-    const prevChapter = allChapters[currentChapterIndex - 1]
-    const prevChapterVerses = getVerseNumbers(prevChapter)
-    if (prevChapterVerses.length > 0) {
-      const lastVerseIndex = prevChapterVerses.length - 1
-      return `${prevChapter}.${prevChapterVerses[lastVerseIndex]}`
-    }
-  }
-  
-  // If first chapter, loop to last verse of last chapter
-  const lastChapter = allChapters[allChapters.length - 1]
-  const lastChapterVerses = getVerseNumbers(lastChapter)
-  if (lastChapterVerses.length > 0) {
-    const lastVerseIndex = lastChapterVerses.length - 1
-    return `${lastChapter}.${lastChapterVerses[lastVerseIndex]}`
-  }
-  
-  // Fallback: loop to last verse of current chapter
+  // If first verse, loop to last verse of current chapter (only chapter 1 available)
   const lastVerseIndex = verseNumbers.length - 1
   return `${chapterNumber}.${verseNumbers[lastVerseIndex]}`
 }

@@ -14,30 +14,39 @@ export default function VersePageRoute() {
 
   useEffect(() => {
     if (chapter && !verse) {
-      // Case: /verse/3 (only chapter, no verse) - redirect to first verse of that chapter
+      // Case: /verse/1 (only chapter, no verse) - redirect to first verse of that chapter
       const chapterNum = parseInt(chapter)
+      // Only allow chapter 1
+      if (chapterNum !== 1) {
+        const verseNumbers = getVerseNumbers(1)
+        if (verseNumbers.length > 0) {
+          router.replace(`/verse/1/${verseNumbers[0]}`)
+        }
+        return
+      }
       const verseNumbers = getVerseNumbers(chapterNum)
       if (verseNumbers.length > 0) {
         router.replace(`/verse/${chapterNum}/${verseNumbers[0]}`)
       } else {
-        // If chapter doesn't exist, redirect to first chapter's first verse
-        const allChapters = getAllChapterNumbers()
-        if (allChapters.length > 0) {
-          const firstChapter = allChapters[0]
-          const firstVerseNumbers = getVerseNumbers(firstChapter)
-          if (firstVerseNumbers.length > 0) {
-            router.replace(`/verse/${firstChapter}/${firstVerseNumbers[0]}`)
-          }
+        // If chapter doesn't exist, redirect to chapter 1 first verse
+        const verseNumbers = getVerseNumbers(1)
+        if (verseNumbers.length > 0) {
+          router.replace(`/verse/1/${verseNumbers[0]}`)
         }
       }
     } else if (!chapter && !verse) {
-      // Case: /verse (no chapter, no verse) - redirect to first chapter's first verse
-      const allChapters = getAllChapterNumbers()
-      if (allChapters.length > 0) {
-        const firstChapter = allChapters[0]
-        const firstVerseNumbers = getVerseNumbers(firstChapter)
-        if (firstVerseNumbers.length > 0) {
-          router.replace(`/verse/${firstChapter}/${firstVerseNumbers[0]}`)
+      // Case: /verse (no chapter, no verse) - redirect to chapter 1 first verse
+      const verseNumbers = getVerseNumbers(1)
+      if (verseNumbers.length > 0) {
+        router.replace(`/verse/1/${verseNumbers[0]}`)
+      }
+    } else if (chapter && verse) {
+      // If trying to access a chapter other than 1, redirect to chapter 1
+      const chapterNum = parseInt(chapter)
+      if (chapterNum !== 1) {
+        const verseNumbers = getVerseNumbers(1)
+        if (verseNumbers.length > 0) {
+          router.replace(`/verse/1/${verseNumbers[0]}`)
         }
       }
     }

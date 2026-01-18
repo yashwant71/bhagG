@@ -1,10 +1,18 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 import './ContextPage.css'
 
 const ContextPage = ({ onNext }) => {
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    setIsLoaded(true)
+  }, [])
+
   return (
     <div className="context-page">
-      <div className="context-container">
+      <div className={`context-container ${isLoaded ? 'loaded' : ''}`}>
         <div className="context-header">
           <h1 className="context-title">भगवद्गीता</h1>
           <p className="context-subtitle">The Divine Song</p>
@@ -41,8 +49,6 @@ const ContextPage = ({ onNext }) => {
           </button>
         </div>
       </div>
-      
-      <div className="context-background"></div>
     </div>
   )
 }

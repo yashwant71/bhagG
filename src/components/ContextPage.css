@@ -15,13 +15,14 @@
   max-width: 900px;
   width: 100%;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translate3d(0, 20px, 0);
+  transition: opacity 0.8s cubic-bezier(0.2, 0, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
+  will-change: transform, opacity;
 }
 
 .context-container.loaded {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 
 .context-header {

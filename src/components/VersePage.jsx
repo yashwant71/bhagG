@@ -1,6 +1,5 @@
-'use client'
-
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
+import { useFloating, autoUpdate, offset, flip, shift, useInteractions, useHover, useClick, useRole, useDismiss, safePolygon } from '@floating-ui/react'
 import { useParams, useRouter } from 'next/navigation'
 import { getVerse, getNextVerseNumber, getPrevVerseNumber, getAllChapterNumbers, getVerseNumbers, getChapter } from '../data/utils'
 import './VersePage.css'
@@ -40,8 +39,41 @@ const VersePage = () => {
   const [translationWordData, setTranslationWordData] = useState(null) // Store translation word data
   const [translationTooltipPosition, setTranslationTooltipPosition] = useState(null) // Tooltip position style
   const [sanskritTooltipPosition, setSanskritTooltipPosition] = useState(null) // Sanskrit tooltip position
-  const sanskritTooltipRef = useRef(null) // Ref for Sanskrit tooltip
-  const translationTooltipRef = useRef(null) // Ref for translation tooltip
+  // Floating UI for Sanskrit tooltips
+  const {
+    x: sanskritX,
+    y: sanskritY,
+    strategy: sanskritStrategy,
+    refs: sanskritRefs,
+    middlewareData: sanskritMiddlewareData,
+  } = useFloating({
+    open: !!clickedWord || !!hoveredWord,
+    placement: 'top',
+    middleware: [
+      offset(10),
+      flip({ fallbackPlacements: ['bottom', 'top'] }),
+      shift({ padding: 10 }),
+    ],
+    whileElementsMounted: autoUpdate,
+  })
+
+  // Floating UI for Translation tooltips
+  const {
+    x: transX,
+    y: transY,
+    strategy: transStrategy,
+    refs: transRefs,
+    middlewareData: transMiddlewareData,
+  } = useFloating({
+    open: !!clickedTranslationWord,
+    placement: 'top',
+    middleware: [
+      offset(10),
+      flip({ fallbackPlacements: ['bottom', 'top'] }),
+      shift({ padding: 10 }),
+    ],
+    whileElementsMounted: autoUpdate,
+  })
   
   // Bookmark management
   const getBookmarks = () => {
@@ -235,41 +267,23 @@ const VersePage = () => {
     }
   }, [clickedWord])
   
-  // Update tooltip positions on scroll/resize only - NOT when content changes
+  // Update tooltip reference when word is clicked/hovered
   useEffect(() => {
-    const updateTooltipPositions = () => {
-      // Update Sanskrit tooltip position - always above
-      if (clickedWord && sanskritTooltipRef.current) {
-        const wordElement = document.querySelector(`.sanskrit-word.tooltip-active`)
-        if (wordElement) {
-          const position = calculateTooltipPosition(wordElement, sanskritTooltipRef.current, true)
-          setSanskritTooltipPosition(position)
-        }
-      }
-      
-      // Update translation tooltip position - can be below if needed
-      if (clickedTranslationWord && translationTooltipRef.current) {
-        const wordElement = document.querySelector(`.translation-word-reference.active`)
-        if (wordElement) {
-          const position = calculateTooltipPosition(wordElement, translationTooltipRef.current, false)
-          setTranslationTooltipPosition(position)
-        }
-      }
+    if (clickedWord) {
+      const element = document.querySelector(`.sanskrit-word.tooltip-active`)
+      if (element) sanskritRefs.setPositionReference(element)
+    } else if (hoveredWord) {
+      const element = document.querySelector(`.sanskrit-word.tooltip-hover`)
+      if (element) sanskritRefs.setPositionReference(element)
     }
-    
-    window.addEventListener('scroll', updateTooltipPositions, true)
-    window.addEventListener('resize', updateTooltipPositions)
-    
-    // Initial position calculation with a small delay to ensure DOM is ready
-    // Only calculate when tooltip first opens, not when content changes
-    const timeoutId = setTimeout(updateTooltipPositions, 10)
-    
-    return () => {
-      window.removeEventListener('scroll', updateTooltipPositions, true)
-      window.removeEventListener('resize', updateTooltipPositions)
-      clearTimeout(timeoutId)
+  }, [clickedWord, hoveredWord, sanskritRefs])
+
+  useEffect(() => {
+    if (clickedTranslationWord) {
+      const element = document.querySelector(`.translation-word-reference.active`)
+      if (element) transRefs.setPositionReference(element)
     }
-  }, [clickedWord, clickedTranslationWord]) // Removed wordData and translationWordData - only recalculate on scroll/resize
+  }, [clickedTranslationWord, transRefs])
 
   // Redirect to chapter 1 if trying to access other chapters
   useEffect(() => {
@@ -350,17 +364,17 @@ const VersePage = () => {
     })
   }
 
-  // Check if text has brackets (chapter1 format) - safe even if verse is null
-  const hasBrackets = verse?.sanskrit && verse.sanskrit.includes('[')
-  const isArrayFormat = Array.isArray(verse?.wordTranslations) && verse.wordTranslations[0]?.id
+  const hasBrackets = useMemo(() => verse?.sanskrit && verse.sanskrit.includes('['), [verse?.sanskrit])
+  const isArrayFormat = useMemo(() => Array.isArray(verse?.wordTranslations) && verse.wordTranslations[0]?.id, [verse?.wordTranslations])
   
-  const sanskritLines = verse ? ((hasBrackets && isArrayFormat) 
-    ? parseSanskritWithBrackets(verse.sanskrit)
-    : splitSanskritIntoWords(verse.sanskrit)) : []
+  const sanskritLines = useMemo(() => {
+    if (!verse) return []
+    return (hasBrackets && isArrayFormat) 
+      ? parseSanskritWithBrackets(verse.sanskrit)
+      : splitSanskritIntoWords(verse.sanskrit)
+  }, [verse, hasBrackets, isArrayFormat])
 
-  // Calculate delays: each word in a line gets a small delay, 
-  // then next line starts right after the previous line's last word finishes
-  const getWordDelay = (lineIndex, wordIndex, lineLength) => {
+  const getWordDelay = useCallback((lineIndex, wordIndex) => {
     // First line: each word has a small delay (0.06s apart - faster)
     if (lineIndex === 0) {
       return wordIndex * 0.06
@@ -386,9 +400,8 @@ const VersePage = () => {
     // Current line starts after previous lines are 60% done
     // Each word in current line has 0.06s delay from the previous word
     return previousLinesEndTime + (wordIndex * 0.06)
-  }
+  }, [sanskritLines])
 
-  // Calculate when all animations complete (last word delay + animation duration)
   const calculateAnimationCompletionTime = useCallback(() => {
     if (sanskritLines.length === 0) return 0
     
@@ -397,14 +410,14 @@ const VersePage = () => {
     for (let lineIndex = 0; lineIndex < sanskritLines.length; lineIndex++) {
       const line = sanskritLines[lineIndex]
       for (let wordIndex = 0; wordIndex < line.length; wordIndex++) {
-        const delay = getWordDelay(lineIndex, wordIndex, line.length)
+        const delay = getWordDelay(lineIndex, wordIndex)
         lastWordDelay = Math.max(lastWordDelay, delay)
       }
     }
     
-    // Animation duration is 0.7s, so total time = last word delay + 0.7s
-    return (lastWordDelay + 0.7) * 1000 // Convert to milliseconds
-  }, [sanskritLines])
+    // Animation duration is 0.6s (updated from 0.7s), so total time = last word delay + 0.6s
+    return (lastWordDelay + 0.6) * 1000 // Convert to milliseconds
+  }, [sanskritLines, getWordDelay])
 
   // Set animations complete after all words have finished animating
   useEffect(() => {
@@ -475,27 +488,11 @@ const VersePage = () => {
     if (clickedTranslationWord === refId) {
       setClickedTranslationWord(null)
       setTranslationWordData(null)
-      setTranslationTooltipPosition(null)
       return
     }
     
     setClickedTranslationWord(refId)
     setTranslationWordData({ wordData, explanation })
-    
-    // Calculate position after state update
-    // Translation tooltips can be below if needed
-    setTimeout(() => {
-      const wordElement = e.currentTarget
-      const tooltipElement = translationTooltipRef.current
-      if (wordElement && tooltipElement) {
-        const position = calculateTooltipPosition(wordElement, tooltipElement, false)
-        setTranslationTooltipPosition(position)
-      } else {
-        // Fallback if tooltip not yet rendered
-        const position = calculateTooltipPosition(wordElement, null, false)
-        setTranslationTooltipPosition(position)
-      }
-    }, 0)
   }
   
   // Navigation handlers
@@ -745,94 +742,6 @@ const VersePage = () => {
     }
   }
 
-  // Calculate optimal tooltip position to avoid screen cutoff
-  // For Sanskrit word tooltips, always position above
-  const calculateTooltipPosition = (triggerElement, tooltipElement, alwaysAbove = true) => {
-    if (!triggerElement) return { bottom: '100%', left: '50%', transform: 'translateX(-50%)', marginBottom: '8px' }
-    
-    const triggerRect = triggerElement.getBoundingClientRect()
-    const viewportWidth = window.innerWidth
-    const viewportHeight = window.innerHeight
-    
-    const spacing = 8
-    // Get actual tooltip dimensions if available, otherwise use estimates
-    const tooltipRect = tooltipElement?.getBoundingClientRect()
-    const tooltipWidth = tooltipRect?.width || 300 // Fallback width
-    const tooltipHeight = tooltipRect?.height || 100 // Fallback height
-    
-    // Calculate available space in each direction
-    const spaceAbove = triggerRect.top
-    const spaceBelow = viewportHeight - triggerRect.bottom
-    const spaceLeft = triggerRect.left
-    const spaceRight = viewportWidth - triggerRect.right
-    
-    // Always position above for Sanskrit word tooltips
-    let position = {
-      bottom: '100%',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      marginBottom: `${spacing}px`,
-      top: 'auto',
-      right: 'auto',
-      marginTop: '0',
-      marginLeft: '0',
-      marginRight: '0'
-    }
-    
-    // Only allow below positioning if explicitly allowed (for translation tooltips)
-    // Sanskrit word tooltips always stay above
-    if (!alwaysAbove && spaceAbove < tooltipHeight + spacing && spaceBelow > spaceAbove) {
-      position = {
-        top: '100%',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        marginTop: `${spacing}px`,
-        bottom: 'auto',
-        right: 'auto',
-        marginBottom: '0',
-        marginLeft: '0',
-        marginRight: '0'
-      }
-    }
-    
-    // Adjust horizontal position if tooltip would overflow
-    const triggerCenterX = triggerRect.left + triggerRect.width / 2
-    const tooltipHalfWidth = tooltipWidth / 2
-    const margin = 10 // Minimum margin from screen edge
-    
-    // Check if tooltip would overflow on the right
-    if (triggerCenterX + tooltipHalfWidth + margin > viewportWidth) {
-      const overflow = (triggerCenterX + tooltipHalfWidth + margin) - viewportWidth
-      // Try shifting left
-      const shiftedLeft = triggerCenterX - overflow
-      if (shiftedLeft - tooltipHalfWidth >= margin) {
-        // Can shift left within bounds
-        position.transform = `translateX(calc(-50% - ${overflow}px))`
-      } else {
-        // Need to position at right edge
-        position.left = 'auto'
-        position.right = `${margin}px`
-        position.transform = 'translateX(0)'
-      }
-    }
-    // Check if tooltip would overflow on the left
-    else if (triggerCenterX - tooltipHalfWidth - margin < 0) {
-      const overflow = margin - (triggerCenterX - tooltipHalfWidth)
-      // Try shifting right
-      const shiftedRight = triggerCenterX + overflow
-      if (shiftedRight + tooltipHalfWidth + margin <= viewportWidth) {
-        // Can shift right within bounds
-        position.transform = `translateX(calc(-50% + ${overflow}px))`
-      } else {
-        // Need to position at left edge
-        position.left = `${margin}px`
-        position.right = 'auto'
-        position.transform = 'translateX(0)'
-      }
-    }
-    
-    return position
-  }
 
   // Handle word click for persistent tooltip
   const handleWordClick = (lineIndex, wordIndex, e) => {
@@ -861,17 +770,6 @@ const VersePage = () => {
     // Clear hover state when clicking
     setHoveredWord(null)
     setHoveredWordData(null)
-    
-    // Calculate position after state update (using setTimeout to ensure DOM is updated)
-    // Always position Sanskrit tooltips above
-    setTimeout(() => {
-      const wordElement = e.target.closest('.sanskrit-word')
-      const tooltipElement = sanskritTooltipRef.current
-      if (wordElement && tooltipElement) {
-        const position = calculateTooltipPosition(wordElement, tooltipElement, true)
-        setSanskritTooltipPosition(position)
-      }
-    }, 0)
   }
 
   // Toggle between translation and transliteration for a specific word
@@ -1069,20 +967,17 @@ const VersePage = () => {
           style={{
             transform: isTransitioning 
               ? swipeDirection === 'left' 
-                ? `translateX(-100%)` 
+                ? `translate3d(-100%, 0, 0)` 
                 : swipeDirection === 'right'
-                ? `translateX(100%)`
-                : 'none'
+                ? `translate3d(100%, 0, 0)`
+                : 'translate3d(0, 0, 0)'
               : isEntering
-              ? swipeDirection === 'left'
-                ? 'translateX(0%)' // Slide in from right (starts at 100%, animates to 0%)
-                : swipeDirection === 'right'
-                ? 'translateX(0%)' // Slide in from left (starts at -100%, animates to 0%)
-                : 'none'
+              ? 'translate3d(0, 0, 0)'
               : swipeOffset !== 0 
-                ? `translateX(${swipeOffset}px)` 
-                : 'none',
-            transition: isSwiping ? 'none' : (isTransitioning || isEntering ? 'transform 0.3s ease-out' : 'transform 0.3s ease-out')
+                ? `translate3d(${swipeOffset}px, 0, 0)` 
+                : 'translate3d(0, 0, 0)',
+            transition: isSwiping ? 'none' : (isTransitioning || isEntering ? 'transform 0.3s cubic-bezier(0.2, 0, 0.2, 1)' : 'transform 0.3s cubic-bezier(0.2, 0, 0.2, 1)'),
+            willChange: (isSwiping || isTransitioning || isEntering) ? 'transform' : 'auto'
           }}
         >
         {/* Pretext/Context Section */}
@@ -1178,13 +1073,19 @@ const VersePage = () => {
                       {wordText}
                       {tooltipData && (
                         <span 
-                          ref={isClicked ? sanskritTooltipRef : null}
+                          ref={sanskritRefs.setFloating}
                           className={`word-tooltip ${isClicked ? 'tooltip-static' : 'tooltip-hover'} ${translation === 'hindi' ? 'hindi-text' : ''} ${isClicked && tooltipData.some(w => {
                             const wordId = w.id || w.key
                             return chapterData?.explanations?.find(e => e.id === wordId)
                           }) ? 'has-explanation' : ''}`}
                           onMouseEnter={() => handleTooltipEnter(lineIndex, wordIndex)}
-                          style={isClicked && sanskritTooltipPosition ? sanskritTooltipPosition : undefined}
+                          style={{
+                            position: sanskritStrategy,
+                            top: sanskritY ?? 0,
+                            left: sanskritX ?? 0,
+                            pointerEvents: 'auto',
+                            visibility: (sanskritX === null) ? 'hidden' : 'visible'
+                          }}
                         >
                           <div className="tooltip-content-wrapper">
                             <div className="tooltip-words-row">
@@ -1361,17 +1262,16 @@ const VersePage = () => {
                           </span>
                           {isClicked && translationWordData && (
                             <div 
-                              ref={translationTooltipRef}
+                              ref={transRefs.setFloating}
                               className="translation-word-tooltip"
                               style={{
-                                position: 'absolute',
-                                ...(translationTooltipPosition || {
-                                  bottom: '100%',
-                                  left: '50%',
-                                  transform: 'translateX(-50%)',
-                                  marginBottom: '8px'
-                                }),
-                                maxWidth: 'min(400px, calc(100vw - 2rem))'
+                                position: transStrategy,
+                                top: transY ?? 0,
+                                left: transX ?? 0,
+                                maxWidth: 'min(400px, calc(100vw - 2rem))',
+                                pointerEvents: 'auto',
+                                zIndex: 2000,
+                                visibility: (transX === null) ? 'hidden' : 'visible'
                               }}
                             >
                               {translationWordData.wordData && (

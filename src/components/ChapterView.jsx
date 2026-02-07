@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo, useCallback } from 'react'
 import { useParams, useRouter } from 'next/navigation'
+import { useFloating, autoUpdate, offset, flip, shift } from '@floating-ui/react'
 import { getChapter, getVerseNumbers, getVerse } from '../data/utils'
 import './ChapterView.css'
 
@@ -30,7 +31,31 @@ const ChapterView = () => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [hoveredWord, setHoveredWord] = useState(null)
   const [hoveredWordData, setHoveredWordData] = useState(null)
-  const [hoveredWordPosition, setHoveredWordPosition] = useState(null)
+  
+  // Floating UI for Chapter tooltips
+  const {
+    x,
+    y,
+    strategy,
+    refs,
+  } = useFloating({
+    open: !!hoveredWord,
+    placement: 'top',
+    middleware: [
+      offset(10),
+      flip({ fallbackPlacements: ['bottom', 'top'] }),
+      shift({ padding: 10 }),
+    ],
+    whileElementsMounted: autoUpdate,
+  })
+
+  // Update position reference when hovered word changes
+  useEffect(() => {
+    if (hoveredWord) {
+      const element = document.querySelector(`.translation-word-reference.active`)
+      if (element) refs.setPositionReference(element)
+    }
+  }, [hoveredWord, refs])
   
   const chapterData = getChapter(validChapterNum)
   const verseNumbers = getVerseNumbers(validChapterNum)
@@ -131,78 +156,16 @@ const ChapterView = () => {
     return parts.length > 0 ? parts : [{ type: 'text', content: text }]
   }
   
-  // Calculate tooltip position (similar to VersePage)
-  const calculateTooltipPosition = (triggerElement) => {
-    if (!triggerElement) return { bottom: '100%', left: '50%', transform: 'translateX(-50%)', marginBottom: '8px' }
-    
-    const triggerRect = triggerElement.getBoundingClientRect()
-    const viewportWidth = window.innerWidth
-    const viewportHeight = window.innerHeight
-    
-    const spacing = 8
-    const tooltipWidth = 300 // Estimated width
-    const tooltipHeight = 150 // Estimated height
-    
-    // Calculate available space
-    const spaceAbove = triggerRect.top
-    const spaceBelow = viewportHeight - triggerRect.bottom
-    
-    // Prefer above, but can be below if needed
-    let position = {
-      bottom: '100%',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      marginBottom: `${spacing}px`,
-      top: 'auto',
-      right: 'auto'
-    }
-    
-    // If not enough space above but enough below, position below
-    if (spaceAbove < tooltipHeight + spacing && spaceBelow > spaceAbove) {
-      position = {
-        top: '100%',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        marginTop: `${spacing}px`,
-        bottom: 'auto',
-        right: 'auto'
-      }
-    }
-    
-    // Adjust horizontal position to prevent overflow
-    const triggerCenterX = triggerRect.left + triggerRect.width / 2
-    const tooltipHalfWidth = tooltipWidth / 2
-    const margin = 10
-    
-    if (triggerCenterX + tooltipHalfWidth + margin > viewportWidth) {
-      const overflow = (triggerCenterX + tooltipHalfWidth + margin) - viewportWidth
-      position.transform = `translateX(calc(-50% - ${overflow}px))`
-    } else if (triggerCenterX - tooltipHalfWidth - margin < 0) {
-      const overflow = margin - (triggerCenterX - tooltipHalfWidth)
-      position.transform = `translateX(calc(-50% + ${overflow}px))`
-    }
-    
-    return position
-  }
-  
   // Handle word hover for tooltip
   const handleWordHover = (refId, wordData, explanation, e) => {
     e.stopPropagation()
     setHoveredWord(refId)
     setHoveredWordData({ wordData, explanation })
-    
-    // Calculate position after a brief delay to ensure DOM is ready
-    setTimeout(() => {
-      const wordElement = e.currentTarget
-      const position = calculateTooltipPosition(wordElement)
-      setHoveredWordPosition(position)
-    }, 0)
   }
   
   const handleWordLeave = () => {
     setHoveredWord(null)
     setHoveredWordData(null)
-    setHoveredWordPosition(null)
   }
   
   return (
@@ -317,16 +280,15 @@ const ChapterView = () => {
                             </span>
                             {isHovered && hoveredWordData && (
                               <div 
+                                ref={refs.setFloating}
                                 className="translation-word-tooltip"
                                 style={{
-                                  position: 'absolute',
-                                  ...(hoveredWordPosition || {
-                                    bottom: '100%',
-                                    left: '50%',
-                                    transform: 'translateX(-50%)',
-                                    marginBottom: '8px'
-                                  }),
-                                  zIndex: 10000
+                                  position: strategy,
+                                  top: y ?? 0,
+                                  left: x ?? 0,
+                                  zIndex: 10000,
+                                  pointerEvents: 'auto',
+                                  visibility: x === null ? 'hidden' : 'visible'
                                 }}
                                 onMouseEnter={() => {}} // Keep tooltip visible
                                 onMouseLeave={handleWordLeave}

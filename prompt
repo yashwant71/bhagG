@@ -1,0 +1,27 @@
+
+for removing the bg
+
+"Subject isolated against an infinite black void.
+Background color is exactly RGB(0,0,0) with zero illumination.
+No environment, no floor, no horizon, no texture, no pattern.
+If anything except pure black appears, it is incorrect"
+
+
+
+
+for further reference use this website it on variour routes ahve all the details and all for verse https://www.holy-bhagavad-gita.org/chapter/1/verse/1/
+also use  gita pdf provided for reference
+also now complete this chapter json with rest of the  verses, with same design
+- know we have explanation as common place for verses as one word can be present in various verse so can be used there
+- add(only add, no remove) explanation data (in the same explanation array) for words which you think need explanation (to that verse reader, who dont know anything about that verse or any other previous/future verses) names mentioned will need explanation about who is it, what is that, or some other things that need to be understood, dont assume reader have read previous verses, thus ensuring that all words present in explanations if found anywhere in translations(hindi and english) are covered linked regardless it came previously or not.
+- -  and if we already have that word in explanation array dont add it again,
+- -  in explanation only the meaning of the word is needed no extra verse or sitution 
+- - also there can be words like "son of dhritrashtra" we may give explation for the dhritrashra and son of dhritrashtra how will be do it we can have better linking process like eg. (son of (dhritrashtra)[1.1.1])[1.1.2] as both meaning we may need, so its better to follow this approach throughout the verses
+references
+- - ensure the linking that is done in translations(hindi and english) is of that exact word no nicknames or related words
+- and pretext only add if its needed to know before knowing that particular verse
+- ensure the translation for english and hindi are correct no hallucinations please if needed properly go through the docs and google
+- please think properly its important, and understand json properly
+
+
+so now its better if you give all 1-47 verses of chapter 1 in json format

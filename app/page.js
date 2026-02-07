@@ -7,7 +7,7 @@ export default function Home() {
   const router = useRouter()
 
   const handleNext = () => {
-    router.push('/verse/1')
+    router.push('/chapter/1')
   }
 
   return <ContextPage onNext={handleNext} />

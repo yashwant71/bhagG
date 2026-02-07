@@ -97,7 +97,7 @@ const ChapterView = () => {
   // Redirect if trying to access other chapters
   useEffect(() => {
     if (chapterNum !== 1) {
-      router.replace('/verse/1')
+      router.replace('/chapter/1')
     }
   }, [chapterNum, router])
   
@@ -292,7 +292,7 @@ const ChapterView = () => {
                                 refs.setReference(e.currentTarget)
                               }}
                               onMouseLeave={handleWordLeave}
-                              onClick={(e) => e.stopPropagation()}
+                              onClick={() => {}}
                             >
                               {part.wordText}
                             </span>

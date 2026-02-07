@@ -543,23 +543,22 @@
   opacity: 0;
 }
 
-/* Word tooltip - Completely separate styling from Sanskrit words */
-.word-tooltip {
+/* Tooltip container - Base styles shared by both types of tooltips */
+.word-tooltip,
+.translation-word-tooltip {
   position: absolute;
   background-color: #1e190f !important;
   opacity: 1 !important;
   color: var(--text-tooltip);
-  padding: 0.6rem var(--spacing-lg);
+  padding: 0.7rem var(--spacing-xl);
   border-radius: var(--radius-md);
   font-size: var(--font-sm);
   font-weight: 400;
-  white-space: nowrap;
   z-index: var(--z-tooltip);
-  border: 1px solid var(--border-gold-medium);
-  box-shadow: var(--shadow-sm);
+  border: 1.2px solid var(--border-gold-medium);
+  box-shadow: var(--shadow-lg);
   pointer-events: auto;
   font-family: 'Inter', sans-serif;
-  opacity: 0;
   animation: tooltipFadeIn 0.2s ease-out forwards;
   -webkit-text-stroke: 0 !important;
   -webkit-text-fill-color: var(--text-tooltip) !important;
@@ -568,21 +567,22 @@
   letter-spacing: 0.3px;
   line-height: 1.4;
   width: auto;
-  max-width: min(600px, calc(100vw - 2rem));
+  min-width: 350px;
+  max-width: min(850px, calc(100vw - 2.5rem));
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Sanskrit Verse Word Specifics */
+.word-tooltip.tooltip-hover {
+  white-space: nowrap;
   min-width: fit-content;
 }
 
-/* Static tooltip (clicked or hover-to-tooltip) - stays visible, auto-width for content */
+/* Static tooltip (clicked or hover-to-tooltip) */
 .word-tooltip.tooltip-static {
-  pointer-events: auto;
-  padding: 0.65rem var(--spacing-lg);
-  font-size: var(--font-sm);
-  box-shadow: var(--shadow-md);
-  border-width: 1.2px;
-  white-space: normal;
-  max-width: min(600px, calc(100vw - 2rem));
-  min-width: fit-content;
-  width: auto;
+  box-shadow: var(--shadow-xl);
+  border-color: var(--border-gold-strong);
 }
 
 
@@ -985,52 +985,50 @@
 }
 
 .translation-word-tooltip {
-  position: absolute;
-  background-color: #1e190f !important;
-  opacity: 1 !important;
-  border: 1px solid var(--border-gold-medium);
-  border-radius: var(--radius-md);
-  padding: 0.65rem var(--spacing-lg);
-  box-shadow: var(--shadow-md);
   z-index: var(--z-tooltip-high);
-  min-width: 200px;
-  max-width: min(400px, calc(100vw - 2rem));
-  color: var(--text-tooltip);
-  font-family: 'Inter', sans-serif;
-  font-size: var(--font-sm);
-  line-height: 1.4;
-  pointer-events: auto;
-  animation: tooltipFadeIn 0.2s ease-out forwards;
-  white-space: normal;
-  word-wrap: break-word;
 }
 
 .tooltip-word-data {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center; /* Use center for better visual balance with mixed scripts */
+  gap: 0.75rem;
+  line-height: 1.2;
 }
 
 .tooltip-word-sanskrit {
   font-family: 'Noto Sans Devanagari', sans-serif;
-  font-size: var(--font-sm);
+  font-size: 1.05rem;
   color: var(--text-tooltip-sanskrit);
-  margin-bottom: var(--spacing-xs);
-  font-weight: 400;
-  line-height: 1.4;
+  font-weight: 500;
+  line-height: 1;
+  position: relative;
+  top: 1.5px; /* Offset to visually align the shirorekha with latin x-height */
 }
 
 .tooltip-word-transliteration {
-  font-size: var(--font-xs);
+  font-size: 0.85rem;
   color: var(--yellow-70);
   font-style: italic;
-  margin-bottom: var(--spacing-xs);
-  line-height: 1.4;
+  line-height: 1;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+.tooltip-word-divider {
+  color: var(--gold-primary);
+  opacity: 0.3;
+  font-weight: 200;
+  margin: 0 0.2rem;
+  font-size: 0.8rem;
 }
 
 .tooltip-word-translation {
   color: var(--text-tooltip);
-  font-size: var(--font-sm);
-  line-height: 1.4;
-  margin-top: var(--spacing-xs);
+  font-size: 0.95rem;
+  line-height: 1.2;
+  font-weight: 400;
 }
 
 .tooltip-word-explanation {

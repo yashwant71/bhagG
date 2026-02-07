@@ -1,11 +1,12 @@
 'use client'
 
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import VersePage from '../../../src/components/VersePage'
 import ChapterView from '../../../src/components/ChapterView'
 
 export default function VersePageRoute() {
   const params = useParams()
+  const router = useRouter()
   
   const chapter = params?.params?.[0]
   const verse = params?.params?.[1]
@@ -15,11 +16,13 @@ export default function VersePageRoute() {
     return <VersePage />
   }
   
-  // If we only have chapter, show the chapter view with all verses
+  // If we only have chapter, redirect to correctly named chapter view
   if (chapter && !verse) {
-    return <ChapterView />
+    router.replace(`/chapter/${chapter}`)
+    return null
   }
 
-  // Otherwise, redirect to chapter 1 view (handled by ChapterView component)
-  return <ChapterView />
+  // Otherwise, default redirect
+  router.replace('/chapter/1')
+  return null
 }

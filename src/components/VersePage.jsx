@@ -770,6 +770,11 @@ const VersePage = () => {
     // Clear hover state when clicking
     setHoveredWord(null)
     setHoveredWordData(null)
+
+    // Set position reference for Floating UI
+    if (e.currentTarget) {
+      sanskritRefs.setReference(e.currentTarget)
+    }
   }
 
   // Toggle between translation and transliteration for a specific word
@@ -1066,102 +1071,20 @@ const VersePage = () => {
                       style={{
                         ['--animation-delay']: `${delay}s`
                       }}
-                      onMouseEnter={(e) => hasTranslation && animationsComplete && handleWordHover(lineIndex, wordIndex, e)}
+                      onMouseEnter={(e) => {
+                        if (hasTranslation && animationsComplete) {
+                          handleWordHover(lineIndex, wordIndex, e)
+                          sanskritRefs.setReference(e.currentTarget)
+                        }
+                      }}
                       onMouseLeave={(e) => hasTranslation && animationsComplete && handleWordLeave(e)}
-                      onClick={(e) => hasTranslation && animationsComplete && handleWordClick(lineIndex, wordIndex, e)}
+                      onClick={(e) => {
+                        if (hasTranslation && animationsComplete) {
+                          handleWordClick(lineIndex, wordIndex, e)
+                        }
+                      }}
                     >
                       {wordText}
-                      {tooltipData && (
-                        <span 
-                          ref={sanskritRefs.setFloating}
-                          className={`word-tooltip ${isClicked ? 'tooltip-static' : 'tooltip-hover'} ${translation === 'hindi' ? 'hindi-text' : ''} ${isClicked && tooltipData.some(w => {
-                            const wordId = w.id || w.key
-                            return chapterData?.explanations?.find(e => e.id === wordId)
-                          }) ? 'has-explanation' : ''}`}
-                          onMouseEnter={() => handleTooltipEnter(lineIndex, wordIndex)}
-                          style={{
-                            position: sanskritStrategy,
-                            top: sanskritY ?? 0,
-                            left: sanskritX ?? 0,
-                            pointerEvents: 'auto',
-                            visibility: (sanskritX === null) ? 'hidden' : 'visible'
-                          }}
-                        >
-                          <div className="tooltip-content-wrapper">
-                            <div className="tooltip-words-row">
-                              {tooltipData.map((word, idx) => {
-                                const wordId = word.id || word.key
-                                // First try to find explanation by ID
-                                let explanation = chapterData?.explanations?.find(e => e.id === wordId)
-                                // If not found, try to match by term name
-                                if (!explanation) {
-                                  const wordText = word[translation] || word.english || ''
-                                  explanation = chapterData?.explanations?.find(e => 
-                                    e.term === wordText || 
-                                    wordText.includes(e.term) ||
-                                    (word.english && (e.term === word.english || word.english.includes(e.term))) ||
-                                    (word.hindi && (e.term === word.hindi || word.hindi.includes(e.term)))
-                                  )
-                                }
-                                const showTransliteration = toggledMeanings[wordId]
-                                const hasExplanation = !!explanation
-                                
-                                return (
-                                  <span key={wordId || idx}>
-                                    <span 
-                                      className={`tooltip-word ${hasExplanation ? 'has-explanation' : ''} ${isClicked ? 'clickable' : ''}`}
-                                      onClick={isClicked ? (e) => {
-                                        e.stopPropagation()
-                                        handleMeaningClick(wordId, e)
-                                      } : undefined}
-                                      style={isClicked ? { cursor: 'pointer' } : {}}
-                                    >
-                                      {showTransliteration && word.transliteration 
-                                        ? word.transliteration 
-                                        : (word[translation] || word.english || '')
-                                      }
-                                    </span>
-                                    {idx < tooltipData.length - 1 && <span className="tooltip-separator"> • </span>}
-                                  </span>
-                                )
-                              })}
-                            </div>
-                            {isClicked && tooltipData.some(w => {
-                              const wordId = w.id || w.key
-                              return chapterData?.explanations?.find(e => e.id === wordId)
-                            }) && (
-                              <div className="tooltip-explanations-row">
-                                {tooltipData.map((word, idx) => {
-                                  const wordId = word.id || word.key
-                                  // First try to find explanation by ID
-                                  let explanation = chapterData?.explanations?.find(e => e.id === wordId)
-                                  // If not found, try to match by term name
-                                  if (!explanation) {
-                                    const wordText = word[translation] || word.english || ''
-                                    explanation = chapterData?.explanations?.find(e => 
-                                      e.term === wordText || 
-                                      wordText.includes(e.term) ||
-                                      (word.english && (e.term === word.english || word.english.includes(e.term))) ||
-                                      (word.hindi && (e.term === word.hindi || word.hindi.includes(e.term)))
-                                    )
-                                  }
-                                  if (!explanation) return null
-                                  
-                                  return (
-                                    <span key={wordId || idx} className="tooltip-explanation-item">
-                                      <span className="tooltip-explanation-term">{(translation === 'hindi' && explanation.termHindi) ? explanation.termHindi : explanation.term}:</span> {translation === 'hindi' && explanation.descHindi ? explanation.descHindi : explanation.desc}
-                                      {idx < tooltipData.length - 1 && tooltipData.slice(idx + 1).some(w => {
-                                        const nextWordId = w.id || w.key
-                                        return chapterData?.explanations?.find(e => e.id === nextWordId)
-                                      }) && <span className="tooltip-explanation-separator"> • </span>}
-                                    </span>
-                                  )
-                                })}
-                              </div>
-                            )}
-                          </div>
-                        </span>
-                      )}
                     </span>
                   )
                 })}
@@ -1322,6 +1245,102 @@ const VersePage = () => {
         </div>
       </div>
       </div>
+
+      {/* Single Sanskrit Word Tooltip Instance */}
+      {(clickedWord || hoveredWord) && (wordData || hoveredWordData) && (
+        <span 
+          ref={sanskritRefs.setFloating}
+          className={`word-tooltip ${clickedWord ? 'tooltip-static' : 'tooltip-hover'} ${translation === 'hindi' ? 'hindi-text' : ''} ${clickedWord && (wordData || hoveredWordData).some(w => {
+            const wordId = w.id || w.key
+            return chapterData?.explanations?.find(e => e.id === wordId)
+          }) ? 'has-explanation' : ''}`}
+          onMouseEnter={() => {
+            if (hoveredWord) {
+              const [l, w] = hoveredWord.split('-').map(Number)
+              handleTooltipEnter(l, w)
+            }
+          }}
+          style={{
+            position: sanskritStrategy,
+            top: sanskritY ?? 0,
+            left: sanskritX ?? 0,
+            pointerEvents: 'auto',
+            visibility: (sanskritX === null) ? 'hidden' : 'visible',
+            zIndex: 1000
+          }}
+        >
+          <div className="tooltip-content-wrapper">
+            <div className="tooltip-words-row">
+              {(wordData || hoveredWordData).map((word, idx) => {
+                const wordId = word.id || word.key
+                let explanation = chapterData?.explanations?.find(e => e.id === wordId)
+                if (!explanation) {
+                  const wordText = word[translation] || word.english || ''
+                  explanation = chapterData?.explanations?.find(e => 
+                    e.term === wordText || 
+                    wordText.includes(e.term) ||
+                    (word.english && (e.term === word.english || word.english.includes(e.term))) ||
+                    (word.hindi && (e.term === word.hindi || word.hindi.includes(e.term)))
+                  )
+                }
+                const showTransliteration = toggledMeanings[wordId]
+                const hasExplanation = !!explanation
+                
+                return (
+                  <span key={wordId || idx}>
+                    <span 
+                      className={`tooltip-word ${hasExplanation ? 'has-explanation' : ''} ${clickedWord ? 'clickable' : ''}`}
+                      onClick={clickedWord ? (e) => {
+                        e.stopPropagation()
+                        handleMeaningClick(wordId, e)
+                      } : undefined}
+                      style={clickedWord ? { cursor: 'pointer' } : {}}
+                    >
+                      {showTransliteration && word.transliteration 
+                        ? word.transliteration 
+                        : (word[translation] || word.english || '')
+                      }
+                    </span>
+                    {idx < (wordData || hoveredWordData).length - 1 && <span className="tooltip-separator"> • </span>}
+                  </span>
+                )
+              })}
+            </div>
+            {clickedWord && (wordData || hoveredWordData).some(w => {
+              const wordId = w.id || w.key
+              return chapterData?.explanations?.find(e => e.id === wordId)
+            }) && (
+              <div className="tooltip-explanations-row">
+                {(wordData || hoveredWordData).map((word, idx) => {
+                  const wordId = word.id || word.key
+                  let explanation = chapterData?.explanations?.find(e => e.id === wordId)
+                  if (!explanation) {
+                    const wordText = word[translation] || word.english || ''
+                    explanation = chapterData?.explanations?.find(e => 
+                      e.term === wordText || 
+                      wordText.includes(e.term) ||
+                      (word.english && (e.term === word.english || word.english.includes(e.term))) ||
+                      (word.hindi && (e.term === word.hindi || word.hindi.includes(e.term)))
+                    )
+                  }
+                  if (!explanation) return null
+                  
+                  return (
+                    <div key={wordId || idx} className="tooltip-explanation-item">
+                      <span className="tooltip-explanation-term">{(translation === 'hindi' && explanation.termHindi) ? explanation.termHindi : explanation.term}:</span>
+                      <span className="tooltip-explanation-text">{translation === 'hindi' && explanation.descHindi ? explanation.descHindi : explanation.desc}</span>
+                      {idx < (wordData || hoveredWordData).filter(w => {
+                        const wId = w.id || w.key
+                        return chapterData?.explanations?.find(e => e.id === wId) || chapterData?.explanations?.find(e => e.term === (w[translation] || w.english))
+                      }).length - 1 && <span className="tooltip-explanation-separator"> | </span>}
+                    </div>
+                  )
+                })}
+              </div>
+            )}
+          </div>
+        </span>
+      )}
     </div>
   )
 }

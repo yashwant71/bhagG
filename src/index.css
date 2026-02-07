@@ -164,3 +164,13 @@ html {
   scrollbar-width: thin;
   scrollbar-color: rgba(150, 150, 150, 0.3) transparent;
 }
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

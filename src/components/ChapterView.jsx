@@ -272,45 +272,15 @@ const ChapterView = () => {
                           >
                             <span
                               className={`translation-word-reference ${isHovered ? 'active' : ''}`}
-                              onMouseEnter={(e) => handleWordHover(part.refId, part.wordData, part.explanation, e)}
+                              onMouseEnter={(e) => {
+                                handleWordHover(part.refId, part.wordData, part.explanation, e)
+                                refs.setReference(e.currentTarget)
+                              }}
                               onMouseLeave={handleWordLeave}
                               onClick={(e) => e.stopPropagation()}
                             >
                               {part.wordText}
                             </span>
-                            {isHovered && hoveredWordData && (
-                              <div 
-                                ref={refs.setFloating}
-                                className="translation-word-tooltip"
-                                style={{
-                                  position: strategy,
-                                  top: y ?? 0,
-                                  left: x ?? 0,
-                                  zIndex: 10000,
-                                  pointerEvents: 'auto',
-                                  visibility: x === null ? 'hidden' : 'visible'
-                                }}
-                                onMouseEnter={() => {}} // Keep tooltip visible
-                                onMouseLeave={handleWordLeave}
-                              >
-                                {hoveredWordData.wordData && (
-                                  <div className="tooltip-word-data">
-                                    <div className="tooltip-word-sanskrit">{hoveredWordData.wordData.sanskrit}</div>
-                                    {hoveredWordData.wordData.transliteration && (
-                                      <div className="tooltip-word-transliteration">({hoveredWordData.wordData.transliteration})</div>
-                                    )}
-                                    <div className="tooltip-word-translation">
-                                      {hoveredWordData.wordData[translation] || hoveredWordData.wordData.english}
-                                    </div>
-                                  </div>
-                                )}
-                                {hoveredWordData.explanation && (
-                                  <div className="tooltip-word-explanation">
-                                    <strong>{(translation === 'hindi' && hoveredWordData.explanation.termHindi) ? hoveredWordData.explanation.termHindi : hoveredWordData.explanation.term}:</strong> {translation === 'hindi' && hoveredWordData.explanation.descHindi ? hoveredWordData.explanation.descHindi : hoveredWordData.explanation.desc}
-                                  </div>
-                                )}
-                              </div>
-                            )}
                           </span>
                         )
                       }
@@ -322,6 +292,41 @@ const ChapterView = () => {
           })}
         </div>
       </div>
+
+      {/* Global Translation Word Tooltip */}
+      {hoveredWord && hoveredWordData && (
+        <div 
+          ref={refs.setFloating}
+          className="translation-word-tooltip"
+          style={{
+            position: strategy,
+            top: y ?? 0,
+            left: x ?? 0,
+            zIndex: 10000,
+            pointerEvents: 'auto',
+            visibility: x === null ? 'hidden' : 'visible'
+          }}
+          onMouseEnter={() => {}} // Keep tooltip visible
+          onMouseLeave={handleWordLeave}
+        >
+          {hoveredWordData.wordData && (
+            <div className="tooltip-word-data">
+              <div className="tooltip-word-sanskrit">{hoveredWordData.wordData.sanskrit}</div>
+              {hoveredWordData.wordData.transliteration && (
+                <div className="tooltip-word-transliteration">({hoveredWordData.wordData.transliteration})</div>
+              )}
+              <div className="tooltip-word-translation">
+                {hoveredWordData.wordData[translation] || hoveredWordData.wordData.english}
+              </div>
+            </div>
+          )}
+          {hoveredWordData.explanation && (
+            <div className="tooltip-word-explanation">
+              <strong>{(translation === 'hindi' && hoveredWordData.explanation.termHindi) ? hoveredWordData.explanation.termHindi : hoveredWordData.explanation.term}:</strong> {translation === 'hindi' && hoveredWordData.explanation.descHindi ? hoveredWordData.explanation.descHindi : hoveredWordData.explanation.desc}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   )
 }

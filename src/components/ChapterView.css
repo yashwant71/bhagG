@@ -78,6 +78,9 @@
   position: relative;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
 }
 
 .language-selector-button {
@@ -85,13 +88,16 @@
   backdrop-filter: blur(8px);
   border: 1px solid rgba(212, 175, 55, 0.2);
   border-radius: 8px;
-  padding: 0.75rem;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
   color: var(--text-primary);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  padding: 0;
 }
 
 .language-selector-button:hover {
@@ -210,7 +216,8 @@
 .translation-word-reference {
   color: var(--text-primary);
   cursor: help;
-  border-bottom: 1px dotted rgba(212, 175, 55, 0.4);
+  text-decoration: none !important;
+  border-bottom: 1px dashed rgba(212, 175, 55, 0.5);
   transition: all 0.2s ease;
   position: relative;
   display: inline-block;

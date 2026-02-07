@@ -97,6 +97,7 @@ const VersePage = () => {
   const touchEndX = useRef(null)
   const touchStartY = useRef(null)
   const verseContainerRef = useRef(null)
+  const sanskritSectionRef = useRef(null)
 
   const chapterNum = parseInt(chapter || '1')
   // Only allow chapter 1, redirect if other chapter is accessed
@@ -132,6 +133,20 @@ const VersePage = () => {
       console.error('Failed to save language preference:', error)
     }
   }
+
+  // Scroll Sanskrit section into center of viewport when verse loads
+  useEffect(() => {
+    if (isLoaded && sanskritSectionRef.current) {
+      // Delay slightly to allow the "fall from above" animation to start
+      const timer = setTimeout(() => {
+        sanskritSectionRef.current.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center' 
+        })
+      }, 100)
+      return () => clearTimeout(timer)
+    }
+  }, [isLoaded, animationKey])
 
   // Check if swipe tutorial should be shown on first visit
   useEffect(() => {
@@ -182,7 +197,6 @@ const VersePage = () => {
     setIsLoaded(false)
     setAnimationsComplete(false) // Reset animations complete state
     setAnimationKey(prev => prev + 1) // Force animation restart
-    window.scrollTo(0, 0)
     
     // Reset tooltip state when verse changes
     setClickedWord(null)
@@ -985,9 +999,9 @@ const VersePage = () => {
             willChange: (isSwiping || isTransitioning || isEntering) ? 'transform' : 'auto'
           }}
         >
-        {/* Pretext/Context Section */}
-        {verse.pretext && (
-          <div className="pretext-wrapper" key={`pretext-${chapterVerseKey}-${animationKey}`}>
+        {/* Pretext/Context and Language Selector Wrapper */}
+        <div className="pretext-wrapper" key={`pretext-${chapterVerseKey}-${animationKey}`}>
+          {verse.pretext ? (
             <div className="pretext-section">
               <div className={`pretext-text ${translation === 'hindi' ? 'hindi-text' : ''}`}>
                 {typeof verse.pretext === 'string' 
@@ -996,61 +1010,64 @@ const VersePage = () => {
                 }
               </div>
             </div>
-            <div className="language-selector-container">
-              <button
-                className="language-selector-button"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setShowLanguageDropdown(!showLanguageDropdown)
-                }}
-                aria-label="Select language"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="2" y1="12" x2="22" y2="12"/>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-              </button>
-              {showLanguageDropdown && (
-                <div className="language-dropdown">
-                  <button
-                    className={`language-option ${translation === 'english' ? 'active' : ''}`}
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      updateTranslation('english')
-                      setShowLanguageDropdown(false)
-                    }}
-                  >
-                    <span>English</span>
-                    {translation === 'english' && (
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M20 6L9 17l-5-5"/>
-                      </svg>
-                    )}
-                  </button>
-                  <button
-                    className={`language-option ${translation === 'hindi' ? 'active' : ''}`}
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      updateTranslation('hindi')
-                      setShowLanguageDropdown(false)
-                    }}
-                  >
-                    <span>हिंदी</span>
-                    {translation === 'hindi' && (
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M20 6L9 17l-5-5"/>
-                      </svg>
-                    )}
-                  </button>
-                </div>
-              )}
-            </div>
+          ) : (
+            <div className="pretext-spacer"></div>
+          )}
+          
+          <div className="language-selector-container">
+            <button
+              className="language-selector-button"
+              onClick={(e) => {
+                e.stopPropagation()
+                setShowLanguageDropdown(!showLanguageDropdown)
+              }}
+              aria-label="Select language"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </button>
+            {showLanguageDropdown && (
+              <div className="language-dropdown">
+                <button
+                  className={`language-option ${translation === 'english' ? 'active' : ''}`}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    updateTranslation('english')
+                    setShowLanguageDropdown(false)
+                  }}
+                >
+                  <span>English</span>
+                  {translation === 'english' && (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                  )}
+                </button>
+                <button
+                  className={`language-option ${translation === 'hindi' ? 'active' : ''}`}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    updateTranslation('hindi')
+                    setShowLanguageDropdown(false)
+                  }}
+                >
+                  <span>हिंदी</span>
+                  {translation === 'hindi' && (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                  )}
+                </button>
+              </div>
+            )}
           </div>
-        )}
+        </div>
         
         {/* Sanskrit Words Section - Primary Focus */}
-        <div className="sanskrit-section">
+        <div ref={sanskritSectionRef} className="sanskrit-section">
           <div className="sanskrit-words-container">
             {sanskritLines.map((line, lineIndex) => (
               <div key={lineIndex} className="sanskrit-line">

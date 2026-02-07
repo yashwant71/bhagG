@@ -466,7 +466,6 @@
   -webkit-text-stroke: 0 !important;
   -webkit-text-fill-color: #f4d03f !important;
   text-shadow: none !important;
-  transform: translateX(-50%) translateY(-8px) !important;
   color: #f4d03f !important;
 }
 
@@ -480,10 +479,10 @@
 /* Word tooltip - Completely separate styling from Sanskrit words */
 .word-tooltip {
   position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-10px);
-  background: var(--bg-tooltip);
+  top: 0;
+  left: 0;
+  background-color: #1e190f !important;
+  opacity: 1 !important;
   color: var(--text-tooltip);
   padding: 0.6rem var(--spacing-lg);
   border-radius: var(--radius-md);
@@ -497,7 +496,6 @@
   font-family: 'Inter', sans-serif;
   opacity: 0;
   animation: tooltipFadeIn 0.2s ease-out forwards;
-  backdrop-filter: var(--blur-md);
   -webkit-text-stroke: 0 !important;
   -webkit-text-fill-color: var(--text-tooltip) !important;
   text-shadow: none !important;
@@ -515,7 +513,6 @@
   pointer-events: auto;
   padding: 0.65rem var(--spacing-lg);
   font-size: var(--font-sm);
-  transform: translateX(-50%) translateY(-11px);
   box-shadow: var(--shadow-md);
   border-width: 1.2px;
   white-space: normal;
@@ -577,9 +574,11 @@
 }
 
 @keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+  }
   to {
     opacity: 1;
-    transform: translateX(-50%) translateY(-8px);
   }
 }
 
@@ -921,8 +920,8 @@
 
 .translation-word-tooltip {
   position: absolute;
-  background: var(--bg-tooltip);
-  backdrop-filter: var(--blur-md);
+  background-color: #1e190f !important;
+  opacity: 1 !important;
   border: 1px solid var(--border-gold-medium);
   border-radius: var(--radius-md);
   padding: 0.65rem var(--spacing-lg);

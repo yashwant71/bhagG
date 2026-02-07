@@ -224,15 +224,14 @@
 
 /* Tooltip styling */
 .translation-word-tooltip {
-  background: var(--bg-tooltip-static);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background-color: #1e190f !important;
+  opacity: 1 !important;
+  border: 1px solid rgba(212, 175, 55, 0.5);
   border-radius: 8px;
   padding: 0.75rem;
   max-width: 300px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   pointer-events: auto;
-  margin-top: -10px;
 }
 
 .tooltip-word-data {

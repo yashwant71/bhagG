@@ -1,7 +1,7 @@
 .verse-page {
   min-height: 100vh;
   position: relative;
-  padding: 1.5rem 2rem;
+  padding: 0 0 1.5rem 0; /* Removed top and side padding for full-width header */
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,81 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  min-height: 100dvh; /* Use dynamic viewport height for mobile */
+  min-height: calc(100dvh - 50px); /* Adjust for header height */
+  flex: 1;
+}
+
+/* Page Header Styles */
+.page-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+  height: 54px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-home-button,
+.header-chapter-button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.header-home-button:hover,
+.header-chapter-button:hover {
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.header-separator {
+  color: rgba(212, 175, 55, 0.3);
+  font-size: 1rem;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-language-selector .language-selector-button {
+  width: 36px;
+  height: 36px;
+}
+
+.header-language-selector .language-selector-button svg {
+  width: 16px;
+  height: 16px;
 }
 
 .verse-container {
@@ -68,15 +142,32 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  flex: 1;
-  justify-content: center; /* Center content vertically if space permits */
-  min-height: 100dvh;
-  padding-top: 1rem;
-  padding-bottom: 50vh; /* Allow enough space at bottom to scroll Sanskrit to center */
+  min-height: calc(100dvh - 54px);
+  justify-content: center; 
+  padding: 0 1rem;
   width: 100%;
   transition: transform 0.3s ease-out;
   will-change: transform;
+}
+
+.verse-focus-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 0.25rem;
+}
+
+.focused-pretext {
+  font-size: 0.75rem;
+  color: var(--text-accent);
+  opacity: 0.5;
+  font-style: italic;
+  text-align: center;
+  max-width: 85%;
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+  animation: fadeIn 1s ease-out 0.2s both;
 }
 
 /* Carousel transition styles */
@@ -112,40 +203,7 @@
   }
 }
 
-/* Pretext Section */
-.pretext-wrapper {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto 1rem auto;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  position: relative;
-  flex-wrap: nowrap;
-}
-
-.pretext-section {
-  flex: 1;
-  min-width: 0;
-  max-width: calc(100% - 44px);
-  padding: var(--spacing-sm) var(--spacing-xl);
-  background: var(--bg-card);
-  border-left: 3px solid var(--border-gold-strong);
-  border-radius: var(--radius-md);
-  animation: fadeInUp 0.5s ease-out 0.1s both;
-}
-
-.pretext-text {
-  font-family: 'Inter', sans-serif;
-  font-size: var(--font-md);
-  line-height: 1.5;
-  color: var(--text-accent);
-  font-style: italic;
-  opacity: 0.85;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
+/* Pretext styles (Moved to header, but kept these as fallback/utility) */
 .pretext-spacer {
   flex: 1;
 }
@@ -205,9 +263,9 @@
   background: rgba(20, 20, 20, 0.98);
   backdrop-filter: var(--blur-lg);
   border: 1px solid var(--border-gold-light);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   box-shadow: var(--shadow-lg);
-  min-width: 140px;
+  min-width: 110px;
   z-index: var(--z-dropdown);
   animation: dropdownFadeIn 0.2s ease-out;
   overflow: hidden;
@@ -226,11 +284,11 @@
 
 .language-option {
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;
   background: transparent;
   border: none;
   color: var(--text-primary);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 400;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -269,10 +327,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5rem 0 1rem 0;
+  padding: 0.25rem 0;
   position: relative;
   flex-shrink: 0;
-  min-height: 250px; /* Anchors the section visually in the viewport */
   display: flex;
   justify-content: center;
 }
@@ -596,9 +653,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 0.75rem;
-  margin-bottom: 0.5rem;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
   width: 100%;
 }
 
@@ -749,21 +806,21 @@
   flex-direction: column;
   gap: 0;
   position: relative;
-  margin-top: -0.5rem;
+  margin-top: 0;
 }
 
 .translation-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 0.7rem;
-  color: rgba(212, 175, 55, 0.5);
+  font-size: 0.65rem;
+  color: rgba(212, 175, 55, 0.4);
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 0.5rem;
-  opacity: 0.6;
+  margin-bottom: 0.25rem;
+  opacity: 0.5;
   font-weight: 300;
   position: relative;
-  padding-top: 0.5rem;
+  padding-top: 0.25rem;
 }
 
 .translation-label::after {

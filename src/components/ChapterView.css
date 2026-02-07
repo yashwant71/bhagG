@@ -33,6 +33,36 @@
   transform: translateY(0);
 }
 
+.chapter-view-nav {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.view-home-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
+.view-home-button:hover {
+  opacity: 1;
+  color: var(--gold-primary);
+}
+
+.view-home-button svg {
+  opacity: 0.8;
+}
+
 .chapter-header {
   margin-bottom: 3rem;
   display: flex;

@@ -98,6 +98,7 @@ const VersePage = () => {
   const touchStartY = useRef(null)
   const verseContainerRef = useRef(null)
   const sanskritSectionRef = useRef(null)
+  const verseFocusAreaRef = useRef(null)
 
   const chapterNum = parseInt(chapter || '1')
   // Only allow chapter 1, redirect if other chapter is accessed
@@ -134,12 +135,12 @@ const VersePage = () => {
     }
   }
 
-  // Scroll Sanskrit section into center of viewport when verse loads
+  // Scroll Verse Focus Area into center of viewport when verse loads
   useEffect(() => {
-    if (isLoaded && sanskritSectionRef.current) {
+    if (isLoaded && verseFocusAreaRef.current) {
       // Delay slightly to allow the "fall from above" animation to start
       const timer = setTimeout(() => {
-        sanskritSectionRef.current.scrollIntoView({ 
+        verseFocusAreaRef.current.scrollIntoView({ 
           behavior: 'smooth', 
           block: 'center' 
         })
@@ -979,42 +980,34 @@ const VersePage = () => {
         </>
       )}
       
-      <div className="verse-carousel-wrapper">
-        <div 
-          ref={verseContainerRef}
-          className={`verse-container ${isTransitioning ? `swipe-${swipeDirection}` : ''} ${isEntering ? `enter-${swipeDirection}` : ''}`}
-          style={{
-            transform: isTransitioning 
-              ? swipeDirection === 'left' 
-                ? `translate3d(-100%, 0, 0)` 
-                : swipeDirection === 'right'
-                ? `translate3d(100%, 0, 0)`
-                : 'translate3d(0, 0, 0)'
-              : isEntering
-              ? 'translate3d(0, 0, 0)'
-              : swipeOffset !== 0 
-                ? `translate3d(${swipeOffset}px, 0, 0)` 
-                : 'translate3d(0, 0, 0)',
-            transition: isSwiping ? 'none' : (isTransitioning || isEntering ? 'transform 0.3s cubic-bezier(0.2, 0, 0.2, 1)' : 'transform 0.3s cubic-bezier(0.2, 0, 0.2, 1)'),
-            willChange: (isSwiping || isTransitioning || isEntering) ? 'transform' : 'auto'
-          }}
-        >
-        {/* Pretext/Context and Language Selector Wrapper */}
-        <div className="pretext-wrapper" key={`pretext-${chapterVerseKey}-${animationKey}`}>
-          {verse.pretext ? (
-            <div className="pretext-section">
-              <div className={`pretext-text ${translation === 'hindi' ? 'hindi-text' : ''}`}>
-                {typeof verse.pretext === 'string' 
-                  ? verse.pretext 
-                  : (translation === 'english' ? verse.pretext.english : verse.pretext.hindi)
-                }
-              </div>
-            </div>
-          ) : (
-            <div className="pretext-spacer"></div>
-          )}
-          
-          <div className="language-selector-container">
+      {/* Page Header */}
+      <div className="page-header">
+        <div className="header-left">
+          <button 
+            className="header-home-button" 
+            onClick={() => router.push('/')}
+            title="Home"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </button>
+          <span className="header-separator">/</span>
+          <button 
+            className="header-chapter-button" 
+            onClick={() => router.push(`/chapter/${validChapterNum}`)}
+          >
+            Chapter {validChapterNum}
+          </button>
+        </div>
+        
+        <div className="header-center">
+          {/* Pretext moved below header */}
+        </div>
+
+        <div className="header-right">
+          <div className="language-selector-container header-language-selector">
             <button
               className="language-selector-button"
               onClick={(e) => {
@@ -1065,8 +1058,39 @@ const VersePage = () => {
             )}
           </div>
         </div>
-        
-        {/* Sanskrit Words Section - Primary Focus */}
+      </div>
+      
+      <div className="verse-carousel-wrapper">
+        <div 
+          ref={verseContainerRef}
+          className={`verse-container ${isTransitioning ? `swipe-${swipeDirection}` : ''} ${isEntering ? `enter-${swipeDirection}` : ''}`}
+          style={{
+            transform: isTransitioning 
+              ? swipeDirection === 'left' 
+                ? `translate3d(-100%, 0, 0)` 
+                : swipeDirection === 'right'
+                ? `translate3d(100%, 0, 0)`
+                : 'translate3d(0, 0, 0)'
+              : isEntering
+              ? 'translate3d(0, 0, 0)'
+              : swipeOffset !== 0 
+                ? `translate3d(${swipeOffset}px, 0, 0)` 
+                : 'translate3d(0, 0, 0)',
+            transition: isSwiping ? 'none' : (isTransitioning || isEntering ? 'transform 0.3s cubic-bezier(0.2, 0, 0.2, 1)' : 'transform 0.3s cubic-bezier(0.2, 0, 0.2, 1)'),
+            willChange: (isSwiping || isTransitioning || isEntering) ? 'transform' : 'auto'
+          }}
+        >
+        <div ref={verseFocusAreaRef} className="verse-focus-area">
+          {verse.pretext && (
+            <div className={`focused-pretext ${translation === 'hindi' ? 'hindi-text' : ''}`}>
+              {typeof verse.pretext === 'string' 
+                ? verse.pretext 
+                : (translation === 'english' ? verse.pretext.english : verse.pretext.hindi)
+              }
+            </div>
+          )}
+          
+          {/* Sanskrit Words Section - Primary Focus */}
         <div ref={sanskritSectionRef} className="sanskrit-section">
           <div className="sanskrit-words-container">
             {sanskritLines.map((line, lineIndex) => (
@@ -1176,6 +1200,7 @@ const VersePage = () => {
             </button>
           </div>
         </div>
+      </div>
 
         {/* Translation Section - In Card */}
         <div className="translation-wrapper" key={`translation-${chapterVerseKey}-${animationKey}`}>

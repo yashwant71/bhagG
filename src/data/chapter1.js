@@ -1,46 +1,7 @@
-export const chapter1 =  {
+export const chapter1 = {
   "chapterNumber": 1,
   "chapterName": "Arjuna Vishada Yoga",
   "chapterNameSanskrit": "अर्जुनविषादयोगः",
-  "explanations": [
-    { "id": "exp_dhritarashtra", "term": "Dhritarashtra", "termHindi": "धृतराष्ट्र", "desc": "The blind King and father of the Kauravas. He represents the attached human mind that is blind to spiritual truth.", "descHindi": "कौरवों के अंधे राजा और पिता। वे उस मानव मन का प्रतिनिधित्व करते हैं जो आध्यात्मिक सत्य के प्रति अंधा है।" },
-    { "id": "exp_kurukshetra", "term": "Kurukshetra", "termHindi": "कुरुक्षेत्र", "desc": "A historical holy place in India. Symbolically, it represents the world as a 'field of action' where the battle between good and evil takes place.", "descHindi": "भारत का एक ऐतिहासिक पवित्र स्थान। प्रतीकात्मक रूप से, यह संसार को 'कर्मक्षेत्र' के रूप में दर्शाता है जहाँ अच्छाई और बुराई के बीच युद्ध होता है।" },
-    { "id": "exp_pandavas", "term": "Pandavas", "termHindi": "पाण्डव", "desc": "The five sons of King Pandu. They represent the forces of righteousness (Dharma) and virtue.", "descHindi": "राजा पाण्डु के पाँच पुत्र। वे धर्म और सदाचार की शक्तियों का प्रतिनिधित्व करते हैं।" },
-    { "id": "exp_sanjaya", "term": "Sanjaya", "termHindi": "सञ्जय", "desc": "The assistant of Dhritarashtra who was blessed with divine vision to see and hear everything happening on the distant battlefield.", "descHindi": "धृतराष्ट्र के सहायक जिन्हें दिव्य दृष्टि का वरदान मिला था जिससे वे दूर के युद्धक्षेत्र में होने वाली हर बात को देख और सुन सकते थे।" },
-    { "id": "exp_duryodhana", "term": "Duryodhana", "termHindi": "दुर्योधन", "desc": "The eldest son of Dhritarashtra and the leader of the Kaurava army. He represents ego, greed, and worldly desire.", "descHindi": "धृतराष्ट्र के सबसे बड़े पुत्र और कौरव सेना के नेता। वे अहंकार, लोभ और सांसारिक इच्छाओं का प्रतिनिधित्व करते हैं।" },
-    { "id": "exp_dronacharya", "term": "Dronacharya", "termHindi": "द्रोणाचार्य", "desc": "The great military teacher (Acharya) who trained both the Pandavas and Kauravas in the art of war.", "descHindi": "महान सैन्य गुरु (आचार्य) जिन्होंने पाण्डवों और कौरवों दोनों को युद्ध कला में प्रशिक्षित किया।" },
-    { "id": "exp_dhrishtadyumna", "term": "Son of Drupada", "termHindi": "द्रुपद पुत्र", "desc": "Dhrishtadyumna, who was born specifically to slay Drona, yet became Drona's pupil to learn the art of warfare.", "descHindi": "धृष्टद्युम्न, जो विशेष रूप से द्रोण को मारने के लिए पैदा हुए थे, फिर भी युद्ध कला सीखने के लिए द्रोण के शिष्य बने।" },
-    { "id": "exp_bhima", "term": "Bhima", "termHindi": "भीम", "desc": "The second Pandava brother, known for his immense physical strength and expertise with the mace.", "descHindi": "दूसरे पाण्डव भाई, जो अपनी अत्यधिक शारीरिक शक्ति और गदा में निपुणता के लिए जाने जाते हैं।" },
-    { "id": "exp_arjuna", "term": "Arjuna", "termHindi": "अर्जुन", "desc": "The third Pandava and the supreme archer. He is the central figure who receives the message of the Gita.", "descHindi": "तीसरे पाण्डव और सर्वश्रेष्ठ धनुर्धर। वे वह केंद्रीय व्यक्ति हैं जिन्हें गीता का संदेश मिलता है।" },
-    { "id": "exp_maharathi", "term": "Maharathi", "termHindi": "महारथी", "desc": "A warrior capable of fighting 10,000 archers simultaneously.", "descHindi": "एक योद्धा जो एक साथ 10,000 धनुर्धरों से लड़ने में सक्षम है।" },
-    { "id": "exp_abhimanyu", "term": "Son of Subhadra", "termHindi": "सुभद्रा पुत्र", "desc": "Abhimanyu, the son of Arjuna and Subhadra, known for his extraordinary bravery at a young age.", "descHindi": "अभिमन्यु, अर्जुन और सुभद्रा के पुत्र, जो कम उम्र में असाधारण वीरता के लिए जाने जाते हैं।" },
-    { "id": "exp_draupadi_sons", "term": "Sons of Draupadi", "termHindi": "द्रौपदी के पुत्र", "desc": "The five sons born to the Pandavas by Draupadi, representing the next generation of heroes.", "descHindi": "द्रौपदी से पाण्डवों के पाँच पुत्र, जो नायकों की अगली पीढ़ी का प्रतिनिधित्व करते हैं।" },
-    { "id": "exp_dvija_uttama", "term": "Best of Brahmanas", "termHindi": "ब्राह्मणों में श्रेष्ठ", "desc": "Duryodhana addresses Drona as the best of the priestly class, acknowledging his wisdom and authority while being a military instructor.", "descHindi": "दुर्योधन द्रोण को ब्राह्मण वर्ग में सर्वश्रेष्ठ कहकर संबोधित करता है, उनकी बुद्धिमत्ता और अधिकार को स्वीकार करते हुए जबकि वे एक सैन्य प्रशिक्षक भी हैं।" },
-    { "id": "exp_bhishma", "term": "Bhishma", "termHindi": "भीष्म", "desc": "The grand-uncle of both Pandavas and Kauravas. He was the commander-in-chief of the Kaurava army and a symbol of duty.", "descHindi": "पाण्डवों और कौरवों दोनों के परदादा। वे कौरव सेना के सेनापति थे और कर्तव्य के प्रतीक थे।" },
-    { "id": "exp_karna", "term": "Karna", "termHindi": "कर्ण", "desc": "A legendary archer and Duryodhana's closest friend, known for his immense bravery and loyalty.", "descHindi": "एक महान धनुर्धर और दुर्योधन के सबसे करीबी मित्र, जो अपनी असाधारण वीरता और निष्ठा के लिए जाने जाते हैं।" },
-    { "id": "exp_kripa", "term": "Kripa", "termHindi": "कृपा", "desc": "A great teacher and one of the immortal souls (Chiranjivi) who fought on the side of the Kauravas.", "descHindi": "एक महान गुरु और अमर आत्माओं (चिरंजीवी) में से एक जिन्होंने कौरवों के पक्ष में युद्ध किया।" },
-    { "id": "exp_conch", "term": "Conch", "termHindi": "शंख", "desc": "A large seashell (Shankha) used as a ritual instrument and a martial trumpet to signal the start of battle.", "descHindi": "एक बड़ा समुद्री कौड़ी (शंख) जिसका उपयोग एक अनुष्ठानिक वाद्य यंत्र और युद्ध की शुरुआत का संकेत देने के लिए एक सैन्य तुरही के रूप में किया जाता है।" },
-    { "id": "exp_madhava", "term": "Madhava", "termHindi": "माधव", "desc": "A name for Lord Krishna, meaning the husband of the Goddess of Fortune, Lakshmi. It signifies His divine and all-powerful nature.", "descHindi": "भगवान कृष्ण का एक नाम, जिसका अर्थ है धन की देवी लक्ष्मी के पति। यह उनकी दिव्य और सर्वशक्तिमान प्रकृति को दर्शाता है।" },
-    { "id": "exp_hrishikesha", "term": "Hrishikesha", "termHindi": "हृषीकेश", "desc": "A name for Lord Krishna meaning 'Master of the Senses'. It indicates His control over the internal and external world.", "descHindi": "भगवान कृष्ण का एक नाम जिसका अर्थ है 'इंद्रियों के स्वामी'। यह आंतरिक और बाहरी दुनिया पर उनके नियंत्रण को दर्शाता है।" },
-    { "id": "exp_vrikodara", "term": "Vrikodara", "termHindi": "वृकोदर", "desc": "A name for Bhima meaning 'wolf-bellied', referring to his voracious appetite and superhuman strength.", "descHindi": "भीम का एक नाम जिसका अर्थ है 'भेड़िया-पेट वाला', जो उनकी अत्यधिक भूख और अलौकिक शक्ति को दर्शाता है।" },
-    { "id": "exp_kapidhwaja", "term": "Kapidhwaja", "termHindi": "कपिध्वज", "desc": "Arjuna, whose flag bore the emblem of Lord Hanuman (the divine monkey hero). Hanuman's presence on the flag signifies victory and strength.", "descHindi": "अर्जुन, जिनके ध्वज पर भगवान हनुमान (दिव्य वानर नायक) का प्रतीक था। ध्वज पर हनुमान की उपस्थिति विजय और शक्ति का प्रतीक है।" },
-    { "id": "exp_achyuta", "term": "Achyuta", "termHindi": "अच्युत", "desc": "A name for Krishna meaning 'the infallible' or 'one who never fails His devotees'. It shows Arjuna's absolute trust.", "descHindi": "कृष्ण का एक नाम जिसका अर्थ है 'अच्युत' या 'जो अपने भक्तों को कभी निराश नहीं करता'। यह अर्जुन के पूर्ण विश्वास को दर्शाता है।" },
-    { "id": "exp_gudakesha", "term": "Gudakesha", "termHindi": "गुडाकेश", "desc": "A name for Arjuna meaning 'one who has conquered sleep'. It signifies his intense focus and self-discipline.", "descHindi": "अर्जुन का एक नाम जिसका अर्थ है 'जिसने नींद पर विजय प्राप्त की है'। यह उनकी तीव्र एकाग्रता और आत्म-अनुशासन को दर्शाता है।" },
-    { "id": "exp_partha", "term": "Partha", "termHindi": "पार्थ", "desc": "A name for Arjuna, meaning 'the son of Pritha' (Kunti). It reminds him of his noble lineage.", "descHindi": "अर्जुन का एक नाम, जिसका अर्थ है 'पृथा का पुत्र' (कुंती)। यह उन्हें उनके महान वंश की याद दिलाता है।" },
-    { "id": "exp_kunti", "term": "Kunti", "termHindi": "कुंती", "desc": "The mother of the Pandavas (Arjuna, Yudhisthira, and Bhima) and the sister of Krishna's father.", "descHindi": "पांडवों (अर्जुन, युधिष्ठिर और भीम) की माता और कृष्ण के पिता की बहन।" },
-    { "id": "exp_gandiva", "term": "Gandiva", "termHindi": "गाण्डीव", "desc": "The celestial bow of Arjuna, created by Brahma and given to him by the fire god Agni.", "descHindi": "अर्जुन का दिव्य धनुष, जिसे ब्रह्मा ने बनाया था और अग्नि देव ने उन्हें दिया था।" },
-    { "id": "exp_keshava", "term": "Keshava", "termHindi": "केशव", "desc": "A name for Krishna meaning 'slayer of the Keshi demon' or 'one who has beautiful hair'.", "descHindi": "कृष्ण का एक नाम जिसका अर्थ है 'केशी राक्षस का वध करने वाला' या 'सुंदर बालों वाला'।" },
-    { "id": "exp_govinda", "term": "Govinda", "termHindi": "गोविन्द", "desc": "A name for Krishna meaning 'one who gives pleasure to the cows and the senses'.", "descHindi": "कृष्ण का एक नाम जिसका अर्थ है 'गायों और इंद्रियों को आनंद देने वाला'।" },
-    { "id": "exp_madhusudana", "term": "Madhusudana", "termHindi": "मधुसूदन", "desc": "A name for Krishna meaning 'slayer of the demon Madhu'.", "descHindi": "कृष्ण का एक नाम जिसका अर्थ है 'मधु राक्षस का वध करने वाला'।" },
-    { "id": "exp_janardana", "term": "Janardana", "termHindi": "जनार्दन", "desc": "A name for Krishna meaning 'one who maintains all living entities' or 'to whom people pray for prosperity'.", "descHindi": "कृष्ण का एक नाम जिसका अर्थ है 'सभी जीवित प्राणियों का पालन करने वाला' या 'जिससे लोग समृद्धि की प्रार्थना करते हैं'।" },
-    { "id": "exp_atatayinas", "term": "Aggressors", "termHindi": "आततायी", "desc": "Felons who commit six heinous crimes: arson, poisoning, attacking with weapons, stealing wealth, stealing land, and kidnapping a wife.", "descHindi": "वे अपराधी जो छह जघन्य अपराध करते हैं: आग लगाना, जहर देना, हथियार से हमला करना, धन चोरी करना, जमीन हड़पना और पत्नी का अपहरण करना।" },
-    { "id": "exp_varshneya", "term": "Varshneya", "termHindi": "वार्ष्णेय", "desc": "A name for Krishna meaning 'descendant of Vrishni', referring to his clan.", "descHindi": "कृष्ण का एक नाम जिसका अर्थ है 'वृष्णि वंशज', जो उनके कुल को दर्शाता है।" },
-    { "id": "exp_pinda", "term": "Pinda", "termHindi": "पिण्ड", "desc": "Ritual offering of food (rice balls) and water given to deceased ancestors to ensure their peace.", "descHindi": "मृत पूर्वजों की शांति सुनिश्चित करने के लिए दिया जाने वाला भोजन (चावल के गोले) और जल का अनुष्ठानिक प्रसाद।" },
-    { "id": "exp_pitrs", "term": "Ancestors", "termHindi": "पितर", "desc": "Forefathers or ancestors who depend on the offerings of their descendants.", "descHindi": "पूर्वज जो अपने वंशजों के प्रसाद पर निर्भर करते हैं।" },
-    { "id": "exp_kula_dharma", "term": "Family Traditions", "termHindi": "कुल-धर्म", "desc": "The religious and social duties specific to a family lineage.", "descHindi": "एक परिवार के वंश के लिए विशिष्ट धार्मिक और सामाजिक कर्तव्य।" },
-    { "id": "exp_varna_sankara", "term": "Unwanted Progeny", "termHindi": "वर्णसंकर", "desc": "Confusion of castes or social disorder arising from the neglect of family duties and morality.", "descHindi": "पारिवारिक कर्तव्यों और नैतिकता की उपेक्षा से उत्पन्न जातियों का मिश्रण या सामाजिक विकार।" },
-    { "id": "exp_jati_dharma", "term": "Caste Duties", "termHindi": "जाति-धर्म", "desc": "The duties and traditions specific to a community or social class.", "descHindi": "एक समुदाय या सामाजिक वर्ग के लिए विशिष्ट कर्तव्य और परंपराएं।" }
-  ],
   "verses": {
     "1": {
       "sanskrit": "धृतराष्ट्र[1.1.1] उवाच[1.1.2]\nधर्मक्षेत्रे[1.1.3] कुरुक्षेत्रे[1.1.4] समवेता[1.1.5] युयुत्सवः[1.1.6]।\nमामकाः[1.1.7] पाण्डवा[1.1.8]श्च[1.1.9]ैव[1.1.10] कि[1.1.11]मकुर्वत[1.1.12] सञ्जय[1.1.13]॥",
@@ -73,7 +34,7 @@ export const chapter1 =  {
       }
     },
     "2": {
-      "sanskrit": "सञ्जय[1.2.1] उवाच[1.2.2]\nदृष्ट्वा[1.2.3] तु[1.2.4] पाण्डवा[1.2.5]नीकं[1.2.6] व्यूढं[1.2.7] दुर्योधन[1.2.8]स्तदा[1.2.9]।\nआचार्य[1.2.10]मुपसंगम्य[1.2.11] राजा[1.2.12] वचन[1.2.13]मब्रवीत्[1.2.14]॥",
+      "sanskrit": "सञ्जय[1.2.1] उवाच[1.2.2]\nदृष्ट्वा[1.2.3] तु[1.2.4] पाण्डव[1.2.5]ानीकं[1.2.6] व्यूढं[1.2.7] दुर्योधन[1.2.8]स्तदा[1.2.9]।\nआचार्य[1.2.10]मुपसंगम्य[1.2.11] राजा[1.2.12] वचन[1.2.13]मब्रवीत्[1.2.14]॥",
       "wordTranslations": [
         { "id": "1.2.1", "sanskrit": "सञ्जयः", "transliteration": "sañjayaḥ", "english": "Sanjaya", "hindi": "संजय", "explanationRef": "exp_sanjaya" },
         { "id": "1.2.2", "sanskrit": "उवाच", "transliteration": "uvāca", "english": "said", "hindi": "बोले" },
@@ -91,11 +52,11 @@ export const chapter1 =  {
         { "id": "1.2.14", "sanskrit": "अब्रवीत्", "transliteration": "abravīt", "english": "spoke", "hindi": "कहा" }
       ],
       "english": {
-        "text": "(Sanjaya)[exp_sanjaya] said: Having seen the Pandava army in military formation, King (Duryodhana)[exp_duryodhana] then approached his teacher (Drona)[exp_dronacharya] and spoke these words.",
+        "text": "(Sanjaya)[exp_sanjaya] said: Having seen the (Pandava)[exp_pandavas] army in military formation, King (Duryodhana)[exp_duryodhana] then approached his teacher (Dronacharya)[exp_dronacharya] and spoke these words.",
         "meaning": "Seeing the strategic discipline of the Pandavas, Duryodhana seeks counsel from his military preceptor."
       },
       "hindi": {
-        "text": "(सञ्जय)[exp_sanjaya] बोले—उस समय राजा (दुर्योधन)[exp_duryodhana] ने व्यूह रचनायुक्त पाण्डवों की सेना को देखकर और (द्रोणाचार्य)[exp_dronacharya] के पास जाकर यह वचन कहा ।।",
+        "text": "(सञ्जय)[exp_sanjaya] बोले—उस समय राजा (दुर्योधन)[exp_duryodhana] ने व्यूह रचनायुक्त (पाण्डवों)[exp_pandavas] की सेना को देखकर और (द्रोणाचार्य)[exp_dronacharya] के पास जाकर यह वचन कहा ।।",
         "meaning": "संजय धृतराष्ट्र को बताते हैं कि दुर्योधन ने पांडवों की युद्ध-तैयारी देखकर अपने गुरु द्रोण से चर्चा की।"
       }
     },
@@ -104,7 +65,7 @@ export const chapter1 =  {
       "wordTranslations": [
         { "id": "1.3.1", "sanskrit": "पश्य", "transliteration": "paśya", "english": "behold", "hindi": "देखिये" },
         { "id": "1.3.2", "sanskrit": "एताम्", "transliteration": "etām", "english": "this", "hindi": "इस" },
-        { "id": "1.3.3", "sanskrit": "पाण्डु-पुत्राणाम्", "transliteration": "pāṇḍu-putrāṇām", "english": "of the sons of Pandu", "hindi": "पाण्डु पुत्रों की" },
+        { "id": "1.3.3", "sanskrit": "पाण्डु-पुत्राणाम्", "transliteration": "pāṇḍu-putrāṇām", "english": "of the sons of Pandu", "hindi": "पाण्डु पुत्रों की", "explanationRef": "exp_pandavas" },
         { "id": "1.3.4", "sanskrit": "आचार्य", "transliteration": "ācārya", "english": "O Teacher", "hindi": "हे आचार्य", "explanationRef": "exp_dronacharya" },
         { "id": "1.3.5", "sanskrit": "महतीम्", "transliteration": "mahatīm", "english": "mighty", "hindi": "बड़ी भारी" },
         { "id": "1.3.6", "sanskrit": "चमूम्", "transliteration": "camūm", "english": "army", "hindi": "सेना को" },
@@ -115,7 +76,7 @@ export const chapter1 =  {
         { "id": "1.3.11", "sanskrit": "धीमता", "transliteration": "dhīmatā", "english": "intelligent", "hindi": "बुद्धिमान" }
       ],
       "english": {
-        "text": "Behold, O (Teacher)[exp_dronacharya], this mighty army of the sons of Pandu, arranged for battle by your talented pupil, the (son of Drupada)[exp_dhrishtadyumna] (Dhrishtadyumna).",
+        "text": "Behold, O (Teacher)[exp_dronacharya], this mighty army of the sons of Pandu, arranged for battle by your talented pupil, the (son of Drupada)[exp_dhrishtadyumna].",
         "meaning": "Duryodhana sarcastically points out that Drona's own student is now leading the enemy, trying to incite Drona's anger against the Pandavas."
       },
       "hindi": {
@@ -137,53 +98,53 @@ export const chapter1 =  {
         { "id": "1.4.5", "sanskrit": "अर्जुन", "transliteration": "arjuna", "english": "Arjuna", "hindi": "अर्जुन", "explanationRef": "exp_arjuna" },
         { "id": "1.4.6", "sanskrit": "समाः", "transliteration": "samāḥ", "english": "equal to", "hindi": "के समान" },
         { "id": "1.4.7", "sanskrit": "युधि", "transliteration": "yudhi", "english": "in battle", "hindi": "युद्ध में" },
-        { "id": "1.4.8", "sanskrit": "युयुधानः", "transliteration": "yuyudhānaḥ", "english": "Yuyudhana (Satyaki)", "hindi": "सात्यकि" },
-        { "id": "1.4.9", "sanskrit": "विराटः", "transliteration": "virāṭaḥ", "english": "Virata", "hindi": "विराट" },
+        { "id": "1.4.8", "sanskrit": "युयुधानः", "transliteration": "yuyudhānaḥ", "english": "Yuyudhana (Satyaki)", "hindi": "सात्यकि", "explanationRef": "exp_yuyudhana" },
+        { "id": "1.4.9", "sanskrit": "विराटः", "transliteration": "virāṭaḥ", "english": "Virata", "hindi": "विराट", "explanationRef": "exp_virata" },
         { "id": "1.4.10", "sanskrit": "ca", "transliteration": "ca", "english": "and", "hindi": "तथा" },
-        { "id": "1.4.11", "sanskrit": "द्रुपदः", "transliteration": "drupadaḥ", "english": "Drupada", "hindi": "द्रुपद" },
+        { "id": "1.4.11", "sanskrit": "द्रुपदः", "transliteration": "drupadaḥ", "english": "Drupada", "hindi": "द्रुपद", "explanationRef": "exp_drupada" },
         { "id": "1.4.12", "sanskrit": "ca", "transliteration": "ca", "english": "and", "hindi": "तथा" },
         { "id": "1.4.13", "sanskrit": "महारथः", "transliteration": "mahā-rathaḥ", "english": "great warrior", "hindi": "महारथी", "explanationRef": "exp_maharathi" }
       ],
       "english": {
-        "text": "Here are brave archers equal in battle to (Bhima)[exp_bhima] and (Arjuna)[exp_arjuna]: Yuyudhana, Virata, and the (Maharathi)[exp_maharathi] Drupada.",
+        "text": "Here are brave archers equal in battle to (Bhima)[exp_bhima] and (Arjuna)[exp_arjuna]: (Yuyudhana)[exp_yuyudhana], (Virata)[exp_virata], and the (Maharathi)[exp_maharathi] (Drupada)[exp_drupada].",
         "meaning": "Duryodhana lists the powerful warriors on the Pandava side, acknowledging their formidable strength."
       },
       "hindi": {
-        "text": "इस सेना में बड़े-बड़े धनुषों वाले तथा युद्ध में (भीम)[exp_bhima] और (अर्जुन)[exp_arjuna] के समान शूरवीर सात्यकि और विराट तथा (महारथी)[exp_maharathi] राजा द्रुपद हैं।",
+        "text": "इस सेना में बड़े-बड़े धनुषों वाले तथा युद्ध में (भीम)[exp_bhima] और (अर्जुन)[exp_arjuna] के समान शूरवीर (सात्यकि)[exp_yuyudhana] और (विराट)[exp_virata] तथा (महारथी)[exp_maharathi] राजा (द्रुपद)[exp_drupada] हैं।",
         "meaning": "दुर्योधन पांडव पक्ष के मुख्य योद्धाओं का नाम लेकर उनकी शक्ति का वर्णन करता है।"
       }
     },
     "5": {
       "sanskrit": "धृष्टकेतु[1.5.1]श्चेकितानः[1.5.2] काशिराज[1.5.3]श्च[1.5.4] वीर्यवान्[1.5.5]।\nपुरुजित्[1.5.6]कुन्तिभोज[1.5.7]श्च[1.5.8] शैव्य[1.5.9]श्च[1.5.10] नरपुङ्गवः[1.5.11]॥",
       "wordTranslations": [
-        { "id": "1.5.1", "sanskrit": "धृष्टकेतुः", "transliteration": "dhṛṣṭaketuḥ", "english": "Dhrishtaketu", "hindi": "धृष्टकेतु" },
-        { "id": "1.5.2", "sanskrit": "चेकितानः", "transliteration": "cekitānaḥ", "english": "Chekitana", "hindi": "चेकितान" },
-        { "id": "1.5.3", "sanskrit": "काशिराजः", "transliteration": "kāśirājaḥ", "english": "the King of Kashi", "hindi": "काशिराज" },
+        { "id": "1.5.1", "sanskrit": "धृष्टकेतुः", "transliteration": "dhṛṣṭaketuḥ", "english": "Dhrishtaketu", "hindi": "धृष्टकेतु", "explanationRef": "exp_dhrishtaketu" },
+        { "id": "1.5.2", "sanskrit": "चेकितानः", "transliteration": "cekitānaḥ", "english": "Chekitana", "hindi": "चेकितान", "explanationRef": "exp_cekitana" },
+        { "id": "1.5.3", "sanskrit": "काशिराजः", "transliteration": "kāśirājaḥ", "english": "the King of Kashi", "hindi": "काशिराज", "explanationRef": "exp_kashiraja" },
         { "id": "1.5.4", "sanskrit": "ca", "transliteration": "ca", "english": "and", "hindi": "तथा" },
         { "id": "1.5.5", "sanskrit": "वीर्यवान्", "transliteration": "vīryavān", "english": "valiant", "hindi": "बलवान" },
-        { "id": "1.5.6", "sanskrit": "पुरुजित्", "transliteration": "purujit", "english": "Purujit", "hindi": "पुरुजित्" },
-        { "id": "1.5.7", "sanskrit": "कुन्तिभोजः", "transliteration": "kuntibhojaḥ", "english": "Kuntibhoja", "hindi": "कुन्तिभोज" },
+        { "id": "1.5.6", "sanskrit": "पुरुजित्", "transliteration": "purujit", "english": "Purujit", "hindi": "पुरुजित्", "explanationRef": "exp_purujit" },
+        { "id": "1.5.7", "sanskrit": "कुन्तिभोजः", "transliteration": "kuntibhojaḥ", "english": "Kuntibhoja", "hindi": "कुन्तिभोज", "explanationRef": "exp_kuntibhoja" },
         { "id": "1.5.8", "sanskrit": "ca", "transliteration": "ca", "english": "and", "hindi": "तथा" },
-        { "id": "1.5.9", "sanskrit": "शैव्यः", "transliteration": "śaibyaḥ", "english": "Shaibya", "hindi": "शैव्य" },
+        { "id": "1.5.9", "sanskrit": "शैव्यः", "transliteration": "śaibyaḥ", "english": "Shaibya", "hindi": "शैव्य", "explanationRef": "exp_shaibya" },
         { "id": "1.5.10", "sanskrit": "ca", "transliteration": "ca", "english": "and", "hindi": "और" },
         { "id": "1.5.11", "sanskrit": "नरपुङ्गवः", "transliteration": "nara-puṅgavaḥ", "english": "best of men", "hindi": "मनुष्यों में श्रेष्ठ" }
       ],
       "english": {
-        "text": "Dhrishtaketu, Chekitana, and the valiant King of Kashi, Purujit, Kuntibhoja, and Shaibya—the best of men.",
+        "text": "(Dhrishtaketu)[exp_dhrishtaketu], (Chekitana)[exp_cekitana], and the valiant (King of Kashi)[exp_kashiraja], (Purujit)[exp_purujit], (Kuntibhoja)[exp_kuntibhoja], and (Shaibya)[exp_shaibya]—the best of men.",
         "meaning": "Continuing the list of legendary heroes fighting against the Kauravas."
       },
       "hindi": {
-        "text": "धृष्टकेतु, चेकितान और बलवान् काशिराज, पुरुजित्, कुन्तिभोज और मनुष्यों में श्रेष्ठ शैव्य (हैं)।",
+        "text": "(धृष्टकेतु)[exp_dhrishtaketu], (चेकितान)[exp_cekitana] और बलवान् (काशिराज)[exp_kashiraja], (पुरुजित्)[exp_purujit], (कुन्तिभोज)[exp_kuntibhoja] और मनुष्यों में श्रेष्ठ (शैव्य)[exp_shaibya] (हैं)।",
         "meaning": "पांडव पक्ष के अन्य शक्तिशाली योद्धाओं का उल्लेख।"
       }
     },
     "6": {
       "sanskrit": "युधामन्यु[1.6.1]श्च[1.6.2] विक्रान्त[1.6.3] उत्तमौजा[1.6.4]श्च[1.6.5] वीर्यवान्[1.6.6]।\nसौभद्रो[1.6.7] द्रौपदेया[1.6.8]श्च[1.6.9] सर्व[1.6.10] एव[1.6.11] महारथाः[1.6.12]॥",
       "wordTranslations": [
-        { "id": "1.6.1", "sanskrit": "युधामन्युः", "transliteration": "yudhāmanyuḥ", "english": "Yudhamanyu", "hindi": "युधामन्यु" },
+        { "id": "1.6.1", "sanskrit": "युधामन्युः", "transliteration": "yudhāmanyuḥ", "english": "Yudhamanyu", "hindi": "युधामन्यु", "explanationRef": "exp_yudhamanyu" },
         { "id": "1.6.2", "sanskrit": "च", "transliteration": "ca", "english": "and", "hindi": "तथा" },
         { "id": "1.6.3", "sanskrit": "विक्रान्तः", "transliteration": "vikrāntaḥ", "english": "the mighty", "hindi": "पराक्रमी" },
-        { "id": "1.6.4", "sanskrit": "उत्तमौजाः", "transliteration": "uttamaujāḥ", "english": "Uttamauja", "hindi": "उत्तमौजा" },
+        { "id": "1.6.4", "sanskrit": "उत्तमौजाः", "transliteration": "uttamaujāḥ", "english": "Uttamauja", "hindi": "उत्तमौजा", "explanationRef": "exp_uttamauja" },
         { "id": "1.6.5", "sanskrit": "च", "transliteration": "ca", "english": "and", "hindi": "तथा" },
         { "id": "1.6.6", "sanskrit": "वीर्यवान्", "transliteration": "vīryavān", "english": "the valiant", "hindi": "बलवान" },
         { "id": "1.6.7", "sanskrit": "सौभद्रः", "transliteration": "saubhadraḥ", "english": "the son of Subhadra", "hindi": "सुभद्रा पुत्र", "explanationRef": "exp_abhimanyu" },
@@ -194,11 +155,11 @@ export const chapter1 =  {
         { "id": "1.6.12", "sanskrit": "महारथाः", "transliteration": "mahā-rathāḥ", "english": "great chariot warriors", "hindi": "महारथी", "explanationRef": "exp_maharathi" }
       ],
       "english": {
-        "text": "The mighty Yudhamanyu, the valiant Uttamauja, (Abhimanyu)[exp_abhimanyu] (son of Subhadra), and the five (sons of Draupadi)[exp_draupadi_sons]—all of them are (great chariot warriors)[exp_maharathi].",
+        "text": "The mighty (Yudhamanyu)[exp_yudhamanyu], the valiant (Uttamauja)[exp_uttamauja], (Abhimanyu)[exp_abhimanyu] (son of Subhadra), and the five (sons of Draupadi)[exp_draupadi_sons]—all of them are (great chariot warriors)[exp_maharathi].",
         "meaning": "Duryodhana continues naming the formidable warriors of the Pandava army, highlighting their status as elite warriors."
       },
       "hindi": {
-        "text": "पराक्रमी युधामन्यु तथा बलवान् उत्तमौजा, (सुभद्रा पुत्र)[exp_abhimanyu] अभिमन्यु एवं (द्रौपदी के पाँचों पुत्र)[exp_draupadi_sons]—ये सभी (महारथी)[exp_maharathi] हैं ।।",
+        "text": "पराक्रमी (युधामन्यु)[exp_yudhamanyu] तथा बलवान् (उत्तमौजा)[exp_uttamauja], (सुभद्रा पुत्र)[exp_abhimanyu] अभिमन्यु एवं (द्रौपदी के पाँचों पुत्र)[exp_draupadi_sons]—ये सभी (महारथी)[exp_maharathi] हैं ।।",
         "meaning": "दुर्योधन पांडव पक्ष के अन्य वीर योद्धाओं के नामों का वर्णन कर रहा है।"
       }
     },
@@ -239,19 +200,19 @@ export const chapter1 =  {
         { "id": "1.8.6", "sanskrit": "कृपः", "transliteration": "kṛpaḥ", "english": "Kripacharya", "hindi": "कृपाचार्य", "explanationRef": "exp_kripa" },
         { "id": "1.8.7", "sanskrit": "च", "transliteration": "ca", "english": "and", "hindi": "तथा" },
         { "id": "1.8.8", "sanskrit": "समितिञ्जयः", "transliteration": "samitiñjayaḥ", "english": "victorious in battle", "hindi": "संग्राम विजयी" },
-        { "id": "1.8.9", "sanskrit": "अश्वत्थामा", "transliteration": "aśvatthāmā", "english": "Ashvatthama", "hindi": "अश्वत्थामा" },
-        { "id": "1.8.10", "sanskrit": "विकर्णः", "transliteration": "vikarṇaḥ", "english": "Vikarna", "hindi": "विकर्ण" },
+        { "id": "1.8.9", "sanskrit": "अश्वत्थामा", "transliteration": "aśvatthāmā", "english": "Ashvatthama", "hindi": "अश्वत्थामा", "explanationRef": "exp_ashvatthama" },
+        { "id": "1.8.10", "sanskrit": "विकर्णः", "transliteration": "vikarṇaḥ", "english": "Vikarna", "hindi": "विकर्ण", "explanationRef": "exp_vikarna" },
         { "id": "1.8.11", "sanskrit": "च", "transliteration": "ca", "english": "and", "hindi": "और" },
-        { "id": "1.8.12", "sanskrit": "सौमदत्तिः", "transliteration": "saumadattiḥ", "english": "Bhurishrava (son of Somadatta)", "hindi": "सोमदत्त पुत्र भूरिश्रवा" },
+        { "id": "1.8.12", "sanskrit": "सौमदत्तिः", "transliteration": "saumadattiḥ", "english": "Bhurishrava (son of Somadatta)", "hindi": "सोमदत्त पुत्र भूरिश्रवा", "explanationRef": "exp_somadatti" },
         { "id": "1.8.13", "sanskrit": "तथा एव", "transliteration": "tathā eva", "english": "as well as", "hindi": "तथा वैसे ही" },
         { "id": "1.8.14", "sanskrit": "च", "transliteration": "ca", "english": "and", "hindi": "भी" }
       ],
       "english": {
-        "text": "Yourself (Drona)[exp_dronacharya], (Bhishma)[exp_bhishma], (Karna)[exp_karna], and (Kripa)[exp_kripa], who is victorious in battle; Ashvatthama, Vikarna, and Bhurishrava.",
+        "text": "Yourself (Drona)[exp_dronacharya], (Bhishma)[exp_bhishma], (Karna)[exp_karna], and (Kripa)[exp_kripa], who is victorious in battle; (Ashvatthama)[exp_ashvatthama], (Vikarna)[exp_vikarna], and (Bhurishrava)[exp_somadatti].",
         "meaning": "Duryodhana lists the core pillars of the Kaurava army, identifying them as champions who have never known defeat."
       },
       "hindi": {
-        "text": "आप (द्रोणाचार्य)[exp_dronacharya] और पितामह (भीष्म)[exp_bhishma] तथा (कर्ण)[exp_karna] और संग्राम विजयी (कृपाचार्य)[exp_kripa] तथा वैसे ही अश्वत्थामा, विकर्ण और भूरिश्रवा ।।",
+        "text": "आप (द्रोणाचार्य)[exp_dronacharya] और पितामह (भीष्म)[exp_bhishma] तथा (कर्ण)[exp_karna] और संग्राम विजयी (कृपाचार्य)[exp_kripa] तथा वैसे ही (अश्वत्थामा)[exp_ashvatthama], (विकर्ण)[exp_vikarna] और (भूरिश्रवा)[exp_somadatti] ।।",
         "meaning": "कौरव पक्ष के प्रमुख अजय योद्धाओं के नाम दुर्योधन गिनाता है।"
       }
     },
@@ -432,52 +393,52 @@ export const chapter1 =  {
       "wordTranslations": [
         { "id": "1.16.1", "sanskrit": "anantavijayam", "transliteration": "anantavijayam", "english": "Anantavijaya", "hindi": "अनन्त विजय" },
         { "id": "1.16.2", "sanskrit": "rājā", "transliteration": "rājā", "english": "the king", "hindi": "राजा" },
-        { "id": "1.16.3", "sanskrit": "kuntī", "transliteration": "kuntī", "english": "of Kunti", "hindi": "कुन्ती" },
+        { "id": "1.16.3", "sanskrit": "kuntī", "transliteration": "kuntī", "english": "of Kunti", "hindi": "कुन्ती", "explanationRef": "exp_kunti" },
         { "id": "1.16.4", "sanskrit": "putraḥ", "transliteration": "putraḥ", "english": "son", "hindi": "पुत्र" },
-        { "id": "1.16.5", "sanskrit": "yudhiṣṭhiraḥ", "transliteration": "yudhiṣṭhiraḥ", "english": "Yudhisthira", "hindi": "युधिष्ठिर ने" },
-        { "id": "1.16.6", "sanskrit": "nakulaḥ", "transliteration": "nakulaḥ", "english": "Nakula", "hindi": "नकुल" },
-        { "id": "1.16.7", "sanskrit": "sahadevaḥ", "transliteration": "sahadevaḥ", "english": "Sahadeva", "hindi": "सहदेव" },
+        { "id": "1.16.5", "sanskrit": "yudhiṣṭhiraḥ", "transliteration": "yudhiṣṭhiraḥ", "english": "Yudhisthira", "hindi": "युधिष्ठिर ने", "explanationRef": "exp_yudhisthira" },
+        { "id": "1.16.6", "sanskrit": "nakulaḥ", "transliteration": "nakulaḥ", "english": "Nakula", "hindi": "नकुल", "explanationRef": "exp_nakula" },
+        { "id": "1.16.7", "sanskrit": "sahadevaḥ", "transliteration": "sahadevaḥ", "english": "Sahadeva", "hindi": "सहदेव", "explanationRef": "exp_sahadeva" },
         { "id": "1.16.8", "sanskrit": "ca", "transliteration": "ca", "english": "and", "hindi": "तथा" },
         { "id": "1.16.9", "sanskrit": "sughoṣa", "transliteration": "sughoṣa", "english": "Sughosa", "hindi": "सुघोष" },
         { "id": "1.16.10", "sanskrit": "maṇipuṣpakau", "transliteration": "maṇipuṣpakau", "english": "Manipuspaka", "hindi": "मणिपुष्पक" }
       ],
       "english": {
-        "text": "King Yudhisthira, son of Kunti, blew his conch Anantavijaya; while Nakula and Sahadeva blew theirs, Sughosa and Manipuspaka respectively.",
+        "text": "King (Yudhisthira)[exp_yudhisthira], son of Kunti, blew his conch Anantavijaya; while (Nakula)[exp_nakula] and (Sahadeva)[exp_sahadeva] blew theirs, Sughosa and Manipuspaka respectively.",
         "meaning": "The rest of the Pandava brothers join in sounding their conches, adding to the psychological pressure on the Kauravas."
       },
       "hindi": {
-        "text": "कुन्ती पुत्र राजा युधिष्ठिर ने अनन्त विजय नामक और नकुल तथा सहदेव ने सुघोष और मणिपुष्पक नामक शंख बजाये ।।",
+        "text": "(कुन्ती)[exp_kunti] पुत्र राजा (युधिष्ठिर)[exp_yudhisthira] ने अनन्त विजय नामक और (नकुल)[exp_nakula] तथा (सहदेव)[exp_sahadeva] ने सुघोष और मणिपुष्पक नामक शंख बजाये ।।",
         "meaning": "राजा युधिष्ठिर, नकुल और सहदेव के शंखों के नाम।"
       }
     },
     "17": {
       "sanskrit": "काश्य[1.17.1]श्च[1.17.2] परमेष्वासः[1.17.3] शिखण्डी[1.17.4] च[1.17.5] महारथः[1.17.6]।\nधृष्टद्युम्नो[1.17.7] विराट[1.17.8]श्च[1.17.9] सात्यकि[1.17.10]श्च[1.17.11]ापराजितः[1.17.11]॥",
       "wordTranslations": [
-        { "id": "1.17.1", "sanskrit": "kāśyaḥ", "transliteration": "kāśyaḥ", "english": "the King of Kashi", "hindi": "काशिराज" },
+        { "id": "1.17.1", "sanskrit": "kāśyaḥ", "transliteration": "kāśyaḥ", "english": "the King of Kashi", "hindi": "काशिराज", "explanationRef": "exp_kashiraja" },
         { "id": "1.17.2", "sanskrit": "ca", "transliteration": "ca", "english": "and", "hindi": "और" },
         { "id": "1.17.3", "sanskrit": "parama-iṣu-āsaḥ", "transliteration": "parama-iṣu-āsaḥ", "english": "the excellent archer", "hindi": "श्रेष्ठ धनुष वाले" },
-        { "id": "1.17.4", "sanskrit": "śikhaṇḍī", "transliteration": "śikhaṇḍī", "english": "Shikhandi", "hindi": "शिखण्डी" },
+        { "id": "1.17.4", "sanskrit": "śikhaṇḍī", "transliteration": "śikhaṇḍī", "english": "Shikhandi", "hindi": "शिखण्डी", "explanationRef": "exp_shikhandi" },
         { "id": "1.17.5", "sanskrit": "ca", "transliteration": "ca", "english": "and", "hindi": "एवं" },
         { "id": "1.17.6", "sanskrit": "mahā-rathaḥ", "transliteration": "mahā-rathaḥ", "english": "great warrior", "hindi": "महारथी", "explanationRef": "exp_maharathi" },
         { "id": "1.17.7", "sanskrit": "dhṛṣṭadyumnaḥ", "transliteration": "dhṛṣṭadyumnaḥ", "english": "Dhrishtadyumna", "hindi": "धृष्टद्युम्न", "explanationRef": "exp_dhrishtadyumna" },
-        { "id": "1.17.8", "sanskrit": "virāṭaḥ", "transliteration": "virāṭaḥ", "english": "Virata", "hindi": "राजा विराट" },
+        { "id": "1.17.8", "sanskrit": "virāṭaḥ", "transliteration": "virāṭaḥ", "english": "Virata", "hindi": "राजा विराट", "explanationRef": "exp_virata" },
         { "id": "1.17.9", "sanskrit": "ca", "transliteration": "ca", "english": "and", "hindi": "तथा" },
-        { "id": "1.17.10", "sanskrit": "sātyakiḥ", "transliteration": "sātyakiḥ", "english": "Satyaki", "hindi": "सात्यकि" },
+        { "id": "1.17.10", "sanskrit": "sātyakiḥ", "transliteration": "sātyakiḥ", "english": "Satyaki", "hindi": "सात्यकि", "explanationRef": "exp_satyaki" },
         { "id": "1.17.11", "sanskrit": "ca-aparājitaḥ", "transliteration": "ca-aparājitaḥ", "english": "and invincible", "hindi": "और अजेय" }
       ],
       "english": {
-        "text": "And the excellent archer, the King of Kashi, Shikhandi the (Maharathi)[exp_maharathi], (Dhrishtadyumna)[exp_dhrishtadyumna] and Virata; and invincible Satyaki,",
+        "text": "And the excellent archer, the (King of Kashi)[exp_kashiraja], (Shikhandi)[exp_shikhandi] the (Maharathi)[exp_maharathi], (Dhrishtadyumna)[exp_dhrishtadyumna] and (Virata)[exp_virata]; and invincible (Satyaki)[exp_satyaki],",
         "meaning": "The great kings and ally warriors of the Pandavas sound their conches together."
       },
       "hindi": {
-        "text": "श्रेष्ठ धनुष वाले काशिराज और (महारथी)[exp_maharathi] शिखण्डी एवं (धृष्टद्युम्न)[exp_dhrishtadyumna] तथा राजा विराट और अजेय सात्यकि...",
+        "text": "श्रेष्ठ धनुष वाले (काशिराज)[exp_kashiraja] और (महारथी)[exp_maharathi] (शिखण्डी)[exp_shikhandi] एवं (धृष्टद्युम्न)[exp_dhrishtadyumna] तथा राजा (विराट)[exp_virata] और अजेय (सात्यकि)[exp_satyaki]...",
         "meaning": "पांडव पक्ष के अन्य प्रमुख योद्धाओं का वर्णन।"
       }
     },
     "18": {
       "sanskrit": "द्रुपदो[1.18.1] द्रौपदेया[1.18.2]श्च[1.18.3] सर्वशः[1.18.4] पृथिवीपते[1.18.5]।\nसौभद्र[1.18.6]श्च[1.18.7] महाबाहुः[1.18.8] शंखान्दध्मुः[1.18.9] पृथक्[1.18.10]पृथक्[1.18.10]॥",
       "wordTranslations": [
-        { "id": "1.18.1", "sanskrit": "drupadaḥ", "transliteration": "drupadaḥ", "english": "Drupada", "hindi": "राजा द्रुपद" },
+        { "id": "1.18.1", "sanskrit": "drupadaḥ", "transliteration": "drupadaḥ", "english": "Drupada", "hindi": "राजा द्रुपद", "explanationRef": "exp_drupada" },
         { "id": "1.18.2", "sanskrit": "draupadeyāḥ", "transliteration": "draupadeyāḥ", "english": "the sons of Draupadi", "hindi": "द्रौपदी के पुत्र", "explanationRef": "exp_draupadi_sons" },
         { "id": "1.18.3", "sanskrit": "ca", "transliteration": "ca", "english": "and", "hindi": "एवं" },
         { "id": "1.18.4", "sanskrit": "sarvaśaḥ", "transliteration": "sarvaśaḥ", "english": "all together", "hindi": "इन सभी ने" },
@@ -489,11 +450,11 @@ export const chapter1 =  {
         { "id": "1.18.10", "sanskrit": "pṛthak-pṛthak", "transliteration": "pṛthak-pṛthak", "english": "each separately", "hindi": "अलग-अलग" }
       ],
       "english": {
-        "text": "Drupada as well as the five (sons of Draupadi)[exp_draupadi_sons], and the mighty-armed (Abhimanyu)[exp_abhimanyu], all of them, O King, blew their respective (conches)[exp_conch] from all sides.",
+        "text": "(Drupada)[exp_drupada] as well as the five (sons of Draupadi)[exp_draupadi_sons], and the mighty-armed (Abhimanyu)[exp_abhimanyu], all of them, O King, blew their respective (conches)[exp_conch] from all sides.",
         "meaning": "The conch-blowing is completed by the rest of the generals, sealing the resolve of the Pandava army."
       },
       "hindi": {
-        "text": "राजा द्रुपद एवं (द्रौपदी के पाँचों पुत्र)[exp_draupadi_sons] और बड़ी भुजावाले (सुभद्रा पुत्र)[exp_abhimanyu] अभिमन्यु—इन सभी ने, हे राजन् ! सब ओर से अलग-अलग (शंख)[exp_conch] बजाये ।।",
+        "text": "राजा (द्रुपद)[exp_drupada] एवं (द्रौपदी के पाँचों पुत्र)[exp_draupadi_sons] और बड़ी भुजावाले (सुभद्रा पुत्र)[exp_abhimanyu] अभिमन्यु—इन सभी ने, हे राजन् ! सब ओर से अलग-अलग (शंख)[exp_conch] बजाये ।।",
         "meaning": "राजा द्रुपद, द्रौपदी के पुत्रों और अभिमन्यु द्वारा शंख बजाने का वर्णन।"
       },
       "pretext": {
@@ -590,7 +551,7 @@ export const chapter1 =  {
         { "id": "1.22.2", "sanskrit": "nirīkṣe", "transliteration": "nirīkṣe", "english": "I observe", "hindi": "देख लूँ" },
         { "id": "1.22.3", "sanskrit": "aham", "transliteration": "aham", "english": "I", "hindi": "मैं" },
         { "id": "1.22.4", "sanskrit": "yoddhu-kāmān", "transliteration": "yoddhu-kāmān", "english": "desirous of fighting", "hindi": "युद्ध के अभिलाषी" },
-        { "id": "1.22.5", "sanskrit": "avasthitān", "transliteration": "avasthitān", "english": "stationed", "hindi": "डटे हुए" },
+        { "id": "1.22.5", "sanskrit": "avasthitān", "transliteration": "avasthitāḥ", "english": "stationed", "hindi": "डटे हुए" },
         { "id": "1.22.6", "sanskrit": "kaiḥ", "transliteration": "kaiḥ", "english": "with whom", "hindi": "किन-किन के" },
         { "id": "1.22.7", "sanskrit": "mayā", "transliteration": "mayā", "english": "by me", "hindi": "मुझे" },
         { "id": "1.22.8", "sanskrit": "saha", "transliteration": "saha", "english": "together with", "hindi": "साथ" },
@@ -669,7 +630,7 @@ export const chapter1 =  {
         { "id": "1.25.9", "sanskrit": "कुरून् इति", "transliteration": "kurūn iti", "english": "Kauravas", "hindi": "इन कौरवों को" }
       ],
       "english": {
-        "text": "...in front of (Bhishma)[exp_bhishma] and (Drona)[exp_dronacharya] and all the rulers of the earth, He said, (Arjuna)[exp_partha], behold these Kauravas assembled here.",
+        "text": "...in front of (Bhishma)[exp_bhishma] and (Dronacharya)[exp_dronacharya] and all the rulers of the earth, He said, (Arjuna)[exp_partha], behold these Kauravas assembled here.",
         "meaning": "Krishna strategically places the chariot right in front of Arjuna's beloved elders and teachers, forcing him to confront the emotional weight of the battle."
       },
       "hindi": {

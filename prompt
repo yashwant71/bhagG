@@ -12,6 +12,7 @@ If anything except pure black appears, it is incorrect"
 for further reference use this website it on variour routes ahve all the details and all for verse https://www.holy-bhagavad-gita.org/chapter/1/verse/1/
 also use  gita pdf provided for reference
 also now complete this chapter json with rest of the  verses, with same design
+- for sanskrit text link with wordTranslation: please refer this idea i am giving now eg. "sanskrit": "धृतराष्ट्र[1.1.1] उवाच[1.1.2]\nधर्मक्षेत्रे[1.1.3] कुरुक्षेत्रे[1.1.4] समवेता[1.1.5] युयुत्सवः[1.1.6]।\nमामकाः[1.1.7] पाण्डवा[1.1.8]श्च[1.1.9]ैव[1.1.10] कि[1.1.11]मकुर्वत[1.1.12] सञ्जय[1.1.13]॥", as you can see we need to have the wordtranslations id mentioned, and if some, words are made of two words we seperate them like  पाण्डवा[1.1.8]श्च[1.1.9]ैव[1.1.10, or  कि[1.1.11]मकुर्वत[1.1.12, we have to do like this in all where needed, and linking need to be done in sanskrit like this with word translation as mentioned in example, ensure to cover all words no missing 
 - know we have explanation as common place for verses as one word can be present in various verse so can be used there
 - add(only add, no remove) explanation data (in the same explanation array) for words which you think need explanation (to that verse reader, who dont know anything about that verse or any other previous/future verses)  all names,title,lineage,place,cultural/religous words/practice unknown to fresh reader ( eg. like son of someone.. ..., or any similar which you may need to explain) mentioned will need to be explained, always assume reader have not read previous/any verses, thus ensuring that all words present in explanations if found anywhere in translations(hindi and english) are covered linked regardless it came previously or not.
 - -  and if we already have that word in explanation array dont add it again,
@@ -21,6 +22,7 @@ also now complete this chapter json with rest of the  verses, with same design
 references, ensure to keep the schema like this small bracket for word and large bracket for id
 - - ensure the linking that is done in translations(hindi and english) is of that exact word no nicknames or related words
 - - also ensure the words explation that you add should ideally are self explanatory, and if certain name/place ot any thing which needs more than just english to understand you need to elaborate it in the explanation itself
+- - because i ahve mentioned that each verse should be self explantory, thus there the explanation also is having things which are not explantory like name,place etc.. so we need to link explanation for those there also the same way we have linked the explanation in the translation
 - and pretext only add if its needed to know before knowing that particular verse, keep it holy yet casual, dont degrade it
 - ensure the translation for english and hindi are correct no hallucinations please if needed properly go through the docs and google
 - please think properly its important, and understand json properly

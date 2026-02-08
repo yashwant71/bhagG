@@ -2,6 +2,7 @@
 
 // Import chapter 1 only
 import { chapter1 } from './chapter1'
+import { explanations } from './explanation'
 
 // Chapter registry - only chapter 1 available
 const chapters = {
@@ -10,7 +11,14 @@ const chapters = {
 
 // Helper function to get a chapter by number
 export const getChapter = (chapterNumber) => {
-  return chapters[chapterNumber] || null
+  const chapter = chapters[chapterNumber]
+  if (!chapter) return null
+  
+  // Merge global explanations into chapter data
+  return {
+    ...chapter,
+    explanations: explanations
+  }
 }
 
 // Helper function to get a verse by chapter and verse number

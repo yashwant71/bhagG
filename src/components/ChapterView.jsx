@@ -324,7 +324,7 @@ const ChapterView = () => {
       {hoveredWord && hoveredWordData && (
         <div 
           ref={refs.setFloating}
-          className="translation-word-tooltip"
+          className={`translation-word-tooltip ${(hoveredWordData.explanation || hoveredWordData.wordData?.explanation) ? 'has-explanation' : ''}`}
           style={{
             position: strategy,
             top: y ?? 0,

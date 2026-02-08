@@ -1277,7 +1277,7 @@ const VersePage = () => {
                 {clickedTranslationWord && translationWordData && (
                   <div 
                     ref={transRefs.setFloating}
-                    className="translation-word-tooltip"
+                    className={`translation-word-tooltip ${(translationWordData.explanation || translationWordData.wordData?.explanation) ? 'has-explanation' : ''}`}
                     style={{
                       position: transStrategy,
                       top: transY ?? 0,
@@ -1322,12 +1322,9 @@ const VersePage = () => {
     </div>
       {/* Single Sanskrit Word Tooltip Instance */}
       {(clickedWord || hoveredWord) && (wordData || hoveredWordData) && (
-        <span 
+        <div 
           ref={sanskritRefs.setFloating}
-          className={`word-tooltip ${clickedWord ? 'tooltip-static' : 'tooltip-hover'} ${translation === 'hindi' ? 'hindi-text' : ''} ${clickedWord && (wordData || hoveredWordData).some(w => {
-            const wordId = w.id || w.key
-            return chapterData?.explanations?.find(e => e.id === wordId)
-          }) ? 'has-explanation' : ''}`}
+          className={`word-tooltip ${clickedWord ? 'tooltip-static' : 'tooltip-hover'} ${translation === 'hindi' ? 'hindi-text' : ''} ${(wordData || hoveredWordData).some(w => !!w.explanation) ? 'has-explanation' : ''}`}
           onMouseEnter={() => {
             if (hoveredWord) {
               const [l, w] = hoveredWord.split('-').map(Number)
@@ -1351,7 +1348,7 @@ const VersePage = () => {
             toggledMeanings={toggledMeanings}
             onMeaningClick={handleMeaningClick}
           />
-        </span>
+        </div>
       )}
     </div>
   )

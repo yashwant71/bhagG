@@ -575,13 +575,13 @@
   background-color: #1e190f !important;
   opacity: 1 !important;
   color: var(--text-tooltip);
-  padding: 0.7rem var(--spacing-xl);
+  padding: 0.9rem 1.25rem;
   border-radius: var(--radius-md);
   font-size: var(--font-sm);
   font-weight: 400;
   z-index: var(--z-tooltip);
   border: 1.2px solid var(--border-gold-medium);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-xl);
   pointer-events: auto;
   font-family: 'Inter', sans-serif;
   animation: tooltipFadeIn 0.2s ease-out forwards;
@@ -592,47 +592,81 @@
   letter-spacing: 0.3px;
   line-height: 1.4;
   width: max-content;
-  min-width: min-content;
-  max-width: min(600px, calc(100vw - 2.5rem));
+  min-width: 240px;
+  max-width: min(500px, calc(100vw - 2.5rem));
   white-space: normal;
   word-wrap: break-word;
 }
 
-/* Ensure a minimum width only for content that actually needs it (explanations) */
-.word-tooltip.has-explanation,
-.translation-word-tooltip.has-explanation {
-  min-width: 260px;
-}
-
-/* Sanskrit Verse Word Specifics - Ensure both hover and static fit content naturally */
-.word-tooltip.tooltip-hover,
-.word-tooltip.tooltip-static {
-  width: fit-content;
-  min-width: auto;
-  /* Allow for even more compact presentation if content is very short */
-}
-
-/* Add a very small min-width as a safety floor for single-letter words */
-.word-tooltip {
-  min-width: 80px;
-}
-
 /* Static tooltip (clicked or hover-to-tooltip) */
 .word-tooltip.tooltip-static {
-  box-shadow: var(--shadow-xl);
   border-color: var(--border-gold-strong);
-}
-
-
-/* Static tooltip with explanations - allow it to be compact like hover unless content is long */
-.word-tooltip.tooltip-static.has-explanation {
-  max-width: min(450px, calc(100vw - 2rem));
-  min-width: auto;
 }
 
 /* Hover tooltip (temporary) - disappears on mouse leave */
 .word-tooltip.tooltip-hover {
   pointer-events: auto; /* Allow mouse enter to convert to static */
+}
+
+/* Word Boxes in Tooltip Header */
+.tooltip-words-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--gold-20);
+  margin-bottom: 0.75rem;
+}
+
+.tooltip-word-item {
+  display: flex;
+}
+
+.tooltip-word-box {
+  background: rgba(255, 215, 0, 0.05);
+  border: 1px solid var(--gold-30);
+  border-radius: 8px;
+  padding: 0.5rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 100px;
+  color: inherit;
+  font-family: inherit;
+}
+
+.tooltip-word-box:hover {
+  background: rgba(255, 215, 0, 0.12);
+  border-color: var(--gold-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-word-box .tooltip-word-sanskrit {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 1rem;
+  color: var(--gold-bright);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.tooltip-word-divider-line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-25), transparent);
+  margin: 1px 0;
+}
+
+.tooltip-word-meaning-text {
+  font-size: 0.8rem;
+  color: var(--text-tooltip);
+  opacity: 0.85;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 /* Clickable meaning in tooltip */
@@ -1146,18 +1180,13 @@
   transform: rotate(90deg);
 }
 
-.tooltip-explanations-row {
-  margin-top: 0.4rem;
-  padding-top: 0.4rem;
-  border-top: 1px solid var(--gold-20);
-  font-size: 0.68rem;
-  line-height: 1.4;
-  color: rgba(244, 208, 63, 0.85);
+.tooltip-explanations-section {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0;
-  white-space: normal;
-  word-wrap: break-word;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--gold-20);
 }
 
 .tooltip-explanation-item {
@@ -1169,8 +1198,22 @@
 
 .tooltip-explanation-header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tooltip-explanation-label {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--gold-bright);
+  background: rgba(var(--gold-primary-rgb), 0.15);
+  padding: 1px 4px;
+  border-radius: 2px;
+  border: 1px solid var(--gold-30);
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 .tooltip-explanation-term {
@@ -1187,9 +1230,10 @@
 }
 
 .tooltip-explanation-text {
-  font-size: 0.78rem;
-  line-height: 1.5;
-  color: rgba(244, 208, 63, 0.9);
+  color: #fceea7;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-top: 0.2rem;
 }
 
 .tooltip-explanation-separator {
@@ -1763,3 +1807,116 @@
     display: none;
   }
 }
+
+/* Enhanced Tooltip Styles */
+
+.tooltip-nested-link {
+  color: #ffda44;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-block;
+  padding: 0 1px;
+}
+
+.tooltip-nested-link:hover {
+  color: #fff;
+  text-decoration-style: solid;
+  background: rgba(255, 218, 68, 0.15);
+  border-radius: 3px;
+}
+
+.tooltip-active-word-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid var(--gold-30);
+  width: 100%;
+}
+
+.tooltip-active-word-header .tooltip-word-sanskrit {
+  font-size: 1.3rem;
+  color: var(--gold-bright);
+}
+
+.tooltip-active-word-header .tooltip-word-transliteration {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--gold-70);
+}
+
+.tooltip-active-word-header .tooltip-word-translation {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  opacity: 0.9;
+}
+
+.tooltip-back-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(var(--gold-primary-rgb), 0.1);
+  border: 1px solid var(--gold-30);
+  color: var(--gold-bright);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: fit-content;
+  margin-bottom: 0.75rem;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.tooltip-back-button:hover {
+  background: rgba(var(--gold-primary-rgb), 0.2);
+  border-color: var(--gold-primary);
+  transform: translateX(-2px);
+}
+
+.tooltip-back-button svg {
+  transition: transform 0.2s ease;
+}
+
+.tooltip-back-button:hover svg {
+  transform: translateX(-2px);
+}
+
+.tooltip-word-data.has-explanation {
+  cursor: pointer !important;
+  background: rgba(var(--gold-primary-rgb), 0.08);
+  border: 1px solid var(--gold-20);
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius-md);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tooltip-word-data.has-explanation:hover {
+  background: rgba(var(--gold-primary-rgb), 0.15);
+  border-color: var(--gold-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--gold-20);
+  transform: translateY(-1px);
+}
+
+.tooltip-explanation-item.active-view {
+  animation: tooltipDetailIn 0.3s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+}
+
+@keyframes tooltipDetailIn {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+

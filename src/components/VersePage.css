@@ -1123,13 +1123,35 @@
 }
 
 .tooltip-explanation-item {
-  display: inline;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: 100%;
+}
+
+.tooltip-explanation-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
 }
 
 .tooltip-explanation-term {
   color: #ffd700;
-  font-weight: 500;
-  margin-right: 0.3rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.tooltip-explanation-sub-translation {
+  color: var(--gold-60);
+  font-size: 0.75rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.tooltip-explanation-text {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: rgba(244, 208, 63, 0.9);
 }
 
 .tooltip-explanation-separator {
@@ -1138,10 +1160,10 @@
 }
 
 .tooltip-content-wrapper {
-  display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 /* Responsive Design */

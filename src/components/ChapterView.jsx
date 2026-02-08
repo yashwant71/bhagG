@@ -4,7 +4,10 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { useFloating, autoUpdate, offset, flip, shift } from '@floating-ui/react'
 import { getChapter, getVerseNumbers, getVerse } from '../data/utils'
+import WordTooltipContent from './WordTooltipContent'
+import TranslationTextRenderer from './TranslationTextRenderer'
 import './ChapterView.css'
+import './VersePage.css' // Reuse styles
 
 const ChapterView = () => {
   const params = useParams()
@@ -109,51 +112,80 @@ const ChapterView = () => {
     router.push(`/verse/${validChapterNum}/${verseNum}`)
   }
   
-  // Parse translation text to extract word references (remove brackets, make hoverable)
+  // Parse translation text to extract word references and handle nesting
   const parseTranslationText = (text, verse) => {
     if (!text || !verse || !verse.wordTranslations) return [{ type: 'text', content: text }]
     
-    const parts = []
-    // Match word followed by reference like "word[1.1.1]" - but don't show brackets
-    const regex = /(\S+?)(\[[\d.]+\])/g
-    let lastIndex = 0
-    let match
+    const findWordData = (refId) => {
+      return Array.isArray(verse.wordTranslations) 
+        ? verse.wordTranslations.find(w => String(w.id) === String(refId) || w.explanationRef === refId)
+        : null
+    }
     
-    while ((match = regex.exec(text)) !== null) {
-      // Add text before the match
-      if (match.index > lastIndex) {
-        parts.push({ type: 'text', content: text.substring(lastIndex, match.index) })
+    const findExplanation = (refId, wordData) => {
+      let exp = chapterData?.explanations?.find(e => e.id === refId)
+      if (!exp && wordData) {
+        exp = chapterData?.explanations?.find(e => e.id === wordData.explanationRef)
+      }
+      return exp
+    }
+
+    const parseContent = (str) => {
+      const res = []
+      let lastIdx = 0
+      let currentIdx = 0
+      
+      while (currentIdx < str.length) {
+        if (str[currentIdx] === '(') {
+          if (currentIdx > lastIdx) {
+            res.push({ type: 'text', content: str.substring(lastIdx, currentIdx) })
+          }
+          
+          let depth = 1
+          let j = currentIdx + 1
+          while (j < str.length && depth > 0) {
+            if (str[j] === '(') depth++
+            if (str[j] === ')') depth--
+            j++
+          }
+          
+          if (j < str.length && str[j] === '[') {
+            const wordContent = str.substring(currentIdx + 1, j - 1)
+            let k = j + 1
+            while (k < str.length && str[k] !== ']') {
+              k++
+            }
+            
+            if (k < str.length) {
+              const refId = str.substring(j + 1, k)
+              const wordData = findWordData(refId)
+              const explanation = findExplanation(refId, wordData)
+              
+              res.push({
+                type: 'reference',
+                refId,
+                wordText: parseContent(wordContent),
+                wordData,
+                explanation
+              })
+              
+              lastIdx = k + 1
+              currentIdx = k + 1
+              continue
+            }
+          }
+        }
+        currentIdx++
       }
       
-      const wordText = match[1]
-      const refMatch = match[2]
-      const refId = refMatch.slice(1, -1) // Remove brackets
+      if (lastIdx < str.length) {
+        res.push({ type: 'text', content: str.substring(lastIdx) })
+      }
       
-      // Find the word data
-      const wordData = Array.isArray(verse.wordTranslations) 
-        ? verse.wordTranslations.find(w => w.id === refId)
-        : null
-      
-      // Find explanation if exists from centralized explanations
-      const explanation = chapterData?.explanations?.find(e => e.id === refId)
-      
-      parts.push({
-        type: 'reference',
-        refId,
-        wordText,
-        wordData,
-        explanation
-      })
-      
-      lastIndex = match.index + match[0].length
+      return res.length > 0 ? res : [{ type: 'text', content: str }]
     }
     
-    // Add remaining text
-    if (lastIndex < text.length) {
-      parts.push({ type: 'text', content: text.substring(lastIndex) })
-    }
-    
-    return parts.length > 0 ? parts : [{ type: 'text', content: text }]
+    return parseContent(text)
   }
   
   // Handle word hover for tooltip
@@ -275,31 +307,11 @@ const ChapterView = () => {
                 
                 <div className="verse-card-content">
                   <div className={`verse-translation ${translation === 'hindi' ? 'hindi-text' : ''}`}>
-                    {parsedText.map((part, idx) => {
-                      if (part.type === 'text') {
-                        return <span key={idx}>{part.content}</span>
-                      } else {
-                        const isHovered = hoveredWord === part.refId
-                        return (
-                          <span 
-                            key={idx} 
-                            style={{ position: 'relative', display: 'inline-block' }}
-                          >
-                            <span
-                              className={`translation-word-reference ${isHovered ? 'active' : ''}`}
-                              onMouseEnter={(e) => {
-                                handleWordHover(part.refId, part.wordData, part.explanation, e)
-                                refs.setReference(e.currentTarget)
-                              }}
-                              onMouseLeave={handleWordLeave}
-                              onClick={() => {}}
-                            >
-                              {part.wordText}
-                            </span>
-                          </span>
-                        )
-                      }
-                    })}
+                    <TranslationTextRenderer 
+                      parts={parsedText} 
+                      onReferenceClick={handleWordHover}
+                      activeRefId={hoveredWord}
+                    />
                   </div>
                 </div>
               </div>
@@ -324,22 +336,12 @@ const ChapterView = () => {
           onMouseEnter={() => {}} // Keep tooltip visible
           onMouseLeave={handleWordLeave}
         >
-          {hoveredWordData.wordData && (
-            <div className="tooltip-word-data">
-              <div className="tooltip-word-sanskrit">{hoveredWordData.wordData.sanskrit}</div>
-              {hoveredWordData.wordData.transliteration && (
-                <div className="tooltip-word-transliteration">({hoveredWordData.wordData.transliteration})</div>
-              )}
-              <div className="tooltip-word-translation">
-                {hoveredWordData.wordData[translation] || hoveredWordData.wordData.english}
-              </div>
-            </div>
-          )}
-          {hoveredWordData.explanation && (
-            <div className="tooltip-word-explanation">
-              <strong>{(translation === 'hindi' && hoveredWordData.explanation.termHindi) ? hoveredWordData.explanation.termHindi : hoveredWordData.explanation.term}:</strong> {translation === 'hindi' && hoveredWordData.explanation.descHindi ? hoveredWordData.explanation.descHindi : hoveredWordData.explanation.desc}
-            </div>
-          )}
+        <WordTooltipContent 
+          words={hoveredWordData.wordData ? [hoveredWordData.wordData] : (hoveredWordData.explanation ? [{ ...hoveredWordData.explanation, english: hoveredWordData.explanation.term, hindi: hoveredWordData.explanation.termHindi, explanation: hoveredWordData.explanation }] : [])} 
+          isTranslationMode={true} 
+          translation={translation}
+          chapterData={chapterData}
+        />
         </div>
       )}
     </div>

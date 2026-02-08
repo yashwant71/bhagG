@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { useFloating, autoUpdate, offset, flip, shift, useInteractions, useHover, useClick, useRole, useDismiss, safePolygon } from '@floating-ui/react'
 import { useParams, useRouter } from 'next/navigation'
 import { getVerse, getNextVerseNumber, getPrevVerseNumber, getAllChapterNumbers, getVerseNumbers, getChapter } from '../data/utils'
+import WordTooltipContent from './WordTooltipContent'
+import TranslationTextRenderer from './TranslationTextRenderer'
 import './VersePage.css'
 
 const VersePage = () => {
@@ -449,51 +451,85 @@ const VersePage = () => {
     return () => clearTimeout(timer)
   }, [isLoaded, animationKey, sanskritLines, calculateAnimationCompletionTime])
 
-  // Parse translation text to extract word references and make them clickable
+  // Parse translation text to extract word references and handle nesting
   const parseTranslationText = (text) => {
     if (!text || !verse || !verse.wordTranslations) return [{ type: 'text', content: text }]
     
     const parts = []
-    // Match word followed by reference like "word[1.1.1]" - but don't show brackets
-    const regex = /(\S+?)(\[[\d.]+\])/g
-    let lastIndex = 0
-    let match
+    let i = 0
     
-    while ((match = regex.exec(text)) !== null) {
-      // Add text before the match
-      if (match.index > lastIndex) {
-        parts.push({ type: 'text', content: text.substring(lastIndex, match.index) })
+    const findWordData = (refId) => {
+      return Array.isArray(verse.wordTranslations) 
+        ? verse.wordTranslations.find(w => String(w.id) === String(refId) || w.explanationRef === refId)
+        : null
+    }
+    
+    const findExplanation = (refId, wordData) => {
+      let exp = chapterData?.explanations?.find(e => e.id === refId)
+      if (!exp && wordData) {
+        exp = chapterData?.explanations?.find(e => e.id === wordData.explanationRef)
+      }
+      return exp
+    }
+
+    const parseContent = (str) => {
+      const res = []
+      let lastIdx = 0
+      let currentIdx = 0
+      
+      while (currentIdx < str.length) {
+        if (str[currentIdx] === '(') {
+          // Add text before this reference
+          if (currentIdx > lastIdx) {
+            res.push({ type: 'text', content: str.substring(lastIdx, currentIdx) })
+          }
+          
+          // Find the matching ')' and then the following '[ID]'
+          let depth = 1
+          let j = currentIdx + 1
+          while (j < str.length && depth > 0) {
+            if (str[j] === '(') depth++
+            if (str[j] === ')') depth--
+            j++
+          }
+          
+          if (j < str.length && str[j] === '[') {
+            const wordContent = str.substring(currentIdx + 1, j - 1)
+            let k = j + 1
+            while (k < str.length && str[k] !== ']') {
+              k++
+            }
+            
+            if (k < str.length) {
+              const refId = str.substring(j + 1, k)
+              const wordData = findWordData(refId)
+              const explanation = findExplanation(refId, wordData)
+              
+              res.push({
+                type: 'reference',
+                refId,
+                wordText: parseContent(wordContent), // Recursive call for nested content
+                wordData,
+                explanation
+              })
+              
+              lastIdx = k + 1
+              currentIdx = k + 1
+              continue
+            }
+          }
+        }
+        currentIdx++
       }
       
-      const wordText = match[1]
-      const refMatch = match[2]
-      const refId = refMatch.slice(1, -1) // Remove brackets
+      if (lastIdx < str.length) {
+        res.push({ type: 'text', content: str.substring(lastIdx) })
+      }
       
-      // Find the word data
-      const wordData = Array.isArray(verse.wordTranslations) 
-        ? verse.wordTranslations.find(w => w.id === refId)
-        : null
-      
-      // Find explanation if exists from centralized explanations
-      const explanation = chapterData?.explanations?.find(e => e.id === refId)
-      
-      parts.push({
-        type: 'reference',
-        refId,
-        wordText,
-        wordData,
-        explanation
-      })
-      
-      lastIndex = match.index + match[0].length
+      return res.length > 0 ? res : [{ type: 'text', content: str }]
     }
     
-    // Add remaining text
-    if (lastIndex < text.length) {
-      parts.push({ type: 'text', content: text.substring(lastIndex) })
-    }
-    
-    return parts.length > 0 ? parts : [{ type: 'text', content: text }]
+    return parseContent(text)
   }
 
   // Handle translation word click
@@ -647,49 +683,58 @@ const VersePage = () => {
     const segment = sanskritLines[lineIndex]?.[wordIndex]
     if (!segment) return null
     
-    // Check if wordTranslations is an array with id field (chapter1 bracket format)
-    if (Array.isArray(verse.wordTranslations) && segment.ids && segment.ids.length > 0) {
-      // Get word data for all IDs in this word
-      const wordsData = segment.ids
-        .map(id => {
-          // Ensure both are strings for comparison
-          const idStr = String(id)
-          const data = verse.wordTranslations.find(wt => String(wt.id) === idStr)
-          if (!data) return null
-          
-          // Check for explanation by ID first
-          let explanation = chapterData?.explanations?.find(e => e.id === idStr)
-          // If not found, try to match by term name
-          if (!explanation) {
-            explanation = chapterData?.explanations?.find(e => 
-              e.term === data.english || 
-              e.term === data.hindi ||
-              (data.english && (data.english.includes(e.term) || e.term.includes(data.english))) ||
-              (data.hindi && (data.hindi.includes(e.term) || e.term.includes(data.hindi)))
-            )
-          }
-          
-          return { id: idStr, ...data, explanation: explanation || null }
-        })
-        .filter(w => w !== null)
+    // Check if wordTranslations is an array (chapter 1 format)
+    if (Array.isArray(verse.wordTranslations)) {
+      // Case 1: Word has manual IDs (brackets)
+      if (segment.ids && segment.ids.length > 0) {
+        const wordsData = segment.ids
+          .map(id => {
+            const idStr = String(id)
+            const data = verse.wordTranslations.find(wt => String(wt.id) === idStr)
+            if (!data) return null
+            
+            // Check for explanation - use explanationRef as primary key
+            const explanation = chapterData?.explanations?.find(e => e.id === (data.explanationRef || idStr))
+            
+            return { id: idStr, ...data, explanation: explanation || null }
+          })
+          .filter(w => w !== null)
+        
+        return wordsData.length > 0 ? wordsData : null
+      }
       
-      return wordsData.length > 0 ? wordsData : null
-    } else if (!Array.isArray(verse.wordTranslations)) {
-      // Object format (chapter2+ format) - use position-based keys
+      // Case 2: Fallback for Chapter 1 without brackets - match by Sanskrit text
+      const wordText = (segment.text || segment).replace(/[।-॥\s-]/g, '')
+      if (!wordText) return null
+
+      // Try fuzzy matching the Sanskrit text
+      const matches = verse.wordTranslations.filter(wt => {
+        const wtSanskrit = (wt.sanskrit || '').replace(/[।-॥\s-]/g, '')
+        return wtSanskrit && (wordText.includes(wtSanskrit) || wtSanskrit.includes(wordText))
+      })
+
+      if (matches.length > 0) {
+        return matches.map(match => {
+          const explanation = chapterData?.explanations?.find(e => e.id === (match.explanationRef || match.id))
+          return { ...match, explanation: explanation || null }
+        })
+      }
+    } else {
+      // Object format (chapter 2+ format) - use position-based keys
       const lineKey = lineIndex + 1
       const wordKeyNum = wordIndex + 1
       const key = `${lineKey}-${wordKeyNum}`
       
       const data = verse.wordTranslations[key]
       if (data) {
-        // Check for explanation by term matching
-        let explanation = chapterData?.explanations?.find(e => 
+        // Check for explanation
+        const explanation = chapterData?.explanations?.find(e => 
+          e.id === data.explanationRef ||
           e.term === data.english || 
           e.term === data.hindi ||
           (data.english && (data.english.includes(e.term) || e.term.includes(data.english))) ||
           (data.hindi && (data.hindi.includes(e.term) || e.term.includes(data.hindi)))
         )
-        // For chapter2 format, use key as id for toggling
         return [{ id: key, key, ...data, explanation: explanation || null }]
       }
     }
@@ -880,98 +925,6 @@ const VersePage = () => {
     setShowNavMenu(false)
   }
 
-  // Helper component for unified tooltip content
-  const TooltipContent = ({ words, isTranslationMode = false, isStatic = false }) => {
-    if (!words || words.length === 0) return null;
-    
-    return (
-      <div className="tooltip-content-wrapper">
-        <div className="tooltip-words-row">
-          {words.map((word, idx) => {
-            const wordId = word.id || word.key
-            const showTransliteration = toggledMeanings[wordId]
-            
-            if (isTranslationMode) {
-              return (
-                <div key={wordId || idx} className="tooltip-word-data">
-                  <div className="tooltip-word-sanskrit">{word.sanskrit}</div>
-                  {word.transliteration && (
-                    <div className="tooltip-word-transliteration">({word.transliteration})</div>
-                  )}
-                  <div className="tooltip-word-divider">—</div>
-                  <div className="tooltip-word-translation">
-                    {word[translation] || word.english}
-                  </div>
-                </div>
-              )
-            }
-            
-            let explanation = chapterData?.explanations?.find(e => e.id === wordId)
-            if (!explanation) {
-              const wordText = word[translation] || word.english || ''
-              explanation = chapterData?.explanations?.find(e => 
-                e.term === wordText || 
-                wordText.includes(e.term) ||
-                (word.english && (e.term === word.english || word.english.includes(e.term))) ||
-                (word.hindi && (e.term === word.hindi || word.hindi.includes(e.term)))
-              )
-            }
-            const hasExplanation = !!explanation
-            
-            return (
-              <span key={wordId || idx}>
-                <span 
-                  className={`tooltip-word ${hasExplanation ? 'has-explanation' : ''} ${clickedWord ? 'clickable' : ''}`}
-                  onClick={clickedWord ? (e) => {
-                    e.stopPropagation()
-                    handleMeaningClick(wordId, e)
-                  } : undefined}
-                  style={clickedWord ? { cursor: 'pointer' } : {}}
-                >
-                  {showTransliteration && word.transliteration 
-                    ? word.transliteration 
-                    : (word[translation] || word.english || '')
-                  }
-                </span>
-                {idx < words.length - 1 && <span className="tooltip-separator"> • </span>}
-              </span>
-            )
-          })}
-        </div>
-        
-        {/* Explanations Row (only for static/clicked states or if explicitly present) */}
-        {(isStatic || isTranslationMode) && words.some(w => {
-          const wId = w.id || w.key
-          return chapterData?.explanations?.find(e => e.id === wId) || 
-                 chapterData?.explanations?.find(e => e.term === (w[translation] || w.english))
-        }) && (
-          <div className="tooltip-explanations-row">
-            {words.map((word, idx) => {
-              const wordId = word.id || word.key
-              let explanation = chapterData?.explanations?.find(e => e.id === wordId)
-              if (!explanation) {
-                const wordText = word[translation] || word.english || ''
-                explanation = chapterData?.explanations?.find(e => 
-                  e.term === wordText || 
-                  wordText.includes(e.term) ||
-                  (word.english && (e.term === word.english || word.english.includes(e.term))) ||
-                  (word.hindi && (e.term === word.hindi || word.hindi.includes(e.term)))
-                )
-              }
-              if (!explanation) return null
-              
-              return (
-                <div key={wordId || idx} className="tooltip-explanation-item">
-                  <span className="tooltip-explanation-term">{(translation === 'hindi' && explanation.termHindi) ? explanation.termHindi : explanation.term}:</span>
-                  <span className="tooltip-explanation-text">{translation === 'hindi' && explanation.descHindi ? explanation.descHindi : explanation.desc}</span>
-                </div>
-              )
-            })}
-          </div>
-        )}
-      </div>
-    )
-  }
 
   return (
     <div 
@@ -1201,7 +1154,8 @@ const VersePage = () => {
                   const isClicked = clickedWord === wordKey
                   const isHovered = hoveredWord === wordKey && !clickedWord
                   const wordText = segment.text || segment
-                  const hasTranslation = segment.ids && segment.ids.length > 0
+                  const wordsDataForCheck = getWordData(lineIndex, wordIndex)
+                  const hasTranslation = (segment.ids && segment.ids.length > 0) || (wordsDataForCheck !== null)
                   const tooltipData = isClicked ? wordData : (isHovered ? hoveredWordData : null)
                   
                   return (
@@ -1311,48 +1265,36 @@ const VersePage = () => {
                   const text = translation === 'english' ? verse.english.text : verse.hindi.text
                   const parsed = parseTranslationText(text)
                   
-                  return parsed.map((part, idx) => {
-                    if (part.type === 'text') {
-                      return <span key={idx}>{part.content}</span>
-                    } else {
-                      const isClicked = clickedTranslationWord === part.refId
-                      return (
-                        <span key={idx} style={{ position: 'relative', display: 'inline-block' }}>
-                          <span
-                            className={`translation-word-reference ${isClicked ? 'active' : ''}`}
-                            onClick={(e) => handleTranslationWordClick(part.refId, part.wordData, part.explanation, e)}
-                          >
-                            {part.wordText}
-                          </span>
-                          {isClicked && translationWordData && (
-                            <div 
-                              ref={transRefs.setFloating}
-                              className="translation-word-tooltip"
-                              style={{
-                                position: transStrategy,
-                                top: transY ?? 0,
-                                left: transX ?? 0,
-                                pointerEvents: 'auto',
-                                zIndex: 2000,
-                                visibility: (transX === null) ? 'hidden' : 'visible'
-                              }}
-                            >
-                              <TooltipContent 
-                                words={translationWordData.wordData ? [translationWordData.wordData] : []} 
-                                isTranslationMode={true} 
-                              />
-                              {translationWordData.explanation && !translationWordData.wordData && (
-                                <div className="tooltip-word-explanation">
-                                  <strong>{(translation === 'hindi' && translationWordData.explanation.termHindi) ? translationWordData.explanation.termHindi : translationWordData.explanation.term}:</strong> {translation === 'hindi' && translationWordData.explanation.descHindi ? translationWordData.explanation.descHindi : translationWordData.explanation.desc}
-                                </div>
-                              )}
-                            </div>
-                          )}
-                        </span>
-                      )
-                    }
-                  })
+                  return (
+                    <TranslationTextRenderer 
+                      parts={parsed} 
+                      onReferenceClick={handleTranslationWordClick}
+                      activeRefId={clickedTranslationWord}
+                    />
+                  )
                 })()}
+
+                {clickedTranslationWord && translationWordData && (
+                  <div 
+                    ref={transRefs.setFloating}
+                    className="translation-word-tooltip"
+                    style={{
+                      position: transStrategy,
+                      top: transY ?? 0,
+                      left: transX ?? 0,
+                      pointerEvents: 'auto',
+                      zIndex: 2000,
+                      visibility: (transX === null) ? 'hidden' : 'visible'
+                    }}
+                  >
+                      <WordTooltipContent 
+                        words={translationWordData.wordData ? [translationWordData.wordData] : (translationWordData.explanation ? [{ ...translationWordData.explanation, english: translationWordData.explanation.term, hindi: translationWordData.explanation.termHindi, explanation: translationWordData.explanation }] : [])} 
+                        isTranslationMode={true} 
+                        translation={translation}
+                        chapterData={chapterData}
+                      />
+                  </div>
+                )}
               </div>
               <button 
                 className="copy-button"
@@ -1401,10 +1343,13 @@ const VersePage = () => {
             zIndex: 1000
           }}
         >
-          <TooltipContent 
+         <WordTooltipContent 
             words={wordData || hoveredWordData} 
             isTranslationMode={false} 
-            isStatic={!!clickedWord}
+            translation={translation}
+            chapterData={chapterData}
+            toggledMeanings={toggledMeanings}
+            onMeaningClick={handleMeaningClick}
           />
         </span>
       )}

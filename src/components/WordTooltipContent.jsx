@@ -75,8 +75,25 @@ const WordTooltipContent = ({
 
   if (!words || words.length === 0) return null;
 
+  // Pre-calculate which words have explanations to avoid empty sections
+  const wordsWithExplanations = !activeView ? words.map((word, idx) => {
+    const wordId = word.id || word.key;
+    let explanation = word.explanation || chapterData?.explanations?.find(e => e.id === (word.explanationRef || wordId));
+    if (!explanation) {
+      const wordText = word[translation] || word.english || '';
+      explanation = chapterData?.explanations?.find(e => 
+        e.term === wordText || 
+        wordText.includes(e.term) ||
+        (word.english && (e.term === word.english || word.english.includes(e.term))) ||
+        (word.hindi && (e.term === word.hindi || word.hindi.includes(e.term)))
+      );
+    }
+    return { word, wordId, explanation };
+  }).filter(item => item.explanation) : [];
+
+  const hasAnyExplanation = wordsWithExplanations.length > 0;
+
   // Find if activeView matches any of our original words to show word header
-  // Only show this header if we are at the first level of navigation (direct word explanation)
   const matchedWord = (activeView && navStack.length === 1) ? words.find(w => {
     const wordId = w.id || w.key;
     return w.explanationRef === activeView.id || wordId === activeView.id || 
@@ -84,7 +101,7 @@ const WordTooltipContent = ({
   }) : null;
 
   return (
-    <div className="tooltip-content-wrapper">
+    <div className={`tooltip-content-wrapper ${!hasAnyExplanation && !activeView ? 'no-explanations' : ''}`}>
       {navStack.length > 0 && (
         <button className="tooltip-back-button" onClick={handleBack}>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -121,42 +138,29 @@ const WordTooltipContent = ({
             })}
           </div>
           
-          <div className="tooltip-explanations-section">
-            {words.map((word, idx) => {
-              const wordId = word.id || word.key;
-              let explanation = word.explanation || chapterData?.explanations?.find(e => e.id === (word.explanationRef || wordId));
-              if (!explanation) {
-                const wordText = word[translation] || word.english || '';
-                explanation = chapterData?.explanations?.find(e => 
-                  e.term === wordText || 
-                  wordText.includes(e.term) ||
-                  (word.english && (e.term === word.english || word.english.includes(e.term))) ||
-                  (word.hindi && (e.term === word.hindi || word.hindi.includes(e.term)))
-                );
-              }
-              if (!explanation) return null;
-              
-              return (
+          {hasAnyExplanation && (
+            <div className="tooltip-explanations-section">
+              {wordsWithExplanations.map((item, idx) => (
                 <div 
-                  key={`${wordId || idx}-exp`} 
+                  key={`${item.wordId || idx}-exp`} 
                   className="tooltip-explanation-item clickable"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setNavStack(prev => [...prev, explanation]);
+                    setNavStack(prev => [...prev, item.explanation]);
                   }}
                 >
                   <div className="tooltip-explanation-header">
                     <span className="tooltip-explanation-term">
-                      {getActiveTerm(explanation)}
+                      {getActiveTerm(item.explanation)}
                     </span>
                   </div>
                   <div className="tooltip-explanation-text">
-                    {renderParsedDescription(getActiveDesc(explanation))}
+                    {renderParsedDescription(getActiveDesc(item.explanation))}
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              ))}
+            </div>
+          )}
         </>
       ) : (
         <div key={activeView.id} className="tooltip-explanation-item active-view">

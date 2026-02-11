@@ -9,7 +9,13 @@ const WordTooltipContent = ({
   onMeaningClick 
 }) => {
   const [navStack, setNavStack] = useState([]);
+  const [showingDetails, setShowingDetails] = useState(false);
   
+  // Reset showingDetails when navigation stack changes (e.g. going back or clicking nested)
+  React.useEffect(() => {
+    setShowingDetails(false);
+  }, [navStack.length]);
+
   const handleNestedClick = useCallback((explanationId, e) => {
     e.stopPropagation();
     const targetExp = chapterData?.explanations?.find(e => e.id === explanationId);
@@ -61,10 +67,23 @@ const WordTooltipContent = ({
     return parts.length > 0 ? parts : text;
   };
 
-  const getActiveDesc = (exp) => {
+  const getActiveDesc = (exp, showDetail = false) => {
     if (!exp) return null;
-    if (translation === 'hindi') return exp.descHindi || exp.desc;
+    const isHindi = translation === 'hindi';
+    
+    if (showDetail) {
+      // Prioritize the detailed description if requested
+      if (isHindi) return exp.descDetailHindi || exp.descDetail || exp.descHindi || exp.desc;
+      return exp.descDetail || exp.descDetailHindi || exp.desc || exp.descHindi;
+    }
+    
+    if (isHindi) return exp.descHindi || exp.desc;
     return exp.desc || exp.descHindi;
+  };
+
+  const hasDetail = (exp) => {
+    if (!exp) return false;
+    return translation === 'hindi' ? !!exp.descDetailHindi : !!exp.descDetail;
   };
 
   const getActiveTerm = (exp) => {
@@ -181,7 +200,18 @@ const WordTooltipContent = ({
             </span>
           </div>
           <div className="tooltip-explanation-text">
-            {renderParsedDescription(getActiveDesc(activeView))}
+            {renderParsedDescription(getActiveDesc(activeView, showingDetails))}
+            {hasDetail(activeView) && !showingDetails && (
+              <button 
+                className="tooltip-know-more-button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowingDetails(true);
+                }}
+              >
+                {translation === 'hindi' ? 'और जानें...' : 'Know More...'}
+              </button>
+            )}
           </div>
         </div>
       )}

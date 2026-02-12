@@ -1,13 +1,12 @@
 export const explanations = [
 
-
   // shiva & family
   {
     "id": "exp_trinity",
     "term": "Trimurti",
     "termHindi": "त्रिमूर्ति",
     "desc": "The Trimurti refers to the three principal deities of cosmic function: (Brahma)[exp_brahma] the Creator, (Vishnu)[exp_vishnu] the Preserver, and (Shiva)[exp_shiva] the Transformer.",
-    "descHindi": "त्रिमूर्ति हिंदू दर्शन में तीन प्रमुख देवताओं का सिद्धांत है: (ब्रह्मा)[exp_brahma] सृष्टिकर्ता, (विष्णु)[exp_vishnu] पालनकर्ता और (शिव)[exp_shiva] संहार एवं परिवर्तनकर्ता।"
+    "descHindi": "त्रिमूर्ति हिंदू दर्शन में तीन प्रमुख देवताओं का सिद्धांत है: (ब्रह्मा)[exp_brahma] सृष्टिकर्ता, (विष्णु)[exp_vishnu] पालनकर्ता और (भगवान शिव)[exp_shiva] संहार एवं परिवर्तनकर्ता।"
   },
   {
     "id": "exp_brahma",
@@ -17,7 +16,7 @@ export const explanations = [
     "descHindi": "त्रिमूर्ति में पूजनीय सृष्टिकर्ता, जिनके द्वारा सृष्टि प्रकट होती है।",
     "descDetail": "In the (Puranas)[exp_puranas], Lord Brahma manifests the worlds and beings at the beginning of each cosmic cycle (kalpa). He is depicted with four faces symbolizing the four Vedas. Though less widely worshipped independently, he is eternally honored as Prajapati, the lord of creation.",
     "descDetailHindi": "(पुराणों)[exp_puranas] में भगवान ब्रह्मा प्रत्येक कल्प के प्रारंभ में लोकों और प्राणियों की सृष्टि करते हैं। उन्हें चार वेदों के प्रतीक रूप में चार मुखों वाला दर्शाया जाता है। यद्यपि उनकी स्वतंत्र उपासना कम प्रचलित है, वे सदा प्रजापति के रूप में पूजनीय हैं।",
-    "isGod": true
+    "category": "deity"
   },
   {
     "id": "exp_puranas",
@@ -26,7 +25,7 @@ export const explanations = [
     "desc": "Ancient Hindu scriptures that expound creation, cosmology, dharma, and the glories of various deities.",
     "descHindi": "प्राचीन हिंदू ग्रंथ जो सृष्टि, ब्रह्मांडीय संरचना, धर्म तथा विभिन्न देवताओं की महिमा का वर्णन करते हैं।",
     "descDetail": "The Puranas are an important part of Hindu sacred literature, traditionally said to be composed by (Veda Vyasa)[exp_veda_vyasa]. There are 18 Mahapuranas and several Upapuranas. They describe the cycles of creation and dissolution, genealogies of gods and kings, and the paths of dharma and moksha, while glorifying deities such as (Vishnu)[exp_vishnu], (Shiva)[exp_shiva], and (Devi)[exp_shakti].",
-    "descDetailHindi": "पुराण हिंदू धर्मग्रंथों का एक महत्वपूर्ण अंग हैं, जिनकी रचना परंपरागत रूप से (वेद व्यास)[exp_veda_vyasa] द्वारा मानी जाती है। 18 महापुराण और अनेक उपपुराण बताए गए हैं। इनमें सृष्टि और प्रलय के चक्र, देवताओं और राजाओं की वंशावली, तथा धर्म और मोक्ष के मार्ग का वर्णन मिलता है, साथ ही (विष्णु)[exp_vishnu], (शिव)[exp_shiva] और (देवी)[exp_shakti] की महिमा का वर्णन किया गया है।",
+    "descDetailHindi": "पुराण हिंदू धर्मग्रंथों का एक महत्वपूर्ण अंग हैं, जिनकी रचना परंपरागत रूप से (वेद व्यास)[exp_veda_vyasa] द्वारा मानी जाती है। 18 महापुराण और अनेक उपपुराण बताए गए हैं। इनमें सृष्टि और प्रलय के चक्र, देवताओं और राजाओं की वंशावली, तथा धर्म और मोक्ष के मार्ग का वर्णन मिलता है, साथ ही (विष्णु)[exp_vishnu], (भगवान शिव)[exp_shiva] और (देवी)[exp_shakti] की महिमा का वर्णन किया गया है।",
   },
   {
     "id": "exp_vishnu",
@@ -36,25 +35,25 @@ export const explanations = [
     "descHindi": "हिंदू (त्रिमूर्ति)[exp_trinity] में पालनकर्ता देवता, जो ब्रह्मांड के रखरखाव और संरक्षण के लिए उत्तरदायी हैं।",
     "descDetail": "Vishnu is the sustainer of cosmic order (dharma). He descends to the material world in various forms, known as avatars (such as Rama, Krishna, and Buddha), to restore balance whenever evil threatens creation. He resides in Vaikuntha, the abode of bliss, and is often depicted with four arms holding a conch, discus, lotus, and mace.",
     "descDetailHindi": "विष्णु ब्रह्मांडीय व्यवस्था (धर्म) के पालक हैं। जब भी बुराई सृष्टि को खतरा पहुँचाती है, वे विभिन्न अवतारों (जैसे राम, कृष्ण और बुद्ध) के रूप में भौतिक जगत में अवतरित होते हैं ताकि संतुलन बहाल कर सकें। वे वैकुंठ, जो आनंद का धाम है, में निवास करते हैं और प्रायः चार भुजाओं वाले दर्शाए जाते हैं, जिनमें शंख, चक्र, कमल और गदा सुशोभित होते हैं।",
-    "isGod": true
+    "category": "deity"
   },
   {
     "id": "exp_shiva",
-    "term": "God Shiva",
+    "term": "Shiva",
     "termHindi": "भगवान शिव",
     "desc": "One of the Supreme Gods of the Hindu (Trinity)[exp_trinity], known as the Destroyer and Transformer of the universe.",
     "descHindi": "हिंदू त्रिमूर्ति के प्रमुख देवताओं में से एक, जिन्हें सृष्टि के संहारक और परिवर्तनकर्ता के रूप में जाना जाता है।",
-    "descDetail": "God Shiva represents destruction not as annihilation, but as a necessary force for renewal and transformation. He is known as (Mahadeva)[exp_mahadeva], (Shankara)[exp_shankara], (Adiyogi)[exp_adiyogi] and (Rudra)[exp_rudra], and is the husband of (Parvati)[exp_parvati] and father of (Ganesha)[exp_ganesha] and (Kartikeya)[exp_kartikeya]. He resides on Mount Kailasa, meditates in deep yogic trance, and embodies both fierce power and supreme compassion.",
+    "descDetail": "Shiva represents destruction not as annihilation, but as a necessary force for renewal and transformation. He is known as (Mahadeva)[exp_mahadeva], (Shankara)[exp_shankara], (Adiyogi)[exp_adiyogi] and (Rudra)[exp_rudra], and is the husband of (Parvati)[exp_parvati] and father of (Ganesha)[exp_ganesha] and (Kartikeya)[exp_kartikeya]. He resides on Mount Kailasa, meditates in deep yogic trance, and embodies both fierce power and supreme compassion.",
     "descDetailHindi": "भगवान शिव संहार का प्रतिनिधित्व करते हैं, जो विनाश नहीं बल्कि पुनर्निर्माण और परिवर्तन के लिए आवश्यक शक्ति है। उन्हें (महादेव)[exp_mahadeva], (शंकर)[exp_shankara] और (रुद्र)[exp_rudra] के नाम से भी जाना जाता है। वे (पार्वती)[exp_parvati] के पति और (गणेश)[exp_ganesha] तथा (कार्तिकेय)[exp_kartikeya] के पिता हैं। वे कैलाश पर्वत पर निवास करते हैं, गहन योग समाधि में लीन रहते हैं, और उग्र शक्ति तथा करुणा दोनों का स्वरूप हैं।",
-    "isGod": true
+    "category": "deity"
   },
   {
     "id": "exp_adiyogi",
     "term": "Adiyogi",
     "termHindi": "अदियोगी",
     "desc": "A title of (Shiva)[exp_shiva], meaning 'The First Yogi'. It signifies his status as the originator of (yoga)[exp_yoga].",
-    "descHindi": "(भगवान शिव)[exp_shiva] का एक श्रेष्ठ नाम, जिसका अर्थ है 'महान देव'। यह देवताओं में उनकी सर्वोच्च स्थिति को दर्शाता है।",
-    "isGod": true
+    "descHindi": "(भगवान शिव)[exp_shiva] का एक नाम, जिसका अर्थ है 'प्रथम योगी'। यह उन्हें योग के आदि स्रोत के रूप में दर्शाता है।",
+    "category": "deity"
   },
   {
     "id": "exp_yoga",
@@ -62,8 +61,8 @@ export const explanations = [
     "termHindi": "योग",
     "desc": "A spiritual discipline and path of union that harmonizes body, mind, and consciousness with the ultimate reality.",
     "descHindi": "आत्मा, मन और चेतना को परम सत्य से जोड़ने वाली आध्यात्मिक साधना और अनुशासन।",
-    "descDetail": "Yoga originates from the Sanskrit root 'Yuj', meaning 'to unite'. It represents the union of individual consciousness with universal consciousness. Beyond physical postures (asanas), Yoga encompasses meditation, breath control (pranayama), ethical discipline, and self-realization. (Lord Shiva)[exp_shiva] is revered as the Adiyogi — the primordial source of yogic wisdom.",
-    "descDetailHindi": "योग शब्द संस्कृत धातु 'युज्' से बना है, जिसका अर्थ है 'जोड़ना'। यह व्यक्तिगत चेतना को सार्वभौमिक चेतना से जोड़ने की साधना है। केवल आसनों तक सीमित न होकर, योग में ध्यान, प्राणायाम, आचार-संहिता और आत्मसाक्षात्कार सम्मिलित हैं। (शिव)[exp_shiva] को आदियोगी के रूप में योग ज्ञान का मूल स्रोत माना जाता है।"
+    "descDetail": "Yoga originates from the Sanskrit root 'Yuj', meaning 'to unite'. It represents the union of individual consciousness with universal consciousness. Beyond physical postures (asanas), Yoga encompasses meditation, breath control (pranayama), ethical discipline, and self-realization. (Shiva)[exp_shiva] is revered as the Adiyogi — the primordial source of yogic wisdom.",
+    "descDetailHindi": "योग शब्द संस्कृत धातु 'युज्' से बना है, जिसका अर्थ है 'जोड़ना'। यह व्यक्तिगत चेतना को सार्वभौमिक चेतना से जोड़ने की साधना है। केवल आसनों तक सीमित न होकर, योग में ध्यान, प्राणायाम, आचार-संहिता और आत्मसाक्षात्कार सम्मिलित हैं। (भगवान शिव)[exp_shiva] को आदियोगी के रूप में योग ज्ञान का मूल स्रोत माना जाता है।",
   },
   {
     "id": "exp_mahadeva",
@@ -73,7 +72,7 @@ export const explanations = [
     "descHindi": "(भगवान शिव)[exp_shiva] का एक श्रेष्ठ नाम, जिसका अर्थ है 'महान देव'। यह देवताओं में उनकी सर्वोच्च स्थिति को दर्शाता है।",
     "descDetail": "Mahadeva represents (भगवान शिव)[exp_shiva] in his supreme and all-encompassing form. As Mahadeva, he embodies cosmic destruction, renewal, ascetic wisdom, and divine grace. He is the husband of (Parvati)[exp_parvati] and father of (Ganesha)[exp_ganesha] and (Kartikeya)[exp_kartikeya].",
     "descDetailHindi": "महादेव रूप में (भगवान शिव)[exp_shiva] समस्त सृष्टि के सर्वोच्च और व्यापक स्वरूप को दर्शाते हैं। इस रूप में वे संहार, पुनर्सृजन, तपस्या और करुणा के प्रतीक हैं। वे (पार्वती)[exp_parvati] के पति तथा (गणेश)[exp_ganesha] और (कार्तिकेय)[exp_kartikeya] के पिता हैं।",
-    "isGod": true
+    "category": "deity"
   },
   {
     "id": "exp_shankara",
@@ -82,8 +81,8 @@ export const explanations = [
     "desc": "A benevolent form of (Shiva)[exp_shiva], meaning 'The Auspicious One' or 'Bestower of Happiness'.",
     "descHindi": "(भगवान शिव)[exp_shiva] का मंगलकारी रूप, जिसका अर्थ है 'कल्याण करने वाला'।",
     "descDetail": "As Shankara, (भगवान शिव)[exp_shiva] represents compassion, protection, and divine grace. This name emphasizes his role as a benefactor who removes suffering and grants spiritual upliftment to devotees.",
-    "descDetailHindi": "शंकर रूप में शिव करुणा, संरक्षण और दिव्य अनुग्रह का प्रतीक हैं। यह नाम उनके उस स्वरूप को दर्शाता है जो भक्तों के दुख दूर कर आध्यात्मिक उन्नति प्रदान करता है।",
-    "isGod": true
+    "descDetailHindi": "शंकर रूप में भगवान शिव करुणा, संरक्षण और दिव्य अनुग्रह का प्रतीक हैं। यह नाम उनके उस स्वरूप को दर्शाता है जो भक्तों के दुख दूर कर आध्यात्मिक उन्नति प्रदान करता है।",
+    "category": "deity"
   },
   {
     "id": "exp_rudra",
@@ -91,33 +90,35 @@ export const explanations = [
     "termHindi": "रुद्र",
     "desc": "An ancient Vedic form of (Shiva)[exp_shiva], associated with storm, fierce power, and transformative force.",
     "descHindi": "(भगवान शिव)[exp_shiva] का वैदिक स्वरूप, जो तूफ़ान, उग्र शक्ति और परिवर्तनकारी ऊर्जा से संबंधित है।",
-    "descDetail": "Rudra appears in the Vedic texts as a powerful and fearsome deity associated with storms and healing. Over time, Rudra evolved into the more widely worshipped form of (Lord Shiva)[exp_shiva]. He represents both destructive force and divine healing energy.",
+    "descDetail": "Rudra appears in the Vedic texts as a powerful and fearsome deity associated with storms and healing. Over time, Rudra evolved into the more widely worshipped form of (Shiva)[exp_shiva]. He represents both destructive force and divine healing energy.",
     "descDetailHindi": "वैदिक ग्रंथों में रुद्र एक उग्र और शक्तिशाली देवता के रूप में वर्णित हैं, जो तूफ़ान और उपचार दोनों से जुड़े हैं। कालांतर में रुद्र का स्वरूप व्यापक रूप से पूजित (भगवान शिव)[exp_shiva] के रूप में विकसित हुआ। वे संहार और उपचार दोनों शक्तियों का प्रतिनिधित्व करते हैं।",
-    "isGod": true
+    "category": "deity"
   },
   {
     "id": "exp_ganesha",
     "term": "Ganesha",
     "termHindi": "गणेश",
-    "desc": "The god of wisdom, prosperity, and good fortune. He is the son of (Lord Shiva)[exp_shiva] and (Parvati)[exp_parvati], and is revered as the remover of obstacles and the god of wisdom.",
-    "descHindi": "ज्ञान, विकास और भावना के देवता। वे (शिव)[exp_shiva] और (पार्वती)[exp_parvati] के बेटे हैं, और वे ब्रह्मांड की माता भी जानी जाती है।"
+    "desc": "The god of wisdom, prosperity, and good fortune. He is the son of (Shiva)[exp_shiva] and (Parvati)[exp_parvati], and is revered as the remover of obstacles and the god of wisdom.",
+    "descHindi": "ज्ञान, बुद्धि और विघ्नों को दूर करने वाले देवता। वे (भगवान शिव)[exp_shiva] और (Parvati)[exp_parvati] के पुत्र हैं और विघ्नहर्ता के रूप में पूजित होते हैं।",
+    "category": "deity"
   },
   {
     "id": "exp_kartikeya",
     "term": "Kartikeya",
     "termHindi": "कार्तिकेय",
-    "desc": "The god of war and the son of (God Shiva)[exp_shiva] and (Parvati)[exp_parvati]. He is revered as the god of war and is known as Murugan in Tamil Nadu.",
-    "descHindi": "कार्तिकेय, जिन्हें युद्धकर्ता के रूप में जाना जाता है। वे (भगवान शिव)[exp_shiva] और (पार्वती)[exp_parvati] के बेटे हैं, और वे ब्रह्मांड की माता भी जानी जाती है।"
+    "desc": "The god of war and the son of (Shiva)[exp_shiva] and (Parvati)[exp_parvati]. He is revered as the god of war and is known as Murugan in Tamil Nadu.",
+    "descHindi": "कार्तिकेय, जिन्हें स्कंद या मुरुगन भी कहा जाता है, युद्ध और वीरता के देवता हैं। वे (भगवान शिव)[exp_shiva] और (पार्वती)[exp_parvati] के पुत्र हैं।",
+    "category": "deity"
   },
   {
     "id": "exp_parvati",
     "term": "Parvati",
     "termHindi": "पार्वती",
-    "desc": "A principal Goddess (Devi) and manifestation of (Shakti)[exp_shakti], the divine consort of (God Shiva)[exp_shiva].",
+    "desc": "A principal Goddess (Devi) and manifestation of (Shakti)[exp_shakti], the divine consort of (Shiva)[exp_shiva].",
     "descHindi": "एक प्रमुख देवी और (शक्ति)[exp_shakti] का प्राकट्य, जो (भगवान शिव)[exp_shiva] की दिव्य अर्धांगिनी हैं।",
     "descDetail": "Born to (Himavan)[exp_himavan], Parvati represents devotion, strength, and divine grace. She is the mother of (Ganesha)[exp_ganesha] and (Kartikeya)[exp_kartikeya], and manifests in powerful forms such as (Durga)[exp_durga] and (Kali)[exp_kali] when needed.",
     "descDetailHindi": "(हिमवान)[exp_himavan] की पुत्री पार्वती भक्ति, शक्ति और दिव्य करुणा का प्रतीक हैं। वे (गणेश)[exp_ganesha] और (कार्तिकेय)[exp_kartikeya] की माता हैं तथा आवश्यकता पड़ने पर (दुर्गा)[exp_durga] और (काली)[exp_kali] जैसे उग्र रूप धारण करती हैं।",
-    "isGod": true
+    "category": "deity"
   },
   {
     "id": "exp_shakti",
@@ -125,18 +126,19 @@ export const explanations = [
     "termHindi": "शक्ति",
     "desc": "The primordial Divine Feminine energy and cosmic power underlying all creation. She manifests in various forms such as (Parvati)[exp_parvati], (Durga)[exp_durga], (Kali)[exp_kali], and (Saraswati)[exp_saraswati].",
     "descHindi": "आदिशक्ति, जो समस्त सृष्टि की मूल दिव्य स्त्री ऊर्जा और ब्रह्मांडीय शक्ति हैं। वे (पार्वती)[exp_parvati], (दुर्गा)[exp_durga], (काली)[exp_kali] और (सरस्वती)[exp_saraswati] जैसे विविध रूपों में प्रकट होती हैं।",
-    "descDetail": "Shakti is the dynamic cosmic energy that enables creation, preservation, and transformation. Without Shakti, even (God Shiva)[exp_shiva] is considered inert. She is the supreme creative force of the universe and appears in many forms to sustain cosmic balance.",
+    "descDetail": "Shakti is the dynamic cosmic energy that enables creation, preservation, and transformation. Without Shakti, even (Shiva)[exp_shiva] is considered inert. She is the supreme creative force of the universe and appears in many forms to sustain cosmic balance.",
     "descDetailHindi": "शक्ति वह गतिशील ब्रह्मांडीय ऊर्जा हैं जो सृष्टि, पालन और संहार को संभव बनाती हैं। शक्ति के बिना (भगवान शिव)[exp_shiva] भी निष्क्रिय माने जाते हैं। वे ब्रह्मांड की परम सृजनात्मक शक्ति हैं, जो संतुलन बनाए रखने हेतु अनेक रूपों में प्रकट होती हैं।",
-    "isGod": true
+    "category": "deity"
   },
   {
     "id": "exp_sati",
     "term": "Sati",
     "termHindi": "सती",
-    "desc": "A manifestation of (Shakti)[exp_shakti] and the first consort of (Lord Shiva)[exp_shiva], who later manifested as (Parvati)[exp_parvati].",
-    "descHindi": "(शक्ति)[exp_shakti] का एक प्राकट्य और (शिव)[exp_shiva] की प्रथम अर्धांगिनी, जिन्होंने बाद में (पार्वती)[exp_parvati] के रूप में पुनः अवतार लिया।",
+    "desc": "A manifestation of (Shakti)[exp_shakti] and the first consort of (Shiva)[exp_shiva], who later manifested as (Parvati)[exp_parvati].",
+    "descHindi": "(शक्ति)[exp_shakti] का एक प्राकट्य और (भगवान शिव)[exp_shiva] की प्रथम अर्धांगिनी, जिन्होंने बाद में (पार्वती)[exp_parvati] के रूप में पुनः अवतार लिया।",
     "descDetail": "Sati represents the Divine Feminine in an earlier manifestation. After withdrawing her earthly form during the episode involving (Daksha)[exp_daksha], she later manifested again as (Parvati)[exp_parvati], continuing her eternal union with Shiva.",
-    "descDetailHindi": "सती दिव्य स्त्री शक्ति का एक पूर्व प्राकट्य हैं। (दक्ष)[exp_daksha] से संबंधित घटना के पश्चात उन्होंने अपना भौतिक स्वरूप त्याग दिया और पुनः (पार्वती)[exp_parvati] के रूप में प्रकट होकर शिव के साथ अपने शाश्वत मिलन को आगे बढ़ाया।"
+    "descDetailHindi": "सती दिव्य स्त्री शक्ति का एक पूर्व प्राकट्य हैं। (दक्ष)[exp_daksha] से संबंधित घटना के पश्चात उन्होंने अपना भौतिक स्वरूप त्याग दिया और पुनः (पार्वती)[exp_parvati] के रूप में प्रकट होकर भगवान शिव के साथ अपने शाश्वत मिलन को आगे बढ़ाया।",
+    "category": "deity"
   },
   {
     "id": "exp_daksha",
@@ -144,7 +146,7 @@ export const explanations = [
     "termHindi": "दक्ष",
     "desc": "One of the Prajapatis (progenitors of creation) and a mind-born son of (Brahma)[exp_brahma].",
     "descHindi": "सृष्टि के प्रजापतियों में से एक तथा (ब्रह्मा)[exp_brahma] के मानस पुत्र।",
-    "descDetail": "Daksha was entrusted with expanding creation and maintaining sacred order through yajna (ritual sacrifice). During a great yajna, he did not invoke (Lord Shiva)[exp_shiva], which led to the divine event connected with (Sati)[exp_sati], marking a profound transformation within the cosmic cycle.",
+    "descDetail": "Daksha was entrusted with expanding creation and maintaining sacred order through yajna (ritual sacrifice). During a great yajna, he did not invoke (Shiva)[exp_shiva], which led to the divine event connected with (Sati)[exp_sati], marking a profound transformation within the cosmic cycle.",
     "descDetailHindi": "दक्ष को सृष्टि के विस्तार और यज्ञ द्वारा धर्म व्यवस्था बनाए रखने का दायित्व दिया गया था। एक महान यज्ञ में उन्होंने (भगवान शिव)[exp_shiva] का आह्वान नहीं किया, जिससे (सती)[exp_sati] से जुड़ा दिव्य प्रसंग उत्पन्न हुआ और सृष्टि चक्र में एक महान परिवर्तन आया।"
 
   },
@@ -155,7 +157,8 @@ export const explanations = [
     "desc": "The divine personification of the Earth and the sustaining mother of all life.",
     "descHindi": "पृथ्वी का दिव्य स्वरूप तथा समस्त जीवन की धारक माता।",
     "descDetail": "Bhumi represents stability, nourishment, patience, and fertility. She sustains all beings and embodies endurance and compassion. In various traditions, she is regarded as an aspect of the Divine Feminine and is sometimes associated with (God Vishnu)[exp_vishnu] as Bhudevi.",
-    "descDetailHindi": "भूदेवी स्थिरता, पोषण, धैर्य और उर्वरता का प्रतीक हैं। वे समस्त प्राणियों का पालन करती हैं और सहनशीलता तथा करुणा का स्वरूप हैं। अनेक परंपराओं में उन्हें दिव्य स्त्री शक्ति का रूप माना गया है तथा कभी-कभी (भगवान विष्णु)[exp_vishnu] की भूदेवी के रूप में पूजित होती हैं।"
+    "descDetailHindi": "भूदेवी स्थिरता, पोषण, धैर्य और उर्वरता का प्रतीक हैं। वे समस्त प्राणियों का पालन करती हैं और सहनशीलता तथा करुणा का स्वरूप हैं। अनेक परंपराओं में उन्हें दिव्य स्त्री शक्ति का रूप माना गया है तथा कभी-कभी (भगवान विष्णु)[exp_vishnu] की भूदेवी के रूप में पूजित होती हैं।",
+    "category": "deity"
   },
   {
     "id": "exp_saraswati",
@@ -164,15 +167,16 @@ export const explanations = [
     "desc": "The Goddess of knowledge, wisdom, speech, music, and arts.",
     "descHindi": "ज्ञान, वाणी, संगीत और कला की देवी।",
     "descDetail": "Saraswati embodies divine wisdom (Vidya) and the flow of consciousness. She is often associated with (God Brahma)[exp_brahma] and represents the creative intelligence underlying the universe. Seated upon a white lotus and holding the veena, she symbolizes purity of knowledge and refined awareness.",
-    "descDetailHindi": "सरस्वती विद्या और चेतना के प्रवाह की अधिष्ठात्री देवी हैं। उन्हें प्रायः (भगवान ब्रह्मा)[exp_brahma] से संबंधित माना जाता है और वे सृष्टि के रचनात्मक ज्ञान का प्रतीक हैं। श्वेत कमल पर विराजमान तथा वीणा धारण किए हुए उनका स्वरूप निर्मल ज्ञान और सूक्ष्म चेतना को दर्शाता है।"
+    "descDetailHindi": "सरस्वती विद्या और चेतना के प्रवाह की अधिष्ठात्री देवी हैं। उन्हें प्रायः (भगवान ब्रह्मा)[exp_brahma] से संबंधित माना जाता है और वे सृष्टि के रचनात्मक ज्ञान का प्रतीक हैं। श्वेत कमल पर विराजमान तथा वीणा धारण किए हुए उनका स्वरूप निर्मल ज्ञान और सूक्ष्म चेतना को दर्शाता है।",
+    "category": "deity"
   },
   {
     "id": "exp_himavan",
     "term": "Himavan",
     "termHindi": "हिमवान / हिमालय",
-    "desc": "The personification and king of the Himalayas in Hindu mythology. He is the father of (Goddess Parvati)[exp_parvati] and father-in-law of (God Shiva)[exp_shiva].",
+    "desc": "The personification and king of the Himalayas in Hindu mythology. He is the father of (Goddess Parvati)[exp_parvati] and father-in-law of (Shiva)[exp_shiva].",
     "descHindi": "हिंदू पुराणों में हिमालय पर्वत के अधिपति और सजीव स्वरूप। वे (पार्वती)[exp_parvati] के पिता तथा (भगवान शिव)[exp_shiva] के श्वसुर हैं।",
-    "descDetail": "Himavan, also known as Himavat, is regarded as the divine embodiment of the Himalayan mountains. He represents stability, purity, and spiritual elevation. As the father of (Goddess Parvati)[exp_parvati], he plays a significant role in the sacred union of (God Shiva)[exp_shiva] and (Goddess Parvati)[exp_parvati]. In many scriptures, he is described as a wise and noble king devoted to dharma.",
+    "descDetail": "Himavan, also known as Himavat, is regarded as the divine embodiment of the Himalayan mountains. He represents stability, purity, and spiritual elevation. As the father of (Goddess Parvati)[exp_parvati], he plays a significant role in the sacred union of (Shiva)[exp_shiva] and (Goddess Parvati)[exp_parvati]. In many scriptures, he is described as a wise and noble king devoted to dharma.",
     "descDetailHindi": "हिमवान, जिन्हें हिमवत भी कहा जाता है, हिमालय पर्वत के दिव्य और सजीव स्वरूप माने जाते हैं। वे स्थिरता, पवित्रता और आध्यात्मिक उत्कर्ष के प्रतीक हैं। (पार्वती)[exp_parvati] के पिता के रूप में वे (भगवान शिव)[exp_shiva] - (पार्वती)[exp_parvati] के दिव्य विवाह में महत्वपूर्ण भूमिका निभाते हैं। शास्त्रों में उन्हें धर्मनिष्ठ, बुद्धिमान और महान राजा के रूप में वर्णित किया गया है।"
   },
   {
@@ -182,7 +186,8 @@ export const explanations = [
     "desc": "The fierce warrior form of (Parvati)[exp_parvati], the Goddess of divine power who destroys evil and protects righteousness.",
     "descHindi": "(पार्वती)[exp_parvati] का उग्र और वीर रूप, जो दुष्टों का संहार कर धर्म की रक्षा करती हैं।",
     "descDetail": "Durga represents the invincible Shakti who defeated powerful demons like Mahishasura. She symbolizes courage, protection, and divine strength. Though fierce in battle, she is compassionate toward devotees and is worshipped as the Universal Mother.",
-    "descDetailHindi": "दुर्गा अजेय शक्ति का स्वरूप हैं जिन्होंने महिषासुर जैसे शक्तिशाली असुरों का वध किया। वे साहस, संरक्षण और दिव्य बल की प्रतीक हैं। युद्ध में उग्र होते हुए भी वे भक्तों के प्रति करुणामयी हैं और जगत् जननी के रूप में पूजित होती हैं।"
+    "descDetailHindi": "दुर्गा अजेय शक्ति का स्वरूप हैं जिन्होंने महिषासुर जैसे शक्तिशाली असुरों का वध किया। वे साहस, संरक्षण और दिव्य बल की प्रतीक हैं। युद्ध में उग्र होते हुए भी वे भक्तों के प्रति करुणामयी हैं और जगत् जननी के रूप में पूजित होती हैं।",
+    "category": "deity"
   },
   {
     "id": "exp_kali",
@@ -191,28 +196,23 @@ export const explanations = [
     "desc": "The intense and transformative form of (Parvati)[exp_parvati], representing time, destruction of ego, and ultimate liberation.",
     "descHindi": "(पार्वती)[exp_parvati] का प्रचंड और परिवर्तनकारी रूप, जो काल, अहंकार के विनाश और मोक्ष का प्रतीक है।",
     "descDetail": "Kali emerges in times of extreme chaos to annihilate powerful demons. She symbolizes the raw force of time (Kala) that dissolves all creation. Though fearsome in appearance, she represents the destruction of ignorance and the compassionate mother who frees souls from bondage.",
-    "descDetailHindi": "काली अत्यंत अराजक परिस्थितियों में प्रकट होकर शक्तिशाली असुरों का संहार करती हैं। वे काल की उस परम शक्ति का प्रतीक हैं जो समस्त सृष्टि को विलीन कर देती है। भयंकर स्वरूप होने पर भी वे अज्ञान के विनाश और जीवों को बंधन से मुक्त करने वाली करुणामयी माता हैं।"
-  },
-  {
-    "id": "exp_vishnu",
-    "term": "God Vishnu",
-    "termHindi": "भगवान विष्णु",
-    "desc": "The Supreme Preserver of the universe who sustains all reality. He incarnates in various forms (Avatars) whenever righteousness declines to restore balance.",
-    "descHindi": "ब्रह्मांड के परम पालनहार जो समस्त सृष्टि को धारण करते हैं। जब भी धर्म की हानि होती है, वे संतुलन बनाए रखने के लिए विभिन्न रूपों (अवतारों) में प्रकट होते हैं।"
+    "descDetailHindi": "काली अत्यंत अराजक परिस्थितियों में प्रकट होकर शक्तिशाली असुरों का संहार करती हैं। वे काल की उस परम शक्ति का प्रतीक हैं जो समस्त सृष्टि को विलीन कर देती है। भयंकर स्वरूप होने पर भी वे अज्ञान के विनाश और जीवों को बंधन से मुक्त करने वाली करुणामयी माता हैं।",
+    "category": "deity"
   },
   {
     "id": "exp_krishna",
     "term": "God Krishna",
     "termHindi": "भगवान कृष्ण",
     "desc": "The God, an eighth (Avatar)[exp_avatar] of (God Vishnu)[exp_vishnu], who descended to restore (Dharma)[exp_dharma]. As the divine charioteer and spiritual master of (Arjuna)[exp_arjuna], He reveals the eternal wisdom of the Bhagavad Gita to dispel ignorance.",
-    "descHindi": "(भगवान विष्णु)[exp_vishnu] के आठवें (अवतार)[exp_avatar] और परमेश्वर। (धर्म)[exp_dharma] की स्थापना के लिए, वे (अर्जुन)[exp_arjuna] के दिव्य सारथी और गुरु बने। उन्होंने अज्ञान को दूर करने के लिए भगवद् गीता का शाश्वत ज्ञान प्रदान किया।"
+    "descHindi": "(भगवान विष्णु)[exp_vishnu] के आठवें (अवतार)[exp_avatar] और परमेश्वर। (धर्म)[exp_dharma] की स्थापना के लिए, वे (अर्जुन)[exp_arjuna] के दिव्य सारथी और गुरु बने। उन्होंने अज्ञान को दूर करने के लिए भगवद् गीता का शाश्वत ज्ञान प्रदान किया।",
+    "category": "deity"
   },
   {
     "id": "exp_avatar",
     "term": "Avatar",
     "termHindi": "अवतार",
     "desc": "A form or incarnation of a deity",
-    "descHindi": "एक दीवता का रूप या विवरण"
+    "descHindi": "किसी देवता का अवतरण या दिव्य रूप"
   },
   {
     "id": "exp_achyuta",
@@ -226,48 +226,55 @@ export const explanations = [
     "term": "Madhava",
     "termHindi": "माधव",
     "desc": "A name for God Krishna, meaning the husband of the Goddess of Fortune ((Lakshmi)[exp_lakshmi]).",
-    "descHindi": "(भगवान कृष्ण)[exp_krishna] का एक नाम, जिसका अर्थ है भाग्य की देवी ((लक्ष्मी)[exp_lakshmi]) के पति।"
+    "descHindi": "(भगवान कृष्ण)[exp_krishna] का एक नाम, जिसका अर्थ है भाग्य की देवी ((लक्ष्मी)[exp_lakshmi]) के पति।",
+    "category": "deity"
   },
   {
     "id": "exp_keshava",
     "term": "Keshava",
     "termHindi": "केशव",
     "desc": "A name for God (Krishna)[exp_krishna] meaning 'Slayer of the (Keshi)[exp_keshi] demon' or 'One with beautiful hair'.",
-    "descHindi": "(भगवान कृष्ण)[exp_krishna] का एक नाम जिसका अर्थ है '(केशी)[exp_keshi] राक्षस का वध करने वाला' या 'सुंदर बालों वाला'।"
+    "descHindi": "(भगवान कृष्ण)[exp_krishna] का एक नाम जिसका अर्थ है '(केशी)[exp_keshi] राक्षस का वध करने वाला' या 'सुंदर बालों वाला'।",
+    "category": "deity"
   },
   {
     "id": "exp_hrishikesha",
     "term": "Hrishikesha",
     "termHindi": "हृषीकेश",
     "desc": "A name for God (Krishna)[exp_krishna] meaning 'Master of the Senses'.",
-    "descHindi": "(भगवान कृष्ण)[exp_krishna] का एक नाम जिसका अर्थ है 'इंद्रियों के स्वामी'।"
+    "descHindi": "(भगवान कृष्ण)[exp_krishna] का एक नाम जिसका अर्थ है 'इंद्रियों के स्वामी'।",
+    "category": "deity"
   }, {
     "id": "exp_govinda",
     "term": "Govinda",
     "termHindi": "गोविन्द",
     "desc": "A name for God (Krishna)[exp_krishna] meaning 'Protector of cows' or 'Giver of pleasure to the senses'.",
-    "descHindi": "(भगवान कृष्ण)[exp_krishna] का एक नाम जिसका अर्थ है 'गायों का रक्षक' या 'इंद्रियों को आनंद देने वाला'।"
+    "descHindi": "(भगवान कृष्ण)[exp_krishna] का एक नाम जिसका अर्थ है 'गायों का रक्षक' या 'इंद्रियों को आनंद देने वाला'।",
+    "category": "deity"
   },
   {
     "id": "exp_madhusudana",
     "term": "Madhusudana",
     "termHindi": "मधुसूदन",
     "desc": "A name for God (Krishna)[exp_krishna] meaning 'Slayer of the demon (Madhu)[exp_madhu_demon]'.",
-    "descHindi": "(भगवान कृष्ण)[exp_krishna] का एक नाम जिसका अर्थ है '(मधु)[exp_madhu_demon] राक्षस का वध करने वाला'।"
+    "descHindi": "(भगवान कृष्ण)[exp_krishna] का एक नाम जिसका अर्थ है '(मधु)[exp_madhu_demon] राक्षस का वध करने वाला'।",
+    "category": "deity"
   },
   {
     "id": "exp_janardana",
     "term": "Janardana",
     "termHindi": "जनार्दन",
     "desc": "A name for God (Krishna)[exp_krishna] meaning 'Maintainer of all beings'.",
-    "descHindi": "(भगवान कृष्ण)[exp_krishna] का एक नाम जिसका अर्थ है 'सभी प्राणियों का पालन करने वाला'।"
+    "descHindi": "(भगवान कृष्ण)[exp_krishna] का एक नाम जिसका अर्थ है 'सभी प्राणियों का पालन करने वाला'।",
+    "category": "deity"
   },
   {
     "id": "exp_varshneya",
     "term": "Varshneya",
     "termHindi": "वार्ष्णेय",
     "desc": "A name for God (Krishna)[exp_krishna] meaning 'Descendant of the (Vrishni)[exp_vrishni] clan'.",
-    "descHindi": "(भगवान कृष्ण)[exp_krishna] का एक नाम जिसका अर्थ है '(वृष्णि)[exp_vrishni] कुल का वंशज'।"
+    "descHindi": "(भगवान कृष्ण)[exp_krishna] का एक नाम जिसका अर्थ है '(वृष्णि)[exp_vrishni] कुल का वंशज'।",
+    "category": "deity"
   },
 
 
@@ -277,8 +284,8 @@ export const explanations = [
     "id": "exp_ashvatthama",
     "term": "Ashvatthama",
     "termHindi": "अश्वत्थामा",
-    "desc": "The son of (Dronacharya)[exp_dronacharya], born with a divine gem on his forehead. He is a fierce warrior and an avatar of Rudra (Shiva's fury).",
-    "descHindi": "(द्रोणाचार्य)[exp_dronacharya] के पुत्र, जिनके मस्तक पर जन्म से ही एक दिव्य मणि थी। वे एक उग्र योद्धा और रुद्र (शिव के क्रोध) के अवतार हैं।",
+    "desc": "The son of (Dronacharya)[exp_dronacharya], born with a divine gem on his forehead. considered by some traditions to embody the fierce aspect of (Rudra)[exp_rudra].",
+    "descHindi": "(द्रोणाचार्य)[exp_dronacharya] के पुत्र, जिनके मस्तक पर जन्म से ही एक दिव्य मणि थी। कुछ परंपराओं के अनुसार, वे (रुद्र)[exp_rudra] के उग्र स्वरूप का प्रतीक माने जाते हैं।",
     "descDetail": "One of the (Chiranjivis)[exp_chiranjivis] (immortals). In a violation of war codes, he slaughtered the sleeping (sons of Draupadi)[exp_draupadi_sons] at night and targeted an unborn child with the Brahmastra. For this sin, (God Krishna)[exp_krishna] cursed him to roam the earth in eternal agony.",
     "descDetailHindi": "सात (चिरंजीवियों)[exp_chiranjivis] में से एक। युद्ध के नियमों का उल्लंघन करते हुए, उन्होंने रात्रि में सोए हुए (द्रौपदी के पुत्रों)[exp_draupadi_sons] की हत्या कर दी और एक अजन्मे शिशु पर ब्रह्मास्त्र चलाया। इस पाप के लिए, (भगवान कृष्ण)[exp_krishna] ने उन्हें अनंत काल तक पीड़ा में भटकने का शाप दिया।"
   },
@@ -288,8 +295,8 @@ export const explanations = [
     "termHindi": "द्रौपदी",
     "desc": "The wife of the five (Pandavas)[exp_pandavas] and daughter of King (Drupada)[exp_drupada], born from a sacrificial fire. ",
     "descHindi": "पाँचों (पांडवों)[exp_pandavas] की पत्नी और राजा (द्रुपद)[exp_drupada] की पुत्री, जिनका जन्म यज्ञ की अग्नि से हुआ था।",
-    "descDetail": "She married all five brothers to fulfill the accidental command of their mother, (Kunti)[exp_kunti], to 'share equally' what (Arjuna)[exp_arjuna] had brought home. This also fulfilled a boon from (Lord Shiva)[exp_shiva] in her past life to have a husband with five supreme qualities found in the five brothers.",
-    "descDetailHindi": "माता (कुंती)[exp_kunti] के अनजाने में दिए गए आदेश कि 'जो भी लाए हो उसे आपस में बाँट लो' का मान रखने के लिए उन्होंने पाँचों भाइयों से विवाह किया। यह उनके पूर्व जन्म में भगवान (शिव)[exp_shiva] से प्राप्त वरदान की भी पूर्ति थी, जिसके तहत उन्हें पाँच सर्वोच्च गुणों वाले पति प्राप्त होने थे।"
+    "descDetail": "She married all five brothers to fulfill the accidental command of their mother, (Kunti)[exp_kunti], to 'share equally' what (Arjuna)[exp_arjuna] had brought home. This also fulfilled a boon from (Shiva)[exp_shiva] in her past life to have a husband with five supreme qualities found in the five brothers.",
+    "descDetailHindi": "माता (कुंती)[exp_kunti] के अनजाने में दिए गए आदेश कि 'जो भी लाए हो उसे आपस में बाँट लो' का मान रखने के लिए उन्होंने पाँचों भाइयों से विवाह किया। यह उनके पूर्व जन्म में (भगवान शिव)[exp_shiva] से प्राप्त वरदान की भी पूर्ति थी, जिसके तहत उन्हें पाँच सर्वोच्च गुणों वाले पति प्राप्त होने थे।"
   },
   {
     "id": "exp_dhritarashtra",
@@ -359,7 +366,7 @@ export const explanations = [
     "term": "Gita",
     "termHindi": "गीता",
     "desc": "The sacred scripture containing the teachings of Lord (Krishna)[exp_krishna] to Arjuna, which forms the essence of the Bhagavad Gita.",
-    "descHindi": "भगवान (कृष्ण)[exp_krishna] के लिए अर्जुन को गीता के रूप में शिक्षण देने वाला पुराणिक शैली।"
+    "descHindi": "भगवान (कृष्ण)[exp_krishna] द्वारा (अर्जुन)[exp_arjuna] को दिया गया दिव्य उपदेश, जो भगवद्गीता के रूप में संकलित है।"
   },
   {
     "id": "exp_maharathi",

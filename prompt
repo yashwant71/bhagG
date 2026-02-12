@@ -32,3 +32,7 @@ do no change the schema please keep the schema same as provided in json, ensurin
 
 one change in linking ansure its handled in (word)[id] or (something.. (word)[id])[id], all linking must follow the same pattern
 so now its better if you give all 1-47 verses of chapter 1 in json format
+
+
+read this explationtions array, any ensure each word which needs further explanation, which cannot be understood just by knowing english or hindi, will have the explanation added for it, and even in that explanation if there are words which need explanation those also will have links, so that all words are covered finally,
+ensure the words are referring to correct explanations too

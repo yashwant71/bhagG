@@ -24,7 +24,7 @@ export const explanations = [
     "termHindi": "पुराण",
     "desc": "Ancient Hindu scriptures that expound creation, cosmology, dharma, and the glories of various deities.",
     "descHindi": "प्राचीन हिंदू ग्रंथ जो सृष्टि, ब्रह्मांडीय संरचना, धर्म तथा विभिन्न देवताओं की महिमा का वर्णन करते हैं।",
-    "descDetail": "The Puranas are an important part of Hindu sacred literature, traditionally said to be composed by (Veda Vyasa)[exp_veda_vyasa]. There are 18 Mahapuranas and several Upapuranas. They describe the cycles of creation and dissolution, genealogies of gods and kings, and the paths of dharma and moksha, while glorifying deities such as (Vishnu)[exp_vishnu], (Shiva)[exp_shiva], and (Devi)[exp_shakti].",
+    "descDetail": "The Puranas are an important part of Hindu sacred literature, composed by (Veda Vyasa)[exp_veda_vyasa]. There are 18 Mahapuranas and several Upapuranas. They describe the cycles of creation and dissolution, genealogies of gods and kings, and the paths of dharma and moksha, while glorifying deities such as (Vishnu)[exp_vishnu], (Shiva)[exp_shiva], and (Devi)[exp_shakti].",
     "descDetailHindi": "पुराण हिंदू धर्मग्रंथों का एक महत्वपूर्ण अंग हैं, जिनकी रचना परंपरागत रूप से (वेद व्यास)[exp_veda_vyasa] द्वारा मानी जाती है। 18 महापुराण और अनेक उपपुराण बताए गए हैं। इनमें सृष्टि और प्रलय के चक्र, देवताओं और राजाओं की वंशावली, तथा धर्म और मोक्ष के मार्ग का वर्णन मिलता है, साथ ही (विष्णु)[exp_vishnu], (भगवान शिव)[exp_shiva] और (देवी)[exp_shakti] की महिमा का वर्णन किया गया है।",
   },
   {

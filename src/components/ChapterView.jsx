@@ -3,9 +3,10 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { useFloating, autoUpdate, offset, flip, shift } from '@floating-ui/react'
-import { getChapter, getVerseNumbers, getVerse } from '../data/utils'
+import { getChapter, getVerseNumbers, getVerse, getAllChapterNumbers } from '../data/utils'
 import WordTooltipContent from './WordTooltipContent'
 import TranslationTextRenderer from './TranslationTextRenderer'
+import CommonHeader from './CommonHeader'
 import './ChapterView.css'
 import './VersePage.css' // Reuse styles
 
@@ -16,8 +17,14 @@ const ChapterView = () => {
   const chapter = Array.isArray(params?.params) ? params.params[0] : (params?.chapter || params?.params?.[0])
   const chapterNum = parseInt(chapter || '1')
   
-  // Only allow chapter 1
-  const validChapterNum = chapterNum === 1 ? 1 : 1
+  // Available chapters from data
+  const allChapters = getAllChapterNumbers()
+  const isValidChapter = allChapters.includes(chapterNum)
+  const validChapterNum = isValidChapter ? chapterNum : 1
+  
+  const currentIndex = allChapters.indexOf(validChapterNum)
+  const prevChapterNum = currentIndex > 0 ? allChapters[currentIndex - 1] : null
+  const nextChapterNum = currentIndex < allChapters.length - 1 ? allChapters[currentIndex + 1] : null
   
   // Load language preference from localStorage, default to 'english'
   const getStoredLanguage = () => {
@@ -30,7 +37,6 @@ const ChapterView = () => {
   }
   
   const [translation, setTranslation] = useState(getStoredLanguage)
-  const [showLanguageDropdown, setShowLanguageDropdown] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
   const [hoveredWord, setHoveredWord] = useState(null)
   const [hoveredWordData, setHoveredWordData] = useState(null)
@@ -78,24 +84,7 @@ const ChapterView = () => {
     }
   }
   
-  // Close language dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (showLanguageDropdown) {
-        const isClickInside = e.target.closest('.language-selector-container') || 
-                              e.target.closest('.language-selector-button') ||
-                              e.target.closest('.language-dropdown')
-        if (!isClickInside) {
-          setShowLanguageDropdown(false)
-        }
-      }
-    }
-    
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [showLanguageDropdown])
+  // Close language dropdown when clicking outside (Now handled by CommonHeader)
   
   // Redirect if trying to access other chapters
   useEffect(() => {
@@ -204,81 +193,19 @@ const ChapterView = () => {
     <div className="chapter-view-page">
       <div className="chapter-view-background"></div>
       
-      <div className={`chapter-view-container ${isLoaded ? 'loaded' : ''}`}>
-        {/* Navigation */}
-        <div className="chapter-view-nav">
-          <button 
-            className="view-home-button" 
-            onClick={() => router.push('/')}
-            aria-label="Back to Home"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-              <polyline points="9 22 9 12 15 12 15 22"/>
-            </svg>
-            <span>Home</span>
-          </button>
-        </div>
+      <CommonHeader 
+        chapterNum={validChapterNum}
+        translation={translation}
+        onTranslationChange={updateTranslation}
+      />
 
+      <div className={`chapter-view-container ${isLoaded ? 'loaded' : ''}`}>
         {/* Chapter Header */}
         <div className="chapter-header">
           <div className="chapter-title-section">
-            <h1 className="chapter-number">Chapter {validChapterNum}</h1>
-            <h2 className="chapter-name">{chapterData.chapterName}</h2>
+            <h1 className="chapter-name">{chapterData.chapterName}</h1>
             {chapterData.chapterNameSanskrit && (
               <p className="chapter-name-sanskrit">{chapterData.chapterNameSanskrit}</p>
-            )}
-          </div>
-          
-          {/* Language Selector */}
-          <div className="language-selector-container">
-            <button
-              className="language-selector-button"
-              onClick={(e) => {
-                e.stopPropagation()
-                setShowLanguageDropdown(!showLanguageDropdown)
-              }}
-              aria-label="Select language"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="2" y1="12" x2="22" y2="12"/>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-              </svg>
-            </button>
-            {showLanguageDropdown && (
-              <div className="language-dropdown">
-                <button
-                  className={`language-option ${translation === 'english' ? 'active' : ''}`}
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    updateTranslation('english')
-                    setShowLanguageDropdown(false)
-                  }}
-                >
-                  <span>English</span>
-                  {translation === 'english' && (
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                  )}
-                </button>
-                <button
-                  className={`language-option ${translation === 'hindi' ? 'active' : ''}`}
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    updateTranslation('hindi')
-                    setShowLanguageDropdown(false)
-                  }}
-                >
-                  <span>हिंदी</span>
-                  {translation === 'hindi' && (
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                  )}
-                </button>
-              </div>
             )}
           </div>
         </div>
@@ -298,25 +225,76 @@ const ChapterView = () => {
                 className="verse-card"
                 onClick={() => handleVerseClick(verseNum)}
               >
-                <div className="verse-card-header">
-                  <span className="verse-number">{validChapterNum}.{verseNum}</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M9 18L15 12L9 6"/>
-                  </svg>
-                </div>
-                
-                <div className="verse-card-content">
-                  <div className={`verse-translation ${translation === 'hindi' ? 'hindi-text' : ''}`}>
-                    <TranslationTextRenderer 
-                      parts={parsedText} 
-                      onReferenceClick={handleWordHover}
-                      activeRefId={hoveredWord}
-                    />
+                <div className="verse-card-layout">
+                  <div className="verse-card-left">
+                    <span className="verse-number">{validChapterNum}.{verseNum}</span>
+                  </div>
+                  
+                  <div className="verse-card-main">
+                    <div className={`verse-translation ${translation === 'hindi' ? 'hindi-text' : ''}`}>
+                      <TranslationTextRenderer 
+                        parts={parsedText} 
+                        onReferenceClick={handleWordHover}
+                        activeRefId={hoveredWord}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="verse-card-right">
+                    <div className="arrow-indicator">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14m-7-7 7 7-7 7"/>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
             )
           })}
+        </div>
+
+        {/* Chapter Navigation Bottom */}
+        <div className="chapter-bottom-nav">
+          <button 
+            className={`nav-button prev ${!prevChapterNum ? 'disabled' : ''}`}
+            onClick={() => prevChapterNum && router.push(`/chapter/${prevChapterNum}`)}
+            disabled={!prevChapterNum}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+            <div className="nav-info">
+              <span className="nav-label">Previous</span>
+              <span className="nav-name">{prevChapterNum ? `Chapter ${prevChapterNum}` : 'No Previous'}</span>
+            </div>
+          </button>
+
+          <button 
+            className="nav-button chapters"
+            onClick={() => router.push('/')}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="3" y="3" width="7" height="7"/>
+              <rect x="14" y="3" width="7" height="7"/>
+              <rect x="14" y="14" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/>
+            </svg>
+            <span>All Chapters</span>
+          </button>
+
+          <button 
+            className={`nav-button next ${!nextChapterNum ? 'disabled' : ''}`}
+            onClick={() => nextChapterNum && router.push(`/chapter/${nextChapterNum}`)}
+            disabled={!nextChapterNum}
+          >
+            <div className="nav-info">
+              <span className="nav-label">Next</span>
+              <span className="nav-name">{nextChapterNum ? `Chapter ${nextChapterNum}` : 'Coming Soon'}</span>
+            </div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -337,6 +315,7 @@ const ChapterView = () => {
           onMouseLeave={handleWordLeave}
         >
         <WordTooltipContent 
+          key={hoveredWord}
           words={hoveredWordData.wordData ? [hoveredWordData.wordData] : (hoveredWordData.explanation ? [{ ...hoveredWordData.explanation, english: hoveredWordData.explanation.term, hindi: hoveredWordData.explanation.termHindi, explanation: hoveredWordData.explanation }] : [])} 
           isTranslationMode={true} 
           translation={translation}

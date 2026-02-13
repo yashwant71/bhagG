@@ -1394,8 +1394,30 @@ const VersePage = () => {
           <div className="card-bg-pattern"></div>
           <div className="card-aura"></div>
           
+          {/* Decorative Corners */}
+          <div className="card-corner tl"></div>
+          <div className="card-corner tr"></div>
+          <div className="card-corner bl"></div>
+          <div className="card-corner br"></div>
+          
           <div className="card-header">
-            <div className="card-verse-badge">{chapterVerseKey}</div>
+            <div className="card-ornament-header">
+              <div className="header-flourish left">
+                <svg width="120" height="40" viewBox="0 0 120 40" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M120,20 C100,20 80,35 50,35 C20,35 0,20 10,10" opacity="0.8" />
+                  <path d="M110,20 C80,20 60,10 40,25 C20,40 10,20 0,35" strokeDasharray="2,2" opacity="0.4" />
+                  <circle cx="120" cy="20" r="2.5" fill="currentColor" />
+                </svg>
+              </div>
+              <div className="card-verse-badge">{chapterVerseKey}</div>
+              <div className="header-flourish right">
+                <svg width="120" height="40" viewBox="0 0 120 40" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M0,20 C20,20 40,35 70,35 C100,35 120,20 110,10" opacity="0.8" />
+                  <path d="M10,20 C40,20 60,10 80,25 C100,40 110,20 120,35" strokeDasharray="2,2" opacity="0.4" />
+                  <circle cx="0" cy="20" r="2.5" fill="currentColor" />
+                </svg>
+              </div>
+            </div>
           </div>
           
           <div className="card-content">

@@ -17,20 +17,34 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    /* Pure dark background - no blue tones */
-    radial-gradient(ellipse at 20% 30%, #000000 0%, #000000 30%, #000000 100%),
-    radial-gradient(ellipse at 80% 70%, #000000 0%, #000000 25%, #000000 100%),
-    radial-gradient(ellipse at 50% 50%, #000000 0%, #000000 100%),
-    /* Very subtle divine fire glow at bottom - no animation */
-    radial-gradient(ellipse at 50% 100%, rgba(255, 140, 0, 0.12) 0%, rgba(212, 175, 55, 0.08) 30%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, #060504 0%, #000000 100%);
   z-index: var(--z-background);
   pointer-events: none;
   overflow: hidden;
 }
 
+/* Moving ambient glow - even slower and subtler */
+.divine-ambient-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(212, 175, 55, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.01) 0%, transparent 70%);
+  animation: bgAmbientMove 30s ease-in-out infinite;
+  filter: blur(80px);
+}
 
-/* Static fire glow at bottom - no animation */
+@keyframes bgAmbientMove {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  33% { transform: translate(-3%, 3%) scale(1.05) rotate(2deg); }
+  66% { transform: translate(3%, -3%) scale(0.95) rotate(-2deg); }
+}
+
+/* Divine fire glow at bottom - breathing animation */
 .verse-background::after {
   content: '';
   position: absolute;
@@ -39,13 +53,87 @@
   width: 100%;
   height: 40%;
   background: 
-    /* Static fire base - no animation */
-    radial-gradient(ellipse at 30% 100%, rgba(255, 100, 0, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 100%, rgba(255, 140, 0, 0.18) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 100%, rgba(212, 175, 55, 0.12) 0%, transparent 60%);
-  /* Remove animation - static color only */
-  animation: none;
-  filter: blur(40px);
+    radial-gradient(ellipse at 50% 100%, rgba(255, 120, 0, 0.12) 0%, rgba(212, 175, 55, 0.06) 40%, transparent 80%),
+    radial-gradient(ellipse at 20% 100%, rgba(255, 60, 0, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(255, 140, 0, 0.08) 0%, transparent 60%);
+  filter: blur(50px);
+  animation: fireBreathing 12s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+@keyframes fireBreathing {
+  0%, 100% { opacity: 0.5; transform: scaleY(1); }
+  50% { opacity: 0.9; transform: scaleY(1.08); }
+}
+
+/* Light beams - more subtle shimmer */
+.divine-light-beams {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent 0%,
+    transparent 10%,
+    rgba(212, 175, 55, 0.01) 12%,
+    transparent 14%,
+    transparent 20%
+  );
+  mask-image: radial-gradient(circle at 50% -20%, black 0%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 50% -20%, black 0%, transparent 80%);
+  animation: beamsShimmer 20s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes beamsShimmer {
+  0% { transform: translateX(-5%) rotate(0deg); }
+  100% { transform: translateX(5%) rotate(3deg); }
+}
+
+/* Particles */
+.divine-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.divine-particle {
+  position: absolute;
+  width: var(--size, 2px);
+  height: var(--size, 2px);
+  background: var(--gold-bright);
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 8px var(--gold-primary), 0 0 16px var(--gold-primary);
+  animation: particleFloat var(--duration, 15s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  left: var(--left, 50%);
+  top: 100%;
+  filter: blur(var(--blur, 0.5px));
+  will-change: transform, opacity;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(10vh) translateX(0) scale(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: var(--max-opacity, 0.5);
+    transform: translateY(0vh) translateX(calc(var(--drift, 10px) * 0.3)) scale(1);
+  }
+  85% {
+    opacity: var(--max-opacity, 0.5);
+  }
+  100% {
+    transform: translateY(var(--y-end, -110vh)) translateX(var(--drift, 20px)) scale(0);
+    opacity: 0;
+  }
 }
 
 
@@ -153,25 +241,30 @@
 
 /* Navigation arrows - Removed, now using verse-number-container controls */
 
-/* Very subtle, light, blended background behind Sanskrit text */
+/* Dynamic divine aura behind Sanskrit text */
 .sanskrit-section::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  min-height: 300px;
+  width: 120%;
+  height: 120%;
+  min-height: 400px;
   background: 
-    radial-gradient(ellipse at center, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.04) 40%, transparent 70%),
-    radial-gradient(ellipse at 30% 50%, rgba(255, 200, 0, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 50%, rgba(255, 180, 0, 0.04) 0%, transparent 45%);
-  border-radius: var(--radius-lg);
-  filter: blur(50px);
+    radial-gradient(ellipse at center, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.05) 40%, transparent 80%),
+    radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.08) 0%, transparent 60%);
+  border-radius: 50%;
+  filter: blur(60px);
   z-index: -1;
   pointer-events: none;
+  animation: divineAuraPulse 10s ease-in-out infinite;
   opacity: 1;
+}
+
+@keyframes divineAuraPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
 }
 
 .sanskrit-words-container {
@@ -364,8 +457,9 @@
 .sanskrit-word:hover,
 .sanskrit-word.hovered {
   -webkit-text-stroke: 2px #e5c84a;
-  text-shadow: var(--shadow-glow-lg);
-  transform: translateY(-3px);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 0 0 40px rgba(212, 175, 55, 0.4);
+  transform: translateY(-5px) scale(1.05);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* Ensure tooltip is not affected by Sanskrit word hover/active state */
@@ -745,16 +839,16 @@
 .translation-card {
   background: linear-gradient(
     to bottom,
-    rgba(26, 26, 26, 0.3) 0%,
-    rgba(26, 26, 26, 0.5) 100%
+    rgba(15, 15, 15, 0.3) 0%,
+    rgba(5, 5, 5, 0.45) 100%
   );
-  backdrop-filter: var(--blur-sm);
-  border: none;
-  border-top: 1px solid var(--gold-15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(212, 175, 55, 0.12);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   padding: var(--spacing-2xl);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 var(--gold-10);
-  animation: fadeInUp 0.6s ease-out 0.3s both;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.03);
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;

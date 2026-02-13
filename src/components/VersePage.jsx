@@ -1004,6 +1004,20 @@ const VersePage = () => {
   }
 
 
+  // Truly randomized particle properties
+  const particleProps = useMemo(() => {
+    return [...Array(60)].map((_, i) => ({
+      left: `${Math.random() * 100}%`,
+      delay: `${Math.random() * 20}s`,
+      duration: `${15 + Math.random() * 20}s`,
+      size: `${1 + Math.random() * 3.5}px`,
+      drift: `${(Math.random() - 0.5) * 120}px`,
+      opacity: 0.15 + Math.random() * 0.45,
+      yEnd: `${-60 - Math.random() * 60}vh`, // Dies at different heights
+      blur: `${Math.random() * 1}px`
+    }))
+  }, [])
+
   return (
     <div 
       className="verse-page"
@@ -1011,7 +1025,28 @@ const VersePage = () => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="verse-background"></div>
+      <div className="verse-background">
+        <div className="divine-ambient-glow"></div>
+        <div className="divine-particles">
+          {particleProps.map((props, i) => (
+            <div 
+              key={i} 
+              className="divine-particle"
+              style={{
+                '--left': props.left,
+                '--delay': props.delay,
+                '--duration': props.duration,
+                '--size': props.size,
+                '--drift': props.drift,
+                '--max-opacity': props.opacity,
+                '--y-end': props.yEnd,
+                '--blur': props.blur
+              }}
+            ></div>
+          ))}
+        </div>
+        <div className="divine-light-beams"></div>
+      </div>
       
       {/* Mobile Swipe Tutorial - App-like Banner */}
       {showSwipeTutorial && (

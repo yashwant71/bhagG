@@ -1,0 +1,102 @@
+.loading-screen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #0f0f0f 0%, #000000 100%);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.loading-visual {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dharmachakra {
+  width: 100%;
+  height: 100%;
+  color: var(--gold-primary);
+  animation: rotateChakra 12s linear infinite;
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
+}
+
+.chakra-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.loading-glow {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  animation: breatheGlow 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes rotateChakra {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes breatheGlow {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.15); opacity: 0.7; }
+}
+
+/* Background Particles */
+.loading-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 1.5px;
+  height: 1.5px;
+  background: var(--gold-primary);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.p0 { top: 20%; left: 30%; animation: floatParticle 6s infinite 0s; }
+.p1 { top: 60%; left: 10%; animation: floatParticle 7s infinite 0.5s; }
+.p2 { top: 40%; left: 80%; animation: floatParticle 8s infinite 1s; }
+.p3 { top: 80%; left: 40%; animation: floatParticle 6.5s infinite 1.5s; }
+.p4 { top: 10%; left: 70%; animation: floatParticle 7.5s infinite 2s; }
+.p5 { top: 30%; left: 15%; animation: floatParticle 6.8s infinite 2.5s; }
+.p6 { top: 70%; left: 90%; animation: floatParticle 8.2s infinite 3s; }
+.p7 { top: 50%; left: 50%; animation: floatParticle 7.2s infinite 3.5s; }
+.p8 { top: 90%; left: 20%; animation: floatParticle 6.3s infinite 4s; }
+.p9 { top: 15%; left: 45%; animation: floatParticle 7.8s infinite 4.5s; }
+.p10 { top: 35%; left: 75%; animation: floatParticle 8.5s infinite 5s; }
+.p11 { top: 65%; left: 60%; animation: floatParticle 7.1s infinite 5.5s; }
+.p12 { top: 25%; left: 85%; animation: floatParticle 6.2s infinite 1.2s; }
+.p13 { top: 75%; left: 25%; animation: floatParticle 7.4s infinite 2.3s; }
+.p14 { top: 45%; left: 5%; animation: floatParticle 6.7s infinite 3.4s; }
+
+@keyframes floatParticle {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  20% { opacity: 0.3; }
+  80% { opacity: 0.1; }
+  100% { transform: translateY(-120px) translateX(25px); opacity: 0; }
+}

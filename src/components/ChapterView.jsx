@@ -10,6 +10,8 @@ import CommonHeader from './CommonHeader'
 import './ChapterView.css'
 import './VersePage.css' // Reuse styles
 
+import LoadingScreen from './LoadingScreen'
+
 const ChapterView = () => {
   const params = useParams()
   const router = useRouter()
@@ -36,6 +38,12 @@ const ChapterView = () => {
     }
   }
   
+  const [chapterData, setChapterData] = useState(null)
+  const [verses, setVerses] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [loadingMore, setLoadingMore] = useState(false)
+  const [pageOffset, setPageOffset] = useState(0)
+  const [hasMore, setHasMore] = useState(false)
   const [translation, setTranslation] = useState(getStoredLanguage)
   const [isLoaded, setIsLoaded] = useState(false)
   const [hoveredWord, setHoveredWord] = useState(null)
@@ -66,13 +74,47 @@ const ChapterView = () => {
     }
   }, [hoveredWord, refs])
   
-  const chapterData = getChapter(validChapterNum)
-  const verseNumbers = getVerseNumbers(validChapterNum)
-  
+  const fetchChapterData = useCallback(async (initial = false) => {
+    const currentOffset = initial ? 0 : pageOffset
+    const url = `/api/chapters/${validChapterNum}?limit=10&offset=${currentOffset}`
+    
+    try {
+      if (initial) setLoading(true)
+      else setLoadingMore(true)
+      
+      const response = await fetch(url)
+      const data = await response.json()
+      
+      if (initial) {
+        setChapterData(data)
+        setVerses(data.verses)
+      } else {
+        setVerses(prev => [...prev, ...data.verses])
+      }
+      
+      setHasMore(data.hasMore)
+      setPageOffset(currentOffset + 10)
+    } catch (error) {
+      console.error('Failed to fetch chapter data:', error)
+    } finally {
+      setLoading(false)
+      setLoadingMore(false)
+      setIsLoaded(true)
+    }
+  }, [validChapterNum, pageOffset])
+
   useEffect(() => {
-    setIsLoaded(true)
+    setPageOffset(0)
+    setVerses([])
+    fetchChapterData(true)
     window.scrollTo(0, 0)
   }, [validChapterNum])
+  
+  const handleLoadMore = () => {
+    if (!loadingMore && hasMore) {
+      fetchChapterData()
+    }
+  }
   
   // Save language preference to localStorage whenever it changes
   const updateTranslation = (lang) => {
@@ -92,10 +134,6 @@ const ChapterView = () => {
       router.replace('/chapter/1')
     }
   }, [chapterNum, router])
-  
-  if (!chapterData) {
-    return null
-  }
   
   const handleVerseClick = (verseNum) => {
     router.push(`/verse/${validChapterNum}/${verseNum}`)
@@ -189,6 +227,14 @@ const ChapterView = () => {
     setHoveredWordData(null)
   }
   
+  if (loading && verses.length === 0) {
+    return <LoadingScreen />
+  }
+
+  if (!chapterData) {
+    return null
+  }
+  
   return (
     <div className="chapter-view-page">
       <div className="chapter-view-background"></div>
@@ -212,10 +258,8 @@ const ChapterView = () => {
         
         {/* Verses List */}
         <div className="verses-list">
-          {verseNumbers.map((verseNum, index) => {
-            const verse = getVerse(validChapterNum, `${validChapterNum}.${verseNum}`)
-            if (!verse) return null
-            
+          {verses.map((verse, index) => {
+            const verseNum = verse.number
             const verseText = translation === 'english' ? verse.english?.text : verse.hindi?.text
             const parsedText = parseTranslationText(verseText || '', verse)
             
@@ -223,26 +267,42 @@ const ChapterView = () => {
               <div 
                 key={verseNum}
                 className="verse-card"
-                onClick={() => handleVerseClick(verseNum)}
               >
                 <div className="verse-card-layout">
-                  <div className="verse-card-left">
-                    <span className="verse-number">{validChapterNum}.{verseNum}</span>
-                  </div>
-                  
-                  <div className="verse-card-main">
-                    <div className={`verse-translation ${translation === 'hindi' ? 'hindi-text' : ''}`}>
-                      <TranslationTextRenderer 
-                        parts={parsedText} 
-                        onReferenceClick={handleWordHover}
-                        activeRefId={hoveredWord}
-                      />
+                  <div className="verse-card-content">
+                    <div className="verse-card-left">
+                      <span className="verse-number">{validChapterNum}.{verseNum}</span>
+                    </div>
+                    
+                    <div className="verse-card-main">
+                      <div className={`verse-translation ${translation === 'hindi' ? 'hindi-text' : ''}`}>
+                        <TranslationTextRenderer 
+                          parts={parsedText} 
+                          onReferenceClick={handleWordHover}
+                          activeRefId={hoveredWord}
+                        />
+                      </div>
                     </div>
                   </div>
 
-                  <div className="verse-card-right">
+                  <div 
+                    className="verse-card-right"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      handleVerseClick(verseNum)
+                    }}
+                    role="button"
+                    aria-label={`View verse ${validChapterNum}.${verseNum}`}
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        handleVerseClick(verseNum)
+                      }
+                    }}
+                  >
                     <div className="arrow-indicator">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M5 12h14m-7-7 7 7-7 7"/>
                       </svg>
                     </div>
@@ -252,6 +312,19 @@ const ChapterView = () => {
             )
           })}
         </div>
+
+        {/* Load More Button */}
+        {hasMore && (
+          <div className="load-more-container">
+            <button 
+              className={`load-more-button ${loadingMore ? 'loading' : ''}`}
+              onClick={handleLoadMore}
+              disabled={loadingMore}
+            >
+              {loadingMore ? <span className="loader-dots">Loading</span> : 'Load More Verses'}
+            </button>
+          </div>
+        )}
 
         {/* Chapter Navigation Bottom */}
         <div className="chapter-bottom-nav">

@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { useFloating, autoUpdate, offset, flip, shift, useInteractions, useHover, useClick, useRole, useDismiss, safePolygon } from '@floating-ui/react'
 import { useParams, useRouter } from 'next/navigation'
-import { getVerse, getNextVerseNumber, getPrevVerseNumber, getAllChapterNumbers, getVerseNumbers, getChapter } from '../data/utils'
+import { getAllChapterNumbers, getVerseNumbers, getChapter } from '../data/utils'
 import WordTooltipContent from './WordTooltipContent'
 import TranslationTextRenderer from './TranslationTextRenderer'
 import CommonHeader from './CommonHeader'
+import LoadingScreen from './LoadingScreen'
 import './VersePage.css'
 
 const VersePage = () => {
@@ -112,12 +113,33 @@ const VersePage = () => {
   const validChapterNum = chapterNum === 1 ? 1 : 1
   const verseNum = verseParam || '1'
   const chapterVerseKey = `${validChapterNum}.${verseNum}`
-  
-  const currentVerseKey = `${validChapterNum}.${verseParam}`
-  const isBookmarked = bookmarks.includes(currentVerseKey)
+  const [verseData, setVerseData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const isBookmarked = bookmarks.includes(chapterVerseKey)
   
   // Get chapter data for centralized explanations
-  const chapterData = getChapter(validChapterNum)
+  const chapterData = useMemo(() => {
+    if (!verseData) return null
+    return {
+      explanations: verseData.chapterExplanations
+    }
+  }, [verseData])
+
+  useEffect(() => {
+    const fetchVerseData = async () => {
+      try {
+        setLoading(true)
+        const response = await fetch(`/api/verses/${validChapterNum}/${verseNum}`)
+        const data = await response.json()
+        setVerseData(data)
+      } catch (error) {
+        console.error('Failed to fetch verse data:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchVerseData()
+  }, [validChapterNum, verseNum])
   
   // Update bookmarks when verse changes
   useEffect(() => {
@@ -126,8 +148,8 @@ const VersePage = () => {
   
   const toggleBookmark = () => {
     const newBookmarks = isBookmarked
-      ? bookmarks.filter(b => b !== currentVerseKey)
-      : [...bookmarks, currentVerseKey]
+      ? bookmarks.filter(b => b !== chapterVerseKey)
+      : [...bookmarks, chapterVerseKey]
     setBookmarks(newBookmarks)
     localStorage.setItem('bg-bookmarks', JSON.stringify(newBookmarks))
   }
@@ -203,10 +225,10 @@ const VersePage = () => {
     
     // Reset animation state when verse changes
     setIsLoaded(false)
-    setAnimationsComplete(false) // Reset animations complete state
-    setAnimationKey(prev => prev + 1) // Force animation restart
+    setAnimationsComplete(false)
+    setAnimationKey(prev => prev + 1)
     
-    // Reset tooltip state when verse changes
+    // Reset tooltip state
     setClickedWord(null)
     setWordData(null)
     setToggledMeanings({})
@@ -217,61 +239,46 @@ const VersePage = () => {
     setSanskritTooltipPosition(null)
     setTranslationTooltipPosition(null)
     
-    // Reset swipe transition state when verse changes
     setIsTransitioning(false)
     setSwipeOffset(0)
     
-    // Trigger animation after a brief delay to ensure DOM is ready
     const timer = setTimeout(() => {
       setIsLoaded(true)
-    }, isEntering ? 50 : 50)
+    }, 50)
     
     return () => clearTimeout(timer)
-  }, [chapter, verseParam])
+  }, [validChapterNum, verseNum])
 
   // Close tooltip when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
-      // Check if click is on Sanskrit word or tooltip
-      const isClickOnSanskritWord = e.target.closest('.sanskrit-word')
-      const isClickOnTooltip = e.target.closest('.word-tooltip')
-      const isClickOnTooltipMeaning = e.target.closest('.tooltip-meaning')
+      const isClickOnSanskritWord = e.target && typeof e.target.closest === 'function' && e.target.closest('.sanskrit-word')
+      const isClickOnTooltip = e.target && typeof e.target.closest === 'function' && e.target.closest('.word-tooltip')
+      const isClickOnTooltipMeaning = e.target && typeof e.target.closest === 'function' && e.target.closest('.tooltip-meaning')
       
-      // Close static tooltip if clicking outside Sanskrit word and tooltip
       if (clickedWord && !isClickOnSanskritWord && !isClickOnTooltip && !isClickOnTooltipMeaning) {
         setClickedWord(null)
         setWordData(null)
         setToggledMeanings({})
       }
       
-      // Also close hover tooltip when clicking anywhere (except on Sanskrit word or tooltip)
       if (hoveredWord && !isClickOnSanskritWord && !isClickOnTooltip) {
         setHoveredWord(null)
         setHoveredWordData(null)
       }
       
-      // Close translation word tooltip if clicking outside
-      if (clickedTranslationWord && !e.target.closest('.translation-word-reference') && !e.target.closest('.translation-word-tooltip')) {
+      if (clickedTranslationWord && (!e.target || typeof e.target.closest !== 'function' || (!e.target.closest('.translation-word-reference') && !e.target.closest('.translation-word-tooltip')))) {
         setClickedTranslationWord(null)
         setTranslationWordData(null)
         setTranslationTooltipPosition(null)
       }
-      
-      // Close Sanskrit tooltip if clicking outside
-      if (clickedWord && !e.target.closest('.sanskrit-word') && !e.target.closest('.word-tooltip')) {
-        setSanskritTooltipPosition(null)
-      }
     }
     
-    // Always add the event listener to handle tooltip closing
     document.addEventListener('mousedown', handleClickOutside)
-    
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
+    return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [clickedWord, hoveredWord, clickedTranslationWord])
   
-  // Clear hover state when word is clicked (becomes static)
+  // Clear hover state when word is clicked
   useEffect(() => {
     if (clickedWord) {
       setHoveredWord(null)
@@ -279,7 +286,7 @@ const VersePage = () => {
     }
   }, [clickedWord])
   
-  // Update tooltip reference when word is clicked/hovered
+  // Update tooltip reference
   useEffect(() => {
     if (clickedWord) {
       const element = document.querySelector(`.sanskrit-word.tooltip-active`)
@@ -297,28 +304,21 @@ const VersePage = () => {
     }
   }, [clickedTranslationWord, transRefs])
 
-  // Redirect to chapter 1 if trying to access other chapters
-  useEffect(() => {
-    if (chapterNum !== 1) {
-      const verseNumbers = getVerseNumbers(1)
-      if (verseNumbers.length > 0) {
-        router.replace(`/verse/1/${verseNumbers[0]}`)
-      }
-    }
-  }, [chapterNum, router])
-  
-  // Handle redirect if verse not found - must be before conditional return
-  useEffect(() => {
-    const verse = getVerse(validChapterNum, chapterVerseKey)
-    if (!verse) {
-      const verseNumbers = getVerseNumbers(1)
-      if (verseNumbers.length > 0) {
-        router.replace(`/verse/1/${verseNumbers[0]}`)
-      }
-    }
-  }, [validChapterNum, chapterVerseKey, router])
-  
-  const verse = getVerse(validChapterNum, chapterVerseKey)
+  // Truly randomized particle properties
+  const particleProps = useMemo(() => {
+    return [...Array(60)].map((_, i) => ({
+      left: `${Math.random() * 100}%`,
+      delay: `${Math.random() * 20}s`,
+      duration: `${15 + Math.random() * 20}s`,
+      size: `${1 + Math.random() * 3.5}px`,
+      drift: `${(Math.random() - 0.5) * 120}px`,
+      opacity: 0.15 + Math.random() * 0.45,
+      yEnd: `${-60 - Math.random() * 60}vh`, // Dies at different heights
+      blur: `${Math.random() * 1}px`
+    }))
+  }, [])
+
+  const verse = verseData
   
   // Parse Sanskrit text - safe even if verse is null
   const parseSanskritWithBrackets = (sanskritText) => {
@@ -543,26 +543,16 @@ const VersePage = () => {
   
   // Navigation handlers
   const handleNextVerse = () => {
-    const nextVerse = getNextVerseNumber(validChapterNum, chapterVerseKey)
-    if (nextVerse) {
-      // Parse the result (e.g., "1.2" -> ["1", "2"])
-      const [nextChapter, nextVerseNum] = nextVerse.split('.')
-      // Only allow chapter 1
-      if (parseInt(nextChapter) === 1) {
-        router.push(`/verse/${nextChapter}/${nextVerseNum}`)
-      }
+    if (verseData?.nextVerse) {
+      const [nextChapter, nextVerseNum] = verseData.nextVerse.split('.')
+      router.push(`/verse/${nextChapter}/${nextVerseNum}`)
     }
   }
 
   const handlePrevVerse = () => {
-    const prevVerse = getPrevVerseNumber(validChapterNum, chapterVerseKey)
-    if (prevVerse) {
-      // Parse the result (e.g., "1.1" -> ["1", "1"])
-      const [prevChapter, prevVerseNum] = prevVerse.split('.')
-      // Only allow chapter 1
-      if (parseInt(prevChapter) === 1) {
-        router.push(`/verse/${prevChapter}/${prevVerseNum}`)
-      }
+    if (verseData?.prevVerse) {
+      const [prevChapter, prevVerseNum] = verseData.prevVerse.split('.')
+      router.push(`/verse/${prevChapter}/${prevVerseNum}`)
     }
   }
 
@@ -844,8 +834,8 @@ const VersePage = () => {
     if (!clickedWord) {
       const relatedTarget = e.relatedTarget
       // Check if mouse is moving to tooltip or another word
-      const isMovingToTooltip = relatedTarget && relatedTarget.closest('.word-tooltip')
-      const isMovingToWord = relatedTarget && relatedTarget.closest('.sanskrit-word')
+      const isMovingToTooltip = relatedTarget && typeof relatedTarget.closest === 'function' && relatedTarget.closest('.word-tooltip')
+      const isMovingToWord = relatedTarget && typeof relatedTarget.closest === 'function' && relatedTarget.closest('.sanskrit-word')
       
       // Only hide if not moving to tooltip or another word
       if (!isMovingToTooltip && !isMovingToWord) {
@@ -954,7 +944,26 @@ const VersePage = () => {
     }
   }
 
-  // If verse not found, return null early (after all hooks)
+  // Handle navigation to a specific chapter/verse
+  const handleNavigateToVerse = (chNum, verseNum) => {
+    // Only allow navigation to chapter 1
+    if (chNum !== 1) {
+      // Redirect to chapter 1 if trying to access other chapters
+      const verseNumbers = getVerseNumbers(1)
+      if (verseNumbers.length > 0) {
+        router.push(`/verse/1/${verseNumbers[0]}`)
+      }
+      setShowNavMenu(false)
+      return
+    }
+    router.push(`/verse/${chNum}/${verseNum}`)
+    setShowNavMenu(false)
+  }
+
+  if (loading && !verseData) {
+    return <LoadingScreen />
+  }
+
   if (!verse) {
     return (
       <div className="verse-page">
@@ -987,36 +996,6 @@ const VersePage = () => {
     }
   })
 
-  // Handle navigation to a specific chapter/verse
-  const handleNavigateToVerse = (chNum, verseNum) => {
-    // Only allow navigation to chapter 1
-    if (chNum !== 1) {
-      // Redirect to chapter 1 if trying to access other chapters
-      const verseNumbers = getVerseNumbers(1)
-      if (verseNumbers.length > 0) {
-        router.push(`/verse/1/${verseNumbers[0]}`)
-      }
-      setShowNavMenu(false)
-      return
-    }
-    router.push(`/verse/${chNum}/${verseNum}`)
-    setShowNavMenu(false)
-  }
-
-
-  // Truly randomized particle properties
-  const particleProps = useMemo(() => {
-    return [...Array(60)].map((_, i) => ({
-      left: `${Math.random() * 100}%`,
-      delay: `${Math.random() * 20}s`,
-      duration: `${15 + Math.random() * 20}s`,
-      size: `${1 + Math.random() * 3.5}px`,
-      drift: `${(Math.random() - 0.5) * 120}px`,
-      opacity: 0.15 + Math.random() * 0.45,
-      yEnd: `${-60 - Math.random() * 60}vh`, // Dies at different heights
-      blur: `${Math.random() * 1}px`
-    }))
-  }, [])
 
   return (
     <div 

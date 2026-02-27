@@ -3,7 +3,7 @@ import path from 'path';
 
 export async function POST(request) {
     try {
-        const { chapterId, verseId, audioUrl, wordTimestamps, language = 'sanskrit', password } = await request.json();
+        const { chapterId, verseId, audioUrl, fileName, wordTimestamps, language = 'sanskrit', password } = await request.json();
 
         // Check password against environment variable
         if (password !== process.env.ADMIN_PASSWORD) {
@@ -56,7 +56,7 @@ export async function POST(request) {
         verseContent = verseContent.replace(/"wordTimestamps":\s*\[.*?\],?\n?\s*/s, '');
 
         // Prepare new audioData structure
-        const langData = { url: audioUrl, timestamps: wordTimestamps };
+        const langData = { url: audioUrl, fileName, timestamps: wordTimestamps };
 
         // Find if audioData already exists
         const audioDataMatch = verseContent.match(/"audioData":\s*{(.*?)\n\s*},/s);

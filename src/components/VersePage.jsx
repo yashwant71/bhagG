@@ -43,6 +43,7 @@ const VersePage = () => {
   const [translationTooltipPosition, setTranslationTooltipPosition] = useState(null) // Tooltip position style
   const [sanskritTooltipPosition, setSanskritTooltipPosition] = useState(null) // Sanskrit tooltip position
   const [isPlaying, setIsPlaying] = useState(false) // Audio playback state
+  const [isPaused, setIsPaused] = useState(false) // Pause state
   const [currentAudioTime, setCurrentAudioTime] = useState(0)
   const [activeWordIndex, setActiveWordIndex] = useState(-1)
   const [isSnapshotting, setIsSnapshotting] = useState(false) // Snapshot animation state
@@ -129,16 +130,16 @@ const VersePage = () => {
 
   useEffect(() => {
     let interval;
-    if (isPlaying && audioRef.current) {
+    if (isPlaying && !isPaused && audioRef.current) {
       interval = setInterval(() => {
         setCurrentAudioTime(audioRef.current.currentTime);
       }, 50);
-    } else {
+    } else if (!isPlaying) {
       setCurrentAudioTime(0);
       setActiveWordIndex(-1);
     }
     return () => clearInterval(interval);
-  }, [isPlaying]);
+  }, [isPlaying, isPaused]);
 
   useEffect(() => {
     const audioData = verseData?.audioData?.sanskrit || { url: verseData?.audio, timestamps: verseData?.wordTimestamps };
@@ -181,6 +182,7 @@ const VersePage = () => {
       audioRef.current.pause()
       audioRef.current = null
       setIsPlaying(false)
+      setIsPaused(false)
     }
   }, [validChapterNum, verseParam])
   
@@ -594,7 +596,7 @@ const VersePage = () => {
     }
   }
 
-  // Audio Play/Stop Handlers
+  // Audio Play/Pause Handlers
   const toggleAudio = () => {
     const audioData = verseData?.audioData?.sanskrit || { url: verseData?.audio };
     
@@ -603,6 +605,7 @@ const VersePage = () => {
         if (audioRef.current) {
           audioRef.current.pause();
           setIsPlaying(false);
+          setIsPaused(false);
         }
       }
       return;
@@ -613,6 +616,7 @@ const VersePage = () => {
       audioRef.current = new Audio(audioData.url);
       audioRef.current.onended = () => {
         setIsPlaying(false);
+        setIsPaused(false);
         setActiveWordIndex(-1);
         setCurrentAudioTime(0);
       };
@@ -626,15 +630,35 @@ const VersePage = () => {
       if (playPromise !== undefined) {
         playPromise.then(() => {
           setIsPlaying(true);
+          setIsPaused(false);
         }).catch(error => {
           console.error("Audio playback failed:", error);
           setIsPlaying(false);
+          setIsPaused(false);
         });
       }
     } else {
-      audioRef.current.pause();
-      setIsPlaying(false);
+      // If already playing, toggle pause
+      if (!isPaused) {
+        audioRef.current.pause();
+        setIsPaused(true);
+      } else {
+        audioRef.current.play();
+        setIsPaused(false);
+      }
     }
+  }
+
+  // Reset audio completely
+  const stopAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+    setIsPlaying(false);
+    setIsPaused(false);
+    setActiveWordIndex(-1);
+    setCurrentAudioTime(0);
   }
 
   // Snapshot Handlers
@@ -1351,22 +1375,36 @@ const VersePage = () => {
                 )}
               </button>
 
-              {/* Audio Play/Stop button */}
-              <button 
-                className={`verse-action-button audio-button ${isPlaying ? 'playing' : ''}`}
-                onClick={toggleAudio}
-                aria-label={isPlaying ? "Stop audio" : "Play audio"}
-              >
-                {isPlaying ? (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <rect x="6" y="6" width="12" height="12"/>
-                  </svg>
-                ) : (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
+              <div className={`audio-controls-wrapper ${isPlaying ? 'audio-active' : ''}`}>
+                <button 
+                  className={`verse-action-button audio-button ${isPlaying ? 'playing' : ''} ${isPaused ? 'paused' : ''}`}
+                  onClick={toggleAudio}
+                  aria-label={isPlaying ? (isPaused ? "Resume audio" : "Pause audio") : "Play audio"}
+                >
+                  {isPlaying && !isPaused ? (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <rect x="6" y="4" width="4" height="16"/>
+                      <rect x="14" y="4" width="4" height="16"/>
+                    </svg>
+                  ) : (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  )}
+                </button>
+                
+                {isPlaying && (
+                  <button 
+                    className="verse-action-button audio-stop-button"
+                    onClick={stopAudio}
+                    aria-label="Stop audio"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <rect x="6" y="6" width="12" height="12"/>
+                    </svg>
+                  </button>
                 )}
-              </button>
+              </div>
             </div>
 
             {/* Next Verse button - now rightmost */}

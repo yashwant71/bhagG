@@ -37,6 +37,9 @@ export const chapter1 = {
       }
     },
     "2": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772166869/gita-audio/o5uaoceputci82ws520n.mp3","fileName":"ElevenLabs_2026-02-27T04_23_08_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.844,1.709,3.486,3.969,4.939,5.371,6.694,8.489,9.586]}
+      },
       "sanskrit": "सञ्जय[1.2.1] उवाच[1.2.2]\nदृष्ट्वा[1.2.3] तु[1.2.4] पाण्डव[1.2.5]ानीकं[1.2.6] व्यूढं[1.2.7] दुर्योधन[1.2.8]स्तदा[1.2.9]।\nआचार्य[1.2.10]मुपसंगम्य[1.2.11] राजा[1.2.12] वचन[1.2.13]मब्रवीत्[1.2.14]॥",
       "wordTranslations": [
         { "id": "1.2.1", "sanskrit": "सञ्जयः", "transliteration": "sañjayaḥ", "english": "Sanjaya", "hindi": "संजय", "explanationRef": "exp_sanjaya" },

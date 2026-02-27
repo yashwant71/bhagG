@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import Script from 'next/script'
+import CustomDropdown from '../../../src/components/CustomDropdown'
 import './admin.css'
 
 const AdminPage = () => {
@@ -15,6 +16,9 @@ const AdminPage = () => {
   const [chapter, setChapter] = useState('1')
   const [verse, setVerse] = useState('1')
   const [audioUrl, setAudioUrl] = useState('')
+  const [selectedFile, setSelectedFile] = useState(null)
+  const [previewUrl, setPreviewUrl] = useState('')
+  const [fileName, setFileName] = useState('')
   const [language, setLanguage] = useState('sanskrit')
   const [status, setStatus] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -24,24 +28,58 @@ const AdminPage = () => {
   const [versesList, setVersesList] = useState([])
 
   useEffect(() => {
-    // Check local storage for existing password
-    const storedPass = localStorage.getItem('bg-admin-password')
-    const adminPass = 'yashwant_gita_2024' // Updated password
+    const checkAuth = async () => {
+      // Check local storage for existing password
+      const storedPass = localStorage.getItem('bg-admin-password')
 
-    if (storedPass === adminPass) {
-      setIsAuthenticated(true)
-      setPassword(storedPass)
-    } else {
+      if (storedPass) {
+        try {
+          const response = await fetch('/api/admin/verify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password: storedPass })
+          })
+          const data = await response.json()
+          if (data.success) {
+            setIsAuthenticated(true)
+            setPassword(storedPass)
+            return
+          }
+        } catch (error) {
+          console.error('Auth check failed:', error)
+        }
+      }
+
+      // If no stored pass or verification failed, prompt for new one
       const pass = prompt('Please enter admin password:')
-      if (pass === adminPass) {
-        setIsAuthenticated(true)
-        setPassword(pass)
-        localStorage.setItem('bg-admin-password', pass)
-      } else {
-        alert('Incorrect password. Redirecting...')
+      if (!pass) {
+        router.push('/')
+        return
+      }
+
+      try {
+        const response = await fetch('/api/admin/verify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password: pass })
+        })
+        const data = await response.json()
+        if (data.success) {
+          setIsAuthenticated(true)
+          setPassword(pass)
+          localStorage.setItem('bg-admin-password', pass)
+        } else {
+          alert('Incorrect password. Redirecting...')
+          localStorage.removeItem('bg-admin-password')
+          router.push('/')
+        }
+      } catch (error) {
+        alert('Verification failed. Try again.')
         router.push('/')
       }
     }
+
+    checkAuth()
   }, [router])
 
   const [selectedVerseData, setSelectedVerseData] = useState(null)
@@ -75,11 +113,13 @@ const AdminPage = () => {
         const langAudio = data.audioData?.[language]
         if (langAudio) {
           setAudioUrl(langAudio.url || '')
+          setFileName(langAudio.fileName || '')
           setWordTimestamps(langAudio.timestamps || [])
         } else {
           // Fallback to legacy structure for migration
           setAudioUrl(data.audio || '')
           setWordTimestamps(data.wordTimestamps || [])
+          setFileName('')
         }
       } catch (error) {
         console.error('Failed to fetch verse detail:', error)
@@ -88,15 +128,26 @@ const AdminPage = () => {
     if (isAuthenticated && verse) fetchVerseDetail()
   }, [chapter, verse, language, isAuthenticated])
 
-  const handleFileChange = async (e) => {
+  const handleFileChange = (e) => {
     const file = e.target.files[0]
     if (!file) return
+    
+    // Create preview URL
+    const objectUrl = URL.createObjectURL(file)
+    setSelectedFile(file)
+    setPreviewUrl(objectUrl)
+    setFileName(file.name)
+    setStatus(`File "${file.name}" picked. Please preview and then click Upload.`)
+  }
+
+  const handleUpload = async () => {
+    if (!selectedFile) return
 
     setIsLoading(true)
-    setStatus('Uploading audio...')
+    setStatus('Uploading to Cloudinary...')
 
     const formData = new FormData()
-    formData.append('file', file)
+    formData.append('file', selectedFile)
     formData.append('password', password)
 
     try {
@@ -108,7 +159,11 @@ const AdminPage = () => {
       const data = await response.json()
       if (data.url) {
         setAudioUrl(data.url)
-        setStatus('Audio uploaded successfully!')
+        // Cleanup preview
+        if (previewUrl) URL.revokeObjectURL(previewUrl)
+        setSelectedFile(null)
+        setPreviewUrl('')
+        setStatus('Audio uploaded successfully! Use the recorder below to set timings.')
       } else {
         setStatus(`Upload failed: ${data.error}`)
       }
@@ -128,9 +183,10 @@ const AdminPage = () => {
     const audio = new Audio(audioUrl)
     setRecordingAudio(audio)
     setIsRecording(true)
-    setWordTimestamps([])
+    // Automatically set first word to 0s
+    setWordTimestamps([0.000])
     audio.play()
-    setStatus('Recording started. Clicks on words to set timing.')
+    setStatus('Recording started. First word set at 0s. Click on subsequent words.')
     audio.onended = () => {
       setIsRecording(false)
       setStatus('Recording ended.')
@@ -168,6 +224,7 @@ const AdminPage = () => {
           chapterId: chapter,
           verseId: verse,
           audioUrl,
+          fileName,
           wordTimestamps: wordTimestamps.length > 0 ? wordTimestamps : undefined,
           language,
           password
@@ -204,33 +261,31 @@ const AdminPage = () => {
         <p className="admin-subtitle">Welcome, {username}</p>
 
         <div className="admin-card">
-          <div className="form-grid">
-            <div className="form-group">
-              <label>Select Chapter</label>
-              <select value={chapter} onChange={(e) => setChapter(e.target.value)}>
-                {availableChapters.map(ch => (
-                  <option key={ch} value={ch}>Chapter {ch}</option>
-                ))}
-              </select>
-            </div>
+          <div className="selector-grid">
+            <CustomDropdown 
+              label="Select Chapter"
+              value={chapter}
+              options={availableChapters.map(ch => ({ value: ch, label: `Chapter ${ch}` }))}
+              onChange={(val) => setChapter(val)}
+            />
 
-            <div className="form-group">
-              <label>Select Verse</label>
-              <select value={verse} onChange={(e) => setVerse(e.target.value)}>
-                {versesList.map(v => (
-                  <option key={v} value={v}>Verse {v}</option>
-                ))}
-              </select>
-            </div>
+            <CustomDropdown 
+              label="Select Verse"
+              value={verse}
+              options={versesList.map(v => ({ value: v, label: `Verse ${v}` }))}
+              onChange={(val) => setVerse(val)}
+            />
 
-            <div className="form-group">
-              <label>Audio Language</label>
-              <select value={language} onChange={(e) => setLanguage(e.target.value)}>
-                <option value="sanskrit">Sanskrit</option>
-                <option value="hindi">Hindi</option>
-                <option value="english">English</option>
-              </select>
-            </div>
+            <CustomDropdown 
+              label="Audio Language"
+              value={language}
+              options={[
+                { value: 'sanskrit', label: 'Sanskrit' },
+                { value: 'hindi', label: 'Hindi' },
+                { value: 'english', label: 'English' }
+              ]}
+              onChange={(val) => setLanguage(val)}
+            />
           </div>
 
           <div className="upload-section">
@@ -246,9 +301,23 @@ const AdminPage = () => {
               </div>
             </label>
             
+            {previewUrl && (
+              <div className="preview-container">
+                <p>Preview Picked File:</p>
+                <audio src={previewUrl} controls className="admin-audio-preview" />
+                <button 
+                  className="confirm-upload-btn" 
+                  onClick={handleUpload}
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Uploading...' : 'Confirm & Upload to Cloudinary'}
+                </button>
+              </div>
+            )}
+            
             {audioUrl && (
               <div className="audio-preview">
-                <p>Current Audio URL:</p>
+                <p>Cloud URL (Ready to Save):</p>
                 <code>{audioUrl}</code>
               </div>
             )}

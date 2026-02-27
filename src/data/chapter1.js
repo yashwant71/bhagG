@@ -4,6 +4,9 @@ export const chapter1 = {
   "chapterNameSanskrit": "अर्जुनविषादयोगः",
   "verses": {
     "1": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772165058/gita-audio/k06tkkrzgtwlxyp4ev7m.mp3","timestamps":[0.177,1.048,2.729,3.664,4.693,5.895,7.082,8.286,10.119,10.713]}
+      },
       "sanskrit": "धृतराष्ट्र[1.1.1] उवाच[1.1.2]\nधर्मक्षेत्रे[1.1.3] कुरुक्षेत्रे[1.1.4] समवेता[1.1.5] युयुत्सवः[1.1.6]।\nमामकाः[1.1.7] पाण्डवा[1.1.8]श्च[1.1.9]ैव[1.1.10] कि[1.1.11]मकुर्वत[1.1.12] सञ्जय[1.1.13]॥",
       "wordTranslations": [
         { "id": "1.1.1", "sanskrit": "धृतराष्ट्रः", "transliteration": "Dhṛtarāṣṭraḥ", "english": "King Dhritarashtra", "hindi": "धृतराष्ट्र", "explanationRef": "exp_dhritarashtra" },

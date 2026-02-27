@@ -306,6 +306,28 @@
   -ms-user-select: none;
 }
 
+.sanskrit-word.audio-active {
+  -webkit-text-fill-color: var(--gold-bright) !important;
+  -webkit-text-stroke: 1.5px #fff !important;
+  text-shadow: 0 0 20px var(--gold-primary), 0 0 10px #fff;
+  transform: scale(1.1);
+  transition: all 0.2s ease-out;
+  z-index: 10;
+  opacity: 1 !important;
+}
+
+.sanskrit-word.audio-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--gold-bright), transparent);
+  box-shadow: 0 0 15px var(--gold-primary);
+  opacity: 1;
+}
+
 .sanskrit-word.has-translation {
   cursor: pointer;
   position: relative;
@@ -641,11 +663,35 @@
 .verse-number-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 0.5rem;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
   width: 100%;
+  max-width: 500px; /* Defined width to keep arrows at ends of icon block */
+  padding: 0 0.25rem;
+}
+
+/* Middle grouped actions */
+.verse-actions-center {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .verse-number-container {
+    max-width: 100%;
+    gap: 0.25rem;
+  }
+  .verse-actions-center {
+    gap: 0.25rem;
+  }
+  .verse-number-clickable {
+    min-width: 100px;
+    padding: 0.4rem 0.6rem;
+  }
 }
 
 .verse-number-clickable {
@@ -684,8 +730,8 @@
   background: rgba(26, 26, 26, 0.5);
   border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 44px; /* Increased from 36px */
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -711,14 +757,14 @@
 }
 
 .verse-nav-button svg {
-  width: 20px;
-  height: 20px;
+  width: 24px; /* Increased from 20px */
+  height: 24px;
 }
 
 .verse-bookmark-button svg,
 .verse-copy-button svg,
 .verse-action-button svg {
-  width: 20px; /* Force consistent desktop icon size */
+  width: 20px; 
   height: 20px;
 }
 
@@ -1126,13 +1172,13 @@
   }
 
   .verse-nav-button {
-    width: 32px;
-    height: 32px;
+    width: 40px; /* Increased for mobile prominence */
+    height: 40px;
   }
 
   .verse-nav-button svg {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
   }
 
   .verse-bookmark-button,
@@ -1227,13 +1273,13 @@
   }
 
   .verse-nav-button {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
   }
 
   .verse-nav-button svg {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
   }
 
   .verse-bookmark-button,
@@ -2119,10 +2165,7 @@
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
-  .verse-action-button {
-    width: 40px;
-    height: 40px;
-  }
+  /* Action buttons now handled in primary mobile media query */
 }
 
 

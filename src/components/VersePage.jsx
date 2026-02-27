@@ -43,6 +43,8 @@ const VersePage = () => {
   const [translationTooltipPosition, setTranslationTooltipPosition] = useState(null) // Tooltip position style
   const [sanskritTooltipPosition, setSanskritTooltipPosition] = useState(null) // Sanskrit tooltip position
   const [isPlaying, setIsPlaying] = useState(false) // Audio playback state
+  const [currentAudioTime, setCurrentAudioTime] = useState(0)
+  const [activeWordIndex, setActiveWordIndex] = useState(-1)
   const [isSnapshotting, setIsSnapshotting] = useState(false) // Snapshot animation state
   const [showSnapshotPreview, setShowSnapshotPreview] = useState(false) // Final preview before hiding
   const snapshotCardRef = useRef(null)
@@ -126,6 +128,35 @@ const VersePage = () => {
   }, [verseData])
 
   useEffect(() => {
+    let interval;
+    if (isPlaying && audioRef.current) {
+      interval = setInterval(() => {
+        setCurrentAudioTime(audioRef.current.currentTime);
+      }, 50);
+    } else {
+      setCurrentAudioTime(0);
+      setActiveWordIndex(-1);
+    }
+    return () => clearInterval(interval);
+  }, [isPlaying]);
+
+  useEffect(() => {
+    const audioData = verseData?.audioData?.sanskrit || { url: verseData?.audio, timestamps: verseData?.wordTimestamps };
+    if (audioData?.timestamps && isPlaying) {
+      const timestamps = audioData.timestamps;
+      let activeIdx = -1;
+      
+      // Find the furthest timestamp that's less than or equal to current time
+      for (let i = 0; i < timestamps.length; i++) {
+        if (timestamps[i] !== null && currentAudioTime >= timestamps[i]) {
+          activeIdx = i;
+        }
+      }
+      setActiveWordIndex(activeIdx);
+    }
+  }, [currentAudioTime, isPlaying, verseData]);
+
+  useEffect(() => {
     const fetchVerseData = async () => {
       try {
         setLoading(true)
@@ -141,9 +172,16 @@ const VersePage = () => {
     fetchVerseData()
   }, [validChapterNum, verseNum])
   
-  // Update bookmarks when verse changes
+  // Update bookmarks and reset audio when verse changes
   useEffect(() => {
     setBookmarks(getBookmarks())
+    
+    // Reset audio state when changing verses
+    if (audioRef.current) {
+      audioRef.current.pause()
+      audioRef.current = null
+      setIsPlaying(false)
+    }
   }, [validChapterNum, verseParam])
   
   const toggleBookmark = () => {
@@ -558,15 +596,44 @@ const VersePage = () => {
 
   // Audio Play/Stop Handlers
   const toggleAudio = () => {
-    // For now, we'll just toggle the state. 
-    // In a real app, we'd play/pause the audioRef.current src
-    setIsPlaying(!isPlaying)
+    const audioData = verseData?.audioData?.sanskrit || { url: verseData?.audio };
     
-    // Placeholder audio logic
+    if (!audioData?.url) {
+      if (isPlaying) {
+        if (audioRef.current) {
+          audioRef.current.pause();
+          setIsPlaying(false);
+        }
+      }
+      return;
+    }
+
+    // Create or update audio element
+    if (!audioRef.current) {
+      audioRef.current = new Audio(audioData.url);
+      audioRef.current.onended = () => {
+        setIsPlaying(false);
+        setActiveWordIndex(-1);
+        setCurrentAudioTime(0);
+      };
+    } else if (audioRef.current.src !== audioData.url) {
+      audioRef.current.pause();
+      audioRef.current.src = audioData.url;
+    }
+
     if (!isPlaying) {
-      console.log(`Playing audio for ${chapterVerseKey}`)
+      const playPromise = audioRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          setIsPlaying(true);
+        }).catch(error => {
+          console.error("Audio playback failed:", error);
+          setIsPlaying(false);
+        });
+      }
     } else {
-      console.log(`Stopping audio for ${chapterVerseKey}`)
+      audioRef.current.pause();
+      setIsPlaying(false);
     }
   }
 
@@ -1175,12 +1242,19 @@ const VersePage = () => {
                   const wordText = segment.text || segment
                   const wordsDataForCheck = getWordData(lineIndex, wordIndex)
                   const hasTranslation = (segment.ids && segment.ids.length > 0) || (wordsDataForCheck !== null)
-                  const tooltipData = isClicked ? wordData : (isHovered ? hoveredWordData : null)
+                  
+                  // Calculate global word index
+                  let prevWordsCount = 0;
+                  for (let i = 0; i < lineIndex; i++) {
+                    prevWordsCount += sanskritLines[i].length;
+                  }
+                  const globalWordIndex = prevWordsCount + wordIndex;
+                  const isAudioActive = activeWordIndex === globalWordIndex;
                   
                   return (
                     <span
                       key={`${chapterVerseKey}-${lineIndex}-${wordIndex}`}
-                      className={`sanskrit-word ${isLoaded ? 'animate-in' : ''} ${hasTranslation ? 'has-translation' : ''} ${animationsComplete ? 'animations-complete' : ''} ${isClicked ? 'tooltip-active' : ''} ${isHovered ? 'tooltip-hover' : ''}`}
+                      className={`sanskrit-word ${isLoaded ? 'animate-in' : ''} ${hasTranslation ? 'has-translation' : ''} ${animationsComplete ? 'animations-complete' : ''} ${isClicked ? 'tooltip-active' : ''} ${isHovered ? 'tooltip-hover' : ''} ${isAudioActive ? 'audio-active' : ''}`}
                       data-word={wordText}
                       style={{
                         ['--animation-delay']: `${delay}s`
@@ -1208,37 +1282,7 @@ const VersePage = () => {
           
           {/* Verse Number and Navigation Controls */}
           <div className="verse-number-container">
-            {/* Snapshot button - on the far left */}
-            <button 
-              className={`verse-action-button snapshot-button ${isSnapshotting ? 'active' : ''}`}
-              onClick={handleSnapshot}
-              aria-label="Create snapshot"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-            </button>
-
-            {/* Bookmark button */}
-            <button 
-              className="verse-bookmark-button"
-              onClick={toggleBookmark}
-              aria-label={isBookmarked ? "Remove bookmark" : "Add bookmark"}
-            >
-              <svg 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill={isBookmarked ? "currentColor" : "none"} 
-                stroke="currentColor" 
-                strokeWidth="2"
-              >
-                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
-              </svg>
-            </button>
-            
+            {/* Previous Verse button - now leftmost */}
             <button 
               className="verse-nav-button verse-nav-prev"
               onClick={handlePrevVerse}
@@ -1248,15 +1292,84 @@ const VersePage = () => {
                 <path d="M15 18l-6-6 6-6"/>
               </svg>
             </button>
-            
-            <button 
-              className="verse-number-clickable"
-              onClick={() => setShowNavMenu(true)}
-              aria-label="Select verse"
-            >
-              {chapterVerseKey}
-            </button>
-            
+
+            <div className="verse-actions-center">
+              {/* Snapshot button */}
+              <button 
+                className={`verse-action-button snapshot-button ${isSnapshotting ? 'active' : ''}`}
+                onClick={handleSnapshot}
+                aria-label="Create snapshot"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </button>
+
+              {/* Bookmark button */}
+              <button 
+                className="verse-bookmark-button"
+                onClick={toggleBookmark}
+                aria-label={isBookmarked ? "Remove bookmark" : "Add bookmark"}
+              >
+                <svg 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill={isBookmarked ? "currentColor" : "none"} 
+                  stroke="currentColor" 
+                  strokeWidth="2"
+                >
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                </svg>
+              </button>
+              
+              <button 
+                className="verse-number-clickable"
+                onClick={() => setShowNavMenu(true)}
+                aria-label="Select verse"
+              >
+                {chapterVerseKey}
+              </button>
+              
+              {/* Copy button for Sanskrit text */}
+              <button 
+                className="verse-copy-button"
+                onClick={handleCopySanskrit}
+                aria-label={copiedSanskrit ? "Copied!" : "Copy Sanskrit text"}
+              >
+                {copiedSanskrit ? (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M20 6L9 17l-5-5"/>
+                  </svg>
+                ) : (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                  </svg>
+                )}
+              </button>
+
+              {/* Audio Play/Stop button */}
+              <button 
+                className={`verse-action-button audio-button ${isPlaying ? 'playing' : ''}`}
+                onClick={toggleAudio}
+                aria-label={isPlaying ? "Stop audio" : "Play audio"}
+              >
+                {isPlaying ? (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="6" y="6" width="12" height="12"/>
+                  </svg>
+                ) : (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                )}
+              </button>
+            </div>
+
+            {/* Next Verse button - now rightmost */}
             <button 
               className="verse-nav-button verse-nav-next"
               onClick={handleNextVerse}
@@ -1265,41 +1378,6 @@ const VersePage = () => {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M9 18l6-6-6-6"/>
               </svg>
-            </button>
-            
-            {/* Copy button for Sanskrit text */}
-            <button 
-              className="verse-copy-button"
-              onClick={handleCopySanskrit}
-              aria-label={copiedSanskrit ? "Copied!" : "Copy Sanskrit text"}
-            >
-              {copiedSanskrit ? (
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M20 6L9 17l-5-5"/>
-                </svg>
-              ) : (
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                </svg>
-              )}
-            </button>
-
-            {/* Audio Play/Stop button - on the far right */}
-            <button 
-              className={`verse-action-button audio-button ${isPlaying ? 'playing' : ''}`}
-              onClick={toggleAudio}
-              aria-label={isPlaying ? "Stop audio" : "Play audio"}
-            >
-              {isPlaying ? (
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <rect x="6" y="6" width="12" height="12"/>
-                </svg>
-              ) : (
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              )}
             </button>
           </div>
         </div>

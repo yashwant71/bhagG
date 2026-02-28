@@ -67,6 +67,9 @@ export const chapter1 = {
       }
     },
     "3": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772252079/gita-audio/dv3fckadgvrwsz37tuqz.mp3","fileName":"ElevenLabs_2026-02-28T04_13_06_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.264,3.421,4.034,5.194,5.919,7.001,7.417,7.858]}
+      },
       "sanskrit": "पश्य[1.3.1]ैतां[1.3.2] पाण्डुपुत्राणा[1.3.3]माचार्य[1.3.4] महतीं[1.3.5] चमूम्[1.3.6]।\nव्यूढां[1.3.7] द्रुपदपुत्रेण[1.3.8] तव[1.3.9] शिष्येण[1.3.10] धीमता[1.3.11]॥",
       "wordTranslations": [
         { "id": "1.3.1", "sanskrit": "पश्य", "transliteration": "paśya", "english": "behold", "hindi": "देखिये" },
@@ -95,6 +98,9 @@ export const chapter1 = {
       }
     },
     "4": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772252364/gita-audio/byp3pl7bcigkboxfofua.mp3","fileName":"ElevenLabs_2026-02-28T04_18_29_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.565,1.258,2.268,2.835,3.706,4.67,5.796,6.746]}
+      },
       "sanskrit": "अत्र[1.4.1] शूरा[1.4.2] महेष्वासा[1.4.3] भीम[1.4.4]ार्जुन[1.4.5]समा[1.4.6] युधि[1.4.7]।\nयुयुधानो[1.4.8] विराट[1.4.9]श्च[1.4.10] द्रुपद[1.4.11]श्च[1.4.12] महारथः[1.4.13]॥",
       "wordTranslations": [
         { "id": "1.4.1", "sanskrit": "अत्र", "transliteration": "atra", "english": "here", "hindi": "यहाँ" },
@@ -121,6 +127,9 @@ export const chapter1 = {
       }
     },
     "5": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772255357/gita-audio/gzzhsrtoftypim9se4bp.mp3","fileName":"ElevenLabs_2026-02-28T05_04_20_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,2.457,3.339,4.587,5.802,6.719]}
+      },
       "sanskrit": "धृष्टकेतु[1.5.1]श्चेकितानः[1.5.2] काशिराज[1.5.3]श्च[1.5.4] वीर्यवान्[1.5.5]।\nपुरुजित्[1.5.6]कुन्तिभोज[1.5.7]श्च[1.5.8] शैव्य[1.5.9]श्च[1.5.10] नरपुङ्गवः[1.5.11]॥",
       "wordTranslations": [
         { "id": "1.5.1", "sanskrit": "धृष्टकेतुः", "transliteration": "dhṛṣṭaketuḥ", "english": "Dhrishtaketu", "hindi": "धृष्टकेतु", "explanationRef": "exp_dhrishtaketu" },
@@ -145,6 +154,9 @@ export const chapter1 = {
       }
     },
     "6": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772255665/gita-audio/uryohmjq3odblzb4jdex.mp3","fileName":"ElevenLabs_2026-02-28T05_12_34_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.572,2.8,3.758,4.946,5.81,6.995,7.401,7.745]}
+      },
       "sanskrit": "युधामन्यु[1.6.1]श्च[1.6.2] विक्रान्त[1.6.3] उत्तमौजा[1.6.4]श्च[1.6.5] वीर्यवान्[1.6.6]।\nसौभद्रो[1.6.7] द्रौपदेया[1.6.8]श्च[1.6.9] सर्व[1.6.10] एव[1.6.11] महारथाः[1.6.12]॥",
       "wordTranslations": [
         { "id": "1.6.1", "sanskrit": "युधामन्युः", "transliteration": "yudhāmanyuḥ", "english": "Yudhamanyu", "hindi": "युधामन्यु", "explanationRef": "exp_yudhamanyu" },
@@ -170,6 +182,9 @@ export const chapter1 = {
       }
     },
     "7": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772255833/gita-audio/nk6o89zmsozzhqs7spwr.mp3","fileName":"ElevenLabs_2026-02-28T05_16_11_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.592,1.144,1.892,2.318,2.762,3.782,4.963,5.525,6.142,7.011,7.301,7.819]}
+      },
       "sanskrit": "अस्माकं[1.7.1] तु[1.7.2] विशिष्टा[1.7.3] ये[1.7.4] तान्[1.7.11]निबोध[1.7.5] द्विजोत्तम[1.7.6]।\nनायका[1.7.7] मम[1.7.8] सैन्यस्य[1.7.9] संज्ञार्थं[1.7.10] तान्[1.7.11] ब्रवीमि[1.7.12] ते[1.7.13]॥",
       "wordTranslations": [
         { "id": "1.7.1", "sanskrit": "अस्माकम्", "transliteration": "asmākam", "english": "our", "hindi": "अपने" },
@@ -196,6 +211,9 @@ export const chapter1 = {
       }
     },
     "8": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772255980/gita-audio/agrjuww7hgz1txca6o3j.mp3","fileName":"ElevenLabs_2026-02-28T05_18_46_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.449,1.034,1.76,2.23,3.464,4.304,5.118,6.579]}
+      },
       "sanskrit": "भवान्[1.8.1] भीष्म[1.8.2]श्च[1.8.3] कर्ण[1.8.4]श्च[1.8.5] कृप[1.8.6]श्च[1.8.7] समितिञ्जयः[1.8.8]।\nअश्वत्थामा[1.8.9] विकर्ण[1.8.10]श्च[1.8.11] सौमदत्ति[1.8.12]स्तथ[1.8.13]ैव[1.8.14] च[1.8.14]॥",
       "wordTranslations": [
         { "id": "1.8.1", "sanskrit": "भवान्", "transliteration": "bhavān", "english": "Yourself (Drona)", "hindi": "आप", "explanationRef": "exp_dronacharya" },
@@ -223,6 +241,9 @@ export const chapter1 = {
       }
     },
     "9": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772256075/gita-audio/mcloxmvqmccmobeizoq4.mp3","fileName":"ElevenLabs_2026-02-28T05_20_32_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.45,0.832,1.291,1.727,2.342,3.111,5.428,6.886]}
+      },
       "sanskrit": "अन्ये[1.9.1] च[1.9.2] बहवः[1.9.3] शूरा[1.9.4] मदर्थे[1.9.5] त्यक्तजीविताः[1.9.6]।\nनानाशस्त्रप्रहरणाः[1.9.7] सर्वे[1.9.8] युद्धविशारदाः[1.9.9]॥",
       "wordTranslations": [
         { "id": "1.9.1", "sanskrit": "अन्ये", "transliteration": "anye", "english": "others", "hindi": "और भी" },
@@ -245,6 +266,9 @@ export const chapter1 = {
       }
     },
     "10": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772256207/gita-audio/utvf0zkdega8ksaaqv10.mp3","fileName":"ElevenLabs_2026-02-28T05_22_33_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.315,2.368,3.089,4.936,5.674,6.685,7.361]}
+      },
       "sanskrit": "अपर्याप्तं[1.10.1] तदस्माकं[1.10.2] बलं[1.10.3] भीष्मा[1.10.4]भिरक्षितम्[1.10.5]।\nपर्याप्तं[1.10.6] त्विदमेतेषां[1.10.7-8] बलं[1.10.9] भीमा[1.10.10]भिरक्षितम्[1.10.11]॥",
       "wordTranslations": [
         { "id": "1.10.1", "sanskrit": "अपर्याप्तम्", "transliteration": "aparyāptam", "english": "unconquerable (unlimited)", "hindi": "अजेय" },
@@ -269,6 +293,9 @@ export const chapter1 = {
       }
     },
     "11": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772256312/gita-audio/e4tbfnoftwci0sgjhzc8.mp3","fileName":"ElevenLabs_2026-02-28T05_24_32_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.636,1.181,1.892,3.703,5.869,6.321,6.73,6.905]}
+      },
       "sanskrit": "अयनेषु[1.11.1] च[1.11.2] सर्वेषु[1.11.3] यथाभाग[1.11.4]मवस्थिताः[1.11.5]।\nभीष्म[1.11.6]मेवाभिरक्षन्तु[1.11.7] भवन्तः[1.11.8] सर्व[1.11.9] एव[1.11.10] हि[1.11.11]॥",
       "wordTranslations": [
         { "id": "1.11.1", "sanskrit": "ayaneṣu", "transliteration": "ayaneṣu", "english": "at the strategic points", "hindi": "मोर्चों पर" },
@@ -293,6 +320,9 @@ export const chapter1 = {
       }
     },
     "12": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772256459/gita-audio/nb8nevqae08v9bbpbinc.mp3","fileName":"ElevenLabs_2026-02-28T05_26_58_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.776,1.398,2.321,2.95,4.04,4.874,5.874,6.358,6.847]}
+      },
       "sanskrit": "तस्य[1.12.1] संजनयन्[1.12.2] हर्षं[1.12.3] कुरुवृद्धः[1.12.4] पितामहः[1.12.5]।\nसिंहनादं[1.12.6] विनद्योच्चैः[1.12.7] शंखं[1.12.8] दध्मौ[1.12.9] प्रतापवान्[1.12.10]॥",
       "wordTranslations": [
         { "id": "1.12.1", "sanskrit": "tasya", "transliteration": "tasya", "english": "his (Duryodhana's)", "hindi": "उस (दुर्योधन) के", "explanationRef": "exp_duryodhana" },
@@ -316,6 +346,9 @@ export const chapter1 = {
       }
     },
     "13": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772256546/gita-audio/uyqnxsxlbmvcponfvj5k.mp3","fileName":"ElevenLabs_2026-02-28T05_28_35_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.794,1.542,2.308,4.367,5.938,6.228]}
+      },
       "sanskrit": "ततः[1.13.1] शंख[1.13.2]श्च[1.13.3] भेर्य[1.13.4]श्च[1.13.5] पणवानकगोमुखाः[1.13.6-7]।\nसहस[1.13.8]ैव[1.13.9]ाभ्यहन्यन्त[1.13.9] स[1.13.10] शब्द[1.13.11]स्तुमुलो[1.13.12]ऽभवत्[1.13.13]॥",
       "wordTranslations": [
         { "id": "1.13.1", "sanskrit": "tataḥ", "transliteration": "tataḥ", "english": "then", "hindi": "इसके पश्चात्" },
@@ -342,6 +375,9 @@ export const chapter1 = {
       }
     },
     "14": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772256660/gita-audio/pqoifjcnvn78gqrdynnn.mp3","fileName":"ElevenLabs_2026-02-28T05_29_58_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.993,2.601,3.163,3.775,4.93,5.612,6.513,7.207,7.67]}
+      },
       "sanskrit": "ततः[1.14.1] श्वेतैर्[1.14.2]हयैर्[1.14.3]युक्ते[1.14.4] महति[1.14.5] स्यन्दने[1.14.6] स्थितौ[1.14.7]।\nमाधवः[1.14.8] पाण्डव[1.14.9]श्च[1.14.10]ैव[1.14.11] दिव्यौ[1.14.12] शंखौ[1.14.13] प्रदध्मतुः[1.14.14]॥",
       "wordTranslations": [
         { "id": "1.14.1", "sanskrit": "tataḥ", "transliteration": "tataḥ", "english": "then", "hindi": "इसके अनन्तर" },
@@ -373,6 +409,9 @@ export const chapter1 = {
       }
     },
     "15": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772256783/gita-audio/kspxdaonl0kqcxtjb412.mp3","fileName":"ElevenLabs_2026-02-28T05_32_22_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.853,1.757,2.504,3.629,4.152,4.719,5.141,5.947]}
+      },
       "sanskrit": "पाञ्चजन्यं[1.15.1] हृषीकेशो[1.15.2] देवदत्तं[1.15.3] धनञ्जयः[1.15.4]।\nपौण्ड्रं[1.15.5] दध्मौ[1.15.6] महाशंखं[1.15.7] भीमकर्मा[1.15.8] वृकोदरः[1.15.9]॥",
       "wordTranslations": [
         { "id": "1.15.1", "sanskrit": "pāñcajanyam", "transliteration": "pāñcajanyam", "english": "Panchajanya", "hindi": "पाञ्चजन्य नामक" },
@@ -395,6 +434,9 @@ export const chapter1 = {
       }
     },
     "16": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772257019/gita-audio/gaqshb5hdydhc5csslrb.mp3","fileName":"ElevenLabs_2026-02-28T05_36_16_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.07,1.82,2.43,2.961,4.539,4.914,5.875]}
+      },
       "sanskrit": "अनन्तविजयं[1.16.1] राजा[1.16.2] कुन्ती[1.16.3] पुत्रो[1.16.4] युधिष्ठिरः[1.16.5]।\nनकुलः[1.16.6] सहदेव[1.16.7]श्च[1.16.8] सुघोष[1.16.9]मणिपुष्पकौ[1.16.10]॥",
       "wordTranslations": [
         { "id": "1.16.1", "sanskrit": "anantavijayam", "transliteration": "anantavijayam", "english": "Anantavijaya", "hindi": "अनन्त विजय" },
@@ -418,6 +460,9 @@ export const chapter1 = {
       }
     },
     "17": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772257134/gita-audio/cpapwwjngm27cmt7itji.mp3","fileName":"ElevenLabs_2026-02-28T05_38_06_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.85,1.985,2.557,2.835,3.983,5.092,6.576]}
+      },
       "sanskrit": "काश्य[1.17.1]श्च[1.17.2] परमेष्वासः[1.17.3] शिखण्डी[1.17.4] च[1.17.5] महारथः[1.17.6]।\nधृष्टद्युम्नो[1.17.7] विराट[1.17.8]श्च[1.17.9] सात्यकि[1.17.10]श्च[1.17.11]ापराजितः[1.17.11]॥",
       "wordTranslations": [
         { "id": "1.17.1", "sanskrit": "kāśyaḥ", "transliteration": "kāśyaḥ", "english": "the King of Kashi", "hindi": "काशिराज", "explanationRef": "exp_kashiraja" },
@@ -442,6 +487,9 @@ export const chapter1 = {
       }
     },
     "18": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772257274/gita-audio/aiscgx2c9cqxcauhduyg.mp3","fileName":"ElevenLabs_2026-02-28T05_40_30_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.853,1.847,2.214,3.271,4.143,4.964,5.613]}
+      },
       "sanskrit": "द्रुपदो[1.18.1] द्रौपदेया[1.18.2]श्च[1.18.3] सर्वशः[1.18.4] पृथिवीपते[1.18.5]।\nसौभद्र[1.18.6]श्च[1.18.7] महाबाहुः[1.18.8] शंखान्दध्मुः[1.18.9] पृथक्[1.18.10]पृथक्[1.18.10]॥",
       "wordTranslations": [
         { "id": "1.18.1", "sanskrit": "drupadaḥ", "transliteration": "drupadaḥ", "english": "Drupada", "hindi": "राजा द्रुपद", "explanationRef": "exp_drupada" },
@@ -469,6 +517,9 @@ export const chapter1 = {
       }
     },
     "19": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772257558/gita-audio/x9zwskr7umrdghmiwyx0.mp3","fileName":"ElevenLabs_2026-02-28T05_45_12_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.313,0.905,2.082,2.929,4.358,5.638,5.975,6.783,7.101]}
+      },
       "sanskrit": "स[1.19.1] घोषो[1.19.2] धार्तराष्ट्राणां[1.19.3] हृदयानि[1.19.4] व्यदारयत्[1.19.5]।\nनभ[1.19.6]श्च[1.19.7] पृथिवीं[1.19.8] च[1.19.9]ैव[1.19.9] तुमुलो[1.19.10] व्यनुनादयन्[1.19.11]॥",
       "wordTranslations": [
         { "id": "1.19.1", "sanskrit": "saḥ", "transliteration": "saḥ", "english": "that", "hindi": "उस" },
@@ -497,6 +548,9 @@ export const chapter1 = {
       }
     },
     "20": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772257759/gita-audio/s2el6m6edwwnwtv5uf4d.mp3","fileName":"ElevenLabs_2026-02-28T05_48_34_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.711,1.472,2.701,4.024,4.708,5.721,6.993]}
+      },
       "sanskrit": "अथ[1.20.1] व्यवस्थितान्[1.20.2]दृष्ट्वा[1.20.3] धार्तराष्ट्रान्[1.20.4] कपिध्वजः[1.20.5]।\nप्रवृत्ते[1.20.6] शस्त्रसम्पाते[1.20.7] धनुरुद्यम्य[1.20.8] पाण्डवः[1.20.9]॥",
       "wordTranslations": [
         { "id": "1.20.1", "sanskrit": "atha", "transliteration": "atha", "english": "then", "hindi": "इसके बाद" },
@@ -519,6 +573,9 @@ export const chapter1 = {
       }
     },
     "21": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772264691/gita-audio/l1l37qzll0jkz14k3twy.mp3","fileName":"","timestamps":[0,0.606,1.375,2.338,3.301,4.657,5.093,8.034,8.783,9.215]}
+      },
       "sanskrit": "हृषीकेशं[1.21.1] तदा[1.21.2] वाक्य[1.21.3]मिद[1.21.4]माह[1.21.5] महीपते[1.21.6]।\nअर्जुन[1.21.7] उवाच[1.21.8]\nसेनयो[1.21.9]रुभयो[1.21.10]र्मध्ये[1.21.11] रथं[1.21.12] स्थापय[1.21.13] मे[1.21.14]ऽच्युत[1.21.15]॥",
       "wordTranslations": [
         { "id": "1.21.1", "sanskrit": "hṛṣīkeśam", "transliteration": "hṛṣīkeśam", "english": "to Sri Krishna", "hindi": "श्रीकृष्ण महाराज से", "explanationRef": "exp_hrishikesha" },
@@ -551,6 +608,9 @@ export const chapter1 = {
       }
     },
     "22": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772264842/gita-audio/zylmdsbmyhnukciiv7r4.mp3","fileName":"ElevenLabs_2026-02-28T07_46_41_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,2.402,5.052,5.639,6.307,7.139]}
+      },
       "sanskrit": "याव[1.22.1]देतान्निरीक्षे[1.22.2]ऽहं[1.22.3] योद्धुकामान्[1.22.4]अवस्थितान्[1.22.5]।\nकै[1.22.6]र्मया[1.22.7] सह[1.22.8] योद्धव्य[1.22.9]मस्मिन्[1.22.10] रणसमुद्यमे[1.22.11]॥",
       "wordTranslations": [
         { "id": "1.22.1", "sanskrit": "yāvat etān", "transliteration": "yāvat etān", "english": "while these", "hindi": "जब तक इन" },
@@ -575,6 +635,9 @@ export const chapter1 = {
       }
     },
     "23": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772264974/gita-audio/mxeqabfwvmsrivnr4mde.mp3","fileName":"ElevenLabs_2026-02-28T07_48_41_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.975,2.91,3.828,5.933,6.586,8.609]}
+      },
       "sanskrit": "योत्स्यमानान्[1.23.1]अवेक्षे[1.23.2]ऽहं[1.23.3] य[1.23.4] एते[1.23.5]ऽत्र[1.23.6] समागताः[1.23.7]।\nधार्तराष्ट्रस्य[1.23.8] दुर्बुद्धे[1.23.9]र्युद्धे[1.23.10] प्रियचिकीर्षवः[1.23.11]॥",
       "wordTranslations": [
         { "id": "1.23.1", "sanskrit": "yotsyamānān", "transliteration": "yotsyamānān", "english": "those about to fight", "hindi": "युद्ध करने वालों को" },
@@ -599,6 +662,9 @@ export const chapter1 = {
       }
     },
     "24": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772265401/gita-audio/cghgrdtz9ek06mnjbcrk.mp3","fileName":"ElevenLabs_2026-02-28T07_55_00_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.624,1.679,3.066,4.192,5.181,6.079,8.128,9.044]}
+      },
       "sanskrit": "सञ्जय[1.24.1] उवाच[1.24.2]\nएव[1.24.3]मुक्तो[1.24.3] हृषीकेशो[1.24.4] गुडाकेशेन[1.24.5] भारत[1.24.6]।\nसेनयो[1.24.7]रुभयो[1.24.8]र्मध्ये[1.24.9] स्थापयित्वा[1.24.10] रथोत्तमम्[1.24.11]॥",
       "wordTranslations": [
         { "id": "1.24.1", "sanskrit": "सञ्जयः", "transliteration": "sañjayaḥ", "english": "Sanjaya", "hindi": "सञ्जय", "explanationRef": "exp_sanjaya" },
@@ -623,6 +689,9 @@ export const chapter1 = {
       }
     },
     "25": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772268443/gita-audio/mfzwgrxi1rpqnld7rnrn.mp3","fileName":"ElevenLabs_2026-02-28T08_46_40_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,2.151,2.808,3.553,4.836,5.509,5.801,7.384,8.08]}
+      },
       "sanskrit": "भीष्मद्रोणप्रमुखतः[1.25.1] सर्वेषां[1.25.2] च[1.25.3] महीक्षिताम्[1.25.4]।\nउवाच[1.25.5] पार्थ[1.25.6] पश्य[1.25.7]ैतान्[1.25.7] समवेतान्[1.25.8] कुरून्[1.25.9]इति[1.25.9]॥",
       "wordTranslations": [
         { "id": "1.25.1", "sanskrit": "भीष्म-द्रोण-प्रमुखतः", "transliteration": "bhīṣma-droṇa-pramukhataḥ", "english": "in front of Bhishma and Drona", "hindi": "भीष्म और द्रोणाचार्य के सामने", "explanationRef": "exp_bhishma" },
@@ -645,6 +714,9 @@ export const chapter1 = {
       }
     },
     "26": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772268575/gita-audio/plzvobbte7tufwjjwkiq.mp3","fileName":"ElevenLabs_2026-02-28T08_48_35_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.868,2.708,3.253,4.547]}
+      },
       "sanskrit": "तत्रा[1.26.1]पश्यत्[1.26.2]स्थितान्[1.26.3] पार्थः[1.26.4] पितॄन्[1.26.5]अथ[1.26.6] पितामहान्[1.26.7]।\nआचार्यान्[1.26.8]मातुलान्[1.26.9]भ्रातॄन्[1.26.10]पुत्रान्[1.26.11]पौत्रान्[1.26.12]सखीं[1.26.13]स्तथा[1.26.14]॥",
       "wordTranslations": [
         { "id": "1.26.1", "sanskrit": "तत्र", "transliteration": "tatra", "english": "there", "hindi": "वहां" },
@@ -676,6 +748,9 @@ export const chapter1 = {
       }
     },
     "27": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772268732/gita-audio/mlhikd2ia4vcaxgdx5n5.mp3","fileName":"ElevenLabs_2026-02-28T08_51_04_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.707,2.261,4.391,5.251,5.81,6.992,10.087,10.999,11.477]}
+      },
       "sanskrit": "श्वशुरान्[1.27.1] सुहृद[1.27.2]श्च[1.27.3]ैव[1.27.4] सेनयो[1.27.5]रुभयो[1.27.6]रपि[1.27.7]।\nतान्[1.27.8]समीक्ष्य[1.27.9] स[1.27.10] कौन्तेयः[1.27.11] सर्वान्[1.27.12]बन्धून्[1.27.13]अवस्थितान्[1.27.14]॥\nकृपया[1.27.15] परया[1.27.16]विष्टो[1.27.17] विषीदन्[1.27.18]निद[1.27.19]मब्रवीत्[1.27.20]।",
       "wordTranslations": [
         { "id": "1.27.1", "sanskrit": "श्वशुरान्", "transliteration": "śvaśurān", "english": "fathers-in-law", "hindi": "ससुरों को" },
@@ -709,6 +784,9 @@ export const chapter1 = {
       }
     },
     "28": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772268998/gita-audio/fqg0lkqwia2p114kjzwj.mp3","fileName":"ElevenLabs_2026-02-28T08_55_59_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.471,1.395,3.055,3.927,4.955,5.624,7.89,8.274,8.649,8.961,9.532,9.835]}
+      },
       "sanskrit": "अर्जुन[1.28.1] उवाच[1.28.2]\nदृष्ट्व[1.28.3]ेमं[1.28.4] स्वजनं[1.28.5] कृष्ण[1.28.6] युयुत्सुं[1.28.7] समुपस्थितम्[1.28.8]।\nसीदन्ति[1.28.9] मम[1.28.10] गात्राणि[1.28.11] मुखं[1.28.12] च[1.28.13] परिशुष्यति[1.28.14]॥",
       "wordTranslations": [
         { "id": "1.28.1", "sanskrit": "अर्जुनः", "transliteration": "arjunaḥ", "english": "Arjuna", "hindi": "अर्जुन", "explanationRef": "exp_arjuna" },
@@ -740,6 +818,9 @@ export const chapter1 = {
       }
     },
     "29": {
+      "audioData": {
+        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772269163/gita-audio/hueydhe288kcgdppbrmv.mp3","fileName":"ElevenLabs_2026-02-28T08_58_35_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.059,1.413,2.154,2.992,4.223,5.089,6.269,7.859]}
+      },
       "sanskrit": "वेपथु[1.29.1]श्च[1.29.2] शरीरे[1.29.3] मे[1.29.4] रोमहर्ष[1.29.5]श्च[1.29.6] जायते[1.29.7]।\nगाण्डीवं[1.29.8] स्रंसते[1.29.9] हस्तात्[1.29.10]त्वक्[1.29.11]च[1.29.12]ैव[1.29.13] परिदह्यते[1.29.14]॥",
       "wordTranslations": [
         { "id": "1.29.1", "sanskrit": "वेपथुः", "transliteration": "vepathuḥ", "english": "trembling", "hindi": "कम्प" },

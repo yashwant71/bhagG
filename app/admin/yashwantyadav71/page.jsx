@@ -85,7 +85,26 @@ const AdminPage = () => {
   const [selectedVerseData, setSelectedVerseData] = useState(null)
   const [wordTimestamps, setWordTimestamps] = useState([])
   const [isRecording, setIsRecording] = useState(false)
+  const [isTesting, setIsTesting] = useState(false)
+  const [currentWordIndex, setCurrentWordIndex] = useState(-1)
+  const [nextWordIndex, setNextWordIndex] = useState(-1)
   const [recordingAudio, setRecordingAudio] = useState(null)
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Spacebar for timing words during recording
+      if (e.code === 'Space' && isRecording) {
+        e.preventDefault()
+        const words = getSanskritWords()
+        if (nextWordIndex >= 0 && nextWordIndex < words.length) {
+          handleWordClick(nextWordIndex)
+        }
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isRecording, nextWordIndex, recordingAudio])
 
   useEffect(() => {
     const fetchVerses = async () => {
@@ -93,14 +112,22 @@ const AdminPage = () => {
         const response = await fetch(`/api/chapters/${chapter}?limit=1000`)
         const data = await response.json()
         if (data && data.verses) {
-          setVersesList(data.verses.map(v => v.number))
+          setVersesList(data.verses)
+          
+          // Auto-select the first verse without audio for current language
+          const firstMissing = data.verses.find(v => !v.audioData?.[language])
+          if (firstMissing) {
+            setVerse(firstMissing.number)
+          } else if (data.verses.length > 0) {
+            setVerse(data.verses[0].number)
+          }
         }
       } catch (error) {
         console.error('Failed to fetch verses:', error)
       }
     }
     if (isAuthenticated) fetchVerses()
-  }, [chapter, isAuthenticated])
+  }, [chapter, isAuthenticated, language])
 
   useEffect(() => {
     const fetchVerseDetail = async () => {
@@ -185,10 +212,12 @@ const AdminPage = () => {
     setIsRecording(true)
     // Automatically set first word to 0s
     setWordTimestamps([0.000])
+    setNextWordIndex(1)
     audio.play()
-    setStatus('Recording started. First word set at 0s. Click on subsequent words.')
+    setStatus('Recording started. Use SPACE or Click words to set timings.')
     audio.onended = () => {
       setIsRecording(false)
+      setNextWordIndex(-1)
       setStatus('Recording ended.')
     }
   }
@@ -197,7 +226,52 @@ const AdminPage = () => {
     if (recordingAudio) {
       recordingAudio.pause()
       setIsRecording(false)
+      setNextWordIndex(-1)
       setStatus('Recording stopped.')
+    }
+  }
+
+  const startTesting = () => {
+    if (!audioUrl) {
+      alert('Please upload/set an audio URL first.')
+      return
+    }
+    if (wordTimestamps.length === 0) {
+      alert('Please record timings first.')
+      return
+    }
+
+    const audio = new Audio(audioUrl)
+    setRecordingAudio(audio)
+    setIsTesting(true)
+    setCurrentWordIndex(-1)
+    
+    audio.play()
+    setStatus('Testing timings...')
+
+    audio.ontimeupdate = () => {
+      const currentTime = audio.currentTime
+      // Find the index of the word that should be highlighted
+      const index = wordTimestamps.reduce((acc, time, idx) => {
+        if (time !== undefined && currentTime >= time) return idx
+        return acc
+      }, -1)
+      setCurrentWordIndex(index)
+    }
+
+    audio.onended = () => {
+      setIsTesting(false)
+      setCurrentWordIndex(-1)
+      setStatus('Test ended.')
+    }
+  }
+
+  const stopTesting = () => {
+    if (recordingAudio) {
+      recordingAudio.pause()
+      setIsTesting(false)
+      setCurrentWordIndex(-1)
+      setStatus('Test stopped.')
     }
   }
 
@@ -205,9 +279,14 @@ const AdminPage = () => {
     if (!isRecording || !recordingAudio) return
     
     const time = recordingAudio.currentTime
-    const newTimestamps = [...wordTimestamps]
-    newTimestamps[wordIndex] = parseFloat(time.toFixed(3))
-    setWordTimestamps(newTimestamps)
+    setWordTimestamps(prev => {
+      const newTimestamps = [...prev]
+      newTimestamps[wordIndex] = parseFloat(time.toFixed(3))
+      return newTimestamps
+    })
+    
+    // Auto-advance to next word
+    setNextWordIndex(wordIndex + 1)
   }
 
   const handleSave = async () => {
@@ -234,6 +313,36 @@ const AdminPage = () => {
       const data = await response.json()
       if (data.success) {
         setStatus(`Successfully updated Chapter ${chapter} Verse ${verse}`)
+        
+        // Update local versesList state to reflect completion
+        setVersesList(prev => prev.map(v => 
+          v.number === verse 
+          ? { 
+              ...v, 
+              audioData: { 
+                ...v.audioData, 
+                [language]: { url: audioUrl, fileName, timestamps: wordTimestamps } 
+              } 
+            } 
+          : v
+        ))
+
+        // Auto-advance to next verse
+        const currentIndex = versesList.findIndex(v => v.number === verse)
+        if (currentIndex !== -1 && currentIndex < versesList.length - 1) {
+          const nextVerseNum = versesList[currentIndex + 1].number
+          setTimeout(() => {
+            setVerse(nextVerseNum)
+            setStatus(`Moved to Verse ${nextVerseNum}`)
+            // Reset temporary recording states for the new verse
+            setAudioUrl('')
+            setFileName('')
+            setWordTimestamps([])
+            setNextWordIndex(-1)
+          }, 1500)
+        } else {
+          setStatus('Chapter complete! All verses timed.')
+        }
       } else {
         setStatus(`Error: ${data.error}`)
       }
@@ -256,126 +365,190 @@ const AdminPage = () => {
 
   return (
     <div className="admin-page">
-      <div className="admin-container">
-        <h1>Gita Admin Panel</h1>
-        <p className="admin-subtitle">Welcome, {username}</p>
-
-        <div className="admin-card">
-          <div className="selector-grid">
-            <CustomDropdown 
-              label="Select Chapter"
-              value={chapter}
-              options={availableChapters.map(ch => ({ value: ch, label: `Chapter ${ch}` }))}
-              onChange={(val) => setChapter(val)}
-            />
-
-            <CustomDropdown 
-              label="Select Verse"
-              value={verse}
-              options={versesList.map(v => ({ value: v, label: `Verse ${v}` }))}
-              onChange={(val) => setVerse(val)}
-            />
-
-            <CustomDropdown 
-              label="Audio Language"
-              value={language}
-              options={[
-                { value: 'sanskrit', label: 'Sanskrit' },
-                { value: 'hindi', label: 'Hindi' },
-                { value: 'english', label: 'English' }
-              ]}
-              onChange={(val) => setLanguage(val)}
-            />
+      <div className="admin-layout">
+        {/* Sidebar */}
+        <aside className="admin-sidebar">
+          <div className="sidebar-header">
+            <h1>Gita Admin</h1>
           </div>
-
-          <div className="upload-section">
-            <label className="file-input-label">
-              <input 
-                type="file" 
-                accept="audio/*" 
-                onChange={handleFileChange} 
-                disabled={isLoading || isRecording}
-              />
-              <div className="file-input-button">
-                {isLoading && !audioUrl ? 'Uploading...' : 'Pick Audio File'}
-              </div>
-            </label>
-            
-            {previewUrl && (
-              <div className="preview-container">
-                <p>Preview Picked File:</p>
-                <audio src={previewUrl} controls className="admin-audio-preview" />
-                <button 
-                  className="confirm-upload-btn" 
-                  onClick={handleUpload}
-                  disabled={isLoading}
-                >
-                  {isLoading ? 'Uploading...' : 'Confirm & Upload to Cloudinary'}
-                </button>
-              </div>
-            )}
-            
-            {audioUrl && (
-              <div className="audio-preview">
-                <p>Cloud URL (Ready to Save):</p>
-                <code>{audioUrl}</code>
-              </div>
-            )}
-          </div>
-
-          {selectedVerseData && (
-            <div className="recording-section">
-              <h3>Word Timing Recorder</h3>
-              <div className="recording-controls">
-                {!isRecording ? (
-                  <button className="record-button start" onClick={startRecording}>
-                    Start Recording Timings
-                  </button>
-                ) : (
-                  <button className="record-button stop" onClick={stopRecording}>
-                    Stop Recording
-                  </button>
-                )}
-                <button 
-                  className="reset-timings" 
-                  onClick={() => setWordTimestamps([])}
-                  disabled={isRecording}
-                >
-                  Reset Timings
-                </button>
-              </div>
-
-              <div className="sanskrit-recording-area">
-                {getSanskritWords().map((word, idx) => (
+          <div className="sidebar-content">
+            <div className="chapter-nav">
+              <h3>Chapters</h3>
+              <div className="chapter-tabs">
+                {availableChapters.map(ch => (
                   <button 
-                    key={idx}
-                    className={`record-word-btn ${wordTimestamps[idx] !== undefined ? 'timed' : ''}`}
-                    onClick={() => handleWordClick(idx)}
+                    key={ch} 
+                    className={`chapter-tab ${chapter === ch ? 'active' : ''}`}
+                    onClick={() => setChapter(ch)}
                   >
-                    <span className="word-text">{word}</span>
-                    <span className="word-time">
-                      {wordTimestamps[idx] !== undefined ? `${wordTimestamps[idx]}s` : '--'}
-                    </span>
+                    Ch {ch}
                   </button>
                 ))}
               </div>
             </div>
-          )}
 
-          <button 
-            className="save-button" 
-            onClick={handleSave}
-            disabled={isLoading || !audioUrl}
-          >
-            {isLoading ? 'Saving...' : 'Save to Verse Data'}
-          </button>
+            <div className="verse-nav">
+              <h3>Verses (Chapter {chapter})</h3>
+              <div className="verse-grid">
+                {versesList.map(v => {
+                  const isDone = !!v.audioData?.[language]
+                  return (
+                    <div 
+                      key={v.number}
+                      className={`verse-box ${verse === v.number ? 'selected' : ''} ${isDone ? 'done' : ''}`}
+                      onClick={() => setVerse(v.number)}
+                    >
+                      {v.number}
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+        </aside>
 
-          {status && <div className={`status-message ${status.includes('Successfully') ? 'success' : ''}`}>{status}</div>}
-        </div>
+        {/* Main Content */}
+        <main className="admin-main">
+          <header className="admin-top-bar">
+            <div className="user-info">
+              <p>Welcome, <strong>{username}</strong></p>
+            </div>
+            <button className="back-home-btn" onClick={() => router.push('/')}>
+              Exit Admin
+            </button>
+          </header>
 
-        <button className="back-home" onClick={() => router.push('/')}>
-          Back to App
-        </button>
+          <div className="admin-content-inner">
+            <div className="admin-card-row">
+              {/* Left Column: Audio Upload & Settings */}
+              <div className="admin-panel-card">
+                <h3>Audio Configuration</h3>
+                
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <CustomDropdown 
+                    label="Target Language"
+                    value={language}
+                    options={[
+                      { value: 'sanskrit', label: 'Sanskrit' },
+                      { value: 'hindi', label: 'Hindi' },
+                      { value: 'english', label: 'English' }
+                    ]}
+                    onChange={(val) => setLanguage(val)}
+                  />
+                </div>
+
+                <div className="upload-section">
+                  <label className="file-input-label">
+                    <input 
+                      type="file" 
+                      accept="audio/*" 
+                      onChange={handleFileChange} 
+                      disabled={isLoading || isRecording || isTesting}
+                    />
+                    <div className="file-input-button">
+                      {isLoading && !audioUrl ? 'Uploading...' : 'Upload New Audio'}
+                    </div>
+                  </label>
+                  
+                  {previewUrl && (
+                    <div className="preview-container">
+                      <p>Preview Picked File:</p>
+                      <audio src={previewUrl} controls className="admin-audio-preview" />
+                      <button 
+                        className="confirm-upload-btn" 
+                        onClick={handleUpload}
+                        disabled={isLoading}
+                      >
+                        {isLoading ? 'Uploading...' : 'Confirm Upload'}
+                      </button>
+                    </div>
+                  )}
+                  
+                  {audioUrl && (
+                    <div className="audio-preview">
+                      <p>Current Cloud URL:</p>
+                      <code>{audioUrl}</code>
+                      {fileName && (
+                          <p className="filename-small">Original: {fileName}</p>
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                {status && (
+                  <div className={`status-message ${status.includes('Successfully') ? 'success' : ''}`}>
+                    {status}
+                  </div>
+                )}
+              </div>
+
+              {/* Right Column: Timings */}
+              {selectedVerseData && (
+                <div className="admin-panel-card">
+                  <div className="recording-section" style={{ border: 'none', paddingTop: 0 }}>
+                    <h3>Word Timing Recorder</h3>
+                    <div className="recording-controls">
+                      {!isRecording ? (
+                        <button className="record-button start" onClick={startRecording} disabled={isTesting}>
+                          Record Timings
+                        </button>
+                      ) : (
+                        <button className="record-button stop" onClick={stopRecording}>
+                          Stop
+                        </button>
+                      )}
+
+                      {!isTesting ? (
+                        <button 
+                          className="record-button test"
+                          onClick={startTesting}
+                          disabled={isRecording || wordTimestamps.length === 0}
+                        >
+                          Verify Match
+                        </button>
+                      ) : (
+                        <button className="record-button stop" onClick={stopTesting}>
+                          Stop Verify
+                        </button>
+                      )}
+
+                      <button 
+                        className="reset-timings" 
+                        onClick={() => setWordTimestamps([])}
+                        disabled={isRecording || isTesting}
+                      >
+                        Reset
+                      </button>
+                    </div>
+
+                    <div className="sanskrit-recording-area">
+                      {getSanskritWords().map((word, idx) => (
+                        <button 
+                          key={idx}
+                          className={`record-word-btn ${wordTimestamps[idx] !== undefined ? 'timed' : ''} ${currentWordIndex === idx ? 'active' : ''} ${isRecording && nextWordIndex === idx ? 'next-to-time' : ''}`}
+                          onClick={() => handleWordClick(idx)}
+                        >
+                          <span className="word-text">{word}</span>
+                          <span className="word-time">
+                            {wordTimestamps[idx] !== undefined ? `${wordTimestamps[idx]}s` : '--'}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+
+                    <button 
+                      className="save-button" 
+                      onClick={handleSave}
+                      disabled={isLoading || !audioUrl || wordTimestamps.length === 0}
+                    >
+                      {isLoading ? 'Saving...' : `Finalize & Save Verse ${verse}`}
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </main>
       </div>
     </div>
   )

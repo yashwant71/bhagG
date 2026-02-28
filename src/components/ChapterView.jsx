@@ -215,17 +215,36 @@ const ChapterView = () => {
     return parseContent(text)
   }
   
-  // Handle word hover for tooltip
-  const handleWordHover = (refId, wordData, explanation, e) => {
+  // Handle translation word click
+  const handleWordClick = (refId, wordData, explanation, e) => {
     e.stopPropagation()
+    
+    if (hoveredWord === refId) {
+      setHoveredWord(null)
+      setHoveredWordData(null)
+      return
+    }
+    
     setHoveredWord(refId)
     setHoveredWordData({ wordData, explanation })
+    
+    if (e.currentTarget) {
+      refs.setReference(e.currentTarget)
+    }
   }
-  
-  const handleWordLeave = () => {
-    setHoveredWord(null)
-    setHoveredWordData(null)
-  }
+
+  // Close tooltip when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (hoveredWord && (!e.target || typeof e.target.closest !== 'function' || (!e.target.closest('.translation-word-reference') && !e.target.closest('.translation-word-tooltip')))) {
+        setHoveredWord(null)
+        setHoveredWordData(null)
+      }
+    }
+    
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [hoveredWord])
   
   if (loading && verses.length === 0) {
     return <LoadingScreen />
@@ -278,7 +297,7 @@ const ChapterView = () => {
                       <div className={`verse-translation ${translation === 'hindi' ? 'hindi-text' : ''}`}>
                         <TranslationTextRenderer 
                           parts={parsedText} 
-                          onReferenceClick={handleWordHover}
+                          onReferenceClick={handleWordClick}
                           activeRefId={hoveredWord}
                         />
                       </div>
@@ -385,7 +404,6 @@ const ChapterView = () => {
             visibility: x === null ? 'hidden' : 'visible'
           }}
           onMouseEnter={() => {}} // Keep tooltip visible
-          onMouseLeave={handleWordLeave}
         >
         <WordTooltipContent 
           key={hoveredWord}

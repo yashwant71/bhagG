@@ -26,5 +26,6 @@ export async function GET(request, { params }) {
         totalVerses,
         verses: paginatedVerses,
         hasMore: offset + limit < totalVerses,
+        explanations: chapter.explanations || []
     });
 }

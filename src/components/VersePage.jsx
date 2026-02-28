@@ -113,7 +113,7 @@ const VersePage = () => {
 
   const chapterNum = parseInt(chapter || '1')
   // Only allow chapter 1, redirect if other chapter is accessed
-  const validChapterNum = chapterNum === 1 ? 1 : 1
+  const validChapterNum = isNaN(chapterNum) ? 1 : chapterNum
   const verseNum = verseParam || '1'
   const chapterVerseKey = `${validChapterNum}.${verseNum}`
   const [verseData, setVerseData] = useState(null)
@@ -1037,16 +1037,6 @@ const VersePage = () => {
 
   // Handle navigation to a specific chapter/verse
   const handleNavigateToVerse = (chNum, verseNum) => {
-    // Only allow navigation to chapter 1
-    if (chNum !== 1) {
-      // Redirect to chapter 1 if trying to access other chapters
-      const verseNumbers = getVerseNumbers(1)
-      if (verseNumbers.length > 0) {
-        router.push(`/verse/1/${verseNumbers[0]}`)
-      }
-      setShowNavMenu(false)
-      return
-    }
     router.push(`/verse/${chNum}/${verseNum}`)
     setShowNavMenu(false)
   }

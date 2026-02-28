@@ -24,7 +24,7 @@ const AdminPage = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   // Chapters and Verses list (For now just Chapter 1)
-  const availableChapters = [1]
+  const availableChapters = [1, 2]
   const [versesList, setVersesList] = useState([])
 
   useEffect(() => {
@@ -115,7 +115,7 @@ const AdminPage = () => {
           setVersesList(data.verses)
           
           // Auto-select the first verse without audio for current language
-          const firstMissing = data.verses.find(v => !v.audioData?.[language])
+          const firstMissing = data.verses.find(v => !v.audioData?.[language]?.url)
           if (firstMissing) {
             setVerse(firstMissing.number)
           } else if (data.verses.length > 0) {
@@ -378,7 +378,7 @@ const AdminPage = () => {
                 {availableChapters.map(ch => (
                   <button 
                     key={ch} 
-                    className={`chapter-tab ${chapter === ch ? 'active' : ''}`}
+                    className={`chapter-tab ${parseInt(chapter) === ch ? 'active' : ''}`}
                     onClick={() => setChapter(ch)}
                   >
                     Ch {ch}
@@ -391,7 +391,7 @@ const AdminPage = () => {
               <h3>Verses (Chapter {chapter})</h3>
               <div className="verse-grid">
                 {versesList.map(v => {
-                  const isDone = !!v.audioData?.[language]
+                  const isDone = !!v.audioData?.[language]?.url
                   return (
                     <div 
                       key={v.number}

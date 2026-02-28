@@ -263,8 +263,8 @@
 }
 
 @keyframes divineAuraPulse {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
 }
 
 .sanskrit-words-container {
@@ -288,13 +288,13 @@
 .sanskrit-word {
   font-family: 'Noto Sans Devanagari', serif;
   font-size: 2.2rem;
-  font-weight: 500;
+  font-weight: 400;
   display: inline-block;
   position: relative;
   padding-bottom: 6px;
-  -webkit-text-stroke: 1.5px #b8941f;
-  -webkit-text-fill-color: var(--text-secondary);
-  text-shadow: var(--shadow-glow-sm);
+  -webkit-text-stroke: 1.2px rgba(212, 175, 55, 0.4);
+  color: var(--text-secondary);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   background: transparent;
   opacity: 0;
   transform: translateY(-150px);
@@ -307,10 +307,10 @@
 }
 
 .sanskrit-word.audio-active {
-  -webkit-text-fill-color: var(--gold-bright) !important;
-  -webkit-text-stroke: 1.5px #fff !important;
-  text-shadow: 0 0 20px var(--gold-primary), 0 0 10px #fff;
-  transform: scale(1.1);
+  color: var(--gold-bright) !important;
+  -webkit-text-stroke: 1.2px var(--gold-primary) !important;
+  text-shadow: 0 0 15px var(--gold-primary);
+  transform: scale(1.05);
   transition: all 0.2s ease-out;
   z-index: 10;
   opacity: 1 !important;

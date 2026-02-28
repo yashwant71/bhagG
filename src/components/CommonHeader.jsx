@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { getAllChapterNumbers, getChapter } from '../data/utils'
 import './CommonHeader.css'
 
 const CommonHeader = ({ 
@@ -12,8 +13,9 @@ const CommonHeader = ({
 }) => {
   const router = useRouter()
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false)
+  const [showChapterDropdown, setShowChapterDropdown] = useState(false)
   
-  // Close language dropdown when clicking outside
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (showLanguageDropdown) {
@@ -22,13 +24,21 @@ const CommonHeader = ({
           setShowLanguageDropdown(false)
         }
       }
+      if (showChapterDropdown) {
+        const isClickInside = e.target.closest('.chapter-selector-container')
+        if (!isClickInside) {
+          setShowChapterDropdown(false)
+        }
+      }
     }
     
     document.addEventListener('mousedown', handleClickOutside)
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [showLanguageDropdown])
+  }, [showLanguageDropdown, showChapterDropdown])
+
+  const allChapters = getAllChapterNumbers()
 
   return (
     <header className="common-header">
@@ -45,14 +55,6 @@ const CommonHeader = ({
               <polyline points="9 22 9 12 15 12 15 22"/>
             </svg>
           </button>
-          <span className="header-separator">/</span>
-          <button 
-            className="header-chapter-button"
-            onClick={() => router.push(`/chapter/${chapterNum}`)}
-            title={`Chapter ${chapterNum}`}
-          >
-            Chapter {chapterNum}
-          </button>
         </div>
 
         <div className="header-center">
@@ -60,6 +62,58 @@ const CommonHeader = ({
         </div>
 
         <div className="header-right">
+          <div className="chapter-selector-container">
+            <button 
+              className="header-chapter-button"
+              onClick={() => router.push(`/chapter/${chapterNum}`)}
+              title={`Chapter ${chapterNum}: ${getChapter(chapterNum)?.chapterName}`}
+            >
+              <span className="chapter-label">Ch {chapterNum}</span>
+              <span className="chapter-name-header">{getChapter(chapterNum)?.chapterName}</span>
+            </button>
+            <button 
+              className={`chapter-dropdown-trigger ${showChapterDropdown ? 'active' : ''}`}
+              onClick={(e) => {
+                e.stopPropagation()
+                setShowChapterDropdown(!showChapterDropdown)
+              }}
+              aria-label="Select chapter"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            
+            {showChapterDropdown && (
+              <div className="chapter-dropdown">
+                {allChapters.map(chNum => {
+                  const chData = getChapter(chNum)
+                  return (
+                    <button
+                      key={chNum}
+                      className={`chapter-option ${parseInt(chapterNum) === chNum ? 'active' : ''}`}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        router.push(`/chapter/${chNum}`)
+                        setShowChapterDropdown(false)
+                      }}
+                    >
+                      <div className="chapter-option-info">
+                        <span className="chapter-option-number">Chapter {chNum}</span>
+                        <span className="chapter-option-name">{chData?.chapterName}</span>
+                      </div>
+                      {parseInt(chapterNum) === chNum && (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                      )}
+                    </button>
+                  )
+                })}
+              </div>
+            )}
+          </div>
+
           <div className="language-selector-container">
             <button
               className="language-selector-button"

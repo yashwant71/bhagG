@@ -50,12 +50,6 @@
   color: var(--gold-primary);
 }
 
-.header-separator {
-  color: rgba(212, 175, 55, 0.3);
-  font-size: 1rem;
-  font-weight: 300;
-}
-
 .header-center {
   flex: 1;
   display: flex;
@@ -67,6 +61,7 @@
 .header-right {
   display: flex;
   align-items: center;
+  gap: 1.25rem;
 }
 
 /* Language Selector */
@@ -151,6 +146,129 @@
   font-weight: 500;
 }
 
+/* Chapter Selector */
+.chapter-selector-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header-chapter-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  line-height: 1.1;
+  padding: 4px 8px;
+}
+
+.chapter-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gold-primary);
+  opacity: 0.8;
+}
+
+.chapter-name-header {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.chapter-dropdown-trigger {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  opacity: 0.6;
+}
+
+.chapter-dropdown-trigger:hover,
+.chapter-dropdown-trigger.active {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--gold-primary);
+  opacity: 1;
+}
+
+.chapter-dropdown-trigger svg {
+  transition: transform 0.3s ease;
+}
+
+.chapter-dropdown-trigger.active svg {
+  transform: rotate(180deg);
+}
+
+.chapter-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  padding: 0.6rem;
+  min-width: 240px;
+  z-index: 1000;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  animation: dropdownSlideIn 0.2s ease-out;
+}
+
+.chapter-option {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.chapter-option:hover {
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.chapter-option.active {
+  color: var(--gold-primary);
+  background: rgba(212, 175, 55, 0.15);
+}
+
+.chapter-option-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chapter-option-number {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+}
+
+.chapter-option-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
 @media (max-width: 768px) {
   .common-header {
     height: 54px;
@@ -162,6 +280,10 @@
   
   .header-chapter-button {
     font-size: 1rem;
+  }
+
+  .chapter-dropdown {
+    min-width: 180px;
   }
 
   .header-center {

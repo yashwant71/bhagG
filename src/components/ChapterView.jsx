@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useMemo, useCallback } from 'react'
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { useFloating, autoUpdate, offset, flip, shift } from '@floating-ui/react'
 import { getChapter, getVerseNumbers, getVerse, getAllChapterNumbers } from '../data/utils'
@@ -16,7 +16,7 @@ const ChapterView = () => {
   const params = useParams()
   const router = useRouter()
   
-  const chapter = Array.isArray(params?.params) ? params.params[0] : (params?.chapter || params?.params?.[0])
+  const chapter = params?.id || (Array.isArray(params?.params) ? params.params[0] : (params?.chapter || params?.params?.[0]))
   const chapterNum = parseInt(chapter || '1')
   
   // Available chapters from data
@@ -48,6 +48,7 @@ const ChapterView = () => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [hoveredWord, setHoveredWord] = useState(null)
   const [hoveredWordData, setHoveredWordData] = useState(null)
+  const loadMoreRef = useRef(null)
   
   // Floating UI for Chapter tooltips
   const {
@@ -110,11 +111,39 @@ const ChapterView = () => {
     window.scrollTo(0, 0)
   }, [validChapterNum])
   
-  const handleLoadMore = () => {
+  const handleLoadMore = useCallback(() => {
     if (!loadingMore && hasMore) {
       fetchChapterData()
     }
-  }
+  }, [loadingMore, hasMore, fetchChapterData])
+
+  // Infinite scroll observer setup
+  useEffect(() => {
+    if (!hasMore || loading) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !loadingMore) {
+          handleLoadMore()
+        }
+      },
+      { 
+        threshold: 0.1, 
+        rootMargin: '200px' // Start loading before user hits bottom
+      }
+    )
+
+    const currentRef = loadMoreRef.current
+    if (currentRef) {
+      observer.observe(currentRef)
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef)
+      }
+    }
+  }, [hasMore, loadingMore, loading, handleLoadMore])
   
   // Save language preference to localStorage whenever it changes
   const updateTranslation = (lang) => {
@@ -128,12 +157,12 @@ const ChapterView = () => {
   
   // Close language dropdown when clicking outside (Now handled by CommonHeader)
   
-  // Redirect if trying to access other chapters
+  // Redirect if trying to access invalid chapters
   useEffect(() => {
-    if (chapterNum !== 1) {
+    if (!isValidChapter) {
       router.replace('/chapter/1')
     }
-  }, [chapterNum, router])
+  }, [isValidChapter, router])
   
   const handleVerseClick = (verseNum) => {
     router.push(`/verse/${validChapterNum}/${verseNum}`)
@@ -332,18 +361,18 @@ const ChapterView = () => {
           })}
         </div>
 
-        {/* Load More Button */}
-        {hasMore && (
-          <div className="load-more-container">
-            <button 
-              className={`load-more-button ${loadingMore ? 'loading' : ''}`}
-              onClick={handleLoadMore}
-              disabled={loadingMore}
-            >
-              {loadingMore ? <span className="loader-dots">Loading</span> : 'Load More Verses'}
-            </button>
-          </div>
-        )}
+        {/* Infinite Scroll Sentinel */}
+        <div 
+          className="load-more-sentinel" 
+          ref={loadMoreRef}
+          style={{ height: '20px', margin: '20px 0' }}
+        >
+          {loadingMore && (
+            <div className="load-more-status">
+              <span className="loader-dots">Loading more verses...</span>
+            </div>
+          )}
+        </div>
 
         {/* Chapter Navigation Bottom */}
         <div className="chapter-bottom-nav">
@@ -361,31 +390,20 @@ const ChapterView = () => {
             </div>
           </button>
 
-          <button 
-            className="nav-button chapters"
-            onClick={() => router.push('/')}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <rect x="3" y="3" width="7" height="7"/>
-              <rect x="14" y="3" width="7" height="7"/>
-              <rect x="14" y="14" width="7" height="7"/>
-              <rect x="3" y="14" width="7" height="7"/>
-            </svg>
-            <span>All Chapters</span>
-          </button>
+
 
           <button 
             className={`nav-button next ${!nextChapterNum ? 'disabled' : ''}`}
             onClick={() => nextChapterNum && router.push(`/chapter/${nextChapterNum}`)}
             disabled={!nextChapterNum}
           >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
             <div className="nav-info">
               <span className="nav-label">Next</span>
               <span className="nav-name">{nextChapterNum ? `Chapter ${nextChapterNum}` : 'Coming Soon'}</span>
             </div>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M9 18l6-6-6-6"/>
-            </svg>
           </button>
         </div>
       </div>

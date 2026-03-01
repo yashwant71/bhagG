@@ -1248,6 +1248,1054 @@ export const chapter2 = {
                 "english": "Summarizing the dual benefits of participating in a righteous war, the Lord issues a final command to fight.",
                 "hindi": "प्रसंग – उपर्युक्त बहुत-से हेतुओं को दिखलाकर युद्ध न करने में अनेक प्रकार की हानियों का वर्णन करने के बाद अब भगवान् युद्ध करने में दोनों तरह से लाभ दिखलाते हुए अर्जुन को युद्ध के लिये तैयार होने की आज्ञा देते हैं—"
             }
+        },
+        "38": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "सुखदुःखे[2.38.1] समे[2.38.2] कृत्वा[2.38.3] लाभालाभौ[2.38.4] जयाजयौ[2.38.5]।\nततो[2.38.6] युद्धाय[2.38.7] युज्यस्व[2.38.8] नैवं[2.38.9-10] पापमवाप्स्यसि[2.38.11-12]॥",
+            "wordTranslations": [
+                { "id": "2.38.1", "sanskrit": "सुख-दुःखे", "transliteration": "sukha-duḥkhe", "english": "pleasure and pain", "hindi": "सुख-दुःख को" },
+                { "id": "2.38.2", "sanskrit": "समे", "transliteration": "same", "english": "alike", "hindi": "समान" },
+                { "id": "2.38.3", "sanskrit": "कृत्वा", "transliteration": "kṛtvā", "english": "treating", "hindi": "समझ कर" },
+                { "id": "2.38.4", "sanskrit": "लाभ-अलाभौ", "transliteration": "lābha-alābhau", "english": "gain and loss", "hindi": "लाभ-हानि (और)" },
+                { "id": "2.38.5", "sanskrit": "जय-अजयौ", "transliteration": "jaya-ajayau", "english": "victory and defeat", "hindi": "जय-पराजय (को)" },
+                { "id": "2.38.6", "sanskrit": "ततः", "transliteration": "tataḥ", "english": "then", "hindi": "उसके बाद" },
+                { "id": "2.38.7", "sanskrit": "युद्धाय", "transliteration": "yuddhāya", "english": "for the fight", "hindi": "युद्ध के लिये" },
+                { "id": "2.38.8", "sanskrit": "युज्यस्व", "transliteration": "yujyasva", "english": "get ready", "hindi": "तैयार हो जा" },
+                { "id": "2.38.9", "sanskrit": "न", "transliteration": "na", "english": "not", "hindi": "नहीं" },
+                { "id": "2.38.10", "sanskrit": "एवम्", "transliteration": "evam", "english": "thus", "hindi": "इस प्रकार (युद्ध करने से)" },
+                { "id": "2.38.11", "sanskrit": "पापम्", "transliteration": "pāpam", "english": "sin", "hindi": "पाप को (तू)" },
+                { "id": "2.38.12", "sanskrit": "अवाप्स्यसि", "transliteration": "avāpsyasi", "english": "you will incur", "hindi": "प्राप्त होगा" }
+            ],
+            "english": {
+                "text": "Treating alike victory and defeat, gain and loss, pleasure and pain, get ready for the fight, then; fighting thus you will not incur sin.",
+                "meaning": "Lord Krishna presents the core principle of Karma Yoga (the Yoga of Action): one must perform their righteous duty without attachment to the dualities of the material world. By acting not out of personal desire or fear, but as an offering to duty itself, one remains free from karmic entanglements and sin."
+            },
+            "hindi": {
+                "text": "जय-पराजय, लाभ-हानि और सुख-दुःख को समान समझ कर, उसके बाद युद्ध के लिये तैयार हो जा; इस प्रकार युद्ध करने से तू पाप को नहीं प्राप्त होगा ।।",
+                "meaning": "भगवान अर्जुन को समभाव (समता) का महान उपदेश देते हैं। जब कोई व्यक्ति परिणाम (सुख-दुख, जीत-हार) की आसक्ति छोड़ कर केवल अपने कर्तव्य का पालन करता है, तो उसे उस कर्म का कोई पाप नहीं लगता।"
+            }
+        },
+
+        "39": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "एषा[2.39.1] तेऽभिहिता[2.39.2-3] सांख्ये[2.39.4] बुद्धिर्योगे[2.39.5-6] त्विमां[2.39.7-8] शृणु[2.39.9]।\nबुद्ध्या[2.39.10] युक्तो[2.39.11] यया[2.39.12] पार्थ[2.39.13] कर्मबन्धं[2.39.14] प्रहास्यसि[2.39.15]॥",
+            "wordTranslations": [
+                { "id": "2.39.1", "sanskrit": "एषा", "transliteration": "eṣā", "english": "this", "hindi": "यह" },
+                { "id": "2.39.2", "sanskrit": "ते", "transliteration": "te", "english": "to you", "hindi": "तेरे लिये" },
+                { "id": "2.39.3", "sanskrit": "अभिहिता", "transliteration": "abhihitā", "english": "has been presented", "hindi": "कही गयी" },
+                { "id": "2.39.4", "sanskrit": "सांख्ये", "transliteration": "sāṅkhye", "english": "in Jnanayoga (analytical knowledge)", "hindi": "ज्ञान योग के विषय में" },
+                { "id": "2.39.5", "sanskrit": "बुद्धिः", "transliteration": "buddhiḥ", "english": "attitude of mind", "hindi": "बुद्धि" },
+                { "id": "2.39.6", "sanskrit": "योगे", "transliteration": "yoge", "english": "in the Yoga of action (Karmayoga)", "hindi": "कर्मयोग के विषय में" },
+                { "id": "2.39.7", "sanskrit": "तु", "transliteration": "tu", "english": "now", "hindi": "और अब" },
+                { "id": "2.39.8", "sanskrit": "इमाम्", "transliteration": "imām", "english": "this", "hindi": "इसको" },
+                { "id": "2.39.9", "sanskrit": "शृणु", "transliteration": "śṛṇu", "english": "hear", "hindi": "सुन" },
+                { "id": "2.39.10", "sanskrit": "बुद्ध्या", "transliteration": "buddhyā", "english": "with the intellect", "hindi": "जिस बुद्धि से" },
+                { "id": "2.39.11", "sanskrit": "युक्तः", "transliteration": "yuktaḥ", "english": "equipped", "hindi": "युक्त हुआ" },
+                { "id": "2.39.12", "sanskrit": "यया", "transliteration": "yayā", "english": "by which", "hindi": "तू" },
+                { "id": "2.39.13", "sanskrit": "पार्थ", "transliteration": "pārtha", "english": "O Partha (Arjuna)", "hindi": "हे पार्थ !", "explanationRef": "exp_partha" },
+                { "id": "2.39.14", "sanskrit": "कर्म-बन्धम्", "transliteration": "karma-bandham", "english": "the shackles of Karma", "hindi": "कर्मों के बन्धन को" },
+                { "id": "2.39.15", "sanskrit": "प्रहास्यसि", "transliteration": "prahāsyasi", "english": "will throw off completely", "hindi": "भलीभाँति त्याग देगा (सर्वथा नष्ट कर डालेगा)" }
+            ],
+            "english": {
+                "text": "(Arjuna)[exp_partha], this attitude of mind has been presented to you from the point of view of Jnanayoga; now hear the same as presented from the standpoint of Karmayoga (the Yoga of selfless action). Equipped with this attitude of mind, you will be able to throw off completely the shackles of Karma.",
+                "meaning": "Lord Krishna marks a profound shift in His divine teaching. Having revealed the ultimate reality of the eternal soul through Sankhya (Knowledge), He now introduces Karma Yoga (Selfless Action). By mastering this, Arjuna can perform his worldly duties with unwavering focus, free from the karmic bonds that tie ordinary men to the cycle of birth and death."
+            },
+            "hindi": {
+                "text": "हे (पार्थ)[exp_partha] ! यह बुद्धि तेरे लिये ज्ञान योग के विषय में कही गयी और अब तू इसको कर्मयोग के विषय में सुन कि जिस बुद्धि से युक्त हुआ तू कर्मों के बन्धन को भलीभाँति त्याग देगा यानि सर्वथा नष्ट कर डालेगा ।।",
+                "meaning": "भगवान श्रीकृष्ण कह रहे हैं कि अभी तक मैंने तुम्हें 'ज्ञान योग' (सांख्य) के दृष्टिकोण से परम सत्य समझाया है। अब इसी विषय को 'कर्मयोग' की दृष्टि से सुनो। इस निष्काम कर्म की भावना को अपनाकर तुम कर्म करते हुए भी कर्म-बंधनों से सदा के लिए मुक्त हो जाओगे।"
+            },
+            "pretext": {
+                "english": "Transitioning from Sankhya Yoga (the path of knowledge), the Lord introduces Karma Yoga (the path of selfless action).",
+                "hindi": "प्रसंग – यहाँ तक भगवान् ने सांख्य योग के सिद्धान्त से तथा क्षात्र धर्म की दृष्टि से युद्ध का औचित्य सिद्ध करके अर्जुन को समतापूर्वक युद्ध करने के लिये आज्ञा दी; अब कर्मयोग के सिद्धान्त से युद्ध का औचित्य बतलाते हैं।"
+            }
+        },
+        "40": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "नेहाभिक्रमनाशो[2.40.1-3]ऽस्ति[2.40.4] प्रत्यवायो[2.40.5] न[2.40.6] विद्यते[2.40.7]।\nस्वल्पमप्य[2.40.8-9]स्य[2.40.10] धर्मस्य[2.40.11] त्रायते[2.40.12] महतो[2.40.13] भयात्[2.40.14]॥",
+            "wordTranslations": [
+                { "id": "2.40.1", "sanskrit": "न", "transliteration": "na", "english": "not", "hindi": "नहीं" },
+                { "id": "2.40.2", "sanskrit": "इह", "transliteration": "iha", "english": "in this (Karma Yoga)", "hindi": "इस कर्मयोग में" },
+                { "id": "2.40.3", "sanskrit": "अभिक्रम-नाशः", "transliteration": "abhikrama-nāśaḥ", "english": "loss of effort (commencement)", "hindi": "आरम्भ का अर्थात् बीज का नाश" },
+                { "id": "2.40.4", "sanskrit": "अस्ति", "transliteration": "asti", "english": "is", "hindi": "है" },
+                { "id": "2.40.5", "sanskrit": "प्रत्यवायः", "transliteration": "pratyavāyaḥ", "english": "fear of contrary result / fault", "hindi": "उलटा फलरूप दोष" },
+                { "id": "2.40.6", "sanskrit": "न", "transliteration": "na", "english": "nor", "hindi": "भी नहीं" },
+                { "id": "2.40.7", "sanskrit": "विद्यते", "transliteration": "vidyate", "english": "is", "hindi": "है" },
+                { "id": "2.40.8", "sanskrit": "स्वल्पम्", "transliteration": "svalpam", "english": "a little", "hindi": "थोड़ा सा" },
+                { "id": "2.40.9", "sanskrit": "अपि", "transliteration": "api", "english": "even", "hindi": "भी" },
+                { "id": "2.40.10", "sanskrit": "अस्य", "transliteration": "asya", "english": "of this", "hindi": "इस" },
+                { "id": "2.40.11", "sanskrit": "धर्मस्य", "transliteration": "dharmasya", "english": "discipline / duty", "hindi": "धर्म का (साधन)" },
+                { "id": "2.40.12", "sanskrit": "त्रायते", "transliteration": "trāyate", "english": "saves / protects", "hindi": "रक्षा कर लेता है" },
+                { "id": "2.40.13", "sanskrit": "महतः", "transliteration": "mahataḥ", "english": "from the terrible", "hindi": "महान्" },
+                { "id": "2.40.14", "sanskrit": "भयात्", "transliteration": "bhayāt", "english": "fear (of birth and death)", "hindi": "भय से" }
+            ],
+            "english": {
+                "text": "In this path (of disinterested action) there is no loss of effort, nor is there fear of contrary result. Even a little practice of this discipline saves one from the terrible fear of birth and death.",
+                "meaning": "Lord Krishna reveals the supreme safety and grace of Karma Yoga. Unlike material endeavors where an incomplete action bears no fruit or yields adverse results, selfless action offered to the Divine is never wasted. Even the slightest sincere effort in this path protects the soul from the greatest fear—the cycle of rebirth."
+            },
+            "hindi": {
+                "text": "इस कर्मयोग में आरम्भ का अर्थात् बीज का नाश नहीं है और उलटा फलरूप दोष भी नहीं है; बल्कि इस कर्मयोग रूप धर्म का थोड़ा सा भी साधन जन्म-मृत्युरूप महान् भय से रक्षा कर लेता है ।।",
+                "meaning": "सकाम कर्मों में यदि कार्य अधूरा रह जाए तो फल नहीं मिलता और त्रुटि होने पर पाप भी लग सकता है। परंतु निष्काम कर्मयोग (स्वार्थ रहित कर्म) का थोड़ा सा भी अभ्यास कभी व्यर्थ नहीं जाता और यह जीवात्मा को जन्म-मरण के महान भय से मुक्त कर देता है।"
+            },
+            "pretext": {
+                "english": "Introducing the profound significance of Karma Yoga, the Lord speaks of its unique merits.",
+                "hindi": "प्रसंग – इस प्रकार कर्मयोग के वर्णन की प्रस्तावना करके अब उसका रहस्यपूर्ण महत्त्व बतलाते हैं—"
+            }
+        },
+        "41": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "व्यवसायात्मिका[2.41.1] बुद्धिर्[2.41.2]एकेह[2.41.3-4] कुरुनन्दन[2.41.5]।\nबहुशाखा[2.41.6] ह्यनन्ता[2.41.7-8]श्च[2.41.9] बुद्धयो[2.41.10]ऽव्यवसायिनाम्[2.41.11]॥",
+            "wordTranslations": [
+                { "id": "2.41.1", "sanskrit": "व्यवसायात्मिका", "transliteration": "vyavasāyātmikā", "english": "determinate / resolute", "hindi": "निश्चयात्मिका" },
+                { "id": "2.41.2", "sanskrit": "बुद्धिः", "transliteration": "buddhiḥ", "english": "intellect", "hindi": "बुद्धि" },
+                { "id": "2.41.3", "sanskrit": "एका", "transliteration": "ekā", "english": "singly / one", "hindi": "एक ही" },
+                { "id": "2.41.4", "sanskrit": "इह", "transliteration": "iha", "english": "in this Yoga", "hindi": "इस कर्मयोग में" },
+                { "id": "2.41.5", "sanskrit": "कुरुनन्दन", "transliteration": "kuru-nandana", "english": "O joy of the Kurus (Arjuna)", "hindi": "हे अर्जुन !", "explanationRef": "exp_arjuna" },
+                { "id": "2.41.6", "sanskrit": "बहु-शाखाः", "transliteration": "bahu-śākhāḥ", "english": "many-branched / wandes in all directions", "hindi": "बहुत भेदोंवाली" },
+                { "id": "2.41.7", "sanskrit": "हि", "transliteration": "hi", "english": "indeed", "hindi": "निश्चय ही" },
+                { "id": "2.41.8", "sanskrit": "अनन्ताः", "transliteration": "anantāḥ", "english": "innumerable", "hindi": "और अनन्त" },
+                { "id": "2.41.9", "sanskrit": "च", "transliteration": "ca", "english": "and", "hindi": "होती हैं" },
+                { "id": "2.41.10", "sanskrit": "बुद्धयः", "transliteration": "buddhayaḥ", "english": "intellects / aims", "hindi": "बुद्धियाँ" },
+                { "id": "2.41.11", "sanskrit": "अव्यवसायिनाम्", "transliteration": "avyavasāyinām", "english": "of the undecided (ignorant men moved by desires)", "hindi": "अस्थिर विचार वाले विवेकहीन सकाम मनुष्यों की" }
+            ],
+            "english": {
+                "text": "(Arjuna)[exp_arjuna], in this Yoga (of disinterested action) the intellect is determinate and directed singly towards one ideal; whereas the intellect of the undecided (ignorant men moved by desires) wanders in all directions, after innumerable aims.",
+                "meaning": "A true seeker on the path of Karma Yoga has a resolute, focused mind aimed solely at the Divine. In contrast, those driven by material desires have scattered, fragmented minds, perpetually chasing endless worldly goals and never finding true peace."
+            },
+            "hindi": {
+                "text": "हे (अर्जुन)[exp_arjuna] ! इस कर्मयोग में निश्चयात्मिका बुद्धि एक ही होती है; किंतु अस्थिर विचार वाले विवेकहीन सकाम मनुष्यों की बुद्धियाँ निश्चय ही बहुत भेदोंवाली और अनन्त होती हैं ।।",
+                "meaning": "भगवान अर्जुन को एकाग्रता का महत्त्व समझाते हैं। जो निष्काम भाव से ईश्वर को समर्पित हैं, उनकी बुद्धि एक ही लक्ष्य पर स्थिर होती है। लेकिन जो सांसारिक इच्छाओं में उलझे हैं, उनकी बुद्धि अनेकों दिशाओं में भटकती रहती है।"
+            },
+            "pretext": {
+                "english": "Contrasting the focused mind of a Karma Yogi with the scattered mind of a worldly person.",
+                "hindi": "प्रसंग – इस प्रकार कर्मयोगी के लिये अवश्य धारण करने योग्य निश्चयात्मिका बुद्धिका और त्याग करने योग्य सकाम मनुष्यों की बुद्धियों का स्वरूप बतलाकर अब सकाम भावको त्याज्य बतलाने के लिये सकाम मनुष्य की स्वभाव का वर्णन करते हैं—"
+            }
+        },
+        "42": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "यामिमां[2.42.1-2] पुष्पितां[2.42.3] वाचं[2.42.4] प्रवदन्त्य[2.42.5]विपश्चितः[2.42.6]।\nवेदवादरताः[2.42.7] पार्थ[2.42.8] नान्यदस्तीति[2.42.9-11] वादिनः[2.42.12]॥\nकामात्मानः[2.42.13] स्वर्गपरा[2.42.14] जन्मकर्मफलप्रदाम्[2.42.15]।\nक्रियाविशेषबहुलां[2.42.16] भोगैश्वर्यगतिं[2.42.17] प्रति[2.42.18]॥\nभोगैश्वर्यप्रसक्तानां[2.42.19] तया[2.42.20]पहृतचेतसाम्[2.42.21]।\nव्यवसायात्मिका[2.42.22] बुद्धिः[2.42.23] समाधौ[2.42.24] न[2.42.25] विधीयते[2.42.26]॥",
+            "wordTranslations": [
+                { "id": "2.42.1", "sanskrit": "याम्", "transliteration": "yām", "english": "which", "hindi": "जिस" },
+                { "id": "2.42.2", "sanskrit": "इमाम्", "transliteration": "imām", "english": "this", "hindi": "इस" },
+                { "id": "2.42.3", "sanskrit": "पुष्पिताम्", "transliteration": "puṣpitām", "english": "flowery", "hindi": "पुष्पित यानी दिखाऊ शोभायुक्त" },
+                { "id": "2.42.4", "sanskrit": "वाचम्", "transliteration": "vācam", "english": "speech", "hindi": "वाणी को" },
+                { "id": "2.42.5", "sanskrit": "प्रवदन्ति", "transliteration": "pravadanti", "english": "utter / speak", "hindi": "कहा करते हैं" },
+                { "id": "2.42.6", "sanskrit": "अविपश्चितः", "transliteration": "avipaścitaḥ", "english": "unwise / ignorant", "hindi": "अविवेकीजन" },
+                { "id": "2.42.7", "sanskrit": "वेद-वाद-रताः", "transliteration": "veda-vāda-ratāḥ", "english": "devoted to the letter of the Vedas", "hindi": "कर्म फल के प्रशंसक वेद-वाक्यों में प्रीति रखते हैं" },
+                { "id": "2.42.8", "sanskrit": "पार्थ", "transliteration": "pārtha", "english": "O Partha (Arjuna)", "hindi": "हे अर्जुन !", "explanationRef": "exp_partha" },
+                { "id": "2.42.9", "sanskrit": "न", "transliteration": "na", "english": "no", "hindi": "नहीं" },
+                { "id": "2.42.10", "sanskrit": "अन्यत्", "transliteration": "anyat", "english": "other", "hindi": "दूसरी कोई वस्तु ही" },
+                { "id": "2.42.11", "sanskrit": "अस्ति इति", "transliteration": "asti iti", "english": "is there (thus)", "hindi": "है—ऐसा" },
+                { "id": "2.42.12", "sanskrit": "वादिनः", "transliteration": "vādinaḥ", "english": "arguing", "hindi": "कहने वाले हैं" },
+                { "id": "2.42.13", "sanskrit": "काम-आत्मानः", "transliteration": "kāma-ātmānaḥ", "english": "full of worldly desires", "hindi": "जो भोगों में तन्मय हो रहे हैं" },
+                { "id": "2.42.14", "sanskrit": "स्वर्ग-पराः", "transliteration": "svarga-parāḥ", "english": "looking upon heaven as the supreme goal", "hindi": "जिनकी बुद्धि में स्वर्ग ही परम प्राप्य वस्तु है" },
+                { "id": "2.42.15", "sanskrit": "जन्म-कर्म-फल-प्रदाम्", "transliteration": "janma-karma-phala-pradām", "english": "with rebirth as their fruit", "hindi": "जन्म रूप कर्म फल देने वाली" },
+                { "id": "2.42.16", "sanskrit": "क्रिया-विशेष-बहुलाम्", "transliteration": "kriyā-viśeṣa-bahulām", "english": "recommending many rituals of various kinds", "hindi": "नाना प्रकार की बहुत-सी क्रियाओं का वर्णन करने वाली है" },
+                { "id": "2.42.17", "sanskrit": "भोग-ऐश्वर्य-गतिम्", "transliteration": "bhoga-aiśvarya-gatim", "english": "attainment of pleasure and power", "hindi": "भोग तथा ऐश्वर्य की प्राप्ति के लिये" },
+                { "id": "2.42.18", "sanskrit": "प्रति", "transliteration": "prati", "english": "towards / for", "hindi": "(के प्रति)" },
+                { "id": "2.42.19", "sanskrit": "भोग-ऐश्वर्य-प्रसक्तानाम्", "transliteration": "bhoga-aiśvarya-prasaktānām", "english": "deeply attached to pleasure and worldly power", "hindi": "जो भोग और ऐश्वर्य में अत्यन्त आसक्त हैं" },
+                { "id": "2.42.20", "sanskrit": "तया", "transliteration": "tayā", "english": "by that (words)", "hindi": "उस वाणी द्वारा" },
+                { "id": "2.42.21", "sanskrit": "अपहृत-चेतसाम्", "transliteration": "apahṛta-cetasām", "english": "whose minds are carried away", "hindi": "जिनका चित्त हर लिया गया है" },
+                { "id": "2.42.22", "sanskrit": "व्यवसायात्मिका", "transliteration": "vyavasāyātmikā", "english": "determinate", "hindi": "निश्चयात्मिका" },
+                { "id": "2.42.23", "sanskrit": "बुद्धिः", "transliteration": "buddhiḥ", "english": "intellect", "hindi": "बुद्धि" },
+                { "id": "2.42.24", "sanskrit": "समाधौ", "transliteration": "samādhau", "english": "on God / in meditation", "hindi": "परमात्मा में" },
+                { "id": "2.42.25", "sanskrit": "न", "transliteration": "na", "english": "cannot", "hindi": "नहीं" },
+                { "id": "2.42.26", "sanskrit": "विधीयते", "transliteration": "vidhīyate", "english": "attain / be established", "hindi": "होती" }
+            ],
+            "english": {
+                "text": "(Arjuna)[exp_partha], those who are full of worldly desires and devoted to the letter of the Vedas, who look upon heaven as the supreme goal and argue that there is nothing beyond heaven are unwise. They utter flowery speech recommending many rituals of various kinds for the attainment of pleasure and power with rebirth as their fruit. Those whose minds are carried away by such words, and who are deeply attached to pleasure and worldly power, cannot attain the determinate intellect concentrated on God.",
+                "meaning": "Krishna criticizes the superficial religious practices of those who perform rituals solely for material gains, wealth, or heavenly comforts. Such individuals are blinded by flowery words of scriptures promising worldly success. Attached to sensory pleasures, they lack the singular, unwavering devotion required to connect deeply with the Supreme."
+            },
+            "hindi": {
+                "text": "हे (अर्जुन)[exp_partha] ! जो भोगों में तन्मय हो रहे हैं, जो कर्म फल के प्रशंसक वेद-वाक्यों में प्रीति रखते हैं, जिनकी बुद्धि में स्वर्ग ही परम प्राप्य वस्तु है और जो स्वर्ग से बढ़कर दूसरी कोई वस्तु ही नहीं है—ऐसा कहने वाले हैं—वे अविवेकीजन इस प्रकार की जिस पुष्पित यानी दिखाऊ शोभायुक्त वाणी को कहा करते हैं जो कि जन्म रूप कर्म फल देने वाली एवं भोग तथा ऐश्वर्य की प्राप्ति के लिये नाना प्रकार की बहुत-सी क्रियाओं का वर्णन करने वाली है, उस वाणी द्वारा जिनका चित्त हर लिया गया है, जो भोग और ऐश्वर्य में अत्यन्त आसक्त हैं, उन पुरुषों की परमात्मा में निश्चयात्मिका बुद्धि नहीं होती ।।",
+                "meaning": "भगवान कहते हैं कि जो अज्ञानी लोग केवल वेदों के कर्मकांडों में उलझे रहते हैं और स्वर्ग तथा सांसारिक सुखों को ही जीवन का परम लक्ष्य मानते हैं, उनकी बुद्धि कभी एकाग्र नहीं हो सकती। ऐसे लोग सकाम कर्मों में फँसकर जन्म-मरण के चक्र में पड़े रहते हैं, और वे कभी भी ईश्वर में दृढ़ता से स्थित नहीं हो पाते।"
+            },
+            "pretext": {
+                "english": "Verses 42, 43, and 44 collectively describe the mindset of those attached to material rewards and the consequences of such desires.",
+                "hindi": "प्रसंग – जो लोग वेदों में वर्णित सकाम कर्मों के फलों के प्रति आसक्त रहते हैं, उनकी स्थिति का वर्णन करते हैं— (श्लोक ४२-४४ एक साथ)"
+            }
+        },
+        "45": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "त्रैगुण्यविषया[2.45.1] वेदा[2.45.2] निस्त्रैगुण्यो[2.45.3] भव[2.45.4]ार्जुन[2.45.5]।\nनिर्द्वन्द्वो[2.45.6] नित्यसत्त्वस्थो[2.45.7] निर्योगक्षेम[2.45.8] आत्मवान्[2.45.9]॥",
+            "wordTranslations": [
+                { "id": "2.45.1", "sanskrit": "त्रैगुण्य-विषयाः", "transliteration": "traiguṇya-viṣayāḥ", "english": "deal with the evolutes of the three Gunas", "hindi": "तीनों गुणों के कार्यरूप समस्त भोगों एवं उनके साधनों का प्रतिपादन करने वाले" },
+                { "id": "2.45.2", "sanskrit": "वेदाः", "transliteration": "vedāḥ", "english": "the Vedas", "hindi": "वेद" },
+                { "id": "2.45.3", "sanskrit": "निस्त्रैगुण्यः", "transliteration": "nistraiguṇyaḥ", "english": "be thou indifferent to these enjoyments and their means (free from three Gunas)", "hindi": "उन भोगों एवं उनके साधनों, आसक्तिहीन" },
+                { "id": "2.45.4", "sanskrit": "भव", "transliteration": "bhava", "english": "be", "hindi": "हो" },
+                { "id": "2.45.5", "sanskrit": "अर्जुन", "transliteration": "arjuna", "english": "O Arjuna", "hindi": "हे अर्जुन !", "explanationRef": "exp_arjuna" },
+                { "id": "2.45.6", "sanskrit": "निर्द्वन्द्वः", "transliteration": "nirdvandvaḥ", "english": "rising above pairs of opposites", "hindi": "हर्ष-शोकादि द्वन्द्वों से रहित" },
+                { "id": "2.45.7", "sanskrit": "नित्य-सत्त्व-स्थः", "transliteration": "nitya-sattva-sthaḥ", "english": "established in the Eternal Existence (God)", "hindi": "नित्यवस्तु परमात्मा में स्थित" },
+                { "id": "2.45.8", "sanskrit": "निर्योग-क्षेमः", "transliteration": "niryoga-kṣemaḥ", "english": "absolutely unconcerned about the supply of wants and preservation", "hindi": "योगक्षेमको न चाहने वाला" },
+                { "id": "2.45.9", "sanskrit": "आत्मवान्", "transliteration": "ātmavān", "english": "self-controlled", "hindi": "और स्वाधीन अन्तःकरणवाला" }
+            ],
+            "english": {
+                "text": "(Arjuna)[exp_arjuna], the Vedas thus deal with evolutes of the three Gunas (modes of Prakriti); viz., worldly enjoyments and the means of attaining such enjoyments; be thou indifferent to these enjoyments and their means, rising above pairs of opposites like pleasure and pain etc., established in the Eternal Existence (God), absolutely unconcerned about the supply of wants and the preservation of what has been already attained, and self-controlled.",
+                "meaning": "The material section of the Vedas focuses on the three modes of material nature (Sattva, Rajas, Tamas) offering rituals for worldly and heavenly rewards. Krishna urges Arjuna to transcend these material enticements. He must become free from dualities (success/failure, joy/sorrow), abandon the anxiety of acquiring new things or protecting what he has, and remain established in the eternal Truth of the soul."
+            },
+            "hindi": {
+                "text": "हे (अर्जुन)[exp_arjuna] ! वेद उपर्युक्त प्रकार से तीनों गुणों के कार्यरूप समस्त भोगों एवं उनके साधनों का प्रतिपादन करने वाले हैं; इसलिये तू उन भोगों एवं उनके साधनों, आसक्तिहीन, हर्ष-शोकादि द्वन्द्वों से रहित, नित्यवस्तु परमात्मा में स्थित योगक्षेमको न चाहने वाला और स्वाधीन अन्तःकरणवाला हो ।।",
+                "meaning": "वेदों का वह भाग जो कर्मकाण्ड का वर्णन करता है, वह प्रकृति के तीन गुणों (सत्त्व, रज, तम) से संबंधित है। श्रीकृष्ण अर्जुन को इन सांसारिक सुखों की लालसा से ऊपर उठने, सुख-दुख के द्वंद्व से मुक्त होने, ईश्वर में अपना मन स्थिर करने और अप्राप्त वस्तु की इच्छा तथा प्राप्त वस्तु की रक्षा (योगक्षेम) की चिंता से मुक्त होने का निर्देश देते हैं।"
+            },
+            "pretext": {
+                "english": "Instructing Arjuna to transcend the material aspect of the Vedas and become established in the self.",
+                "hindi": "प्रसंग – इस प्रकार भोग और ऐश्वर्य में आसक्त सकाम पुरुषों में निश्चयात्मिका बुद्धि के न होने की बात कहकर अब कर्मयोग का उपदेश देने के उद्देश्य से पहले भगवान् अर्जुन को उपर्युक्त भोग और ऐश्वर्य में आसक्ति रहित होकर समभाव से सम्पन्न होने के लिये कहते हैं—"
+            }
+        }, "46": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "यावानर्थ[2.46.1-2] उदपाने[2.46.3] सर्वतः[2.46.4] सम्प्लुतोदके[2.46.5]।\nतावान्[2.46.6] सर्वेषु[2.46.7] वेदेषु[2.46.8] ब्राह्मणस्य[2.46.9] विजानतः[2.46.10]॥",
+            "wordTranslations": [
+                { "id": "2.46.1", "sanskrit": "यावान्", "transliteration": "yāvān", "english": "as much", "hindi": "जितना" },
+                { "id": "2.46.2", "sanskrit": "अर्थः", "transliteration": "arthaḥ", "english": "use / purpose", "hindi": "प्रयोजन रहता है" },
+                { "id": "2.46.3", "sanskrit": "उदपाने", "transliteration": "udapāne", "english": "in a small reservoir of water", "hindi": "छोटे जलाशय में" },
+                { "id": "2.46.4", "sanskrit": "सर्वतः", "transliteration": "sarvataḥ", "english": "on all sides", "hindi": "सब ओर से" },
+                { "id": "2.46.5", "sanskrit": "सम्प्लुतोदके", "transliteration": "samplutodake", "english": "in a sheet of water overflowing", "hindi": "परिपूर्ण जलाशय के प्राप्त हो जाने पर" },
+                { "id": "2.46.6", "sanskrit": "तावान्", "transliteration": "tāvān", "english": "that much", "hindi": "उतना ही प्रयोजन" },
+                { "id": "2.46.7", "sanskrit": "सर्वेषु", "transliteration": "sarveṣu", "english": "in all", "hindi": "समस्त" },
+                { "id": "2.46.8", "sanskrit": "वेदेषु", "transliteration": "vedeṣu", "english": "the Vedas", "hindi": "वेदों में" },
+                { "id": "2.46.9", "sanskrit": "ब्राह्मणस्य", "transliteration": "brāhmaṇasya", "english": "for a Brahmana", "hindi": "ब्राह्मण का", "explanationRef": "exp_brahmana" },
+                { "id": "2.46.10", "sanskrit": "विजानतः", "transliteration": "vijānataḥ", "english": "who has obtained enlightenment", "hindi": "ब्रह्म को तत्त्व से जानने वाले" }
+            ],
+            "english": {
+                "text": "A (Brahmana)[exp_brahmana], who has obtained enlightenment, has the same use for all the Vedas as one who stands at the brink of a sheet of water overflowing on all sides has for a small reservoir of water.",
+                "meaning": "Just as a small well becomes completely unnecessary when one is standing next to a vast, overflowing lake, the ritualistic rewards of the Vedas serve no purpose to an enlightened soul who has realized the Supreme Truth."
+            },
+            "hindi": {
+                "text": "सब ओर से परिपूर्ण जलाशय के प्राप्त हो जाने पर छोटे जलाशय में मनुष्य का जितना प्रयोजन रहता है, ब्रह्म को तत्त्व से जानने वाले (ब्राह्मण)[exp_brahmana] का समस्त वेदों में उतना ही प्रयोजन रह जाता है ।।",
+                "meaning": "जैसे एक बहुत बड़े सरोवर के मिल जाने पर छोटे कुएं या तालाब की कोई आवश्यकता नहीं रह जाती, वैसे ही जिस महापुरुष ने परब्रह्म को जान लिया है, उसके लिए वेदों में बताए गए सकाम कर्मों और स्वर्ग आदि फलों का कोई महत्व नहीं रह जाता।"
+            },
+            "pretext": {
+                "english": "Illustrating the absolute fulfillment found in God-realization, which surpasses all material and heavenly rewards.",
+                "hindi": "प्रसंग – पूर्व श्लोक में अर्जुन को यह बात कही गयी कि सब वेद तीनों गुणों के कार्य का प्रतिपादन करनेवाले हैं और तुम तीनों गुणों के कार्यरूप समस्त भोगों में और उनके साधनों में आसक्तिरहित हो जाओ | अब उसके फलस्वरूप ब्रह्मज्ञान का महत्त्व बतलाते हैं—"
+            }
+        },
+        "47": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "कर्मण्येवाधिकारस्ते[2.47.1-4] मा[2.47.5] फलेषु[2.47.6] कदाचन[2.47.7]।\nमा[2.47.8] कर्मफलहेतुर्भूर्[2.47.9-10]मा[2.47.11] ते[2.47.12] सङ्गोऽस्त्वकर्मणि[2.47.13-15]॥",
+            "wordTranslations": [
+                { "id": "2.47.1", "sanskrit": "कर्मणि", "transliteration": "karmaṇi", "english": "to work / to duty", "hindi": "कर्म करने में" },
+                { "id": "2.47.2", "sanskrit": "एव", "transliteration": "eva", "english": "only", "hindi": "ही" },
+                { "id": "2.47.3", "sanskrit": "अधिकारः", "transliteration": "adhikāraḥ", "english": "right", "hindi": "अधिकार है" },
+                { "id": "2.47.4", "sanskrit": "ते", "transliteration": "te", "english": "your", "hindi": "तेरा" },
+                { "id": "2.47.5", "sanskrit": "मा", "transliteration": "mā", "english": "never", "hindi": "नहीं" },
+                { "id": "2.47.6", "sanskrit": "फलेषु", "transliteration": "phaleṣu", "english": "to the fruits", "hindi": "उसके फलों में" },
+                { "id": "2.47.7", "sanskrit": "कदाचन", "transliteration": "kadācana", "english": "at any time", "hindi": "कभी" },
+                { "id": "2.47.8", "sanskrit": "मा", "transliteration": "mā", "english": "do not", "hindi": "मत" },
+                { "id": "2.47.9", "sanskrit": "कर्म-फल-हेतुः", "transliteration": "karma-phala-hetuḥ", "english": "instrumental in making your actions bear fruit", "hindi": "कर्मों के फल का हेतु" },
+                { "id": "2.47.10", "sanskrit": "भूः", "transliteration": "bhūḥ", "english": "be", "hindi": "हो" },
+                { "id": "2.47.11", "sanskrit": "मा", "transliteration": "mā", "english": "nor", "hindi": "न" },
+                { "id": "2.47.12", "sanskrit": "ते", "transliteration": "te", "english": "your", "hindi": "तेरी" },
+                { "id": "2.47.13", "sanskrit": "सङ्गः", "transliteration": "saṅgaḥ", "english": "attachment", "hindi": "आसक्ति" },
+                { "id": "2.47.14", "sanskrit": "अस्तु", "transliteration": "astu", "english": "let there be", "hindi": "हो" },
+                { "id": "2.47.15", "sanskrit": "अकर्मणि", "transliteration": "akarmaṇi", "english": "to inaction", "hindi": "कर्म न करने में भी" }
+            ],
+            "english": {
+                "text": "Your right is to work only, but never to the fruit thereof. Be not instrumental in making your actions bear fruit, nor let your attachment be to inaction.",
+                "meaning": "This is the essence of Karma Yoga. Lord Krishna commands Arjuna to focus entirely on performing his righteous duty without becoming emotionally attached to success or failure. At the same time, he must not use this detachment as an excuse for laziness or inaction."
+            },
+            "hindi": {
+                "text": "तेरा कर्म करने में ही अधिकार है, उसके फलों में कभी नहीं । इसलिये तू कर्मों के फल का हेतु मत हो तथा तेरी कर्म न करने में भी आसक्ति न हो ।।",
+                "meaning": "यह गीता का सबसे प्रसिद्ध उपदेश है: मनुष्य का अधिकार केवल अपना कर्म करने तक सीमित है, कर्म के परिणाम पर उसका कोई नियंत्रण नहीं है। इसलिए फल की इच्छा से कोई कार्य नहीं करना चाहिए, और न ही कर्म छोड़ने (अकर्म) का विचार मन में लाना चाहिए।"
+            },
+            "pretext": {
+                "english": "Defining the core methodology of Karma Yoga—selfless action.",
+                "hindi": "प्रसंग – इस प्रकार समबुद्धि रूप कर्मयोग का और उसके फलका महत्त्व बतलाकर अब दो श्लोकों में भगवान् कर्मयोग का स्वरूप बतलाते हुए अर्जुन को कर्मयोग में स्थित होकर कर्म करने के लिये कहते हैं—"
+            }
+        },
+        "48": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "योगस्थः[2.48.1] कुरु[2.48.2] कर्माणि[2.48.3] सङ्गं[2.48.4] त्यक्त्वा[2.48.5] धनञ्जय[2.48.6]।\nसिद्ध्यसिद्ध्योः[2.48.7] समो[2.48.8] भूत्वा[2.48.9] समत्वं[2.48.10] योग[2.48.11] उच्यते[2.48.12]॥",
+            "wordTranslations": [
+                { "id": "2.48.1", "sanskrit": "योग-स्थः", "transliteration": "yoga-sthaḥ", "english": "established in Yoga", "hindi": "योग में स्थित हुआ" },
+                { "id": "2.48.2", "sanskrit": "कुरु", "transliteration": "kuru", "english": "perform", "hindi": "कर" },
+                { "id": "2.48.3", "sanskrit": "कर्माणि", "transliteration": "karmāṇi", "english": "your duties", "hindi": "कर्तव्य कर्मों को" },
+                { "id": "2.48.4", "sanskrit": "सङ्गम्", "transliteration": "saṅgam", "english": "attachment", "hindi": "आसक्ति को" },
+                { "id": "2.48.5", "sanskrit": "त्यक्त्वा", "transliteration": "tyaktvā", "english": "renouncing", "hindi": "त्याग कर" },
+                { "id": "2.48.6", "sanskrit": "धनञ्जय", "transliteration": "dhanañjaya", "english": "O Dhananjaya (Arjuna)", "hindi": "हे धनञ्जय !", "explanationRef": "exp_arjuna" },
+                { "id": "2.48.7", "sanskrit": "सिद्धि-असिद्ध्योः", "transliteration": "siddhi-asiddhyoḥ", "english": "in success and failure", "hindi": "सिद्धि और असिद्धि में" },
+                { "id": "2.48.8", "sanskrit": "समः", "transliteration": "samaḥ", "english": "even-tempered", "hindi": "समान बुद्धिवाला" },
+                { "id": "2.48.9", "sanskrit": "भूत्वा", "transliteration": "bhūtvā", "english": "becoming", "hindi": "होकर" },
+                { "id": "2.48.10", "sanskrit": "समत्वम्", "transliteration": "samatvam", "english": "evenness of temper / equanimity", "hindi": "समत्व ही" },
+                { "id": "2.48.11", "sanskrit": "योगः", "transliteration": "yogaḥ", "english": "Yoga", "hindi": "योग" },
+                { "id": "2.48.12", "sanskrit": "उच्यते", "transliteration": "ucyate", "english": "is called", "hindi": "कहलाता है" }
+            ],
+            "english": {
+                "text": "(Arjuna)[exp_arjuna], perform your duties established in Yoga, renouncing attachment, and even-tempered in success and failure; evenness of temper is called Yoga.",
+                "meaning": "Lord Krishna provides the ultimate definition of Yoga: Equanimity. True spiritual union is achieved when one remains utterly balanced and undisturbed by the dualities of worldly life, continuing to perform their duties purely out of devotion."
+            },
+            "hindi": {
+                "text": "हे (धनञ्जय)[exp_arjuna] ! तू आसक्ति को त्याग कर तथा सिद्धि और असिद्धि में समान बुद्धिवाला होकर योग में स्थित हुआ कर्तव्य कर्मों को कर, समत्व ही योग कहलाता है ।।",
+                "meaning": "कर्मयोग का अर्थ है अनासक्त भाव से अपना काम करना। कार्य सफल हो या विफल, दोनों ही परिस्थितियों में मन का शांत और संतुलित रहना ही 'योग' कहलाता है।"
+            },
+            "pretext": {
+                "english": "Clarifying how one must act if they are to abandon attachment to both results and inaction.",
+                "hindi": "प्रसंग – उपर्युक्त श्लोक में यह बात कही गयी कि तुमको न तो कर्मों के फलका हेतु बनना चाहिये और न कर्म न करने में ही आसक्त होना चाहिये अर्थात् कर्मों का त्याग भी नहीं करना चाहिये । इस पर यह जिज्ञासा होती है कि तो फिर किस प्रकार कर्म करना चाहिये ? इसलिये भगवान् कहते हैं—"
+            }
+        },
+        "49": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "दूरेण[2.49.1] ह्यवरं[2.49.2-3] कर्म[2.49.4] बुद्धियोगाद्धनञ्जय[2.49.5-6]।\nबुद्धौ[2.49.7] शरणमन्विच्छ[2.49.8-9] कृपणाः[2.49.10] फलहेतवः[2.49.11]॥",
+            "wordTranslations": [
+                { "id": "2.49.1", "sanskrit": "दूरेण", "transliteration": "dūreṇa", "english": "by far", "hindi": "अत्यन्त ही" },
+                { "id": "2.49.2", "sanskrit": "हि", "transliteration": "hi", "english": "indeed", "hindi": "(निश्चित)" },
+                { "id": "2.49.3", "sanskrit": "अवरम्", "transliteration": "avaram", "english": "inferior", "hindi": "निम्न श्रेणी का है" },
+                { "id": "2.49.4", "sanskrit": "कर्म", "transliteration": "karma", "english": "action (with a selfish motive)", "hindi": "सकाम कर्म" },
+                { "id": "2.49.5", "sanskrit": "बुद्धि-योगात्", "transliteration": "buddhi-yogāt", "english": "to this Yoga in the form of equanimity", "hindi": "इस समत्वरूप बुद्धियोग से" },
+                { "id": "2.49.6", "sanskrit": "धनञ्जय", "transliteration": "dhanañjaya", "english": "O Dhananjaya (Arjuna)", "hindi": "हे धनञ्जय !", "explanationRef": "exp_arjuna" },
+                { "id": "2.49.7", "sanskrit": "बुद्धौ", "transliteration": "buddhau", "english": "in this equipoise of mind", "hindi": "समबुद्धि में ही" },
+                { "id": "2.49.8", "sanskrit": "शरणम्", "transliteration": "śaraṇam", "english": "refuge", "hindi": "रक्षा का उपाय अर्थात् आश्रय" },
+                { "id": "2.49.9", "sanskrit": "अन्विच्छ", "transliteration": "anviccha", "english": "do you seek", "hindi": "ग्रहण कर" },
+                { "id": "2.49.10", "sanskrit": "कृपणाः", "transliteration": "kṛpaṇāḥ", "english": "poor and wretched", "hindi": "अत्यन्त दीन हैं" },
+                { "id": "2.49.11", "sanskrit": "फल-हेतवः", "transliteration": "phala-hetavaḥ", "english": "those who are instrumental in making their actions bear fruit", "hindi": "फल के हेतु बनने वाले" }
+            ],
+            "english": {
+                "text": "Action (with a selfish motive) is far inferior to this Yoga in the form of equanimity. Do you seek refuge in this equipoise of mind, (Arjuna)[exp_arjuna]; for poor and wretched are those who are instrumental in making their actions bear fruit.",
+                "meaning": "Working solely for personal gain binds a person to misery and anxiety. Such a self-centered approach is vastly inferior to the noble path of selfless duty (Buddhi Yoga). Krishna pities those whose only motivation is the fruit of their labor, as they are forever slaves to circumstances."
+            },
+            "hindi": {
+                "text": "इस समत्वरूप बुद्धियोग से सकाम कर्म अत्यन्त ही निम्न श्रेणी का है । इसलिये हे (धनञ्जय)[exp_arjuna] ! तू समबुद्धि में ही रक्षा का उपाय ढूँढ़ अर्थात् बुद्धियोग का ही आश्रय ग्रहण कर; क्योंकि फल के हेतु बनने वाले अत्यन्त दीन हैं ।।",
+                "meaning": "जो लोग केवल फल की इच्छा से काम करते हैं, वे कृपण (दीन) होते हैं क्योंकि उनका सुख और दुख बाहरी परिस्थितियों का गुलाम होता है। समत्व भाव (बुद्धियोग) से किया गया कर्म ही सर्वोच्च है।"
+            },
+            "pretext": {
+                "english": "Denouncing selfish action, the Lord instructs Arjuna to take refuge in equanimity.",
+                "hindi": "प्रसंग – इस प्रकार कर्मयोग की प्रक्रिया बतलाकर अब सकाम भाव की निन्दा और समभावरूप बुद्धियोग का महत्त्व प्रकट करते हुए भगवान् अर्जुन को उसका आश्रय लेने के लिये आज्ञा देते हैं—"
+            }
+        },
+        "50": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "बुद्धियुक्तो[2.50.1] जहातीह[2.50.2-3] उभे[2.50.4] सुकृतदुष्कृते[2.50.5]।\nतस्माद्योगाय[2.50.6-7] युज्यस्व[2.50.8] योगः[2.50.9] कर्मसु[2.50.10] कौशलम्[2.50.11]॥",
+            "wordTranslations": [
+                { "id": "2.50.1", "sanskrit": "बुद्धि-युक्तः", "transliteration": "buddhi-yuktaḥ", "english": "endowed with equanimity", "hindi": "समबुद्धि युक्त पुरुष" },
+                { "id": "2.50.2", "sanskrit": "जहाति", "transliteration": "jahāti", "english": "sheds", "hindi": "त्याग देता है अर्थात् उनसे मुक्त हो जाता है" },
+                { "id": "2.50.3", "sanskrit": "इह", "transliteration": "iha", "english": "in this life", "hindi": "इसी लोक में" },
+                { "id": "2.50.4", "sanskrit": "उभे", "transliteration": "ubhe", "english": "both", "hindi": "दोनों को" },
+                { "id": "2.50.5", "sanskrit": "सुकृत-दुष्कृते", "transliteration": "sukṛta-duṣkṛte", "english": "good and evil", "hindi": "पुण्य और पाप" },
+                { "id": "2.50.6", "sanskrit": "तस्मात्", "transliteration": "tasmāt", "english": "therefore", "hindi": "इससे" },
+                { "id": "2.50.7", "sanskrit": "योगाय", "transliteration": "yogāya", "english": "for the practice of this Yoga", "hindi": "समत्वरूप योग में" },
+                { "id": "2.50.8", "sanskrit": "युज्यस्व", "transliteration": "yujyasva", "english": "strive", "hindi": "लग जा" },
+                { "id": "2.50.9", "sanskrit": "योगः", "transliteration": "yogaḥ", "english": "this Yoga", "hindi": "यह समत्व रूप योग ही" },
+                { "id": "2.50.10", "sanskrit": "कर्मसु", "transliteration": "karmasu", "english": "in action", "hindi": "कर्मों में" },
+                { "id": "2.50.11", "sanskrit": "कौशलम्", "transliteration": "kauśalam", "english": "skill", "hindi": "कुशलता है अर्थात् कर्मबन्धन से छूटने का उपाय है" }
+            ],
+            "english": {
+                "text": "Endowed with equanimity, one sheds in this life both good and evil. Therefore, strive for the practice of this Yoga of equanimity. Skill in action lies in (the practice of this) Yoga.",
+                "meaning": "By maintaining an even and unattached mind, a person transcends the karmic reactions of both good and bad deeds. To act beautifully, efficiently, and effectively in the world without getting entangled by the consequences—that is the true art and skill of Yoga."
+            },
+            "hindi": {
+                "text": "समबुद्धि युक्त पुरुष पुण्य और पाप दोनों को इसी लोक में त्याग देता है अर्थात् उनसे मुक्त हो जाता है । इससे तू समत्वरूप योग में लग जा; यह समत्व रूप योग ही कर्मों में कुशलता है अर्थात् कर्मबन्धन से छूटने का उपाय है ।।",
+                "meaning": "जो व्यक्ति सुख-दुख में सम रहता है, वह इस जीवन में ही पाप और पुण्य के बंधनों से मुक्त हो जाता है। इसलिए समता (योग) को धारण करो, क्योंकि बिना किसी आसक्ति के कुशलतापूर्वक अपने कर्तव्यों का पालन करना ही वास्तविक योग है।"
+            },
+            "pretext": {
+                "english": "Praising the state of equanimity, the Lord commands Arjuna to fully engage in this form of Yoga.",
+                "hindi": "प्रसंग – इस प्रकार अर्जुन को समत्व का आश्रय लेने की आज्ञा देकर अब दो श्लोकों में उस समता रूप बुद्धि से युक्त महापुरुषों की प्रशंसा करते हुए भगवान् अर्जुन को कर्मयोग का अनुष्ठान करने की पुनः आज्ञा देकर उसका फल बतलाते हैं—"
+            }
+        }, "51": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "कर्मजं[2.51.1] बुद्धियुक्ता[2.51.2] हि[2.51.3] फलं[2.51.4] त्यक्त्वा[2.51.5] मनीषिणः[2.51.6]।\nजन्मबन्धविनिर्मुक्ताः[2.51.7] पदं[2.51.8] गच्छन्त्यनामयम्[2.51.9-10]॥",
+            "wordTranslations": [
+                { "id": "2.51.1", "sanskrit": "कर्म-जम्", "transliteration": "karma-jam", "english": "born of actions", "hindi": "कर्मों से उत्पन्न होने वाले" },
+                { "id": "2.51.2", "sanskrit": "बुद्धि-युक्ताः", "transliteration": "buddhi-yuktāḥ", "english": "possessing an equipoised mind", "hindi": "समबुद्धि से युक्त" },
+                { "id": "2.51.3", "sanskrit": "हि", "transliteration": "hi", "english": "for", "hindi": "क्योंकि" },
+                { "id": "2.51.4", "sanskrit": "फलम्", "transliteration": "phalam", "english": "the fruit", "hindi": "फल को" },
+                { "id": "2.51.5", "sanskrit": "त्यक्त्वा", "transliteration": "tyaktvā", "english": "renouncing", "hindi": "त्याग कर" },
+                { "id": "2.51.6", "sanskrit": "मनीषिणः", "transliteration": "manīṣiṇaḥ", "english": "wise men", "hindi": "ज्ञानी जन" },
+                { "id": "2.51.7", "sanskrit": "जन्म-बन्ध-विनिर्मुक्ताः", "transliteration": "janma-bandha-vinirmuktāḥ", "english": "freed from the shackles of birth", "hindi": "जन्मरूप बन्धन से मुक्त हो" },
+                { "id": "2.51.8", "sanskrit": "पदम्", "transliteration": "padam", "english": "state", "hindi": "पद को" },
+                { "id": "2.51.9", "sanskrit": "गच्छन्ति", "transliteration": "gacchanti", "english": "attain", "hindi": "प्राप्त हो जाते हैं" },
+                { "id": "2.51.10", "sanskrit": "अनामयम्", "transliteration": "anāmayam", "english": "blissful supreme", "hindi": "निर्विकार परम" }
+            ],
+            "english": {
+                "text": "For wise men possessing an equipoised mind, renouncing the fruit of actions and freed from the shackles of birth, attain the blissful supreme state.",
+                "meaning": "Lord Krishna explains the ultimate destination of a Karma Yogi. By acting selflessly without craving the results, one purifies their consciousness. This supreme detachment breaks the endless cycle of birth and death, leading the soul to ultimate liberation (Moksha), a state free from all sorrow."
+            },
+            "hindi": {
+                "text": "क्योंकि समबुद्धि से युक्त ज्ञानी जन कर्मों से उत्पन्न होने वाले फल को त्याग कर जन्मरूप बन्धन से मुक्त हो निर्विकार परम पद को प्राप्त हो जाते हैं ।।",
+                "meaning": "जब मनुष्य कर्म के फलों की आसक्ति छोड़ देता है, तो उसके कर्म उसे बाँधते नहीं हैं। इस समता के भाव से वह जन्म-मरण के चक्र से मुक्त होकर उस परम शांति और ईश्वर की प्राप्ति कर लेता है जहाँ कोई दुःख नहीं है।"
+            },
+            "pretext": {
+                "english": "Explaining the supreme outcome of working with a detached intellect.",
+                "hindi": "प्रसंग – भगवान् ने कर्मयोग के आचरण द्वारा अनामय पद की प्राप्ति बतलायी; इस पर अर्जुन को यह जिज्ञासा हो सकती है कि अनामय परम पद की प्राप्ति मुझे कब और कैसे होगी ? इसके लिये भगवान् दो श्लोकों में कहते हैं—"
+            }
+        },
+        "52": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "यदा[2.52.1] ते[2.52.2] मोहकलिलं[2.52.3-4] बुद्धिर्[2.52.5]व्यतितरिष्यति[2.52.6]।\nतदा[2.52.7] गन्तासि[2.52.8] निर्वेदं[2.52.9] श्रोतव्यस्य[2.52.10] श्रुतस्य[2.52.11] च[2.52.12]॥",
+            "wordTranslations": [
+                { "id": "2.52.1", "sanskrit": "यदा", "transliteration": "yadā", "english": "when", "hindi": "जिस काल में" },
+                { "id": "2.52.2", "sanskrit": "ते", "transliteration": "te", "english": "your", "hindi": "तेरी" },
+                { "id": "2.52.3", "sanskrit": "मोह-कलिलम्", "transliteration": "moha-kalilam", "english": "the mire of delusion", "hindi": "मोहरूप दलदल को" },
+                { "id": "2.52.4", "sanskrit": "बुद्धिः", "transliteration": "buddhiḥ", "english": "mind / intellect", "hindi": "बुद्धि" },
+                { "id": "2.52.5", "sanskrit": "व्यतितरिष्यति", "transliteration": "vyatitariṣyati", "english": "will have fully crossed", "hindi": "भलीभाँति पार कर जायेगी" },
+                { "id": "2.52.6", "sanskrit": "तदा", "transliteration": "tadā", "english": "then", "hindi": "उस समय" },
+                { "id": "2.52.7", "sanskrit": "गन्तासि", "transliteration": "gantāsi", "english": "you will grow / attain", "hindi": "तू प्राप्त हो जायेगा" },
+                { "id": "2.52.8", "sanskrit": "निर्वेदम्", "transliteration": "nirvedam", "english": "indifferent / dispassion", "hindi": "वैराग्य को" },
+                { "id": "2.52.9", "sanskrit": "श्रोतव्यस्य", "transliteration": "śrotavyasya", "english": "that are yet to be heard of", "hindi": "सुनने में आने वाले" },
+                { "id": "2.52.10", "sanskrit": "श्रुतस्य", "transliteration": "śrutasya", "english": "have been heard of", "hindi": "सुने हुए" },
+                { "id": "2.52.11", "sanskrit": "च", "transliteration": "ca", "english": "and", "hindi": "और" }
+            ],
+            "english": {
+                "text": "When your mind will have fully crossed the mire of delusion, you will then grow indifferent to the enjoyments of this world and the next that have been heard of as well as to those that are yet to be heard of.",
+                "meaning": "When pure spiritual understanding dawns, the mind pierces through the illusion that worldly objects bring true happiness. At this stage, a seeker loses all interest in the temporary pleasures described in scriptures (like heaven) or those found in the material world."
+            },
+            "hindi": {
+                "text": "जिस काल में तेरी बुद्धि मोहरूप दलदल को भलीभाँति पार कर जायेगी, उस समय तू सुने हुए और सुनने में आने वाले इस लोक और परलोक सम्बन्धी सभी भोगों से वैराग्य को प्राप्त हो जायेगा ।।",
+                "meaning": "जब तुम्हारी बुद्धि अज्ञान और मोह के अंधकार से बाहर निकल जाएगी, तब तुम्हें न तो इस दुनिया के सुखों की लालसा रहेगी और न ही स्वर्ग के सुखों की। तब तुम स्वतः ही वैरागी हो जाओगे।"
+            }
+        },
+        "53": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "श्रुतिविप्रतिपन्ना[2.53.1] ते[2.53.2] यदा[2.53.3] स्थास्यति[2.53.4] निश्चला[2.53.5]।\nसमाधा[2.53.6]वचला[2.53.7] बुद्धिस्[2.53.8]तदा[2.53.9] योगमवाप्स्यसि[2.53.10-11]॥",
+            "wordTranslations": [
+                { "id": "2.53.1", "sanskrit": "श्रुति-विप्रतिपन्ना", "transliteration": "śruti-vipratipannā", "english": "confused by hearing conflicting statements", "hindi": "भाँति-भाँति के वचनों को सुनने से विचलित हुई" },
+                { "id": "2.53.2", "sanskrit": "ते", "transliteration": "te", "english": "your", "hindi": "तेरी" },
+                { "id": "2.53.3", "sanskrit": "यदा", "transliteration": "yadā", "english": "when", "hindi": "जब" },
+                { "id": "2.53.4", "sanskrit": "स्थास्यति", "transliteration": "sthāsyati", "english": "will rest", "hindi": "ठहर जायेगी" },
+                { "id": "2.53.5", "sanskrit": "निश्चला", "transliteration": "niścalā", "english": "steady", "hindi": "स्थिर" },
+                { "id": "2.53.6", "sanskrit": "समाधौ", "transliteration": "samādhau", "english": "(in meditation) on God", "hindi": "परमात्मा में" },
+                { "id": "2.53.7", "sanskrit": "अचला", "transliteration": "acalā", "english": "undistracted", "hindi": "अचल" },
+                { "id": "2.53.8", "sanskrit": "बुद्धिः", "transliteration": "buddhiḥ", "english": "intellect", "hindi": "बुद्धि" },
+                { "id": "2.53.9", "sanskrit": "तदा", "transliteration": "tadā", "english": "then", "hindi": "तब" },
+                { "id": "2.53.10", "sanskrit": "योगम्", "transliteration": "yogam", "english": "Yoga (lasting union with God)", "hindi": "योग को" },
+                { "id": "2.53.11", "sanskrit": "अवाप्स्यसि", "transliteration": "avāpsyasi", "english": "you will attain", "hindi": "तू प्राप्त हो जायेगा अर्थात् तेरा परमात्मा से नित्य संयोग हो जायेगा" }
+            ],
+            "english": {
+                "text": "When your intellect, confused by hearing conflicting statements, will rest, steady and undistracted (in meditation) on God, you will then attain Yoga (for lasting union with God).",
+                "meaning": "The mind is often confused by varied interpretations of religious texts and worldly advice. Once the intellect stops wavering and remains firmly anchored in the contemplation of the Supreme, true Yoga (union with God) is achieved."
+            },
+            "hindi": {
+                "text": "भाँति-भाँति के वचनों को सुनने से विचलित हुई तेरी बुद्धि जब परमात्मा में अचल और स्थिर ठहर जायेगी, तब तू योग को प्राप्त हो जायेगा अर्थात् तेरा परमात्मा से नित्य संयोग हो जायेगा ।।",
+                "meaning": "अनेक प्रकार के मतों और शास्त्रों को सुनकर मन विचलित हो जाता है। परंतु जब बुद्धि इन सब से हटकर केवल ईश्वर में स्थिर और एकाग्र हो जाती है, तब वास्तविक योग (ईश्वर से मिलन) की प्राप्ति होती है।"
+            }
+        },
+        "54": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "अर्जुन[2.54.1] उवाच[2.54.2]\nस्थितप्रज्ञस्य[2.54.3] का[2.54.4] भाषा[2.54.5] समाधिस्थस्य[2.54.6] केशव[2.54.7]।\nस्थितधीः[2.54.8] किं[2.54.9] प्रभाषेत[2.54.10] किमासीत[2.54.11-12] व्रजेत[2.54.13] किम्[2.54.14]॥",
+            "wordTranslations": [
+                { "id": "2.54.1", "sanskrit": "अर्जुनः", "transliteration": "arjunaḥ", "english": "Arjuna", "hindi": "अर्जुन", "explanationRef": "exp_arjuna" },
+                { "id": "2.54.2", "sanskrit": "उवाच", "transliteration": "uvāca", "english": "said", "hindi": "बोले" },
+                { "id": "2.54.3", "sanskrit": "स्थित-प्रज्ञस्य", "transliteration": "sthita-prajñasya", "english": "of a God-realized soul (stable in mind)", "hindi": "स्थिर बुद्धि पुरुष का" },
+                { "id": "2.54.4", "sanskrit": "का", "transliteration": "kā", "english": "what", "hindi": "क्या" },
+                { "id": "2.54.5", "sanskrit": "भाषा", "transliteration": "bhāṣā", "english": "definition (mark)", "hindi": "लक्षण है" },
+                { "id": "2.54.6", "sanskrit": "समाधि-स्थस्य", "transliteration": "samādhi-sthasya", "english": "established in Samadhi", "hindi": "समाधि में स्थित परमात्मा को प्राप्त हुए" },
+                { "id": "2.54.7", "sanskrit": "केशव", "transliteration": "keśava", "english": "O Keshava", "hindi": "हे केशव !", "explanationRef": "exp_keshava" },
+                { "id": "2.54.8", "sanskrit": "स्थित-धीः", "transliteration": "sthita-dhīḥ", "english": "the man of stable mind", "hindi": "वह स्थिर बुद्धि पुरुष" },
+                { "id": "2.54.9", "sanskrit": "किम्", "transliteration": "kim", "english": "how", "hindi": "कैसे" },
+                { "id": "2.54.10", "sanskrit": "प्रभाषेत", "transliteration": "prabhāṣeta", "english": "does speak", "hindi": "बोलता है" },
+                { "id": "2.54.11", "sanskrit": "किम्", "transliteration": "kim", "english": "how", "hindi": "कैसे" },
+                { "id": "2.54.12", "sanskrit": "आसीत", "transliteration": "āsīta", "english": "does sit", "hindi": "बैठता है" },
+                { "id": "2.54.13", "sanskrit": "व्रजेत", "transliteration": "vrajeta", "english": "does walk", "hindi": "चलता है" },
+                { "id": "2.54.14", "sanskrit": "किम्", "transliteration": "kim", "english": "how", "hindi": "और कैसे" }
+            ],
+            "english": {
+                "text": "(Arjuna)[exp_arjuna] said: (Krishna)[exp_keshava], what is the definition (mark) of a God-realized soul, stable to mind and established in Samadhi (perfect tranquillity of mind)? How does the man of stable mind speak, how does he sit, how does he walk?",
+                "meaning": "Inspired by the concept of equanimity, Arjuna asks four specific questions about a 'Sthitaprajna' (one whose wisdom is firmly established in the Divine). He wants to know how such an enlightened person can be identified in everyday life—through their speech, rest, and actions."
+            },
+            "hindi": {
+                "text": "(अर्जुन)[exp_arjuna] बोले—हे (केशव)[exp_keshava] ! समाधि में स्थित परमात्मा को प्राप्त हुए स्थिर बुद्धि पुरुष का क्या लक्षण है ? वह स्थिर बुद्धि पुरुष कैसे बोलता है, कैसे बैठता है और कैसे चलता है ? ।।",
+                "meaning": "अर्जुन श्रीकृष्ण से पूछते हैं कि जिस व्यक्ति की बुद्धि ईश्वर में पूर्णतः स्थिर हो गई है (स्थितप्रज्ञ), उसकी पहचान क्या है? उसका व्यवहार, बातचीत, और उठना-बैठना एक साधारण मनुष्य से किस प्रकार भिन्न होता है?"
+            },
+            "pretext": {
+                "english": "Arjuna inquires about the characteristics of an enlightened being.",
+                "hindi": "प्रसंग – पूर्वश्लोकों में भगवान् ने यह बात कही कि जब तुम्हारी बुद्धि मोहरूपी दलदल को सर्वथा पारकर जायेगी तथा तुम इस लोक और परलोक के समस्त भोगों से विरक्त हो जाओगे, तुम्हारी बुद्धि परमात्मा में निश्चल ठहर जायेगी, तब तुम परमात्मा को प्राप्त हो जाओगे । इस पर परमात्मा को प्राप्त स्थित प्रज्ञ, सिद्ध योगी के लक्षण और आचरण जानने की इच्छा से अर्जुन पूछते हैं—"
+            }
+        },
+        "55": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "श्रीभगवानुवाच[2.55.1]\nप्रजहाति[2.55.2] यदा[2.55.3] कामान्[2.55.4] सर्वान्[2.55.5] पार्थ[2.55.6] मनोगतान्[2.55.7]।\nआत्मन्येवात्मना[2.55.8-10] तुष्टः[2.55.11] स्थितप्रज्ञस्तदोच्यते[2.55.12-14]॥",
+            "wordTranslations": [
+                { "id": "2.55.1", "sanskrit": "श्री भगवान् उवाच", "transliteration": "śrī-bhagavān uvāca", "english": "Sri Bhagavan said", "hindi": "श्री भगवान् बोले" },
+                { "id": "2.55.2", "sanskrit": "प्रजहाति", "transliteration": "prajahāti", "english": "thoroughly dismisses", "hindi": "भलीभाँति त्याग देता है" },
+                { "id": "2.55.3", "sanskrit": "यदा", "transliteration": "yadā", "english": "when", "hindi": "जिस काल में" },
+                { "id": "2.55.4", "sanskrit": "कामान्", "transliteration": "kāmān", "english": "cravings / desires", "hindi": "कामनाओं को" },
+                { "id": "2.55.5", "sanskrit": "सर्वान्", "transliteration": "sarvān", "english": "all", "hindi": "सम्पूर्ण" },
+                { "id": "2.55.6", "sanskrit": "पार्थ", "transliteration": "pārtha", "english": "O Arjuna", "hindi": "हे अर्जुन !", "explanationRef": "exp_partha" },
+                { "id": "2.55.7", "sanskrit": "मनोगतान्", "transliteration": "manogatān", "english": "of the mind", "hindi": "मन में स्थित" },
+                { "id": "2.55.8", "sanskrit": "आत्मनि", "transliteration": "ātmani", "english": "in the self", "hindi": "आत्मा में" },
+                { "id": "2.55.9", "sanskrit": "एव", "transliteration": "eva", "english": "only", "hindi": "ही" },
+                { "id": "2.55.10", "sanskrit": "आत्मना", "transliteration": "ātmanā", "english": "through the self", "hindi": "आत्मा से" },
+                { "id": "2.55.11", "sanskrit": "तुष्टः", "transliteration": "tuṣṭaḥ", "english": "satisfied", "hindi": "सन्तुष्ट रहता है" },
+                { "id": "2.55.12", "sanskrit": "स्थित-प्रज्ञः", "transliteration": "sthita-prajñaḥ", "english": "stable of mind", "hindi": "स्थित प्रज्ञ" },
+                { "id": "2.55.13", "sanskrit": "तदा", "transliteration": "tadā", "english": "then", "hindi": "उस काल में" },
+                { "id": "2.55.14", "sanskrit": "उच्यते", "transliteration": "ucyate", "english": "is called", "hindi": "कहा जाता है" }
+            ],
+            "english": {
+                "text": "(Sri Bhagavan)[exp_krishna] said: (Arjuna)[exp_partha], when one thoroughly dismisses all cravings of the mind, and is satisfied in the self through (the joy of) the self, then he is called stable of mind.",
+                "meaning": "Answering Arjuna's first question, Krishna defines a Sthitaprajna. The fundamental mark of an enlightened being is the complete eradication of personal desires from the mind. Such a person does not seek external objects for happiness, because they have discovered infinite, unchanging joy within their own soul."
+            },
+            "hindi": {
+                "text": "श्री भगवान् बोले—हे (अर्जुन)[exp_partha] ! जिस काल में यह पुरुष मन में स्थित सम्पूर्ण कामनाओं को भलीभाँति त्याग देता है और आत्मा से आत्मा में ही सन्तुष्ट रहता है, उस काल में स्थित प्रज्ञ कहा जाता है ।।",
+                "meaning": "भगवान अर्जुन के प्रश्न का उत्तर देते हुए कहते हैं कि जब कोई व्यक्ति अपने मन की सभी इच्छाओं और लालसाओं को पूरी तरह त्याग देता है, और बाहरी सुखों की बजाय अपनी ही आत्मा के आनंद में संतुष्ट रहता है, तब उसे 'स्थितप्रज्ञ' (स्थिर बुद्धि वाला) कहा जाता है।"
+            },
+            "pretext": {
+                "english": "The Lord begins answering Arjuna's questions about the marks of a self-realized soul.",
+                "hindi": "प्रसंग – पूर्व श्लोक में अर्जुन ने परमात्मा को प्राप्त हुए सिद्ध योगी के विषय में चार बातें पूछी हैं; इन चारों बातों का उत्तर भगवान् ने अध्याय की समाप्ति पर्यन्त दिया है, बीच में प्रसंगवश दूसरी बातें भी कही हैं । इस अगले श्लोक में अर्जुन के पहले प्रश्न का उत्तर संक्षेप में देते हैं—"
+            }
+        }, "56": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "दुःखेष्वनुद्विग्नमनाः[2.56.1-2] सुखेषु[2.56.3] विगतस्पृहः[2.56.4]।\nवीतरागभयक्रोधः[2.56.5-7] स्थितधीर्मुनिरुच्यते[2.56.8-10]॥",
+            "wordTranslations": [
+                { "id": "2.56.1", "sanskrit": "दुःखेषु", "transliteration": "duḥkheṣu", "english": "amid sorrows", "hindi": "दुःखों की प्राप्ति होने पर" },
+                { "id": "2.56.2", "sanskrit": "अनुद्विग्न-मनाः", "transliteration": "anudvigna-manāḥ", "english": "whose mind remains unperturbed", "hindi": "जिसके मन में उद्वेग नहीं होता" },
+                { "id": "2.56.3", "sanskrit": "सुखेषु", "transliteration": "sukheṣu", "english": "amid pleasures", "hindi": "सुखों की प्राप्ति में" },
+                { "id": "2.56.4", "sanskrit": "विगत-स्पृहः", "transliteration": "vigata-spṛhaḥ", "english": "whose thirst has altogether disappeared", "hindi": "जो सर्वथा निःस्पृह है" },
+                { "id": "2.56.5", "sanskrit": "वीत-राग", "transliteration": "vīta-rāga", "english": "free from passion", "hindi": "जिसके राग नष्ट हो गये हैं" },
+                { "id": "2.56.6", "sanskrit": "भय", "transliteration": "bhaya", "english": "fear", "hindi": "भय" },
+                { "id": "2.56.7", "sanskrit": "क्रोधः", "transliteration": "krodhaḥ", "english": "and anger", "hindi": "और क्रोध" },
+                { "id": "2.56.8", "sanskrit": "स्थित-धीः", "transliteration": "sthita-dhīḥ", "english": "stable of mind", "hindi": "स्थिर बुद्धि" },
+                { "id": "2.56.9", "sanskrit": "मुनिः", "transliteration": "muniḥ", "english": "the sage", "hindi": "ऐसा मुनि" },
+                { "id": "2.56.10", "sanskrit": "उच्यते", "transliteration": "ucyate", "english": "is called", "hindi": "कहा जाता है" }
+            ],
+            "english": {
+                "text": "The sage, whose mind remains unperturbed amid sorrows, whose thirst for pleasure has altogether disappeared, and who is free from passion, fear and anger, is called stable of mind.",
+                "meaning": "Lord Krishna continues to answer Arjuna's question, describing how a person of stable mind reacts to circumstances. Such an enlightened sage does not get agitated by pain, nor do they hanker after pleasure. They have completely transcended the emotional turbulence caused by attachment, fear, and anger."
+            },
+            "hindi": {
+                "text": "दुःखों की प्राप्ति होने पर जिसके मन में उद्वेग नहीं होता, सुखों की प्राप्ति में जो सर्वथा निःस्पृह है तथा जिसके राग, भय और क्रोध नष्ट हो गये हैं, ऐसा मुनि स्थिर बुद्धि कहा जाता है ।।",
+                "meaning": "श्रीकृष्ण बताते हैं कि एक स्थितप्रज्ञ व्यक्ति दुःख आने पर घबराता नहीं है और सुख मिलने पर उसकी कोई लालसा नहीं रखता। वह संसार के राग (आसक्ति), भय और क्रोध से पूर्णतः मुक्त हो चुका होता है।"
+            },
+            "pretext": {
+                "english": "Elaborating on the marks of an enlightened soul.",
+                "hindi": "प्रसंग – स्थित प्रज्ञ के विषय में अर्जुन ने चार बातें पूछी हैं, उनमें से पहला प्रश्न इतना व्यापक है कि उसके बाद के तीनों प्रश्न उसमें अन्तर्भाव हो जाता है। इस दृष्टि से तो अध्याय की समाप्ति पर्यन्त उस एक ही प्रश्न का उत्तर है; पर अन्य तीन प्रश्नों का समझने के लिये ऐसा समझना चाहिये कि अब दो श्लोकों में 'स्थितप्रज्ञ कैसे बोलता है' इस दूसरे प्रश्न का उत्तर दिया जाता है—"
+            }
+        },
+        "57": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "यः[2.57.1] सर्वत्रानभिस्नेहस्[2.57.2-3] तत्तत्प्राप्य[2.57.4-6] शुभाशुभम्[2.57.7-8]।\nनाभिनन्दति[2.57.9-10] न[2.57.11] द्वेष्टि[2.57.12] तस्य[2.57.13] प्रज्ञा[2.57.14] प्रतिष्ठिता[2.57.15]॥",
+            "wordTranslations": [
+                { "id": "2.57.1", "sanskrit": "यः", "transliteration": "yaḥ", "english": "he who", "hindi": "जो पुरुष" },
+                { "id": "2.57.2", "sanskrit": "सर्वत्र", "transliteration": "sarvatra", "english": "to everything", "hindi": "सर्वत्र" },
+                { "id": "2.57.3", "sanskrit": "अनभिस्नेहः", "transliteration": "anabhisnehaḥ", "english": "unattached", "hindi": "स्नेहरहित हुआ" },
+                { "id": "2.57.4", "sanskrit": "तत्", "transliteration": "tat", "english": "that", "hindi": "उस-" },
+                { "id": "2.57.5", "sanskrit": "तत्", "transliteration": "tat", "english": "that", "hindi": "उस" },
+                { "id": "2.57.6", "sanskrit": "प्राप्य", "transliteration": "prāpya", "english": "meeting with", "hindi": "प्राप्त होकर" },
+                { "id": "2.57.7", "sanskrit": "शुभ", "transliteration": "śubha", "english": "good", "hindi": "शुभ" },
+                { "id": "2.57.8", "sanskrit": "अशुभम्", "transliteration": "aśubham", "english": "and evil", "hindi": "या अशुभ वस्तु को" },
+                { "id": "2.57.9", "sanskrit": "न", "transliteration": "na", "english": "neither", "hindi": "न" },
+                { "id": "2.57.10", "sanskrit": "अभिनन्दति", "transliteration": "abhinandati", "english": "rejoices", "hindi": "प्रसन्न होता है" },
+                { "id": "2.57.11", "sanskrit": "न", "transliteration": "na", "english": "nor", "hindi": "और न" },
+                { "id": "2.57.12", "sanskrit": "द्वेष्टि", "transliteration": "dveṣṭi", "english": "recoils (hates)", "hindi": "द्वेष करता है" },
+                { "id": "2.57.13", "sanskrit": "तस्य", "transliteration": "tasya", "english": "his", "hindi": "उसकी" },
+                { "id": "2.57.14", "sanskrit": "प्रज्ञा", "transliteration": "prajñā", "english": "mind", "hindi": "बुद्धि" },
+                { "id": "2.57.15", "sanskrit": "प्रतिष्ठिता", "transliteration": "pratiṣṭhitā", "english": "is stable", "hindi": "स्थिर है" }
+            ],
+            "english": {
+                "text": "He who is unattached to everything, and meeting with good and evil, neither rejoices nor recoils, his mind is stable.",
+                "meaning": "Further describing the interaction of a wise person with the world, Krishna states that true wisdom lies in remaining completely neutral. The enlightened soul neither excessively celebrates favorable events nor laments over unfortunate ones, remaining anchored in supreme consciousness."
+            },
+            "hindi": {
+                "text": "जो पुरुष सर्वत्र स्नेहरहित हुआ उस-उस शुभ या अशुभ वस्तु को प्राप्त होकर न प्रसन्न होता है और न द्वेष करता है उसकी बुद्धि स्थिर है ।।",
+                "meaning": "स्थितप्रज्ञ वह है जिसकी किसी भी व्यक्ति या वस्तु में कोई सांसारिक आसक्ति नहीं होती। जीवन में कुछ अच्छा होने पर वह अहंकार से नहीं भरता और कुछ बुरा होने पर दुखी या निराश नहीं होता।"
+            }
+        },
+        "58": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "यदा[2.58.1] संहरते[2.58.2] चायं[2.58.3-4] कूर्मोऽङ्गानीव[2.58.5-7] सर्वशः[2.58.8]।\nइन्द्रियाणीन्द्रियार्थेभ्यस्[2.58.9-10]तस्य[2.58.11] प्रज्ञा[2.58.12] प्रतिष्ठिता[2.58.13]॥",
+            "wordTranslations": [
+                { "id": "2.58.1", "sanskrit": "यदा", "transliteration": "yadā", "english": "when", "hindi": "जब" },
+                { "id": "2.58.2", "sanskrit": "संहरते", "transliteration": "saṁharate", "english": "draws in (withdraws)", "hindi": "समेट लेता है" },
+                { "id": "2.58.3", "sanskrit": "च", "transliteration": "ca", "english": "and", "hindi": "और" },
+                { "id": "2.58.4", "sanskrit": "अयम्", "transliteration": "ayam", "english": "this (yogi)", "hindi": "यह (योगी)" },
+                { "id": "2.58.5", "sanskrit": "कूर्मः", "transliteration": "kūrmaḥ", "english": "a tortoise", "hindi": "कछुआ" },
+                { "id": "2.58.6", "sanskrit": "अङ्गानि", "transliteration": "aṅgāni", "english": "limbs", "hindi": "अपने सब अंगों को" },
+                { "id": "2.58.7", "sanskrit": "इव", "transliteration": "iva", "english": "like", "hindi": "जैसे" },
+                { "id": "2.58.8", "sanskrit": "सर्वशः", "transliteration": "sarvaśaḥ", "english": "from all directions", "hindi": "सब ओर से" },
+                { "id": "2.58.9", "sanskrit": "इन्द्रियाणि", "transliteration": "indriyāṇi", "english": "his senses", "hindi": "अपनी सब इन्द्रियों को" },
+                { "id": "2.58.10", "sanskrit": "इन्द्रिय-अर्थेभ्यः", "transliteration": "indriya-arthebhyaḥ", "english": "from the sense-objects", "hindi": "हटा लिया है" },
+                { "id": "2.58.11", "sanskrit": "तस्य", "transliteration": "tasya", "english": "his", "hindi": "उसकी" },
+                { "id": "2.58.12", "sanskrit": "प्रज्ञा", "transliteration": "prajñā", "english": "mind", "hindi": "बुद्धि" },
+                { "id": "2.58.13", "sanskrit": "प्रतिष्ठिता", "transliteration": "pratiṣṭhitā", "english": "is stable", "hindi": "स्थिर हो जाती है" }
+            ],
+            "english": {
+                "text": "When like a tortoise, which draws in its limbs from all directions, he withdraws his senses from the sense-objects, his mind is (should be considered as) stable.",
+                "meaning": "Answering how a wise person \"sits\" (withdraws from the world), Krishna gives the famous analogy of a tortoise. Just as a tortoise pulls its limbs into its shell at the hint of danger, a yogi can instantly withdraw their senses from the allure of material objects to remain absorbed in the Self."
+            },
+            "hindi": {
+                "text": "जैसे कछुआ अपने सब अंगों को समेट लेता है, वैसे ही जिसने अपनी सब इन्द्रियों को हटा लिया है, उसकी बुद्धि स्थिर हो जाती है ।।",
+                "meaning": "श्रीकृष्ण स्थितप्रज्ञ के \"बैठने\" (ध्यानस्थ होने) का अर्थ कछुए के उदाहरण से समझाते हैं। जैसे कछुआ खतरे का आभास होते ही अपने अंगों को खोल के भीतर खींच लेता है, वैसे ही ज्ञानी पुरुष अपनी इंद्रियों को बाहरी विषयों से तुरंत समेटकर अपने भीतर (आत्मा में) स्थिर कर लेता है।"
+            },
+            "pretext": {
+                "english": "Answering how a wise person \"sits\" (withdraws their senses from the world).",
+                "hindi": "प्रसंग – 'स्थित बुद्धि वाला योगी कैसे बोलता है ?' इस दूसरे प्रश्न का उत्तर समाप्त करके अब भगवान् 'वह कैसे बैठता है ?' इस तीसरे प्रश्न का उत्तर देते हुए यह दिखलाते हैं कि स्थित प्रज्ञ पुरुष की इन्द्रियों का सर्वथा उसके वश में हो जाना ही उसका बैठना है।"
+            }
+        },
+        "59": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "विषया[2.59.1] विनिवर्तन्ते[2.59.2] निराहारस्य[2.59.3] देहिनः[2.59.4]।\nरसवर्जं[2.59.5] रसोऽप्यस्य[2.59.6-8] परं[2.59.9] दृष्ट्वा[2.59.10] निवर्तते[2.59.11]॥",
+            "wordTranslations": [
+                { "id": "2.59.1", "sanskrit": "विषयाः", "transliteration": "viṣayāḥ", "english": "sense-objects", "hindi": "विषय तो" },
+                { "id": "2.59.2", "sanskrit": "विनिवर्तन्ते", "transliteration": "vinivartante", "english": "turn away", "hindi": "निवृत्त हो जाते हैं" },
+                { "id": "2.59.3", "sanskrit": "निराहारस्य", "transliteration": "nirāhārasya", "english": "of one who does not enjoy them (restricts senses)", "hindi": "इन्द्रियों के द्वारा विषयों को ग्रहण न करने वाले" },
+                { "id": "2.59.4", "sanskrit": "देहिनः", "transliteration": "dehinaḥ", "english": "of the embodied soul", "hindi": "पुरुष के भी" },
+                { "id": "2.59.5", "sanskrit": "रस-वर्जम्", "transliteration": "rasa-varjam", "english": "leaving the taste / attachment", "hindi": "परंतु उनमें रहने वाली आसक्ति निवृत्त नहीं होती" },
+                { "id": "2.59.6", "sanskrit": "रसः", "transliteration": "rasaḥ", "english": "relish / taste", "hindi": "आसक्ति भी" },
+                { "id": "2.59.7", "sanskrit": "अपि", "transliteration": "api", "english": "also", "hindi": "तो" },
+                { "id": "2.59.8", "sanskrit": "अस्य", "transliteration": "asya", "english": "his (of the stable mind)", "hindi": "इस स्थितप्रज्ञ की" },
+                { "id": "2.59.9", "sanskrit": "परम्", "transliteration": "param", "english": "the Supreme", "hindi": "परमात्मा को" },
+                { "id": "2.59.10", "sanskrit": "दृष्ट्वा", "transliteration": "dṛṣṭvā", "english": "having seen", "hindi": "साक्षात् करके" },
+                { "id": "2.59.11", "sanskrit": "निवर्तते", "transliteration": "nivartate", "english": "disappears", "hindi": "निवृत्त हो जाती है" }
+            ],
+            "english": {
+                "text": "Sense-objects turn away from him, who does not enjoy them with his senses; but the taste for them persists. This relish also disappears in the case of the man of stable mind when he sees the Supreme.",
+                "meaning": "By fasting or forced physical restraint, a person can stop interacting with sense objects, but the inner craving for them remains. However, when a seeker attains the direct realization of the Supreme Lord, even the subtlest desire completely vanishes, as the infinite joy of the Divine vastly overshadows all material pleasures."
+            },
+            "hindi": {
+                "text": "इन्द्रियों के द्वारा विषयों को ग्रहण न करने वाले पुरुष के भी केवल विषय तो निवृत्त हो जाते हैं, परंतु उनमें रहने वाली आसक्ति निवृत्त नहीं होती । इस स्थितप्रज्ञ पुरुष की तो आसक्ति भी परम तत्त्व का साक्षात्कार करके निवृत्त हो जाती है ।।",
+                "meaning": "यदि कोई मनुष्य बलपूर्वक इंद्रियों को विषयों से रोक ले, तो वह विषय-भोग तो छोड़ देता है, किन्तु उसके मन की लालसा नहीं मिटती। परन्तु जब मनुष्य को ईश्वर का परम आनंद प्राप्त हो जाता है, तो उसकी वह सूक्ष्म लालसा (आसक्ति) भी जड़ से समाप्त हो जाती है।"
+            },
+            "pretext": {
+                "english": "Clarifying a common doubt regarding sense-restraint, the Lord explains the unique mastery of the enlightened soul.",
+                "hindi": "प्रसंग – पूर्व श्लोक में तीसरे प्रश्न का उत्तर देते हुए स्थित प्रज्ञ के बैठने का प्रकार बतलाकर अब उसमें होने वाली शंकाओं का समाधान करने के लिये अन्य प्रकार से किये जाने वाले इन्द्रिय संयम की अपेक्षा स्थितप्रज्ञ के इन्द्रिय संयम की विलक्षणता दिखलाते हैं—"
+            }
+        },
+        "60": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "यततो[2.60.1] ह्यपि[2.60.2-3] कौन्तेय[2.60.4] पुरुषस्य[2.60.5] विपश्चितः[2.60.6]।\nइन्द्रियाणि[2.60.7] प्रमाथीनि[2.60.8] हरन्ति[2.60.9] प्रसभं[2.60.10] मनः[2.60.11]॥",
+            "wordTranslations": [
+                { "id": "2.60.1", "sanskrit": "यततः", "transliteration": "yatataḥ", "english": "striving / endeavouring", "hindi": "यत्न करते हुए" },
+                { "id": "2.60.2", "sanskrit": "हि", "transliteration": "hi", "english": "surely", "hindi": "क्योंकि" },
+                { "id": "2.60.3", "sanskrit": "अपि", "transliteration": "api", "english": "even", "hindi": "भी" },
+                { "id": "2.60.4", "sanskrit": "कौन्तेय", "transliteration": "kaunteya", "english": "O Arjuna", "hindi": "हे अर्जुन !", "explanationRef": "exp_arjuna" },
+                { "id": "2.60.5", "sanskrit": "पुरुषस्य", "transliteration": "puruṣasya", "english": "of a man", "hindi": "पुरुष के" },
+                { "id": "2.60.6", "sanskrit": "विपश्चितः", "transliteration": "vipaścitaḥ", "english": "wise", "hindi": "बुद्धिमान्" },
+                { "id": "2.60.7", "sanskrit": "इन्द्रियाणि", "transliteration": "indriyāṇi", "english": "the senses", "hindi": "ये इन्द्रियाँ" },
+                { "id": "2.60.8", "sanskrit": "प्रमाथीनि", "transliteration": "pramāthīni", "english": "turbulent", "hindi": "प्रमथन स्वभाव वाली" },
+                { "id": "2.60.9", "sanskrit": "हरन्ति", "transliteration": "haranti", "english": "carry away", "hindi": "हर लेती हैं" },
+                { "id": "2.60.10", "sanskrit": "प्रसभम्", "transliteration": "prasabham", "english": "forcibly", "hindi": "बलात्कार से" },
+                { "id": "2.60.11", "sanskrit": "मनः", "transliteration": "manaḥ", "english": "mind", "hindi": "मन को" }
+            ],
+            "english": {
+                "text": "Turbulent by nature, the senses even of a wise man, who is practising self-control, forcibly carry away his mind, (Arjuna)[exp_arjuna].",
+                "meaning": "The senses are extraordinarily powerful and inherently restless. Even highly intelligent seekers who try to control themselves by their own willpower can be suddenly overpowered and dragged away by sensory temptations."
+            },
+            "hindi": {
+                "text": "हे (अर्जुन)[exp_arjuna] ! आसक्ति का नाश न होने के कारण ये प्रमथन स्वभाव वाली इन्द्रियाँ यत्न करते हुए बुद्धिमान् पुरुष के मन को बलात्कार से हर लेती हैं ।।",
+                "meaning": "इंद्रियां स्वभाव से ही इतनी उग्र और चंचल होती हैं कि वे संयम का प्रयास करने वाले ज्ञानवान पुरुष के मन को भी बलपूर्वक खींचकर भटका सकती हैं, यदि अंतर्मन से आसक्ति समाप्त न हुई हो।"
+            },
+            "pretext": {
+                "english": "Pointing out the danger of suppressing the senses without removing internal attachment.",
+                "hindi": "प्रसंग – आसक्ति का नाश और इन्द्रिय संयम नहीं होने से क्या हानि है ? इस पर कहते हैं—"
+            }
+        },
+        "61": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "तानि[2.61.1] सर्वाणि[2.61.2] संयम्य[2.61.3] युक्त[2.61.4] आसीत[2.61.5] मत्परः[2.61.6]।\nवशे[2.61.7] हि[2.61.8] यस्ये[2.61.9]न्द्रियाणि[2.61.10] तस्य[2.61.11] प्रज्ञा[2.61.12] प्रतिष्ठिता[2.61.13]॥",
+            "wordTranslations": [
+                { "id": "2.61.1", "sanskrit": "तानि", "transliteration": "tāni", "english": "them", "hindi": "उन" },
+                { "id": "2.61.2", "sanskrit": "सर्वाणि", "transliteration": "sarvāṇi", "english": "all", "hindi": "सम्पूर्ण" },
+                { "id": "2.61.3", "sanskrit": "संयम्य", "transliteration": "saṁyamya", "english": "having controlled", "hindi": "वश में करके" },
+                { "id": "2.61.4", "sanskrit": "युक्तः", "transliteration": "yuktaḥ", "english": "collecting his mind (integrated)", "hindi": "समाहित चित्त हुआ" },
+                { "id": "2.61.5", "sanskrit": "आसीत", "transliteration": "āsīta", "english": "should sit", "hindi": "ध्यान में बैठे" },
+                { "id": "2.61.6", "sanskrit": "मत्परः", "transliteration": "mat-paraḥ", "english": "devoting oneself to Me", "hindi": "मेरे परायण होकर" },
+                { "id": "2.61.7", "sanskrit": "वशे", "transliteration": "vaśe", "english": "under control", "hindi": "वश में" },
+                { "id": "2.61.8", "sanskrit": "हि", "transliteration": "hi", "english": "for / because", "hindi": "क्योंकि" },
+                { "id": "2.61.9", "sanskrit": "यस्य", "transliteration": "yasya", "english": "whose", "hindi": "जिस पुरुष की" },
+                { "id": "2.61.10", "sanskrit": "इन्द्रियाणि", "transliteration": "indriyāṇi", "english": "senses", "hindi": "इन्द्रियाँ" },
+                { "id": "2.61.11", "sanskrit": "तस्य", "transliteration": "tasya", "english": "his", "hindi": "उसी की" },
+                { "id": "2.61.12", "sanskrit": "प्रज्ञा", "transliteration": "prajñā", "english": "mind / intellect", "hindi": "बुद्धि" },
+                { "id": "2.61.13", "sanskrit": "प्रतिष्ठिता", "transliteration": "pratiṣṭhitā", "english": "is stable", "hindi": "स्थिर हो जाती है" }
+            ],
+            "english": {
+                "text": "Therefore, having controlled them all and collecting his mind one should sit for meditation, devoting oneself heart and soul to Me. For he, whose senses are mastered is known to have a stable mind.",
+                "meaning": "Self-control cannot be achieved solely by willpower; it requires spiritual absorption. Krishna instructs that a seeker must restrain the senses and fix the mind entirely upon the Supreme Lord. Only through devotion to the Divine can the mind become completely stable and immune to worldly turbulence."
+            },
+            "hindi": {
+                "text": "इसलिये साधक को चाहिये कि वह उन सम्पूर्ण इन्द्रियों को वश में करके समाहित चित्त हुआ मेरे परायण होकर ध्यान में बैठे; क्योंकि जिस पुरुष की इन्द्रियाँ वश में होती हैं, उसी की बुद्धि स्थिर हो जाती है ।।",
+                "meaning": "इंद्रियों पर विजय पाने का एकमात्र उपाय ईश्वर की शरण लेना है। भगवान कहते हैं कि साधक को चाहिए कि वह अपनी चंचल इंद्रियों को रोककर अपना मन पूरी तरह मुझमें (परमात्मा में) लगा दे। जिसकी इंद्रियां इस प्रकार वश में हो जाती हैं, उसी की बुद्धि सच्ची स्थिरता प्राप्त करती है।"
+            },
+            "pretext": {
+                "english": "Highlighting the necessity of devotion alongside self-control to stabilize the intellect.",
+                "hindi": "प्रसंग – इस प्रकार इन्द्रिय संयम की आवश्यकता का प्रतिपादन करके अब भगवान् साधक का कर्तव्य बतलाते हुए पुनः इन्द्रिय संयम को स्थितप्रज्ञ-अवस्था का हेतु बतलाते हैं—"
+            }
+        },
+        "62": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "ध्यायतो[2.62.1] विषयान्पुंसः[2.62.2-3] सङ्गस्तेषूपजायते[2.62.4-6]।\nसङ्गात्सञ्जायते[2.62.7-8] कामः[2.62.9] कामात्क्रोधोऽभिजायते[2.62.10-12]॥",
+            "wordTranslations": [
+                { "id": "2.62.1", "sanskrit": "ध्यायतः", "transliteration": "dhyāyataḥ", "english": "dwelling on / contemplating", "hindi": "चिन्तन करने वाले" },
+                { "id": "2.62.2", "sanskrit": "विषयान्", "transliteration": "viṣayān", "english": "sense-objects", "hindi": "विषयों का" },
+                { "id": "2.62.3", "sanskrit": "पुंसः", "transliteration": "puṁsaḥ", "english": "of the man", "hindi": "पुरुष की" },
+                { "id": "2.62.4", "sanskrit": "सङ्गः", "transliteration": "saṅgaḥ", "english": "attachment", "hindi": "आसक्ति" },
+                { "id": "2.62.5", "sanskrit": "तेषु", "transliteration": "teṣu", "english": "for them", "hindi": "उन (विषयों) में" },
+                { "id": "2.62.6", "sanskrit": "उपजायते", "transliteration": "upajāyate", "english": "develops", "hindi": "हो जाती है" },
+                { "id": "2.62.7", "sanskrit": "सङ्गात्", "transliteration": "saṅgāt", "english": "from attachment", "hindi": "आसक्ति से" },
+                { "id": "2.62.8", "sanskrit": "सञ्जायते", "transliteration": "sañjāyate", "english": "springs up", "hindi": "उत्पन्न होती है" },
+                { "id": "2.62.9", "sanskrit": "कामः", "transliteration": "kāmaḥ", "english": "desire", "hindi": "कामना" },
+                { "id": "2.62.10", "sanskrit": "कामात्", "transliteration": "kāmāt", "english": "from desire (unfulfilled)", "hindi": "कामना में विघ्न पड़ने से" },
+                { "id": "2.62.11", "sanskrit": "क्रोधः", "transliteration": "krodhaḥ", "english": "anger", "hindi": "क्रोध" },
+                { "id": "2.62.12", "sanskrit": "अभिजायते", "transliteration": "abhijāyate", "english": "ensues / arises", "hindi": "उत्पन्न होता है" }
+            ],
+            "english": {
+                "text": "The man dwelling on sense-objects develops attachment for them; from attachment springs up desire, and from desire (unfulfilled) ensues anger.",
+                "meaning": "Krishna outlines the psychological cascade of human downfall. It begins simply by thinking repeatedly about an object of pleasure. This constant thought breeds a strong attachment. Attachment gives birth to a burning desire to possess it, and when that desire is frustrated or obstructed, it inevitably flares into anger."
+            },
+            "hindi": {
+                "text": "विषयों का चिन्तन करने वाले पुरुष की उन विषयों में आसक्ति हो जाती है, आसक्ति से उन विषयों की कामना उत्पन्न होती है और कामना में विघ्न पड़ने से क्रोध उत्पन्न होता है ।।",
+                "meaning": "भगवान मनुष्य के पतन का क्रम बताते हैं: भौतिक सुखों के बारे में बार-बार सोचने से उनमें लगाव पैदा होता है। लगाव से उन्हें पाने की प्रबल इच्छा जन्म लेती है, और जब उस इच्छा के पूरे होने में कोई बाधा आती है, तो मनुष्य को क्रोध आता है।"
+            },
+            "pretext": {
+                "english": "Detailing the sequence of downfall that begins when the mind is not fixed on the Lord.",
+                "hindi": "प्रसंग – उपर्युक्त प्रकार से मनसहित इन्द्रियों को वश में न करने से और भगवत्परायण न होने से क्या हानि है ? यह बात अब दो श्लोकों में बतलायी जाती है—"
+            }
+        },
+        "63": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "क्रोधाद्भवति[2.63.1-2] सम्मोहः[2.63.3] सम्मोहात्स्मृतिविभ्रमः[2.63.4-5]।\nस्मृतिभ्रंशाद्[2.63.6] बुद्धिनाशो[2.63.7-8] बुद्धिनाशात्प्रणश्यति[2.63.9-10]॥",
+            "wordTranslations": [
+                { "id": "2.63.1", "sanskrit": "क्रोधात्", "transliteration": "krodhāt", "english": "from anger", "hindi": "क्रोध से" },
+                { "id": "2.63.2", "sanskrit": "भवति", "transliteration": "bhavati", "english": "arises", "hindi": "उत्पन्न हो जाता है" },
+                { "id": "2.63.3", "sanskrit": "सम्मोहः", "transliteration": "sammohaḥ", "english": "infatuation / delusion", "hindi": "अत्यन्त मूढ़भाव" },
+                { "id": "2.63.4", "sanskrit": "सम्मोहात्", "transliteration": "sammohāt", "english": "from infatuation", "hindi": "मूढ़भाव से" },
+                { "id": "2.63.5", "sanskrit": "स्मृति-विभ्रमः", "transliteration": "smṛti-vibhramaḥ", "english": "confusion of memory", "hindi": "स्मृति में भ्रम" },
+                { "id": "2.63.6", "sanskrit": "स्मृति-भ्रंशात्", "transliteration": "smṛti-bhraṁśāt", "english": "from confusion of memory", "hindi": "स्मृति में भ्रम हो जाने से" },
+                { "id": "2.63.7", "sanskrit": "बुद्धि-नाशः", "transliteration": "buddhi-nāśaḥ", "english": "loss of reason", "hindi": "बुद्धि का नाश" },
+                { "id": "2.63.8", "sanskrit": "बुद्धि-नाशात्", "transliteration": "buddhi-nāśāt", "english": "from loss of reason", "hindi": "बुद्धि का नाश हो जाने से" },
+                { "id": "2.63.9", "sanskrit": "प्रणश्यति", "transliteration": "praṇaśyati", "english": "goes to complete ruin", "hindi": "अपनी स्थिति से गिर जाता है" }
+            ],
+            "english": {
+                "text": "From anger arises infatuation; from infatuation, confusion of memory; from confusion of memory, loss of reason; and from loss of reason one goes to complete ruin.",
+                "meaning": "Continuing the sequence: Anger causes a severe clouding of judgment (delusion). This delusion destroys the memory of one's spiritual goals and wisdom. Without this guiding memory, the intellect is lost, and a person bereft of intellect ruins their life, completely falling from the path of spiritual elevation."
+            },
+            "hindi": {
+                "text": "क्रोध से अत्यन्त मूढ़भाव उत्पन्न हो जाता है, मूढ़भाव से स्मृति में भ्रम हो जाता है, स्मृति में भ्रम हो जाने से बुद्धि अर्थात् ज्ञानशक्ति का नाश हो जाता है और बुद्धि का नाश हो जाने से यह पुरुष अपनी स्थिति से गिर जाता है ।।",
+                "meaning": "क्रोध मनुष्य की सोचने-समझने की क्षमता (विवेक) को अंधा कर देता है। इस मूर्खता से उसकी सही-गलत की स्मृति नष्ट हो जाती है। स्मृति नष्ट होने पर बुद्धि काम करना बंद कर देती है, और जब बुद्धि नष्ट हो जाती है, तो मनुष्य का पूर्ण रूप से पतन हो जाता है।"
+            }
+        },
+        "64": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "रागद्वेषवियुक्तैस्तु[2.64.1-4] विषयानिन्द्रियैश्चरन्[2.64.5-7]।\nआत्मवश्यैर्विधेयात्मा[2.64.8-9] प्रसादमधिगच्छति[2.64.10-11]॥",
+            "wordTranslations": [
+                { "id": "2.64.1", "sanskrit": "राग", "transliteration": "rāga", "english": "likes / attraction", "hindi": "राग" },
+                { "id": "2.64.2", "sanskrit": "द्वेष", "transliteration": "dveṣa", "english": "dislikes / repulsion", "hindi": "द्वेष" },
+                { "id": "2.64.3", "sanskrit": "वियुक्तैः", "transliteration": "viyuktaiḥ", "english": "free from", "hindi": "से रहित" },
+                { "id": "2.64.4", "sanskrit": "तु", "transliteration": "tu", "english": "but", "hindi": "परंतु" },
+                { "id": "2.64.5", "sanskrit": "विषयान्", "transliteration": "viṣayān", "english": "various sense-objects", "hindi": "विषयों में" },
+                { "id": "2.64.6", "sanskrit": "इन्द्रियैः", "transliteration": "indriyaiḥ", "english": "through his senses", "hindi": "इन्द्रियों द्वारा" },
+                { "id": "2.64.7", "sanskrit": "चरन्", "transliteration": "caran", "english": "enjoying / moving among", "hindi": "विचरण करता हुआ" },
+                { "id": "2.64.8", "sanskrit": "आत्म-वश्यैः", "transliteration": "ātma-vaśyaiḥ", "english": "which are disciplined (under control)", "hindi": "अपने वश में की हुई" },
+                { "id": "2.64.9", "sanskrit": "विधेयात्मा", "transliteration": "vidheyātmā", "english": "the self-controlled practicant", "hindi": "अपने अधीन किये हुए अन्तःकरणवाला साधक" },
+                { "id": "2.64.10", "sanskrit": "प्रसादम्", "transliteration": "prasādam", "english": "placidity of mind", "hindi": "अन्तःकरण की प्रसन्नता को" },
+                { "id": "2.64.11", "sanskrit": "अधिगच्छति", "transliteration": "adhigacchati", "english": "attains", "hindi": "प्राप्त होता है" }
+            ],
+            "english": {
+                "text": "But the self-controlled practicant, while enjoying the various sense-objects through his senses, which are disciplined and free from likes and dislikes, attains placidity of mind.",
+                "meaning": "True spirituality does not mean running away to a forest. A self-controlled yogi lives in the world, interacting with objects through their senses, but because their senses are free from craving and aversion, their mind remains perfectly tranquil and peaceful."
+            },
+            "hindi": {
+                "text": "परंतु अपने अधीन किये हुए अन्तःकरणवाला साधक अपने वश में की हुई, राग-द्वेष से रहित इन्द्रियों द्वारा विषयों में विचरण करता हुआ अन्तःकरण की प्रसन्नता को प्राप्त होता है ।।",
+                "meaning": "सच्चा साधक संसार से भागता नहीं है। वह संसार में रहता है और वस्तुओं का उपयोग भी करता है, परन्तु क्योंकि उसकी इन्द्रियां उसके वश में होती हैं और उनमें कोई राग या द्वेष नहीं होता, इसलिए उसे परम मानसिक शांति और आनंद की प्राप्ति होती है।"
+            },
+            "pretext": {
+                "english": "Answering how a person of stable mind moves and interacts in the world.",
+                "hindi": "प्रसंग – इस प्रकार मनसहित इन्द्रियों को वश में न करने वाले मनुष्य के पतन का क्रम बतलाकर अब भगवान् 'स्थितप्रज्ञ योगी कैसे चलता है' इस चौथे प्रश्न का उत्तर आरम्भ करते हुए पहले दो श्लोकों में जिसके मन और इन्द्रियाँ वश में हैं, ऐसे साधक द्वारा विषयों में विचरण किये जाने का प्रकार और उसका फल बतलाते हैं—"
+            }
+        },
+        "65": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "प्रसादे[2.65.1] सर्वदुःखानां[2.65.2] हानिरस्योपजायते[2.65.3-5]।\nप्रसन्नचेतसो[2.65.6] ह्याशु[2.65.7] बुद्धिः[2.65.8] पर्यवतिष्ठते[2.65.9]॥",
+            "wordTranslations": [
+                { "id": "2.65.1", "sanskrit": "प्रसादे", "transliteration": "prasāde", "english": "with the attainment of such placidity of mind", "hindi": "अन्तःकरण की प्रसन्नता होने पर" },
+                { "id": "2.65.2", "sanskrit": "सर्व-दुःखानाम्", "transliteration": "sarva-duḥkhānām", "english": "all his sorrows", "hindi": "इसके सम्पूर्ण दुःखों का" },
+                { "id": "2.65.3", "sanskrit": "हानिः", "transliteration": "hāniḥ", "english": "end / destruction", "hindi": "अभाव" },
+                { "id": "2.65.4", "sanskrit": "अस्य", "transliteration": "asya", "english": "his", "hindi": "इसके" },
+                { "id": "2.65.5", "sanskrit": "उपजायते", "transliteration": "upajāyate", "english": "come to an", "hindi": "हो जाता है" },
+                { "id": "2.65.6", "sanskrit": "प्रसन्न-चेतसः", "transliteration": "prasanna-cetasaḥ", "english": "of such a person of tranquil mind", "hindi": "उस प्रसन्न चित्त वाले कर्मयोगी की" },
+                { "id": "2.65.7", "sanskrit": "हि आशु", "transliteration": "hi āśu", "english": "soon", "hindi": "शीघ्र ही" },
+                { "id": "2.65.8", "sanskrit": "बुद्धिः", "transliteration": "buddhiḥ", "english": "intellect", "hindi": "बुद्धि" },
+                { "id": "2.65.9", "sanskrit": "पर्यवतिष्ठते", "transliteration": "paryavatiṣṭhate", "english": "becomes firmly established", "hindi": "सब ओर से हटकर एक परमात्मा में ही भलीभाँति स्थिर हो जाती है" }
+            ],
+            "english": {
+                "text": "With the attainment of such placidity of mind, all his sorrows come to an end; and the intellect of such a person of tranquil mind, soon withdrawing itself from all sides, becomes firmly established in God.",
+                "meaning": "When the mind is peaceful and free from the agitations of worldly desires, the suffering caused by life's dualities instantly ends. Such a serene intellect naturally gravitates towards and becomes permanently anchored in the Supreme Lord."
+            },
+            "hindi": {
+                "text": "अन्तःकरण की प्रसन्नता होने पर इसके सम्पूर्ण दुःखों का अभाव हो जाता है और उस प्रसन्न चित्त वाले कर्मयोगी की बुद्धि शीघ्र ही सब ओर से हटकर एक परमात्मा में ही भलीभाँति स्थिर हो जाती है ।।",
+                "meaning": "मन की शांति प्राप्त होने पर व्यक्ति के सारे दुःख अपने आप समाप्त हो जाते हैं। ऐसे शांत चित्त वाले मनुष्य की बुद्धि सांसारिक भटकावों से मुक्त होकर अत्यंत शीघ्र परमात्मा में अचल रूप से स्थिर हो जाती है।"
+            }
+        }, "66": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "नास्ति[2.66.1-2] बुद्धिरयुक्तस्य[2.66.3-4] न[2.66.5] चायुक्तस्य[2.66.6-7] भावना[2.66.8]।\nन[2.66.9] चाभावयतः[2.66.10-11] शान्तिरशान्तस्य[2.66.12-13] कुतः[2.66.14] सुखम्[2.66.15]॥",
+            "wordTranslations": [
+                { "id": "2.66.1", "sanskrit": "न", "transliteration": "na", "english": "no", "hindi": "नहीं" },
+                { "id": "2.66.2", "sanskrit": "अस्ति", "transliteration": "asti", "english": "there is", "hindi": "होती" },
+                { "id": "2.66.3", "sanskrit": "बुद्धिः", "transliteration": "buddhiḥ", "english": "reason / stable intellect", "hindi": "निश्चयात्मिका बुद्धि" },
+                { "id": "2.66.4", "sanskrit": "अयुक्तस्य", "transliteration": "ayuktasya", "english": "for one who has not controlled his mind and senses", "hindi": "न जीते हुए मन और इन्द्रियों वाले पुरुष में" },
+                { "id": "2.66.5", "sanskrit": "न", "transliteration": "na", "english": "nor", "hindi": "और न" },
+                { "id": "2.66.6", "sanskrit": "च", "transliteration": "ca", "english": "and", "hindi": "तथा" },
+                { "id": "2.66.7", "sanskrit": "अयुक्तस्य", "transliteration": "ayuktasya", "english": "of the undisciplined", "hindi": "उस अयुक्त मनुष्य के अन्तःकरण में" },
+                { "id": "2.66.8", "sanskrit": "भावना", "transliteration": "bhāvanā", "english": "unthinking / meditation", "hindi": "भावना भी" },
+                { "id": "2.66.9", "sanskrit": "न", "transliteration": "na", "english": "nor", "hindi": "नहीं" },
+                { "id": "2.66.10", "sanskrit": "च", "transliteration": "ca", "english": "and", "hindi": "और" },
+                { "id": "2.66.11", "sanskrit": "अभावयतः", "transliteration": "abhāvayataḥ", "english": "for the unthinking man", "hindi": "भावनाहीन मनुष्य को" },
+                { "id": "2.66.12", "sanskrit": "शान्तिः", "transliteration": "śāntiḥ", "english": "peace", "hindi": "शान्ति मिलती है" },
+                { "id": "2.66.13", "sanskrit": "अशान्तस्य", "transliteration": "aśāntasya", "english": "for the unpeaceful", "hindi": "शान्तिरहित मनुष्य को" },
+                { "id": "2.66.14", "sanskrit": "कुतः", "transliteration": "kutaḥ", "english": "how can there be", "hindi": "कैसे मिल सकता है ?" },
+                { "id": "2.66.15", "sanskrit": "सुखम्", "transliteration": "sukham", "english": "happiness", "hindi": "सुख" }
+            ],
+            "english": {
+                "text": "He who has not controlled his mind and senses can have no reason; nor can such an undisciplined man think of God. The unthinking man can have no peace; and how can there be happiness for one lacking peace of mind?",
+                "meaning": "An undisciplined mind, constantly pulled by the senses, can never develop a steady, spiritual intellect. Without spiritual intelligence, one cannot meditate or feel true devotion. Without devotion and focus, the mind is always restless, and without peace of mind, true happiness is absolutely impossible to find."
+            },
+            "hindi": {
+                "text": "न जीते हुए मन और इन्द्रियों वाले पुरुष में निश्चयात्मिका बुद्धि नहीं होती और उस अयुक्त मनुष्य के अन्तःकरण में भावना भी नहीं होती तथा भावनाहीन मनुष्य को शान्ति नहीं मिलती और शान्तिरहित मनुष्य को सुख कैसे मिल सकता है ?",
+                "meaning": "जिस मनुष्य ने अपने मन और इंद्रियों को वश में नहीं किया है, उसकी बुद्धि कभी स्थिर नहीं हो सकती। स्थिर बुद्धि के बिना परमात्मा में ध्यान या श्रद्धा (भावना) नहीं जगती। बिना भगवान के ध्यान के मनुष्य को शांति नहीं मिल सकती, और जिसके मन में शांति नहीं है, उसे सच्चा सुख भला कैसे प्राप्त हो सकता है?"
+            },
+            "pretext": {
+                "english": "Contrasting the peaceful state of a self-controlled person with the restless state of an undisciplined one.",
+                "hindi": "प्रसंग – इस प्रकार मन और इन्द्रियों को वश में करके अनासक्त भाव से इन्द्रियों द्वारा व्यवहार करने वाले साधक को सुख शान्ति और स्थितप्रज्ञ-अवस्था प्राप्त होने की बात कहकर अब दो श्लोकों द्वारा इससे विपरीत जिसके मन-इन्द्रिय जीते हुए नहीं हैं, ऐसे विषयासक्त मनुष्य में सुख शान्ति का अभाव दिखलाकर विषयों के संग से उसकी बुद्धि के विचलित हो जाने का प्रकार बतलाते हैं—"
+            }
+        },
+        "67": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "इन्द्रियाणां[2.67.1] हि[2.67.2] चरतां[2.67.3] यन्मनोऽनुविधीयते[2.67.4-6]।\nतदस्य[2.67.7-8] हरति[2.67.9] प्रज्ञां[2.67.10] वायुर्नावमिवाम्भसि[2.67.11-14]॥",
+            "wordTranslations": [
+                { "id": "2.67.1", "sanskrit": "इन्द्रियाणाम्", "transliteration": "indriyāṇām", "english": "of the senses", "hindi": "इन्द्रियों में से" },
+                { "id": "2.67.2", "sanskrit": "हि", "transliteration": "hi", "english": "for", "hindi": "क्योंकि" },
+                { "id": "2.67.3", "sanskrit": "चरताम्", "transliteration": "caratām", "english": "moving among (sense-objects)", "hindi": "विषयों में विचरती हुई" },
+                { "id": "2.67.4", "sanskrit": "यत्", "transliteration": "yat", "english": "which", "hindi": "जिस इन्द्रिय के साथ" },
+                { "id": "2.67.5", "sanskrit": "मनः", "transliteration": "manaḥ", "english": "mind", "hindi": "मन" },
+                { "id": "2.67.6", "sanskrit": "अनुविधीयते", "transliteration": "anuvidhīyate", "english": "is joined / follows", "hindi": "रहता है" },
+                { "id": "2.67.7", "sanskrit": "तत्", "transliteration": "tat", "english": "that (mind)", "hindi": "वह एक ही इन्द्रिय" },
+                { "id": "2.67.8", "sanskrit": "अस्य", "transliteration": "asya", "english": "his", "hindi": "इस अयुक्त पुरुष की" },
+                { "id": "2.67.9", "sanskrit": "हरति", "transliteration": "harati", "english": "takes away", "hindi": "हर लेती है" },
+                { "id": "2.67.10", "sanskrit": "प्रज्ञाम्", "transliteration": "prajñām", "english": "discrimination", "hindi": "बुद्धि को" },
+                { "id": "2.67.11", "sanskrit": "वायुः", "transliteration": "vāyuḥ", "english": "wind", "hindi": "वायु" },
+                { "id": "2.67.12", "sanskrit": "नावम्", "transliteration": "nāvam", "english": "boat", "hindi": "नाव को" },
+                { "id": "2.67.13", "sanskrit": "इव", "transliteration": "iva", "english": "as", "hindi": "जैसे" },
+                { "id": "2.67.14", "sanskrit": "अम्भसि", "transliteration": "ambhasi", "english": "upon the waters", "hindi": "जल में चलने वाली" }
+            ],
+            "english": {
+                "text": "As the wind carries away a boat upon the waters, even so of the senses moving among sense-objects, the one to which the mind is joined takes away his discrimination.",
+                "meaning": "Using a striking metaphor, Krishna explains the danger of the senses. Just as a single powerful gust of wind can sweep a boat off its course on the ocean, even yielding to a single wandering sense can hijack the mind and completely sweep away a person's spiritual intelligence and discrimination."
+            },
+            "hindi": {
+                "text": "क्योंकि जैसे जल में चलने वाली नाव को वायु हर लेती है, वैसे ही विषयों में विचरती हुई इन्द्रियों में से मन जिस इन्द्रिय के साथ रहता है वह एक ही इन्द्रिय इस अयुक्त पुरुष की बुद्धि को हर लेती है ।।",
+                "meaning": "जिस प्रकार समुद्र में चलती हुई नाव को एक तेज हवा का झोंका अपने लक्ष्य से भटका देता है, उसी प्रकार यदि मन किसी एक भी सांसारिक विषय की ओर भागने वाली इंद्रिय के पीछे लग जाए, तो वह व्यक्ति की सारी बुद्धि और विवेक को नष्ट कर देता है।"
+            },
+            "pretext": {
+                "english": "Giving an analogy to show how a single uncontrolled sense can ruin a seeker's intellect.",
+                "hindi": "प्रसंग – इस प्रकार अयुक्त पुरुष की बुद्धि के विचलित होने का प्रकार बतलाकर अब पुनः स्थितप्रज्ञ अवस्था की प्राप्ति में सब प्रकार से इन्द्रिय संयम की विशेष आवश्यकता सिद्ध करते हुए स्थितप्रज्ञ पुरुष की अवस्था का वर्णन करते हैं—"
+            }
+        },
+        "68": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "तस्माद्यस्य[2.68.1-2] महाबाहो[2.68.3] निगृहीतानि[2.68.4] सर्वशः[2.68.5]।\nइन्द्रियाणीन्द्रियार्थेभ्यस्[2.68.6-7]तस्य[2.68.8] प्रज्ञा[2.68.9] प्रतिष्ठिता[2.68.10]॥",
+            "wordTranslations": [
+                { "id": "2.68.1", "sanskrit": "तस्मात्", "transliteration": "tasmāt", "english": "therefore", "hindi": "इसलिये" },
+                { "id": "2.68.2", "sanskrit": "यस्य", "transliteration": "yasya", "english": "whose", "hindi": "जिस पुरुष की" },
+                { "id": "2.68.3", "sanskrit": "महा-बाहो", "transliteration": "mahā-bāho", "english": "O mighty-armed (Arjuna)", "hindi": "हे महाबाहो !", "explanationRef": "exp_arjuna" },
+                { "id": "2.68.4", "sanskrit": "निगृहीतानि", "transliteration": "nigṛhītāni", "english": "are completely restrained", "hindi": "निग्रह की हुई हैं" },
+                { "id": "2.68.5", "sanskrit": "सर्वशः", "transliteration": "sarvaśaḥ", "english": "from all sides / completely", "hindi": "सब प्रकार" },
+                { "id": "2.68.6", "sanskrit": "इन्द्रियाणि", "transliteration": "indriyāṇi", "english": "senses", "hindi": "इन्द्रियाँ" },
+                { "id": "2.68.7", "sanskrit": "इन्द्रिय-अर्थेभ्यः", "transliteration": "indriya-arthebhyaḥ", "english": "from their objects", "hindi": "इन्द्रियों के विषयों से" },
+                { "id": "2.68.8", "sanskrit": "तस्य", "transliteration": "tasya", "english": "his", "hindi": "उसी की" },
+                { "id": "2.68.9", "sanskrit": "प्रज्ञा", "transliteration": "prajñā", "english": "intellect", "hindi": "बुद्धि" },
+                { "id": "2.68.10", "sanskrit": "प्रतिष्ठिता", "transliteration": "pratiṣṭhitā", "english": "is stable", "hindi": "स्थिर है" }
+            ],
+            "english": {
+                "text": "Therefore, (Arjuna)[exp_arjuna], he whose senses are completely restrained from their objects, is said to have a stable mind.",
+                "meaning": "Reaffirming the supreme importance of absolute sense control, Lord Krishna concludes that true stability of mind belongs exclusively to the one who has successfully and consistently withdrawn their senses from the temptations of the material world in all situations."
+            },
+            "hindi": {
+                "text": "इसलिये हे महाबाहो (अर्जुन)[exp_arjuna] ! जिस पुरुष की इन्द्रियाँ इन्द्रियों के विषयों से सब प्रकार निग्रह की हुई हैं, उसी की बुद्धि स्थिर है ।।",
+                "meaning": "इंद्रियों की भयंकर शक्ति को देखते हुए, श्रीकृष्ण स्पष्ट करते हैं कि केवल उसी व्यक्ति की बुद्धि स्थिर (स्थितप्रज्ञ) मानी जा सकती है, जिसने अपनी सभी इंद्रियों को हर प्रकार के सांसारिक आकर्षणों से पूरी तरह अपने वश में कर लिया है।"
+            },
+            "pretext": {
+                "english": "Concluding the necessity of sense-control to maintain a steady intellect.",
+                "hindi": "प्रसंग – इस बात को रात और दिन के दृष्टान्त से समझाते हुए उनकी स्वाभाविक स्थिति का वर्णन करते हैं—"
+            }
+        },
+        "69": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "या[2.69.1] निशा[2.69.2] सर्वभूतानां[2.69.3] तस्यां[2.69.4] जागर्ति[2.69.5] संयमी[2.69.6]।\nयस्यां[2.69.7] जाग्रति[2.69.8] भूतानि[2.69.9] सा[2.69.10] निशा[2.69.11] पश्यतो[2.69.12] मुनेः[2.69.13]॥",
+            "wordTranslations": [
+                { "id": "2.69.1", "sanskrit": "या", "transliteration": "yā", "english": "what", "hindi": "जो" },
+                { "id": "2.69.2", "sanskrit": "निशा", "transliteration": "niśā", "english": "is night", "hindi": "रात्रि के समान है" },
+                { "id": "2.69.3", "sanskrit": "सर्व-भूतानाम्", "transliteration": "sarva-bhūtānām", "english": "to all beings", "hindi": "सम्पूर्ण प्राणियों के लिये" },
+                { "id": "2.69.4", "sanskrit": "तस्याम्", "transliteration": "tasyām", "english": "in that (state)", "hindi": "उस नित्य ज्ञानस्वरूप परमानन्द की प्राप्ति में" },
+                { "id": "2.69.5", "sanskrit": "जागर्ति", "transliteration": "jāgarti", "english": "keeps awake", "hindi": "जागता है" },
+                { "id": "2.69.6", "sanskrit": "संयमी", "transliteration": "saṁyamī", "english": "the God-realized Yogi", "hindi": "स्थितप्रज्ञ योगी" },
+                { "id": "2.69.7", "sanskrit": "यस्याम्", "transliteration": "yasyām", "english": "in which", "hindi": "जिस नाशवान् सांसारिक सुख की प्राप्ति में" },
+                { "id": "2.69.8", "sanskrit": "जाग्रति", "transliteration": "jāgrati", "english": "keep awake", "hindi": "जागते हैं" },
+                { "id": "2.69.9", "sanskrit": "भूतानि", "transliteration": "bhūtāni", "english": "all beings", "hindi": "सब प्राणी" },
+                { "id": "2.69.10", "sanskrit": "सा", "transliteration": "sā", "english": "that", "hindi": "वह" },
+                { "id": "2.69.11", "sanskrit": "निशा", "transliteration": "niśā", "english": "night", "hindi": "रात्रि के समान है" },
+                { "id": "2.69.12", "sanskrit": "पश्यतः", "transliteration": "paśyataḥ", "english": "to the seeing", "hindi": "परमात्मा के तत्त्व को जानने वाले" },
+                { "id": "2.69.13", "sanskrit": "मुनेः", "transliteration": "muneḥ", "english": "seer / sage", "hindi": "मुनि के लिये" }
+            ],
+            "english": {
+                "text": "That which is night to all beings, in that state (of Divine Knowledge and supreme Bliss) the God-realized Yogi keeps awake. And that (the ever-changing, transient worldly happiness) in which all beings keep awake is night to the seer.",
+                "meaning": "This verse beautifully contrasts the perspectives of a worldly person and a spiritually awakened sage. What ordinary people consider real and actively pursue (material wealth, sensual pleasures) is seen as darkness and ignorance (night) by the wise. Conversely, the profound spiritual reality of the soul, which is invisible and obscure (like night) to materialistic people, is the bright, awakened reality for the enlightened sage."
+            },
+            "hindi": {
+                "text": "सम्पूर्ण प्राणियों के लिये जो रात्रि के समान है, उस नित्य ज्ञानस्वरूप परमानन्द की प्राप्ति में स्थितप्रज्ञ योगी जागता है और जिस नाशवान् सांसारिक सुख की प्राप्ति में सब प्राणी जागते हैं, परमात्मा के तत्त्व को जानने वाले मुनि के लिये वह रात्रि के समान है ।।",
+                "meaning": "सांसारिक और आध्यात्मिक दृष्टिकोण में विरोधाभास: अज्ञानी मनुष्य जिन सांसारिक भोगों और सुखों में दिन-रात जागा रहता है, वे एक ज्ञानी पुरुष के लिए अज्ञानरूपी अंधकार (रात्रि) के समान हैं। और जिस आध्यात्मिक सत्य से साधारण मनुष्य अनभिज्ञ रहता है (जो उनके लिए रात्रि है), उसी दिव्य सत्य में स्थितप्रज्ञ योगी सदैव जागृत रहता है।"
+            },
+            "pretext": {
+                "english": "Contrasting the awareness of a sage with that of ordinary materialistic beings.",
+                "hindi": "प्रसंग – इस प्रकार रात्रि के रूपक से ज्ञानी और अज्ञानियों की स्थिति का भेद दिखलाकर अब समुद्र की उपमा से भेद भाव दिखलाते हैं कि ज्ञानी परम शान्ति को प्राप्त होता है और भोगों की कामना वाला अज्ञानी मनुष्य शान्ति को प्राप्त नहीं होता—"
+            }
+        },
+        "70": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "आपूर्यमाणमचलप्रतिष्ठं[2.70.1-2]\nसमुद्रमापः[2.70.3-4] प्रविशन्ति[2.70.5] यद्वत्[2.70.6]।\nतद्वत्कामा[2.70.7-8] यं[2.70.9] प्रविशन्ति[2.70.10] सर्वे[2.70.11]\nस[2.70.12] शान्तिमाप्नोति[2.70.13-14] न[2.70.15] कामकामी[2.70.16]॥",
+            "wordTranslations": [
+                { "id": "2.70.1", "sanskrit": "आपूर्यमाणम्", "transliteration": "āpūryamāṇam", "english": "full on all sides", "hindi": "सब ओर से परिपूर्ण" },
+                { "id": "2.70.2", "sanskrit": "अचल-प्रतिष्ठम्", "transliteration": "acala-pratiṣṭham", "english": "undisturbed", "hindi": "अचल प्रतिष्ठा वाले" },
+                { "id": "2.70.3", "sanskrit": "समुद्रम्", "transliteration": "samudram", "english": "ocean", "hindi": "समुद्र में" },
+                { "id": "2.70.4", "sanskrit": "आपः", "transliteration": "āpaḥ", "english": "waters", "hindi": "जल" },
+                { "id": "2.70.5", "sanskrit": "प्रविशन्ति", "transliteration": "praviśanti", "english": "enter", "hindi": "समा जाते हैं" },
+                { "id": "2.70.6", "sanskrit": "यद्वत्", "transliteration": "yadvat", "english": "as", "hindi": "जैसे" },
+                { "id": "2.70.7", "sanskrit": "तद्वत्", "transliteration": "tadvat", "english": "likewise", "hindi": "वैसे ही" },
+                { "id": "2.70.8", "sanskrit": "कामाः", "transliteration": "kāmāḥ", "english": "enjoyments / desires", "hindi": "सब भोग" },
+                { "id": "2.70.9", "sanskrit": "यम्", "transliteration": "yam", "english": "whom", "hindi": "जिस स्थितप्रज्ञ पुरुष में" },
+                { "id": "2.70.10", "sanskrit": "प्रविशन्ति", "transliteration": "praviśanti", "english": "enter / merge", "hindi": "समा जाते हैं" },
+                { "id": "2.70.11", "sanskrit": "सर्वे", "transliteration": "sarve", "english": "all", "hindi": "(सभी)" },
+                { "id": "2.70.12", "sanskrit": "सः", "transliteration": "saḥ", "english": "he", "hindi": "वही पुरुष" },
+                { "id": "2.70.13", "sanskrit": "शान्तिम्", "transliteration": "śāntim", "english": "peace", "hindi": "शान्ति को" },
+                { "id": "2.70.14", "sanskrit": "आप्नोति", "transliteration": "āpnoti", "english": "attains", "hindi": "प्राप्त होता है" },
+                { "id": "2.70.15", "sanskrit": "न", "transliteration": "na", "english": "not", "hindi": "नहीं" },
+                { "id": "2.70.16", "sanskrit": "काम-कामी", "transliteration": "kāma-kāmī", "english": "he who hankers after desires", "hindi": "भोगों को चाहने वाला" }
+            ],
+            "english": {
+                "text": "As the waters of different rivers enter the ocean, which though full on all sides remains undisturbed, likewise he in whom all enjoyments merge themselves attains peace; not he who hankers after such enjoyments.",
+                "meaning": "The ultimate state of peace is beautifully illustrated using the ocean. Countless rivers constantly flow into the ocean, yet the ocean never overflows or loses its calm majesty. Similarly, an enlightened mind experiences the continuous flow of sensory inputs from the world but remains utterly still and unaffected within. True peace comes from this vast inner fullness, not from desperately trying to fulfill endless desires."
+            },
+            "hindi": {
+                "text": "जैसे नाना नदियों के जल सब ओर से परिपूर्ण, अचल प्रतिष्ठा वाले, समुद्र में उसको विचलित न करते हुए ही समा जाते हैं, वैसे ही सब भोग जिस स्थितप्रज्ञ पुरुष में किसी प्रकार का विकार उत्पन्न किये बिना ही समा जाते हैं, वही पुरुष शान्ति को प्राप्त होता है, भोगों को चाहने वाला नहीं ।।",
+                "meaning": "जिस प्रकार अनगिनत नदियाँ निरंतर समुद्र में गिरती हैं, फिर भी समुद्र अपनी मर्यादा नहीं लांघता और शांत रहता है, ठीक उसी प्रकार ज्ञानी पुरुष के जीवन में अनेक सांसारिक भोग आते हैं, पर वे उसके मन में कोई विकार या हलचल पैदा नहीं करते। केवल वही व्यक्ति परम शांति प्राप्त करता है, न कि वह जो सांसारिक इच्छाओं के पीछे भागता रहता है।"
+            },
+            "pretext": {
+                "english": "Using the analogy of the ocean to explain how a wise sage attains supreme peace despite worldly interactions.",
+                "hindi": "प्रसंग – 'स्थितप्रज्ञ कैसे चलता है ?' अर्जुन का यह चौथा प्रश्न परमात्मा को प्राप्त हुए पुरुष के विषय में ही था; अब उस प्रश्न का स्पष्ट उत्तर देते हुए स्थितप्रज्ञ पुरुष के आचरण का प्रकार बतलाते हैं—"
+            }
+        },
+        "71": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "विहाय[2.71.1] कामान्यः[2.71.2-3] सर्वान्पुमांश्चरति[2.71.4-6] निःस्पृहः[2.71.7]।\nनिर्ममो[2.71.8] निरहङ्कारः[2.71.9] स[2.71.10] शान्तिमधिगच्छति[2.71.11-12]॥",
+            "wordTranslations": [
+                { "id": "2.71.1", "sanskrit": "विहाय", "transliteration": "vihāya", "english": "having given up", "hindi": "त्यागकर" },
+                { "id": "2.71.2", "sanskrit": "कामान्", "transliteration": "kāmān", "english": "desires", "hindi": "कामनाओं को" },
+                { "id": "2.71.3", "sanskrit": "यः", "transliteration": "yaḥ", "english": "who", "hindi": "जो" },
+                { "id": "2.71.4", "sanskrit": "सर्वान्", "transliteration": "sarvān", "english": "all", "hindi": "सम्पूर्ण" },
+                { "id": "2.71.5", "sanskrit": "पुमान्", "transliteration": "pumān", "english": "man", "hindi": "पुरुष" },
+                { "id": "2.71.6", "sanskrit": "चरति", "transliteration": "carati", "english": "moves", "hindi": "विचरता है" },
+                { "id": "2.71.7", "sanskrit": "निःस्पृहः", "transliteration": "niḥspṛhaḥ", "english": "free from thirst for enjoyment", "hindi": "स्पृहारहित हुआ" },
+                { "id": "2.71.8", "sanskrit": "निर्ममः", "transliteration": "nirmamaḥ", "english": "free from attachment", "hindi": "ममतारहित" },
+                { "id": "2.71.9", "sanskrit": "निरहङ्कारः", "transliteration": "nirahaṅkāraḥ", "english": "free from egoism", "hindi": "अहङ्काररहित" },
+                { "id": "2.71.10", "sanskrit": "सः", "transliteration": "saḥ", "english": "he", "hindi": "वही" },
+                { "id": "2.71.11", "sanskrit": "शान्तिम्", "transliteration": "śāntim", "english": "peace", "hindi": "शान्ति को" },
+                { "id": "2.71.12", "sanskrit": "अधिगच्छति", "transliteration": "adhigacchati", "english": "attains", "hindi": "प्राप्त होता है" }
+            ],
+            "english": {
+                "text": "He who has given up all desires, and moves free from attachment, egoism and thirst for enjoyment attains peace.",
+                "meaning": "The ultimate formula for mental peace is outlined here. A person attains absolute tranquility when they systematically shed three major psychological burdens: 'Kama' (desire for what one does not have), 'Mamata' (attachment/ownership of what one has), and 'Ahamkara' (ego or the false sense of 'I'). Walking through life without these weights is true spiritual freedom."
+            },
+            "hindi": {
+                "text": "जो पुरुष सम्पूर्ण कामनाओं को त्यागकर ममतारहित, अहङ्काररहित और स्पृहारहित हुआ विचरता है, वही शान्ति को प्राप्त होता है अर्थात् वह शान्ति को प्राप्त है ।।",
+                "meaning": "सच्ची शांति केवल उसी व्यक्ति को मिलती है जिसने अपनी सभी सांसारिक इच्छाओं का त्याग कर दिया हो, जिसे किसी वस्तु से कोई लगाव (मेरापन) न हो, और जिसके मन में 'मैं' (अहंकार) का भाव पूरी तरह से मिट चुका हो।"
+            },
+            "pretext": {
+                "english": "Summarizing the method by which a realized soul walks in the world.",
+                "hindi": "प्रसंग – इस प्रकार अर्जुन के चारों प्रश्नों का उत्तर देने के अनन्तर अब स्थितप्रज्ञ पुरुष का महत्त्व बतलाते हुए इस अध्याय का उपसंहार करते हैं—"
+            }
+        },
+        "72": {
+            "audioData": {
+                "sanskrit": {}
+            },
+            "sanskrit": "एषा[2.72.1] ब्राह्मी[2.72.2] स्थितिः[2.72.3] पार्थ[2.72.4] नैनां[2.72.5-6] प्राप्य[2.72.7] विमुह्यति[2.72.8]।\nस्थित्वास्यामन्तकाले[2.72.9-11]ऽपि[2.72.12] ब्रह्मनिर्वाणमृच्छति[2.72.13-14]॥",
+            "wordTranslations": [
+                { "id": "2.72.1", "sanskrit": "एषा", "transliteration": "eṣā", "english": "this", "hindi": "यह" },
+                { "id": "2.72.2", "sanskrit": "ब्राह्मी", "transliteration": "brāhmī", "english": "of the God-realized soul / Brahmic", "hindi": "ब्रह्म को प्राप्त पुरुष की" },
+                { "id": "2.72.3", "sanskrit": "स्थितिः", "transliteration": "sthitiḥ", "english": "state", "hindi": "स्थिति है" },
+                { "id": "2.72.4", "sanskrit": "पार्थ", "transliteration": "pārtha", "english": "O Arjuna", "hindi": "हे अर्जुन !", "explanationRef": "exp_partha" },
+                { "id": "2.72.5", "sanskrit": "न", "transliteration": "na", "english": "not", "hindi": "नहीं" },
+                { "id": "2.72.6", "sanskrit": "एनाम्", "transliteration": "enām", "english": "this", "hindi": "इसको" },
+                { "id": "2.72.7", "sanskrit": "प्राप्य", "transliteration": "prāpya", "english": "having reached", "hindi": "प्राप्त होकर" },
+                { "id": "2.72.8", "sanskrit": "विमुह्यति", "transliteration": "vimuhyati", "english": "overcomes delusion", "hindi": "योगी कभी मोहित (नहीं) होता" },
+                { "id": "2.72.9", "sanskrit": "स्थित्वा", "transliteration": "sthitvā", "english": "established", "hindi": "स्थित होकर" },
+                { "id": "2.72.10", "sanskrit": "अस्याम्", "transliteration": "asyām", "english": "in this", "hindi": "इस ब्राह्मी स्थिति में" },
+                { "id": "2.72.11", "sanskrit": "अन्त-काले", "transliteration": "anta-kāle", "english": "at the last moment", "hindi": "अन्त काल में" },
+                { "id": "2.72.12", "sanskrit": "अपि", "transliteration": "api", "english": "even", "hindi": "भी" },
+                { "id": "2.72.13", "sanskrit": "ब्रह्म-निर्वाणम्", "transliteration": "brahma-nirvāṇam", "english": "Brahmic Bliss", "hindi": "ब्रह्मानन्द को" },
+                { "id": "2.72.14", "sanskrit": "ऋच्छति", "transliteration": "ṛcchati", "english": "attains", "hindi": "प्राप्त हो जाता है" }
+            ],
+            "english": {
+                "text": "(Arjuna)[exp_partha], such is the state of the God-realized soul; having reached this state, he overcomes delusion. And established in this state, even at the last moment, he attains Brahmic Bliss.",
+                "meaning": "Concluding the profound teachings of Chapter 2, Lord Krishna names this ultimate state of egoless, desireless awareness as 'Brahmi Sthiti' (the divine state). Once a person achieves this enlightenment, they can never fall back into the darkness of material delusion. Even if this realization dawns at the very last moment of life, the soul is instantly liberated into supreme, eternal bliss."
+            },
+            "hindi": {
+                "text": "हे (अर्जुन)[exp_partha] ! यह ब्रह्म को प्राप्त पुरुष की स्थिति है, इसको प्राप्त होकर योगी कभी मोहित नहीं होता और अन्त काल में भी इस ब्राह्मी स्थिति में स्थित होकर ब्रह्मानन्द को प्राप्त हो जाता है ।।\n\nॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे साङ्ख्ययोगो नाम द्वितीयोऽध्यायः॥ २ ॥",
+                "meaning": "श्रीकृष्ण द्वितीय अध्याय का समापन करते हुए कहते हैं कि उपर्युक्त स्थिति साक्षात् ईश्वर-प्राप्ति (ब्राह्मी स्थिति) की अवस्था है। इसे पा लेने के बाद मनुष्य कभी संसार के मोह में नहीं फंसता। यदि जीवन के अंतिम क्षण में भी कोई इस दिव्य चेतना में स्थित हो जाए, तो वह जन्म-मरण के बंधन से मुक्त होकर परम ब्रह्मानंद (मोक्ष) को प्राप्त कर लेता है।"
+            },
+            "pretext": {
+                "english": "Concluding the chapter, Lord Krishna names this supreme spiritual state and its ultimate reward.",
+                "hindi": "प्रसंग – इस प्रकार अर्जुन के चारों प्रश्नों का उत्तर देने के अनन्तर अब स्थितप्रज्ञ पुरुष का महत्त्व बतलाते हुए इस अध्याय का उपसंहार करते हैं—"
+            }
         }
     }
+
 }

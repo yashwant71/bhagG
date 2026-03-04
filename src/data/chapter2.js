@@ -415,7 +415,7 @@ export const chapter2 = {
             },
             "pretext": {
                 "english": "Lord Krishna continues to explain the eternal nature of the soul.",
-                "hindi": " "
+                "hindi": "भगवान श्रीकृष्ण आत्मा की नित्यता का वर्णन जारी रखते हैं।"
             }
         },
         "13": {
@@ -446,6 +446,10 @@ export const chapter2 = {
             "hindi": {
                 "text": "जैसे जीवात्मा की इस देह में बालक पन, जवानी और वृद्धावस्था होती है, वैसे ही अन्य शरीर की प्राप्ति होती है; उस विषय में धीर पुरुष मोहित नहीं होता ।।",
                 "meaning": "जिस प्रकार शरीर बचपन से जवानी और फिर बुढ़ापे में बदलता है, उसी प्रकार मृत्यु के बाद आत्मा एक नया शरीर धारण करती है। ज्ञानी पुरुष इस प्राकृतिक चक्र को समझता है और शोक नहीं करता।"
+            },
+            "pretext": {
+                "english": "Lord Krishna explains the soul's transition through various stages of life.",
+                "hindi": "भगवान श्रीकृष्ण जीवन की विभिन्न अवस्थाओं में आत्मा के परिवर्तन का वर्णन करते हैं।"
             }
 
         },
@@ -510,10 +514,6 @@ export const chapter2 = {
                 "text": "क्योंकि हे पुरुष श्रेष्ठ ! दुःख-सुख को समान समझने वाले जिस धीर पुरुष को ये इन्द्रियाँ और विषयों के संयोग व्याकुल नहीं करते, वह मोक्ष के योग्य होता है ।।",
                 "meaning": "जो व्यक्ति सुख और दुख में एक समान रहता है और इन्द्रियों के आकर्षण से विचलित नहीं होता, वही मोक्ष (अमरत्व) प्राप्त करने का सच्चा अधिकारी है।"
             },
-            "pretext": {
-                "english": "Explaining the benefit of enduring the pairs of opposites.",
-                "hindi": "इन सबको सहन करने से क्या लाभ होगा ? इस जिज्ञासा पर कहते हैं"
-            }
         },
         "16": {
             "audioData": {
@@ -546,8 +546,8 @@ export const chapter2 = {
                 "meaning": "भगवान स्पष्ट करते हैं कि जो 'असत्' (अनित्य शरीर आदि) है उसका कोई स्थायी अस्तित्व नहीं है, और जो 'सत्' (आत्मा) है उसका कभी नाश नहीं होता। तत्वज्ञानियों ने इसी सत्य को अनुभव किया है।"
             },
             "pretext": {
-                "english": "Lord Krishna explains the fundamental difference between the transient material body and the eternal soul.",
-                "hindi": "इस श्लोक में भगवान् नित्य और अनित्य वस्तु के विवेचन की रीति बतलाने के लिये दोनों के लक्षण बतलाते हैं"
+                "english": "Lord Krishna speaks, continuing his instruction with divine authority.",
+                "hindi": "श्रीकृष्ण दिव्य अधिकार के साथ अपना उपदेश जारी रखते हैं।"
             }
         },
         "17": {
@@ -581,8 +581,8 @@ export const chapter2 = {
                 "meaning": "भगवान अर्जुन को समझाते हैं कि यह संपूर्ण ब्रह्मांड जिस चेतना से व्याप्त है, वही अमर है। उस अविनाशी तत्त्व (आत्मा) को नष्ट करने की शक्ति किसी में नहीं है।"
             },
             "pretext": {
-                "english": "Explaining the nature of the 'Real' (Sat) which was mentioned in the previous verse.",
-                "hindi": "पूर्व श्लोक में जिस 'सत्' तत्त्व के लिये यह कहा गया है कि 'उसका अभाव नहीं है', वह 'सत्' तत्त्व क्या हैइस जिज्ञासा पर कहते हैं"
+                "english": "Lord Krishna continues with calm authority, deepening the spiritual insight.",
+                "hindi": "श्रीकृष्ण शांत अधिकार के साथ आध्यात्मिक अंतर्दृष्टि को और गहरा करते हुए आगे बढ़ते हैं।"
             }
         },
         "18": {
@@ -612,8 +612,8 @@ export const chapter2 = {
                 "meaning": "आत्मा कभी नहीं मरती, केवल शरीर ही नश्वर है। यह सत्य जानकर अर्जुन को शोक त्याग कर अपने क्षत्रिय धर्म का पालन करते हुए युद्ध करना चाहिए।"
             },
             "pretext": {
-                "english": "Now the Lord explains what constitutes the 'unreal' (Asat).",
-                "hindi": "इस प्रकार 'सत्' तत्त्व की व्याख्या हो जाने के अनन्तर पूर्वोक्त 'असत्' वस्तु क्या है, इस जिज्ञासा पर कहते हैं"
+                "english": "Krishna’s tone becomes firm and encouraging, shifting from metaphysical truth to a direct call for action.",
+                "hindi": "श्रीकृष्ण का स्वर दृढ़ और उत्साहजनक हो जाता है, जो आध्यात्मिक सत्य से सीधे कर्म के आह्वान की ओर बढ़ता है।"
             }
         },
         "19": {
@@ -650,8 +650,8 @@ export const chapter2 = {
                 "meaning": "जो यह सोचता है कि वह किसी को मार सकता है या कोई उसे मार सकता है, वह अज्ञानी है। वास्तव में आत्मा न किसी को मारती है और न ही वह कभी मर सकती है।"
             },
             "pretext": {
-                "english": "Clarifying that believing the soul can be killed is born out of ignorance.",
-                "hindi": "अगले श्लोकों में 'आत्मा को मरने या मारनेवाला मानना अज्ञान है', यह कहकर उसका समाधान करते हैं"
+                "english": "Krishna continues with calm authority, shifting back to the nature of the soul.",
+                "hindi": "श्रीकृष्ण शांत अधिकार के साथ आत्मा के स्वरूप पर वापस लौटते हैं।"
             }
         },
         "20": {
@@ -691,8 +691,8 @@ export const chapter2 = {
                 "meaning": "आत्मा जन्म और मृत्यु के चक्र से पूरी तरह परे है। शरीर की मृत्यु होने पर भी यह शाश्वत और पुरातन आत्मा कभी नष्ट नहीं होती।"
             },
             "pretext": {
-                "english": "The Lord further elaborates on why the soul is impervious to death.",
-                "hindi": "उन्नीसवें श्लोक में भगवान् ने यह बात कही कि आत्मा न तो किसी को मारता है और न किसी के द्वारा मारा जाता है, इस पर यह जिज्ञासा होती है कि आत्मा किसी के द्वारा नहीं मारा जाता, इसमें क्या कारण है ? इसके उत्तर में भगवान् आत्मा में सब प्रकार के विकारों का अभाव बतलाते हुए उसके स्वरूप का प्रतिपादन करते हैं"
+                "english": "Lord speaks with a sense of profound stillness, further unveiling the soul's eternal nature.",
+                "hindi": "श्रीकृष्ण अत्यंत गंभीरता के साथ आत्मा के शाश्वत स्वरूप का और अधिक उद्घाटन करते हैं।"
             }
         },
         "21": {
@@ -758,8 +758,8 @@ export const chapter2 = {
                 "meaning": "मृत्यु मात्र देह का परिवर्तन है, आत्मा का अंत नहीं। जैसे मनुष्य फटे-पुराने कपड़े उतारकर नए कपड़े पहन लेता है, वैसे ही आत्मा जीर्ण शरीर को छोड़कर नए शरीर में प्रवेश कर जाती है।"
             },
             "pretext": {
-                "english": "Addressing the doubt about the pain of leaving one body for another, the Lord provides a comforting analogy.",
-                "hindi": "आत्मा का जो एक शरीर से सम्बन्ध छूटकर दूसरे शरीर से सम्बन्ध होता है, उसमें उसे अत्यन्त कष्ट होता है; अतः उसके लिये शोक करना कैसे अनुचित है ? इस पर कहते हैं"
+                "english": "Lord Krishna offers a comforting analogy to ease the fear of transition.",
+                "hindi": "भगवान कृष्ण देह परिवर्तन के भय को दूर करने के लिए एक सुखद उदाहरण देते हैं।"
             }
         },
         "23": {
@@ -794,8 +794,8 @@ export const chapter2 = {
                 "meaning": "आत्मा भौतिक तत्वों से परे है। शस्त्र इसे भेद नहीं सकते, अग्नि इसे जला नहीं सकती, जल इसे भिगो नहीं सकता, और वायु इसे सुखा नहीं सकती।"
             },
             "pretext": {
-                "english": "Further describing the formless and unchangeable nature of the soul to remove the fear of destruction.",
-                "hindi": "इस प्रकार एक शरीर से दूसरे शरीर के प्राप्त होने में शोक करना अनुचित सिद्ध करके, अब भगवान् आत्मा का स्वरूप दुर्विज्ञेय होने के कारण पुनः प्रकारान्तर से उसकी नित्यता, निराकारता और निर्विकारता का प्रतिपादन करते हैं"
+                "english": "Shri Krishna continues his instruction with firm conviction, transitioning to the soul's inherent indestructibility.",
+                "hindi": "श्रीकृष्ण दृढ़ता के साथ अपना उपदेश जारी रखते हैं, और आत्मा की अविनाशी प्रकृति की ओर बढ़ते हैं।"
             }
         },
         "24": {
@@ -889,8 +889,8 @@ export const chapter2 = {
                 "meaning": "भगवान एक व्यावहारिक तर्क देते हैं कि यदि तू आत्मा को नित्य जन्मने और मरने वाला मान भी ले, तो भी जो उत्पन्न हुआ है उसका मरना निश्चित है। ऐसे स्वाभाविक और अटल चक्र के लिए शोक करना उचित नहीं है।"
             },
             "pretext": {
-                "english": "Even assuming a materialistic perspective, the Lord shows that grief is illogical.",
-                "hindi": "उपर्युक्त श्लोकों में भगवान् ने आत्मा को अजन्मा और अविनाशी बतलाकर उसके लिये शोक करना अनुचित सिद्ध किया; अब दो श्लोकों द्वारा आत्मा को औपचारिक रूप से जन्मने-मरने वाला मानने पर भी उसके लिये शोक करना अनुचित है, ऐसा सिद्ध करते हैं"
+                "english": "Krishna adopts a logical tone, shifting the perspective to address Arjuna's grief.",
+                "hindi": "श्रीकृष्ण एक तार्किक स्वर अपनाते हैं, अर्जुन के शोक को दूर करने के लिए दृष्टिकोण बदलते हैं।"
             }
         },
         "27": {
@@ -949,8 +949,8 @@ export const chapter2 = {
                 "meaning": "सृष्टि में सभी प्राणी जन्म से पूर्व भी अदृश्य थे और मृत्यु के पश्चात् फिर से अदृश्य हो जाएँगे। वे केवल इस जीवन काल के बीच में ही दिखाई देते हैं। इसलिए इस क्षणभंगुर अवस्था के लिए शोक करना अज्ञानता है।"
             },
             "pretext": {
-                "english": "Having proven that grieving for the soul is illogical from both the absolute and material viewpoints, the Lord now shows that even grieving for the physical body is uncalled for.",
-                "hindi": "पूर्व श्लोकों द्वारा जो आत्मा को नित्य, अजन्मा अविनाशी मानते हैं और जो सदा जन्मने-मरनेवाला मानते हैं, उन दोनों के मत से ही आत्मा के लिये शोक करना नहीं बनतायह बात सिद्ध की गयी । अब अगले श्लोक में यह सिद्ध करते हैं कि प्राणियों के शरीरों को उद्देश्य करके भी शोक करना नहीं बनता"
+                "english": "Krishna maintains a logical tone, shifting the perspective.",
+                "hindi": "श्रीकृष्ण एक तार्किक स्वर बनाए रखते हैं, और दृष्टिकोण बदलते हैं।"
             }
         },
         "29": {
@@ -992,8 +992,8 @@ export const chapter2 = {
                 "meaning": "आत्मा का ज्ञान अत्यंत दुर्लभ और अलौकिक है। बहुत कम लोग इसके दर्शन कर पाते हैं, कुछ ही इसका वर्णन कर पाते हैं, विरले ही इसे समझ पाते हैं, और कई तो ऐसे हैं जो इसके बारे में सुनकर भी इसके परम रहस्य को नहीं जान पाते।"
             },
             "pretext": {
-                "english": "Lord Krishna emphasizes the sublime and incomprehensible nature of the true self.",
-                "hindi": "आत्मतत्त्व अत्यन्त दुर्बोध होने के कारण उसे समझाने के लिये भगवान् ने उपर्युक्त श्लोकों द्वारा भिन्न-भिन्न प्रकार से उसके स्वरूप का वर्णन किया; अब उस आत्मतत्त्व दर्शन, वर्णन और श्रवण की अलौकिकता और दुर्लभता का निरूपण करते हैं"
+                "english": "Lord Krishna speaks with a sense of wonder, highlighting the rarity of this realization.",
+                "hindi": "श्रीकृष्ण विस्मय के भाव से इस बोध की दुर्लभता का वर्णन करते हैं।"
             }
         },
         "30": {
@@ -1026,8 +1026,8 @@ export const chapter2 = {
                 "meaning": "सांख्य योग (ज्ञान योग) के उपदेश का समापन करते हुए भगवान श्रीकृष्ण कहते हैं कि चूंकि सभी प्राणियों के शरीर में स्थित आत्मा शाश्वत है और कभी नष्ट नहीं होती, अतः किसी के भी मरने का शोक करना व्यर्थ है।"
             },
             "pretext": {
-                "english": "Concluding the topic of Sankhya Yoga, Krishna delivers the final verdict on why grieving is inappropriate.",
-                "hindi": "इस प्रकार आत्म तत्त्व के दर्शन, वर्णन और श्रवण की अलौकिकता और दुर्लभता का प्रतिपादन करके अब, 'आत्मा नित्य है और अवध्य है; अतः किसी भी प्राणी के लिये शोक करना उचित नहीं है'यह बतलाते हुए भगवान् सांख्य योग के प्रकरण का उपसंहार करते हैं"
+                "english": "Krishna concludes the philosophical discourse with a firm, final word.",
+                "hindi": "श्रीकृष्ण सांख्य योग के उपदेश का समापन करते हुए अपना अंतिम निर्णय देते हैं।"
             }
         },
         "31": {
@@ -1061,8 +1061,8 @@ export const chapter2 = {
                 "meaning": "आध्यात्मिक ज्ञान देने के बाद भगवान अब व्यावहारिक स्तर पर समझाते हैं। वे कहते हैं कि एक क्षत्रिय होने के नाते तुम्हारा परम धर्म समाज में न्याय की रक्षा करना है, और इसलिए धर्मयुद्ध में भाग लेने से पीछे हटना या संकोच करना तुम्हारे लिए कदापि उचित नहीं है।"
             },
             "pretext": {
-                "english": "Moving from the science of the soul to societal duty, the Lord inspires Arjuna by explaining the warrior's code (Kshatriya Dharma).",
-                "hindi": "यहाँ तक भगवान् ने सांख्य योग के अनुसार अनेक युक्तियों द्वारा नित्य, शुद्ध, बुद्ध, सम, निर्विकार और अकर्ता आत्मा के एकत्व, नित्यत्व, अविनाशित्व आदि का प्रतिपादन करके तथा शरीरों को विनाशशील बतलाकर आत्मा के या शरीरों के लिये अथवा शरीर और आत्मा के वियोग के लिये शोक करना अनुचित सिद्ध किया । साथ ही प्रसंग वश आत्मा को जन्मने-मरनेवाला मानने पर भी शोक करने के अनौचित्यका प्रतिपादन किया और अर्जुन को युद्ध करने के लिये आज्ञा दी । अब सात श्लोकों द्वारा क्षात्र धर्म के अनुसार शोक करना अनुचित सिद्ध करते हुए अर्जुन को युद्ध के लिये उत्साहित करते हैं"
+                "english": "Shifting from the science of the soul to societal duty, Krishna reminds Arjuna of his warrior code.",
+                "hindi": "आत्मा के ज्ञान के बाद, अब श्रीकृष्ण अर्जुन को उसके क्षत्रिय धर्म और कर्तव्य का बोध कराते हैं।"
             }
         },
         "32": {
@@ -1084,16 +1084,16 @@ export const chapter2 = {
                 { "id": "2.32.11", "sanskrit": "ईदृशम्", "transliteration": "īdṛśam", "english": "such", "hindi": "इस प्रकार के" }
             ],
             "english": {
-                "text": "(Arjuna)[exp_arjuna], happy are the Ksatriyas who get such an unsolicited opportunity for war; which opens the door to heaven.",
+                "text": "(Arjuna)[exp_arjuna], happy are the (Ksatriyas)[exp_kshatriya] who get such an unsolicited opportunity for war; which opens the door to heaven.",
                 "meaning": "Lord Krishna continues to explain the warrior's code (Kshatriya Dharma). A righteous war that arrives without being actively sought by the warrior is considered a direct and open gateway to heavenly realms. Only the most fortunate warriors receive such a noble opportunity to defend righteousness."
             },
             "hindi": {
-                "text": "हे (पार्थ)[exp_partha] ! अपने-आप प्राप्त हुए और खुले हुए स्वर्ग के द्वार रूप इस प्रकार के युद्ध को भाग्यवान् क्षत्रिय लोग ही पाते हैं ।।",
+                "text": "हे (पार्थ)[exp_partha] ! अपने-आप प्राप्त हुए और खुले हुए स्वर्ग के द्वार रूप इस प्रकार के युद्ध को भाग्यवान् (क्षत्रिय)[exp_kshatriya] लोग ही पाते हैं ।।",
                 "meaning": "भगवान अर्जुन को समझाते हैं कि एक क्षत्रिय के लिए धर्म की रक्षा हेतु स्वयं सामने आया युद्ध बहुत दुर्लभ और सौभाग्य की बात है। यह युद्ध उनके लिए सीधे स्वर्ग का मार्ग खोलने वाला है।"
             },
             "pretext": {
-                "english": "The Lord highlights the glory and spiritual benefit of engaging in a righteous war.",
-                "hindi": "इस प्रकार धर्ममय युद्ध करने में लाभ दिखलाने के बाद अब उसे न करने में हानि दिखलाते हुए भगवान् अर्जुन को युद्ध के लिये उत्साहित करते हैं"
+                "english": "Lord Krishna continues, his tone becoming more direct as he addresses Arjuna's hesitation.",
+                "hindi": "श्रीकृष्ण अपनी बात जारी रखते हैं, और अर्जुन के संकोच को देखते हुए उनके स्वर में अब और अधिक स्पष्टता आ जाती है।"
             }
         },
         "33": {
@@ -1242,8 +1242,8 @@ export const chapter2 = {
                 "meaning": "भगवान स्पष्ट करते हैं कि धर्मयुद्ध में दोनों ही स्थितियों में तुम्हारी जीत है। यदि वीरगति प्राप्त हुई तो स्वर्ग मिलेगा, और यदि जीत हुई तो पृथ्वी का निष्कंटक साम्राज्य। इसलिए सब संशय त्याग कर दृढ़ निश्चय के साथ युद्ध के लिए उठ खड़े हो।"
             },
             "pretext": {
-                "english": "Summarizing the dual benefits of participating in a righteous war, the Lord issues a final command to fight.",
-                "hindi": "उपर्युक्त बहुत-से हेतुओं को दिखलाकर युद्ध न करने में अनेक प्रकार की हानियों का वर्णन करने के बाद अब भगवान् युद्ध करने में दोनों तरह से लाभ दिखलाते हुए अर्जुन को युद्ध के लिये तैयार होने की आज्ञा देते हैं"
+                "english": "Shri Krishna continues his address, shifting the tone towards a more encouraging and decisive resolution.",
+                "hindi": "श्री कृष्ण अपनी चर्चा जारी रखते हुए, अब एक उत्साहजनक और निर्णायक स्वर में अर्जुन का मार्गदर्शन करते हैं।"
             }
         },
         "38": {
@@ -1306,8 +1306,8 @@ export const chapter2 = {
                 "meaning": "भगवान श्रीकृष्ण कह रहे हैं कि अभी तक मैंने तुम्हें 'ज्ञान योग' (सांख्य) के दृष्टिकोण से परम सत्य समझाया है। अब इसी विषय को 'कर्मयोग' की दृष्टि से सुनो। इस निष्काम कर्म की भावना को अपनाकर तुम कर्म करते हुए भी कर्म-बंधनों से सदा के लिए मुक्त हो जाओगे।"
             },
             "pretext": {
-                "english": "Transitioning from Sankhya Yoga (the path of knowledge), the Lord introduces Karma Yoga (the path of selfless action).",
-                "hindi": "यहाँ तक भगवान् ने सांख्य योग के सिद्धान्त से तथा क्षात्र धर्म की दृष्टि से युद्ध का औचित्य सिद्ध करके अर्जुन को समतापूर्वक युद्ध करने के लिये आज्ञा दी; अब कर्मयोग के सिद्धान्त से युद्ध का औचित्य बतलाते हैं।"
+                "english": "Shri Krishna transitions His discourse, shifting the tone as He prepares to offer a new perspective.",
+                "hindi": "श्री कृष्ण अब चर्चा को आगे बढ़ाते हुए, एक नए दृष्टिकोण की नींव रखते हैं।"
             }
         },
         "40": {
@@ -1340,8 +1340,8 @@ export const chapter2 = {
                 "meaning": "सकाम कर्मों में यदि कार्य अधूरा रह जाए तो फल नहीं मिलता और त्रुटि होने पर पाप भी लग सकता है। परंतु निष्काम कर्मयोग (स्वार्थ रहित कर्म) का थोड़ा सा भी अभ्यास कभी व्यर्थ नहीं जाता और यह जीवात्मा को जन्म-मरण के महान भय से मुक्त कर देता है।"
             },
             "pretext": {
-                "english": "Introducing the profound significance of Karma Yoga, the Lord speaks of its unique merits.",
-                "hindi": "इस प्रकार कर्मयोग के वर्णन की प्रस्तावना करके अब उसका रहस्यपूर्ण महत्त्व बतलाते हैं"
+                "english": "Shri Krishna continues, His voice filled with encouragement as He deepens the discourse.",
+                "hindi": "श्री कृष्ण अब और भी अधिक उत्साह के साथ अपनी बात जारी रखते हैं।"
             }
         },
         "41": {
@@ -1371,8 +1371,8 @@ export const chapter2 = {
                 "meaning": "भगवान अर्जुन को एकाग्रता का महत्त्व समझाते हैं। जो निष्काम भाव से ईश्वर को समर्पित हैं, उनकी बुद्धि एक ही लक्ष्य पर स्थिर होती है। लेकिन जो सांसारिक इच्छाओं में उलझे हैं, उनकी बुद्धि अनेकों दिशाओं में भटकती रहती है।"
             },
             "pretext": {
-                "english": "Contrasting the focused mind of a Karma Yogi with the scattered mind of a worldly person.",
-                "hindi": "इस प्रकार कर्मयोगी के लिये अवश्य धारण करने योग्य निश्चयात्मिका बुद्धिका और त्याग करने योग्य सकाम मनुष्यों की बुद्धियों का स्वरूप बतलाकर अब सकाम भावको त्याज्य बतलाने के लिये सकाम मनुष्य की स्वभाव का वर्णन करते हैं"
+                "english": "Krishna continues his instruction, his voice steady and insightful.",
+                "hindi": "श्री कृष्ण अपना उपदेश जारी रखते हैं, उनका स्वर स्थिर और ज्ञानपूर्ण है।"
             }
         },
         "42": {
@@ -1417,8 +1417,8 @@ export const chapter2 = {
                 "meaning": "भगवान कहते हैं कि जो अज्ञानी लोग केवल वेदों के कर्मकांडों में उलझे रहते हैं और स्वर्ग तथा सांसारिक सुखों को ही जीवन का परम लक्ष्य मानते हैं, उनकी बुद्धि कभी एकाग्र नहीं हो सकती। ऐसे लोग सकाम कर्मों में फँसकर जन्म-मरण के चक्र में पड़े रहते हैं, और वे कभी भी ईश्वर में दृढ़ता से स्थित नहीं हो पाते।"
             },
             "pretext": {
-                "english": "Verses 42, 43, and 44 collectively describe the mindset of those attached to material rewards and the consequences of such desires.",
-                "hindi": "जो लोग वेदों में वर्णित सकाम कर्मों के फलों के प्रति आसक्त रहते हैं, उनकी स्थिति का वर्णन करते हैं (श्लोक ४२-४४ एक साथ)"
+                "english": "Krishna’s tone shifts, becoming more serious as he addresses the pitfalls of superficiality.",
+                "hindi": "श्री कृष्ण का स्वर बदलता है, और वे सतहीपन की कमियों को बताते हुए अधिक गंभीर हो जाते हैं।"
             }
         },
         "45": {
@@ -1438,16 +1438,16 @@ export const chapter2 = {
                 { "id": "2.45.9", "sanskrit": "आत्मवान्", "transliteration": "ātmavān", "english": "self-controlled", "hindi": "और स्वाधीन अन्तःकरणवाला" }
             ],
             "english": {
-                "text": "(Arjuna)[exp_arjuna], the Vedas thus deal with evolutes of the three Gunas (modes of Prakriti); viz., worldly enjoyments and the means of attaining such enjoyments; be thou indifferent to these enjoyments and their means, rising above pairs of opposites like pleasure and pain etc., established in the Eternal Existence (God), absolutely unconcerned about the supply of wants and the preservation of what has been already attained, and self-controlled.",
-                "meaning": "The material section of the Vedas focuses on the three modes of material nature (Sattva, Rajas, Tamas) offering rituals for worldly and heavenly rewards. Krishna urges Arjuna to transcend these material enticements. He must become free from dualities (success/failure, joy/sorrow), abandon the anxiety of acquiring new things or protecting what he has, and remain established in the eternal Truth of the soul."
+                "text": "(Arjuna)[exp_arjuna], the (Vedas)[exp_vedas] thus deal with evolutes of the (three Gunas)[exp_gunas], worldly enjoyments and the means of attaining such enjoyments; be thou indifferent to these enjoyments and their means, rising above pairs of opposites like pleasure and pain etc., established in the Eternal Existence (God), absolutely unconcerned about the supply of wants and the preservation of what has been already attained, and self-controlled.",
+                "meaning": "The material section of the (Vedas)[exp_vedas] focuses on the three modes of material nature (Sattva, Rajas, Tamas) offering rituals for worldly and heavenly rewards. Krishna urges Arjuna to transcend these material enticements. He must become free from dualities (success/failure, joy/sorrow), abandon the anxiety of acquiring new things or protecting what he has, and remain established in the eternal Truth of the soul."
             },
             "hindi": {
-                "text": "हे (अर्जुन)[exp_arjuna] ! वेद उपर्युक्त प्रकार से तीनों गुणों के कार्यरूप समस्त भोगों एवं उनके साधनों का प्रतिपादन करने वाले हैं; इसलिये तू उन भोगों एवं उनके साधनों, आसक्तिहीन, हर्ष-शोकादि द्वन्द्वों से रहित, नित्यवस्तु परमात्मा में स्थित योगक्षेमको न चाहने वाला और स्वाधीन अन्तःकरणवाला हो ।।",
+                "text": "हे (अर्जुन)[exp_arjuna] ! (वेद)[exp_vedas] उपर्युक्त प्रकार से (तीनों गुणों)[exp_gunas] के कार्यरूप समस्त भोगों एवं उनके साधनों का प्रतिपादन करने वाले हैं; इसलिये तू उन भोगों एवं उनके साधनों, आसक्तिहीन, हर्ष-शोकादि द्वन्द्वों से रहित, नित्यवस्तु परमात्मा में स्थित योगक्षेमको न चाहने वाला और स्वाधीन अन्तःकरणवाला हो ।।",
                 "meaning": "वेदों का वह भाग जो कर्मकाण्ड का वर्णन करता है, वह प्रकृति के तीन गुणों (सत्त्व, रज, तम) से संबंधित है। श्रीकृष्ण अर्जुन को इन सांसारिक सुखों की लालसा से ऊपर उठने, सुख-दुख के द्वंद्व से मुक्त होने, ईश्वर में अपना मन स्थिर करने और अप्राप्त वस्तु की इच्छा तथा प्राप्त वस्तु की रक्षा (योगक्षेम) की चिंता से मुक्त होने का निर्देश देते हैं।"
             },
             "pretext": {
-                "english": "Instructing Arjuna to transcend the material aspect of the Vedas and become established in the self.",
-                "hindi": "इस प्रकार भोग और ऐश्वर्य में आसक्त सकाम पुरुषों में निश्चयात्मिका बुद्धि के न होने की बात कहकर अब कर्मयोग का उपदेश देने के उद्देश्य से पहले भगवान् अर्जुन को उपर्युक्त भोग और ऐश्वर्य में आसक्ति रहित होकर समभाव से सम्पन्न होने के लिये कहते हैं"
+                "english": "Krishna speaks with firm authority, guiding Arjuna's perspective as the conversation deepens.",
+                "hindi": "श्रीकृष्ण दृढ़ अधिकार के साथ बोलते हैं, जैसे-जैसे संवाद गहराता है, वे अर्जुन के दृष्टिकोण का मार्गदर्शन करते हैं।"
             }
         }, "46": {
             "audioData": {
@@ -1475,8 +1475,8 @@ export const chapter2 = {
                 "meaning": "जैसे एक बहुत बड़े सरोवर के मिल जाने पर छोटे कुएं या तालाब की कोई आवश्यकता नहीं रह जाती, वैसे ही जिस महापुरुष ने परब्रह्म को जान लिया है, उसके लिए वेदों में बताए गए सकाम कर्मों और स्वर्ग आदि फलों का कोई महत्व नहीं रह जाता।"
             },
             "pretext": {
-                "english": "Illustrating the absolute fulfillment found in God-realization, which surpasses all material and heavenly rewards.",
-                "hindi": "पूर्व श्लोक में अर्जुन को यह बात कही गयी कि सब वेद तीनों गुणों के कार्य का प्रतिपादन करनेवाले हैं और तुम तीनों गुणों के कार्यरूप समस्त भोगों में और उनके साधनों में आसक्तिरहित हो जाओ | अब उसके फलस्वरूप ब्रह्मज्ञान का महत्त्व बतलाते हैं"
+                "english": "Krishna continues his instruction, addressing Arjuna with a composed and steady tone.",
+                "hindi": "श्रीकृष्ण शांत और गंभीर भाव से अर्जुन को उपदेश देना जारी रखते हैं।"
             }
         },
         "47": {
@@ -1510,8 +1510,8 @@ export const chapter2 = {
                 "meaning": "यह गीता का सबसे प्रसिद्ध उपदेश है: मनुष्य का अधिकार केवल अपना कर्म करने तक सीमित है, कर्म के परिणाम पर उसका कोई नियंत्रण नहीं है। इसलिए फल की इच्छा से कोई कार्य नहीं करना चाहिए, और न ही कर्म छोड़ने (अकर्म) का विचार मन में लाना चाहिए।"
             },
             "pretext": {
-                "english": "Defining the core methodology of Karma Yogaselfless action.",
-                "hindi": "इस प्रकार समबुद्धि रूप कर्मयोग का और उसके फलका महत्त्व बतलाकर अब दो श्लोकों में भगवान् कर्मयोग का स्वरूप बतलाते हुए अर्जुन को कर्मयोग में स्थित होकर कर्म करने के लिये कहते हैं"
+                "english": "Lord Krishna continues to address Arjuna, shifting the tone towards the practical application of equanimity.",
+                "hindi": "श्रीकृष्ण अर्जुन को संबोधित करते हुए, समत्व बुद्धि के व्यावहारिक पक्ष पर प्रकाश डालते हैं।"
             }
         },
         "48": {
@@ -1534,16 +1534,16 @@ export const chapter2 = {
                 { "id": "2.48.12", "sanskrit": "उच्यते", "transliteration": "ucyate", "english": "is called", "hindi": "कहलाता है" }
             ],
             "english": {
-                "text": "(Arjuna)[exp_arjuna], perform your duties established in Yoga, renouncing attachment, and even-tempered in success and failure; evenness of temper is called Yoga.",
-                "meaning": "Lord Krishna provides the ultimate definition of Yoga: Equanimity. True spiritual union is achieved when one remains utterly balanced and undisturbed by the dualities of worldly life, continuing to perform their duties purely out of devotion."
+                "text": "(Arjuna)[exp_arjuna], perform your duties established in (Yoga)[exp_yoga], renouncing attachment, and even-tempered in success and failure; evenness of temper is called (Yoga)[exp_yoga].",
+                "meaning": "Lord Krishna provides the ultimate definition of (Yoga)[exp_yoga]: Equanimity. True spiritual union is achieved when one remains utterly balanced and undisturbed by the dualities of worldly life, continuing to perform their duties purely out of devotion."
             },
             "hindi": {
-                "text": "हे (धनञ्जय)[exp_arjuna] ! तू आसक्ति को त्याग कर तथा सिद्धि और असिद्धि में समान बुद्धिवाला होकर योग में स्थित हुआ कर्तव्य कर्मों को कर, समत्व ही योग कहलाता है ।।",
-                "meaning": "कर्मयोग का अर्थ है अनासक्त भाव से अपना काम करना। कार्य सफल हो या विफल, दोनों ही परिस्थितियों में मन का शांत और संतुलित रहना ही 'योग' कहलाता है।"
+                "text": "हे (धनञ्जय)[exp_arjuna] ! तू आसक्ति को त्याग कर तथा सिद्धि और असिद्धि में समान बुद्धिवाला होकर (योग)[exp_yoga] में स्थित हुआ कर्तव्य कर्मों को कर, समत्व ही (योग)[exp_yoga] कहलाता है ।।",
+                "meaning": "कर्मयोग का अर्थ है अनासक्त भाव से अपना काम करना। कार्य सफल हो या विफल, दोनों ही परिस्थितियों में मन का शांत और संतुलित रहना ही (योग)[exp_yoga] कहलाता है।"
             },
             "pretext": {
-                "english": "Clarifying how one must act if they are to abandon attachment to both results and inaction.",
-                "hindi": "उपर्युक्त श्लोक में यह बात कही गयी कि तुमको न तो कर्मों के फलका हेतु बनना चाहिये और न कर्म न करने में ही आसक्त होना चाहिये अर्थात् कर्मों का त्याग भी नहीं करना चाहिये । इस पर यह जिज्ञासा होती है कि तो फिर किस प्रकार कर्म करना चाहिये ? इसलिये भगवान् कहते हैं"
+                "english": "Lord Krishna continues his guidance to Arjuna, maintaining a focused and instructional tone.",
+                "hindi": "श्रीकृष्ण अर्जुन को संबोधित करते हुए उपदेश के प्रवाह को आगे बढ़ाते हैं।"
             }
         },
         "49": {
@@ -1573,8 +1573,8 @@ export const chapter2 = {
                 "meaning": "जो लोग केवल फल की इच्छा से काम करते हैं, वे कृपण (दीन) होते हैं क्योंकि उनका सुख और दुख बाहरी परिस्थितियों का गुलाम होता है। समत्व भाव (बुद्धियोग) से किया गया कर्म ही सर्वोच्च है।"
             },
             "pretext": {
-                "english": "Denouncing selfish action, the Lord instructs Arjuna to take refuge in equanimity.",
-                "hindi": "इस प्रकार कर्मयोग की प्रक्रिया बतलाकर अब सकाम भाव की निन्दा और समभावरूप बुद्धियोग का महत्त्व प्रकट करते हुए भगवान् अर्जुन को उसका आश्रय लेने के लिये आज्ञा देते हैं"
+                "english": "Lord Krishna continues his guidance, maintaining a firm and instructional tone.",
+                "hindi": "श्रीकृष्ण अर्जुन को संबोधित करते हुए, उपदेश के प्रवाह को दृढ़ता के साथ आगे बढ़ाते हैं।"
             }
         },
         "50": {
@@ -1596,16 +1596,16 @@ export const chapter2 = {
                 { "id": "2.50.11", "sanskrit": "कौशलम्", "transliteration": "kauśalam", "english": "skill", "hindi": "कुशलता है अर्थात् कर्मबन्धन से छूटने का उपाय है" }
             ],
             "english": {
-                "text": "Endowed with equanimity, one sheds in this life both good and evil. Therefore, strive for the practice of this Yoga of equanimity. Skill in action lies in (the practice of this) Yoga.",
-                "meaning": "By maintaining an even and unattached mind, a person transcends the karmic reactions of both good and bad deeds. To act beautifully, efficiently, and effectively in the world without getting entangled by the consequencesthat is the true art and skill of Yoga."
+                "text": "Endowed with equanimity, one sheds in this life both good and evil. Therefore, strive for the practice of this Yoga of equanimity. Skill in action lies in (the practice of this) (Yoga)[exp_yoga].",
+                "meaning": "By maintaining an even and unattached mind, a person transcends the karmic reactions of both good and bad deeds. To act beautifully, efficiently, and effectively in the world without getting entangled by the consequencesthat is the true art and skill of (Yoga)[exp_yoga]."
             },
             "hindi": {
                 "text": "समबुद्धि युक्त पुरुष पुण्य और पाप दोनों को इसी लोक में त्याग देता है अर्थात् उनसे मुक्त हो जाता है । इससे तू समत्वरूप योग में लग जा; यह समत्व रूप योग ही कर्मों में कुशलता है अर्थात् कर्मबन्धन से छूटने का उपाय है ।।",
-                "meaning": "जो व्यक्ति सुख-दुख में सम रहता है, वह इस जीवन में ही पाप और पुण्य के बंधनों से मुक्त हो जाता है। इसलिए समता (योग) को धारण करो, क्योंकि बिना किसी आसक्ति के कुशलतापूर्वक अपने कर्तव्यों का पालन करना ही वास्तविक योग है।"
+                "meaning": "जो व्यक्ति सुख-दुख में सम रहता है, वह इस जीवन में ही पाप और पुण्य के बंधनों से मुक्त हो जाता है। इसलिए समता (योग) को धारण करो, क्योंकि बिना किसी आसक्ति के कर्मों में कुशलता पूर्वक अपने कर्मों का पालन करना ही वास्तविक (योग)[exp_yoga] है।"
             },
             "pretext": {
-                "english": "Praising the state of equanimity, the Lord commands Arjuna to fully engage in this form of Yoga.",
-                "hindi": "इस प्रकार अर्जुन को समत्व का आश्रय लेने की आज्ञा देकर अब दो श्लोकों में उस समता रूप बुद्धि से युक्त महापुरुषों की प्रशंसा करते हुए भगवान् अर्जुन को कर्मयोग का अनुष्ठान करने की पुनः आज्ञा देकर उसका फल बतलाते हैं"
+                "english": "Shree Krishna continues His guidance with an encouraging tone.",
+                "hindi": "श्रीकृष्ण अर्जुन को प्रोत्साहित करते हुए अपनी बात जारी रखते हैं।"
             }
         }, "51": {
             "audioData": {
@@ -1683,12 +1683,12 @@ export const chapter2 = {
                 { "id": "2.53.11", "sanskrit": "अवाप्स्यसि", "transliteration": "avāpsyasi", "english": "you will attain", "hindi": "तू प्राप्त हो जायेगा अर्थात् तेरा परमात्मा से नित्य संयोग हो जायेगा" }
             ],
             "english": {
-                "text": "When your intellect, confused by hearing conflicting statements, will rest, steady and undistracted (in meditation) on God, you will then attain Yoga (for lasting union with God).",
-                "meaning": "The mind is often confused by varied interpretations of religious texts and worldly advice. Once the intellect stops wavering and remains firmly anchored in the contemplation of the Supreme, true Yoga (union with God) is achieved."
+                "text": "When your intellect, confused by hearing conflicting statements, will rest, steady and undistracted (in meditation) on God, you will then attain (Yoga)[exp_yoga] (for lasting union with God).",
+                "meaning": "The mind is often confused by varied interpretations of religious texts and worldly advice. Once the intellect stops wavering and remains firmly anchored in the contemplation of the Supreme, true (Yoga)[exp_yoga] (union with God) is achieved."
             },
             "hindi": {
-                "text": "भाँति-भाँति के वचनों को सुनने से विचलित हुई तेरी बुद्धि जब परमात्मा में अचल और स्थिर ठहर जायेगी, तब तू योग को प्राप्त हो जायेगा अर्थात् तेरा परमात्मा से नित्य संयोग हो जायेगा ।।",
-                "meaning": "अनेक प्रकार के मतों और शास्त्रों को सुनकर मन विचलित हो जाता है। परंतु जब बुद्धि इन सब से हटकर केवल ईश्वर में स्थिर और एकाग्र हो जाती है, तब वास्तविक योग (ईश्वर से मिलन) की प्राप्ति होती है।"
+                "text": "भाँति-भाँति के वचनों को सुनने से विचलित हुई तेरी बुद्धि जब परमात्मा में अचल और स्थिर ठहर जायेगी, तब तू (योग)[exp_yoga] को प्राप्त हो जायेगा अर्थात् तेरा परमात्मा से नित्य संयोग हो जायेगा ।।",
+                "meaning": "अनेक प्रकार के मतों और शास्त्रों को सुनकर मन विचलित हो जाता है। परंतु जब बुद्धि इन सब से हटकर केवल ईश्वर में स्थिर और एकाग्र हो जाती है, तब वास्तविक (योग)[exp_yoga] (ईश्वर से मिलन) की प्राप्ति होती है।"
             }
         },
         "54": {
@@ -1721,8 +1721,8 @@ export const chapter2 = {
                 "meaning": "अर्जुन श्रीकृष्ण से पूछते हैं कि जिस व्यक्ति की बुद्धि ईश्वर में पूर्णतः स्थिर हो गई है (स्थितप्रज्ञ), उसकी पहचान क्या है? उसका व्यवहार, बातचीत, और उठना-बैठना एक साधारण मनुष्य से किस प्रकार भिन्न होता है?"
             },
             "pretext": {
-                "english": "Arjuna inquires about the characteristics of an enlightened being.",
-                "hindi": "पूर्वश्लोकों में भगवान् ने यह बात कही कि जब तुम्हारी बुद्धि मोहरूपी दलदल को सर्वथा पारकर जायेगी तथा तुम इस लोक और परलोक के समस्त भोगों से विरक्त हो जाओगे, तुम्हारी बुद्धि परमात्मा में निश्चल ठहर जायेगी, तब तुम परमात्मा को प्राप्त हो जाओगे । इस पर परमात्मा को प्राप्त स्थित प्रज्ञ, सिद्ध योगी के लक्षण और आचरण जानने की इच्छा से अर्जुन पूछते हैं"
+                "english": "Inspired by the talk of equanimity, Arjuna seeks to understand the practical nature of a steady mind.",
+                "hindi": "समत्व की चर्चा से प्रेरित होकर, अर्जुन अब एक स्थिर बुद्धि वाले पुरुष के लक्षणों को जानने की इच्छा करते हैं।"
             }
         },
         "55": {
@@ -1755,8 +1755,8 @@ export const chapter2 = {
                 "meaning": "भगवान अर्जुन के प्रश्न का उत्तर देते हुए कहते हैं कि जब कोई व्यक्ति अपने मन की सभी इच्छाओं और लालसाओं को पूरी तरह त्याग देता है, और बाहरी सुखों की बजाय अपनी ही आत्मा के आनंद में संतुष्ट रहता है, तब उसे 'स्थितप्रज्ञ' (स्थिर बुद्धि वाला) कहा जाता है।"
             },
             "pretext": {
-                "english": "The Lord begins answering Arjuna's questions about the marks of a self-realized soul.",
-                "hindi": "पूर्व श्लोक में अर्जुन ने परमात्मा को प्राप्त हुए सिद्ध योगी के विषय में चार बातें पूछी हैं; इन चारों बातों का उत्तर भगवान् ने अध्याय की समाप्ति पर्यन्त दिया है, बीच में प्रसंगवश दूसरी बातें भी कही हैं । इस अगले श्लोक में अर्जुन के पहले प्रश्न का उत्तर संक्षेप में देते हैं"
+                "english": "The Blessed Lord begins to speak, responding to Arjuna's inquiry with calm authority.",
+                "hindi": "श्री भगवान अब अर्जुन के प्रश्नों का उत्तर देना आरम्भ करते हैं।"
             }
         }, "56": {
             "audioData": {
@@ -1784,8 +1784,8 @@ export const chapter2 = {
                 "meaning": "श्रीकृष्ण बताते हैं कि एक स्थितप्रज्ञ व्यक्ति दुःख आने पर घबराता नहीं है और सुख मिलने पर उसकी कोई लालसा नहीं रखता। वह संसार के राग (आसक्ति), भय और क्रोध से पूर्णतः मुक्त हो चुका होता है।"
             },
             "pretext": {
-                "english": "Elaborating on the marks of an enlightened soul.",
-                "hindi": "स्थित प्रज्ञ के विषय में अर्जुन ने चार बातें पूछी हैं, उनमें से पहला प्रश्न इतना व्यापक है कि उसके बाद के तीनों प्रश्न उसमें अन्तर्भाव हो जाता है। इस दृष्टि से तो अध्याय की समाप्ति पर्यन्त उस एक ही प्रश्न का उत्तर है; पर अन्य तीन प्रश्नों का समझने के लिये ऐसा समझना चाहिये कि अब दो श्लोकों में 'स्थितप्रज्ञ कैसे बोलता है' इस दूसरे प्रश्न का उत्तर दिया जाता है"
+                "english": "Lord Krishna continues with a calm and steady authority.",
+                "hindi": "श्रीकृष्ण अपनी बात को आगे बढ़ाते हुए शांत और स्थिर भाव से कहते हैं।"
             }
         },
         "57": {
@@ -1848,8 +1848,8 @@ export const chapter2 = {
                 "meaning": "श्रीकृष्ण स्थितप्रज्ञ के बैठने का अर्थ कछुए के उदाहरण से समझाते हैं। जैसे कछुआ अपनी रक्षा के लिए अंगों को समेट लेता है, वैसे ही ज्ञानी पुरुष अपनी इंद्रियों को बाहरी विषयों से तुरंत समेटकर अपनी आत्मा में स्थिर कर लेता है।"
             },
             "pretext": {
-                "english": "Having concluded the answer to the second question, 'How does the Yogi of stable mind speak?', the Lord now answers the third question, 'How does he sit?', showing that the absolute control of the senses by a man of stable mind and their withdrawing from their respective objects, free from attachment, is indeed his 'sitting'.",
-                "hindi": "'स्थित बुद्धि वाला योगी कैसे बोलता है ?' इस दूसरे प्रश्न का उत्तर समाप्त करके अब भगवान् 'वह कैसे बैठता है ?' इस तीसरे प्रश्न का उत्तर देते हुए यह दिखलाते हैं कि स्थित प्रज्ञ पुरुष की इन्द्रियों का सर्वथा उसके वश में हो जाना और आसक्ति से रहित होकर अपने-अपने विषयों से उपरत हो जाना ही स्थित प्रज्ञ पुरुष का बैठना है।"
+                "english": "Lord Krishna continues his instruction with calm and steady focus.",
+                "hindi": "श्रीकृष्ण अपनी बात को शांत और स्थिर भाव से आगे बढ़ाते हैं।"
             }
         },
         "59": {
@@ -1879,8 +1879,8 @@ export const chapter2 = {
                 "meaning": "यदि कोई मनुष्य बलपूर्वक इंद्रियों को विषयों से रोक ले, तो वह विषय-भोग तो छोड़ देता है, किन्तु उसके मन की लालसा नहीं मिटती। परन्तु जब मनुष्य को ईश्वर का परम आनंद प्राप्त हो जाता है, तो उसकी वह सूक्ष्म लालसा (आसक्ति) भी जड़ से समाप्त हो जाती है।"
             },
             "pretext": {
-                "english": "Clarifying a common doubt regarding sense-restraint, the Lord explains the unique mastery of the enlightened soul.",
-                "hindi": "पूर्व श्लोक में तीसरे प्रश्न का उत्तर देते हुए स्थित प्रज्ञ के बैठने का प्रकार बतलाकर अब उसमें होने वाली शंकाओं का समाधान करने के लिये अन्य प्रकार से किये जाने वाले इन्द्रिय संयम की अपेक्षा स्थितप्रज्ञ के इन्द्रिय संयम की विलक्षणता दिखलाते हैं"
+                "english": "Lord Krishna continues his guidance with a serene and insightful tone.",
+                "hindi": "श्रीकृष्ण शांत और अंतर्दृष्टिपूर्ण भाव से अपना मार्गदर्शन जारी रखते हैं।"
             }
         },
         "60": {
@@ -1910,8 +1910,8 @@ export const chapter2 = {
                 "meaning": "इंद्रियां स्वभाव से ही इतनी उग्र और चंचल होती हैं कि वे संयम का प्रयास करने वाले ज्ञानवान पुरुष के मन को भी बलपूर्वक खींचकर भटका सकती हैं, यदि अंतर्मन से आसक्ति समाप्त न हुई हो।"
             },
             "pretext": {
-                "english": "Pointing out the danger of suppressing the senses without removing internal attachment.",
-                "hindi": "आसक्ति का नाश और इन्द्रिय संयम नहीं होने से क्या हानि है ? इस पर कहते हैं"
+                "english": "Lord Krishna continues his instruction with a tone of earnest caution.",
+                "hindi": "श्रीकृष्ण अपनी बात को गंभीर और चेतावनी भरे स्वर में आगे बढ़ाते हैं।"
             }
         },
         "61": {
@@ -1943,8 +1943,8 @@ export const chapter2 = {
                 "meaning": "इंद्रियों पर विजय पाने का एकमात्र उपाय ईश्वर की शरण लेना है। भगवान कहते हैं कि साधक को चाहिए कि वह अपनी चंचल इंद्रियों को रोककर अपना मन पूरी तरह मुझमें (परमात्मा में) लगा दे। जिसकी इंद्रियां इस प्रकार वश में हो जाती हैं, उसी की बुद्धि सच्ची स्थिरता प्राप्त करती है।"
             },
             "pretext": {
-                "english": "Highlighting the necessity of devotion alongside self-control to stabilize the intellect.",
-                "hindi": "इस प्रकार इन्द्रिय संयम की आवश्यकता का प्रतिपादन करके अब भगवान् साधक का कर्तव्य बतलाते हुए पुनः इन्द्रिय संयम को स्थितप्रज्ञ-अवस्था का हेतु बतलाते हैं"
+                "english": "Krishna speaks with a serene and authoritative tone, guiding the seeker toward inner focus.",
+                "hindi": "श्रीकृष्ण शांत और अधिकारपूर्ण स्वर में बोलते हैं, साधक को आंतरिक एकाग्रता की ओर ले जाते हुए।"
             }
         },
         "62": {
@@ -1975,8 +1975,8 @@ export const chapter2 = {
                 "meaning": "भगवान मनुष्य के पतन का क्रम बताते हैं: भौतिक सुखों के बारे में बार-बार सोचने से उनमें लगाव पैदा होता है। लगाव से उन्हें पाने की प्रबल इच्छा जन्म लेती है, और जब उस इच्छा के पूरे होने में कोई बाधा आती है, तो मनुष्य को क्रोध आता है।"
             },
             "pretext": {
-                "english": "Detailing the sequence of downfall that begins when the mind is not fixed on the Lord.",
-                "hindi": "उपर्युक्त प्रकार से मनसहित इन्द्रियों को वश में न करने से और भगवत्परायण न होने से क्या हानि है ? यह बात अब दो श्लोकों में बतलायी जाती है"
+                "english": "Krishna continues his instruction, his tone shifting to one of grave caution.",
+                "hindi": "श्रीकृष्ण अपना उपदेश जारी रखते हैं, उनका स्वर अब गंभीर और चेतावनी भरा हो जाता है।"
             }
         },
         "63": {
@@ -2031,8 +2031,8 @@ export const chapter2 = {
                 "meaning": "सच्चा साधक संसार से भागता नहीं है। वह संसार में रहता है और वस्तुओं का उपयोग भी करता है, परन्तु क्योंकि उसकी इन्द्रियां उसके वश में होती हैं और उनमें कोई राग या द्वेष नहीं होता, इसलिए उसे परम मानसिक शांति और आनंद की प्राप्ति होती है।"
             },
             "pretext": {
-                "english": "Answering how a person of stable mind moves and interacts in the world.",
-                "hindi": "इस प्रकार मनसहित इन्द्रियों को वश में न करने वाले मनुष्य के पतन का क्रम बतलाकर अब भगवान् 'स्थितप्रज्ञ योगी कैसे चलता है' इस चौथे प्रश्न का उत्तर आरम्भ करते हुए पहले दो श्लोकों में जिसके मन और इन्द्रियाँ वश में हैं, ऐसे साधक द्वारा विषयों में विचरण किये जाने का प्रकार और उसका फल बतलाते हैं"
+                "english": "Krishna offers a contrast to the previous warning, his tone becoming composed and reassuring.",
+                "hindi": "पिछली चेतावनी के विपरीत, श्रीकृष्ण अब संयमित और आश्वस्त स्वर में समाधान प्रस्तुत करते हैं।"
             }
         },
         "65": {
@@ -2090,8 +2090,8 @@ export const chapter2 = {
                 "meaning": "जिस मनुष्य ने अपने मन और इंद्रियों को वश में नहीं किया है, उसकी बुद्धि कभी स्थिर नहीं हो सकती। स्थिर बुद्धि के बिना परमात्मा में ध्यान या श्रद्धा (भावना) नहीं जगती। बिना भगवान के ध्यान के मनुष्य को शांति नहीं मिल सकती, और जिसके मन में शांति नहीं है, उसे सच्चा सुख भला कैसे प्राप्त हो सकता है?"
             },
             "pretext": {
-                "english": "Contrasting the peaceful state of a self-controlled person with the restless state of an undisciplined one.",
-                "hindi": "इस प्रकार मन और इन्द्रियों को वश में करके अनासक्त भाव से इन्द्रियों द्वारा व्यवहार करने वाले साधक को सुख शान्ति और स्थितप्रज्ञ-अवस्था प्राप्त होने की बात कहकर अब दो श्लोकों द्वारा इससे विपरीत जिसके मन-इन्द्रिय जीते हुए नहीं हैं, ऐसे विषयासक्त मनुष्य में सुख शान्ति का अभाव दिखलाकर विषयों के संग से उसकी बुद्धि के विचलित हो जाने का प्रकार बतलाते हैं"
+                "english": "Krishna’s tone becomes analytical and firm as he presents a sharp contrast.",
+                "hindi": "श्रीकृष्ण का स्वर अब विश्लेषणात्मक और दृढ़ हो जाता है क्योंकि वे एक स्पष्ट विषमता प्रस्तुत करते हैं।"
             }
         },
         "67": {
@@ -2124,8 +2124,8 @@ export const chapter2 = {
                 "meaning": "जिस प्रकार समुद्र में चलती हुई नाव को एक तेज हवा का झोंका अपने लक्ष्य से भटका देता है, उसी प्रकार यदि मन किसी एक भी सांसारिक विषय की ओर भागने वाली इंद्रिय के पीछे लग जाए, तो वह व्यक्ति की सारी बुद्धि और विवेक को नष्ट कर देता है।"
             },
             "pretext": {
-                "english": "Giving an analogy to show how a single uncontrolled sense can ruin a seeker's intellect.",
-                "hindi": "इस प्रकार अयुक्त पुरुष की बुद्धि के विचलित होने का प्रकार बतलाकर अब पुनः स्थितप्रज्ञ अवस्था की प्राप्ति में सब प्रकार से इन्द्रिय संयम की विशेष आवश्यकता सिद्ध करते हुए स्थितप्रज्ञ पुरुष की अवस्था का वर्णन करते हैं"
+                "english": "Krishna speaks with a tone of decisive conviction.",
+                "hindi": "श्रीकृष्ण अब पूर्ण दृढ़ता और निर्णायक भाव से कहते हैं।"
             }
         },
         "68": {
@@ -2147,15 +2147,16 @@ export const chapter2 = {
             ],
             "english": {
                 "text": "Therefore, (Arjuna)[exp_arjuna], he whose senses are completely restrained from their objects, is said to have a stable mind.",
-                "meaning": "Reaffirming the supreme importance of absolute sense control, Lord Krishna concludes that true stability of mind belongs exclusively to the one who has successfully and consistently withdrawn their senses from the temptations of the material world in all situations."
+                "meaning": "Considering the terrible power of the senses, Lord Krishna clarifies that true stability of mind (Sthitaprajna) belongs only to the one who has completely withdrawn all their senses from every kind of worldly attraction."
+
             },
             "hindi": {
                 "text": "इसलिये हे महाबाहो (अर्जुन)[exp_arjuna] ! जिस पुरुष की इन्द्रियाँ इन्द्रियों के विषयों से सब प्रकार निग्रह की हुई हैं, उसी की बुद्धि स्थिर है ।।",
                 "meaning": "इंद्रियों की भयंकर शक्ति को देखते हुए, श्रीकृष्ण स्पष्ट करते हैं कि केवल उसी व्यक्ति की बुद्धि स्थिर (स्थितप्रज्ञ) मानी जा सकती है, जिसने अपनी सभी इंद्रियों को हर प्रकार के सांसारिक आकर्षणों से पूरी तरह अपने वश में कर लिया है।"
             },
             "pretext": {
-                "english": "Concluding the necessity of sense-control to maintain a steady intellect.",
-                "hindi": "इस बात को रात और दिन के दृष्टान्त से समझाते हुए उनकी स्वाभाविक स्थिति का वर्णन करते हैं"
+                "english": "Krishna speaks with a tone of definitive authority and steady conviction.",
+                "hindi": "श्रीकृष्ण अब पूर्ण अधिकार और स्थिर दृढ़ता के साथ अपनी बात कहते हैं।"
             }
         },
         "69": {
@@ -2179,16 +2180,16 @@ export const chapter2 = {
                 { "id": "2.69.13", "sanskrit": "मुनेः", "transliteration": "muneḥ", "english": "seer / sage", "hindi": "मुनि के लिये" }
             ],
             "english": {
-                "text": "That which is night to all beings, in that state (of Divine Knowledge and supreme Bliss) the God-realized Yogi keeps awake. And that (the ever-changing, transient worldly happiness) in which all beings keep awake is night to the seer.",
-                "meaning": "This verse beautifully contrasts the perspectives of a worldly person and a spiritually awakened sage. What ordinary people consider real and actively pursue (material wealth, sensual pleasures) is seen as darkness and ignorance (night) by the wise. Conversely, the profound spiritual reality of the soul, which is invisible and obscure (like night) to materialistic people, is the bright, awakened reality for the enlightened sage."
+                "text": "That which is night to all beings, in that state (of Divine Knowledge and supreme Bliss) the (God-realized Yogi)[exp_god_realized_yogi] keeps awake. And that (the ever-changing, transient worldly happiness) in which all beings keep awake is night to the seer.",
+                "meaning": "This verse contrasts the worldly and the wise: what the ignorant pursue as reality is darkness to the sage, while the spiritual truth obscure to the masses is the awakened reality for the enlightened."
             },
             "hindi": {
-                "text": "सम्पूर्ण प्राणियों के लिये जो रात्रि के समान है, उस नित्य ज्ञानस्वरूप परमानन्द की प्राप्ति में स्थितप्रज्ञ योगी जागता है और जिस नाशवान् सांसारिक सुख की प्राप्ति में सब प्राणी जागते हैं, परमात्मा के तत्त्व को जानने वाले मुनि के लिये वह रात्रि के समान है ।।",
+                "text": "सम्पूर्ण प्राणियों के लिये जो रात्रि के समान है, उस नित्य ज्ञानस्वरूप परमानन्द की प्राप्ति में (स्थितप्रज्ञ योगी)[exp_god_realized_yogi] जागता है और जिस नाशवान् सांसारिक सुख की प्राप्ति में सब प्राणी जागते हैं, परमात्मा के तत्त्व को जानने वाले मुनि के लिये वह रात्रि के समान है ।।",
                 "meaning": "सांसारिक और आध्यात्मिक दृष्टिकोण में विरोधाभास: अज्ञानी मनुष्य जिन सांसारिक भोगों और सुखों में दिन-रात जागा रहता है, वे एक ज्ञानी पुरुष के लिए अज्ञानरूपी अंधकार (रात्रि) के समान हैं। और जिस आध्यात्मिक सत्य से साधारण मनुष्य अनभिज्ञ रहता है (जो उनके लिए रात्रि है), उसी दिव्य सत्य में स्थितप्रज्ञ योगी सदैव जागृत रहता है।"
             },
             "pretext": {
-                "english": "Contrasting the awareness of a sage with that of ordinary materialistic beings.",
-                "hindi": "इस प्रकार रात्रि के रूपक से ज्ञानी और अज्ञानियों की स्थिति का भेद दिखलाकर अब समुद्र की उपमा से भेद भाव दिखलाते हैं कि ज्ञानी परम शान्ति को प्राप्त होता है और भोगों की कामना वाला अज्ञानी मनुष्य शान्ति को प्राप्त नहीं होता"
+                "english": "Krishna adopts a contemplative and profound tone, transitioning between metaphors of spiritual awareness.",
+                "hindi": "श्रीकृष्ण एक चिंतनशील और गहरा स्वर अपनाते हैं, जो आध्यात्मिक बोध के रूपकों के बीच परिवर्तन करते हैं।"
             }
         },
         "70": {
@@ -2216,15 +2217,15 @@ export const chapter2 = {
             ],
             "english": {
                 "text": "As the waters of different rivers enter the ocean, which though full on all sides remains undisturbed, likewise he in whom all enjoyments merge themselves attains peace; not he who hankers after such enjoyments.",
-                "meaning": "The ultimate state of peace is beautifully illustrated using the ocean. Countless rivers constantly flow into the ocean, yet the ocean never overflows or loses its calm majesty. Similarly, an enlightened mind experiences the continuous flow of sensory inputs from the world but remains utterly still and unaffected within. True peace comes from this vast inner fullness, not from desperately trying to fulfill endless desires."
+                "meaning": "Like the ocean staying calm despite incoming rivers, an enlightened mind remains still amidst sensory inputs. True peace comes from inner fullness, not from chasing desires.",
             },
             "hindi": {
                 "text": "जैसे नाना नदियों के जल सब ओर से परिपूर्ण, अचल प्रतिष्ठा वाले, समुद्र में उसको विचलित न करते हुए ही समा जाते हैं, वैसे ही सब भोग जिस स्थितप्रज्ञ पुरुष में किसी प्रकार का विकार उत्पन्न किये बिना ही समा जाते हैं, वही पुरुष शान्ति को प्राप्त होता है, भोगों को चाहने वाला नहीं ।।",
                 "meaning": "जिस प्रकार अनगिनत नदियाँ निरंतर समुद्र में गिरती हैं, फिर भी समुद्र अपनी मर्यादा नहीं लांघता और शांत रहता है, ठीक उसी प्रकार ज्ञानी पुरुष के जीवन में अनेक सांसारिक भोग आते हैं, पर वे उसके मन में कोई विकार या हलचल पैदा नहीं करते। केवल वही व्यक्ति परम शांति प्राप्त करता है, न कि वह जो सांसारिक इच्छाओं के पीछे भागता रहता है।"
             },
             "pretext": {
-                "english": "Using the analogy of the ocean to explain how a wise sage attains supreme peace despite worldly interactions.",
-                "hindi": "'स्थितप्रज्ञ कैसे चलता है ?' अर्जुन का यह चौथा प्रश्न परमात्मा को प्राप्त हुए पुरुष के विषय में ही था; अब उस प्रश्न का स्पष्ट उत्तर देते हुए स्थितप्रज्ञ पुरुष के आचरण का प्रकार बतलाते हैं"
+                "english": "Krishna speaks with calm authority, transitioning to the inner composure of the wise.",
+                "hindi": "श्रीकृष्ण शांत भाव से ज्ञानी पुरुष की आंतरिक स्थिरता के विषय में कहते हैं।"
             }
         },
         "71": {
@@ -2248,15 +2249,15 @@ export const chapter2 = {
             ],
             "english": {
                 "text": "He who has given up all desires, and moves free from attachment, egoism and thirst for enjoyment attains peace.",
-                "meaning": "The ultimate formula for mental peace is outlined here. A person attains absolute tranquility when they systematically shed three major psychological burdens: 'Kama' (desire for what one does not have), 'Mamata' (attachment/ownership of what one has), and 'Ahamkara' (ego or the false sense of 'I'). Walking through life without these weights is true spiritual freedom."
+                "meaning": "Peace is attained by shedding the burdens of desire, attachment, and ego.",
             },
             "hindi": {
                 "text": "जो पुरुष सम्पूर्ण कामनाओं को त्यागकर ममतारहित, अहङ्काररहित और स्पृहारहित हुआ विचरता है, वही शान्ति को प्राप्त होता है अर्थात् वह शान्ति को प्राप्त है ।।",
                 "meaning": "सच्ची शांति केवल उसी व्यक्ति को मिलती है जिसने अपनी सभी सांसारिक इच्छाओं का त्याग कर दिया हो, जिसे किसी वस्तु से कोई लगाव (मेरापन) न हो, और जिसके मन में 'मैं' (अहंकार) का भाव पूरी तरह से मिट चुका हो।"
             },
             "pretext": {
-                "english": "Summarizing the method by which a realized soul walks in the world.",
-                "hindi": "इस प्रकार अर्जुन के चारों प्रश्नों का उत्तर देने के अनन्तर अब स्थितप्रज्ञ पुरुष का महत्त्व बतलाते हुए इस अध्याय का उपसंहार करते हैं"
+                "english": "Krishna speaks with serene clarity, transitioning with a sense of steady conviction.",
+                "hindi": "श्रीकृष्ण शांत स्पष्टता के साथ बोलते हैं, स्थिर दृढ़ता के भाव के साथ संक्रमण करते हुए।"
             }
         },
         "72": {
@@ -2277,20 +2278,20 @@ export const chapter2 = {
                 { "id": "2.72.10", "sanskrit": "अस्याम्", "transliteration": "asyām", "english": "in this", "hindi": "इस ब्राह्मी स्थिति में" },
                 { "id": "2.72.11", "sanskrit": "अन्त-काले", "transliteration": "anta-kāle", "english": "at the last moment", "hindi": "अन्त काल में" },
                 { "id": "2.72.12", "sanskrit": "अपि", "transliteration": "api", "english": "even", "hindi": "भी" },
-                { "id": "2.72.13", "sanskrit": "ब्रह्म-निर्वाणम्", "transliteration": "brahma-nirvāṇam", "english": "Brahmic Bliss", "hindi": "ब्रह्मानन्द को" },
+                { "id": "2.72.13", "sanskrit": "ब्रह्म-निर्वाणम्", "transliteration": "brahma-nirvāṇam", "english": "Brahmic Bliss", "hindi": "ब्रह्मानन्द को", "explanationRef": "exp_brahmic_bliss" },
                 { "id": "2.72.14", "sanskrit": "ऋच्छति", "transliteration": "ṛcchati", "english": "attains", "hindi": "प्राप्त हो जाता है" }
             ],
             "english": {
-                "text": "(Arjuna)[exp_partha], such is the state of the God-realized soul; having reached this state, he overcomes delusion. And established in this state, even at the last moment, he attains Brahmic Bliss.",
+                "text": "(Arjuna)[exp_partha], such is the state of the God-realized soul; having reached this state, he overcomes delusion. And established in this state, even at the last moment, he attains (Brahmic Bliss)[exp_brahmic_bliss].",
                 "meaning": "Concluding the profound teachings of Chapter 2, Lord Krishna names this ultimate state of egoless, desireless awareness as 'Brahmi Sthiti' (the divine state). Once a person achieves this enlightenment, they can never fall back into the darkness of material delusion. Even if this realization dawns at the very last moment of life, the soul is instantly liberated into supreme, eternal bliss."
             },
             "hindi": {
-                "text": "हे (अर्जुन)[exp_partha] ! यह ब्रह्म को प्राप्त पुरुष की स्थिति है, इसको प्राप्त होकर योगी कभी मोहित नहीं होता और अन्त काल में भी इस ब्राह्मी स्थिति में स्थित होकर ब्रह्मानन्द को प्राप्त हो जाता है ।।\n\nॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे साङ्ख्ययोगो नाम द्वितीयोऽध्यायः॥ २ ॥",
+                "text": "हे (अर्जुन)[exp_partha] ! यह ब्रह्म को प्राप्त पुरुष की स्थिति है, इसको प्राप्त होकर योगी कभी मोहित नहीं होता और अन्त काल में भी इस ब्राह्मी स्थिति में स्थित होकर (ब्रह्मानन्द)[exp_brahmic_bliss] को प्राप्त हो जाता है ।।\n\nॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे साङ्ख्ययोगो नाम द्वितीयोऽध्यायः॥ २ ॥",
                 "meaning": "श्रीकृष्ण द्वितीय अध्याय का समापन करते हुए कहते हैं कि उपर्युक्त स्थिति साक्षात् ईश्वर-प्राप्ति (ब्राह्मी स्थिति) की अवस्था है। इसे पा लेने के बाद मनुष्य कभी संसार के मोह में नहीं फंसता। यदि जीवन के अंतिम क्षण में भी कोई इस दिव्य चेतना में स्थित हो जाए, तो वह जन्म-मरण के बंधन से मुक्त होकर परम ब्रह्मानंद (मोक्ष) को प्राप्त कर लेता है।"
             },
             "pretext": {
-                "english": "Concluding the chapter, Lord Krishna names this supreme spiritual state and its ultimate reward.",
-                "hindi": "इस प्रकार अर्जुन के चारों प्रश्नों का उत्तर देने के अनन्तर अब स्थितप्रज्ञ पुरुष का महत्त्व बतलाते हुए इस अध्याय का उपसंहार करते हैं"
+                "english": "Krishna concludes his discourse with a sense of serene finality.",
+                "hindi": "श्रीकृष्ण अत्यंत शांति और पूर्णता के भाव के साथ अपनी बात समाप्त करते हैं।"
             }
         }
     }

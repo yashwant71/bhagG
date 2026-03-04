@@ -14,10 +14,11 @@ export const explanations = [
     "termHindi": "ब्रह्मा",
     "desc": "The revered Creator among the (Trimurti)[exp_trinity], through whom creation manifests.",
     "descHindi": "त्रिमूर्ति में पूजनीय सृष्टिकर्ता, जिनके द्वारा सृष्टि प्रकट होती है।",
-    "descDetail": "In the (Puranas)[exp_puranas], Lord Brahma manifests the worlds and beings at the beginning of each cosmic cycle (kalpa). He is depicted with four faces symbolizing the four Vedas. Though less widely worshipped independently, he is eternally honored as Prajapati, the lord of creation.",
-    "descDetailHindi": "(पुराणों)[exp_puranas] में भगवान ब्रह्मा प्रत्येक कल्प के प्रारंभ में लोकों और प्राणियों की सृष्टि करते हैं। उन्हें चार वेदों के प्रतीक रूप में चार मुखों वाला दर्शाया जाता है। यद्यपि उनकी स्वतंत्र उपासना कम प्रचलित है, वे सदा प्रजापति के रूप में पूजनीय हैं।",
+    "descDetail": "In the (Puranas)[exp_puranas], Lord Brahma manifests the worlds and beings at the beginning of each cosmic cycle (kalpa). He is depicted with four faces symbolizing the four (Vedas)[exp_vedas]. Though less widely worshipped independently, he is eternally honored as Prajapati, the lord of creation.",
+    "descDetailHindi": "(पुराणों)[exp_puranas] में भगवान ब्रह्मा प्रत्येक कल्प के प्रारंभ में लोकों और प्राणियों की सृष्टि करते हैं। उन्हें चार (वेदों)[exp_vedas] के प्रतीक रूप में चार मुखों वाला दर्शाया जाता है। यद्यपि उनकी स्वतंत्र उपासना कम प्रचलित है, वे सदा प्रजापति के रूप में पूजनीय हैं।",
     "category": "deity"
   },
+
   {
     "id": "exp_puranas",
     "term": "Puranas",
@@ -740,6 +741,13 @@ export const explanations = [
     "descHindi": "वैदिक सामाजिक व्यवस्था में पुरोहित वर्ग का एक सदस्य, जो अध्ययन, अध्यापन और पूजा के लिए समर्पित है।"
   },
   {
+    "id": "exp_kshatriya",
+    "term": "Kshatriya",
+    "termHindi": "क्षत्रिय",
+    "desc": "A member of the warrior class in the Vedic social order, dedicated to military service and defense.",
+    "descHindi": "वैदिक सामाजिक व्यवस्था में राजकुमारी वर्ग का एक सदस्य, जो रक्षा और रक्षण के लिए समर्पित है।"
+  },
+  {
     "id": "exp_somadatta",
     "term": "Somadatta",
     "termHindi": "सोमदत्त",
@@ -880,9 +888,113 @@ export const explanations = [
     "descHindi": "मानव इंद्रियों का अंतर्निहित चंचल, शक्तिशाली और व्याकुल करने वाला स्वभाव।",
     "descDetail": "The senses are described as 'Pramathini' (turbulent) because they have the sheer force to violently sweep away the discrimination and self-control of even a highly intelligent and striving seeker.",
     "descDetailHindi": "इंद्रियों को 'प्रमाथीनि' (मथने वाली) कहा गया है क्योंकि उनमें इतनी शक्ति होती है कि वे यत्न करने वाले एक अत्यंत बुद्धिमान साधक के विवेक और आत्म-नियंत्रण को भी बलपूर्वक हर कर ले जाती हैं।"
-  }
+  },
+  {
+    "id": "exp_brahmic_bliss",
+    "term": "Brahmic Bliss",
+    "termHindi": "ब्रह्मानन्द",
+    "desc": "The ultimate state of egoless, desireless awareness, where the mind is free from attachment and delusion.",
+    "descHindi": "अहंकार और मोहित नहीं होने वाली स्थिति, जहाँ मन संसार के मोहों से अपनी आंतरिक स्थिरता को बचाता है।",
+    "descDetail": "The ultimate state of egoless, desireless awareness, where the mind is free from attachment and delusion.",
+    "descDetailHindi": "अहंकार और मोहित नहीं होने वाली स्थिति, जहाँ मन संसार के मोहों से अपनी आंतरिक स्थिरता को बचाता है।"
+  },
+  {
+    "id": "exp_god_realized_yogi",
+    "term": "God-Realized Yogi",
+    "termHindi": "परमात्मा के तत्त्व को जानने वाले योगी",
+    "desc": "A yogi who has realized the ultimate truth of the universe and has transcended all worldly attachments and delusions.",
+    "descHindi": "एक योगी जो विश्व का अंतर्गत सत्य को प्राप्त कर लेता है और सांसारिक आंसुओं से अपनी आंतरिक स्थिरता को बचाता है।",
+    "descDetail": "A yogi who has realized the ultimate truth of the universe and has transcended all worldly attachments and delusions.",
+    "descDetailHindi": "एक योगी जो विश्व का अंतर्गत सत्य को प्राप्त कर लेता है और सांसारिक आंसुओं से अपनी आंतरिक स्थिरता को बचाता है।"
+  },
+
+  {
+    "id": "exp_vedas",
+    "term": "Vedas",
+    "termHindi": "वेद",
+    "desc": "The most ancient and authoritative scriptures of Hinduism/Sanatana Dharma, containing divine knowledge, hymns, and rituals.",
+    "descHindi": "हिंदू धर्म के सबसे प्राचीन और प्रामाणिक धर्मग्रंथ, जिनमें ईश्वरीय ज्ञान, मंत्र और यज्ञ-विधान का संग्रह है।",
+    "descDetail": "The Vedas are the foundational and most sacred texts of Sanatana Dharma. They are divided into four parts: (Rigveda)[exp_rigveda], (Yajurveda)[exp_yajurveda], (Samaveda)[exp_samaveda], and (Atharvaveda)[exp_atharvaveda]. They encompass profound spiritual philosophy, hymns for praising the Divine, rules for rituals (Yajnas)[exp_yajnas], and the ultimate knowledge of the Supreme Truth (Upanishads)[exp_upanishads].",
+    "descDetailHindi": "वेद सनातन धर्म के सबसे प्राचीन और पवित्र मूल ग्रंथ हैं, जिनका ज्ञान प्राचीन ऋषियों को गहन ध्यान की अवस्था में साक्षात् ईश्वर से प्राप्त हुआ था (अपौरुषेय)। इन्हें चार भागों में बाँटा गया है: (ऋग्वेद)[exp_rigveda], (यजुर्वेद)[exp_yajurveda], (सामवेद)[exp_samaveda], और (अथर्ववेद)[exp_atharvaveda]। इनमें परमेश्वर की स्तुति के लिए मंत्र, (यज्ञों)[exp_yajnas] के नियम, ब्रह्मांडीय रहस्य और परम सत्य (उपनिषद/वेदांत)[exp_upanishads] का गहन दार्शनिक वर्णन है।"
+  },
+  {
+    "id": "exp_rigveda",
+    "term": "Rigveda",
+    "termHindi": "ऋग्वेद",
+    "desc": "The oldest and most foundational of the four Vedas, consisting of ancient Sanskrit hymns praising the cosmic deities.",
+    "descHindi": "चार वेदों में सबसे प्राचीन और मूल वेद, जिसमें लौकिक और ब्रह्मांडीय देवताओं की स्तुति के लिए मंत्र (सूक्त) संकलित हैं।",
+    "descDetail": "The Rigveda is the oldest known Vedic Sanskrit text. It is a vast collection of hymns (Suktas) dedicated to various deities like Agni, Indra, and Surya. It forms the philosophical and spiritual foundation of Hinduism, focusing on prayer, cosmic order (Rta), and divine contemplation.",
+    "descDetailHindi": "ऋग्वेद सबसे प्राचीन ज्ञात वैदिक संस्कृत ग्रंथ है। यह अग्नि, इंद्र, सूर्य आदि देवताओं को समर्पित भजनों (सूक्तों) का एक विशाल संग्रह है। यह हिंदू धर्म का दार्शनिक और आध्यात्मिक आधार है, जो प्रार्थना, ब्रह्मांडीय व्यवस्था (ऋत) और ईश्वरीय चिंतन पर केंद्रित है।"
+  },
+  {
+    "id": "exp_yajurveda",
+    "term": "Yajurveda",
+    "termHindi": "यजुर्वेद",
+    "desc": "The Veda of rituals and sacrifices, containing prose mantras and detailed instructions for performing sacred ceremonies.",
+    "descHindi": "अनुष्ठानों और यज्ञों का वेद, जिसमें पवित्र कर्मकांडों को संपन्न करने के लिए गद्य मंत्र और विस्तृत निर्देश दिए गए हैं।",
+    "descDetail": "Known as the manual of the priests, the Yajurveda provides the practical, ritualistic application of the Vedic hymns. It is divided into the Shukla (White) and Krishna (Black) Yajurveda, offering precise guidelines for (Yajna)[exp_yajna] to maintain cosmic harmony and achieve spiritual purification.",
+    "descDetailHindi": "पुरोहितों के मार्गदर्शक ग्रंथ के रूप में जाना जाने वाला यजुर्वेद वैदिक मंत्रों के व्यावहारिक और कर्मकांडीय उपयोग को दर्शाता है। इसे शुक्ल और कृष्ण यजुर्वेद में विभाजित किया गया है। यह ब्रह्मांडीय संतुलन बनाए रखने और आध्यात्मिक शुद्धि प्राप्त करने के लिए (यज्ञ)[exp_yajna] (हवन) के सटीक नियम प्रदान करता है।"
+  },
+  {
+    "id": "exp_samaveda",
+    "term": "Samaveda",
+    "termHindi": "सामवेद",
+    "desc": "The Veda of melodies and chants, containing musical verses intended to be sung during sacred rituals.",
+    "descHindi": "मधुर धुनों और गायन का वेद, जिसमें पवित्र यज्ञों के दौरान गाए जाने वाले संगीतमय मंत्रों का संग्रह है।",
+    "descDetail": "The Samaveda is deeply connected to the (Rigveda)[exp_rigveda], taking its hymns and setting them to rhythmic melodies. It is considered the root of Indian classical music and dance.",
+    "descDetailHindi": "सामवेद का (ऋग्वेद)[exp_rigveda] से गहरा संबंध है; इसमें ऋग्वेद के मंत्रों को लयबद्ध धुनों में पिरोया गया है। इसे भारतीय शास्त्रीय संगीत और कला का मूल माना जाता है।"
+  },
+  {
+    "id": "exp_atharvaveda",
+    "term": "Atharvaveda",
+    "termHindi": "अथर्ववेद",
+    "desc": "The fourth Veda, dealing with practical aspects of life, including healing, medicine, and protection against negative forces.",
+    "descHindi": "चौथा वेद, जो जीवन के व्यावहारिक पहलुओं, जैसे चिकित्सा, आयुर्वेद और नकारात्मक शक्तियों से सुरक्षा के उपायों से संबंधित है।",
+    "descDetail": "Unlike the first three Vedas which focus heavily on Yajna, the Atharvaveda addresses the daily life of society. It contains hymns for healing, longevity, marriage, and prosperity. It is highly significant for being the ancient source of (Ayurveda)[exp_ayurveda] (the science of life and medicine) and practical (statecraft)[exp_statecraft].",
+    "descDetailHindi": "पहले तीन वेदों के विपरीत, जो मुख्य रूप से यज्ञ पर केंद्रित हैं, अथर्ववेद समाज के दैनिक जीवन को संबोधित करता है। इसमें रोग निवारण, दीर्घायु, विवाह और समृद्धि के लिए मंत्र हैं। यह (आयुर्वेद)[exp_ayurveda] (जीवन और चिकित्सा का विज्ञान) और व्यावहारिक (कूटनीति)[exp_statecraft] का प्राचीन स्रोत होने के कारण अत्यंत महत्वपूर्ण है।"
+  },
+
+  {
+    "id": "exp_ayurveda",
+    "term": "Ayurveda",
+    "termHindi": "आयुर्वेद",
+    "desc": "The ancient Indian science of life, health, and holistic medicine, rooted in the Vedic tradition.",
+    "descHindi": "प्राचीन भारतीय चिकित्सा पद्धति और समग्र जीवन का विज्ञान, जो शारीरिक, मानसिक और आध्यात्मिक स्वास्थ्य पर केंद्रित है।",
+    "descDetail": "Derived from the Sanskrit words 'Ayur' (life) and 'Veda' (knowledge), Ayurveda is an Upaveda (ancillary science) closely associated with the (Atharvaveda)[exp_atharvaveda]. It focuses not merely on curing diseases but on maintaining a perfect balance between the body, mind, and spirit. It teaches how to live in harmony with the laws of nature by balancing the three vital energies (Doshas)[exp_doshas]: Vata, Pitta, and Kapha.",
+    "descDetailHindi": "संस्कृत के 'आयुर्' (जीवन) और 'वेद' (ज्ञान) शब्दों से मिलकर बना (आयुर्वेद)[exp_ayurveda] (जीवन और चिकित्सा का विज्ञान), (अथर्ववेद)[exp_atharvaveda] से जुड़ा एक उपवेद है। इसका मुख्य उद्देश्य केवल रोगों का उपचार करना नहीं, बल्कि शरीर, मन और आत्मा का समग्र संतुलन बनाए रखकर स्वस्थ जीवन जीना है। यह प्रकृति के नियमों के अनुसार जीवन शैली अपनाने और शरीर के तीन मुख्य (दोषों)[exp_doshas] (वात, पित्त और कफ) को संतुलित रखने का गहन ज्ञान प्रदान करता है।"
+  },
 
 
 
+  //need improvement
+  {
+    "id": "exp_doshas",
+    "term": "Doshas",
+    "termHindi": "दोष",
+    "desc": "The three vital energies in the body that maintain balance and harmony.",
+    "descHindi": "शरीर में तीन मुख्य दोषों (दोषों)[exp_doshas] (वात, पित्त और कफ) जो शरीर, मन और आत्मा का समग्र संतुलन बनाए रखने का गहन ज्ञान प्रदान करता है।"
+  },
+  {
+    "id": "exp_statecraft",
+    "term": "Statecraft (Rajadharma / Niti)",
+    "termHindi": "कूटनीति / राजधर्म",
+    "desc": "The art and science of governance, political strategy, and the righteous administration of a kingdom.",
+    "descHindi": "राज्य के प्रशासन, कूटनीति और न्यायपूर्ण शासन का प्राचीन विज्ञान, जिसे राजधर्म या नीतिशास्त्र भी कहा जाता है।",
+    "descDetail": "In ancient Indian texts like the Mahabharata, Arthashastra, and various Smritis, statecraft encompasses the ethical, economic, and strategic principles required to govern effectively. It includes diplomacy, warfare, justice, and the protection of citizens. In the context of the Bhagavad Gita, it is intimately tied to 'Rajadharma'—the sacred and moral duty of a Kshatriya (warrior/ruler) to uphold societal order (Dharma) and ensure the welfare of the people.",
+    "descDetailHindi": "प्राचीन भारतीय ग्रंथों जैसे महाभारत, चाणक्य के अर्थशास्त्र और स्मृतियों में राज्य के कुशल और धर्मपूर्ण संचालन के लिए जिन नैतिक और रणनीतिक सिद्धांतों का वर्णन है, उसे कूटनीति या शासन कला कहा जाता है। इसमें न्याय, प्रशासन और प्रजा की सुरक्षा शामिल है। भगवद्गीता के संदर्भ में, यह 'राजधर्म' से गहराई से जुड़ा है—जो एक क्षत्रिय (शासक) का परम कर्तव्य है कि वह समाज में धर्म की स्थापना करे और जन-कल्याण सुनिश्चित करे।"
+  },
+
+  {
+    "id": "exp_gunas",
+    "term": "Gunas",
+    "termHindi": "गुण",
+    "desc": "The three modes of material nature (Sattva, Rajas, Tamas) offering rituals for worldly and heavenly rewards.",
+    "descHindi": "सत्त्व, राजस और तमस गुणों का समावेश।",
+    "descDetail": "The three modes of material nature (Sattva, Rajas, Tamas) offering rituals for worldly and heavenly rewards.",
+    "descDetailHindi": "सत्त्व, राजस और तमस गुणों का समावेश।"
+  },
 
 ]
+
+
+

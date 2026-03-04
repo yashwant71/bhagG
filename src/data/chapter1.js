@@ -5,7 +5,7 @@ export const chapter1 = {
   "verses": {
     "1": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772165058/gita-audio/k06tkkrzgtwlxyp4ev7m.mp3","timestamps":[0.177,1.048,2.729,3.664,4.693,5.895,7.082,8.286,10.119,10.713]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772165058/gita-audio/k06tkkrzgtwlxyp4ev7m.mp3", "timestamps": [0.177, 1.048, 2.729, 3.664, 4.693, 5.895, 7.082, 8.286, 10.119, 10.713] }
       },
       "sanskrit": "धृतराष्ट्र[1.1.1] उवाच[1.1.2]\nधर्मक्षेत्रे[1.1.3] कुरुक्षेत्रे[1.1.4] समवेता[1.1.5] युयुत्सवः[1.1.6]।\nमामकाः[1.1.7] पाण्डवा[1.1.8]श्च[1.1.9]ैव[1.1.10] कि[1.1.11]मकुर्वत[1.1.12] सञ्जय[1.1.13]॥",
       "wordTranslations": [
@@ -38,7 +38,7 @@ export const chapter1 = {
     },
     "2": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772166869/gita-audio/o5uaoceputci82ws520n.mp3","fileName":"ElevenLabs_2026-02-27T04_23_08_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.844,1.709,3.486,3.969,4.939,5.371,6.694,8.489,9.586]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772166869/gita-audio/o5uaoceputci82ws520n.mp3", "fileName": "ElevenLabs_2026-02-27T04_23_08_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.844, 1.709, 3.486, 3.969, 4.939, 5.371, 6.694, 8.489, 9.586] }
       },
       "sanskrit": "सञ्जय[1.2.1] उवाच[1.2.2]\nदृष्ट्वा[1.2.3] तु[1.2.4] पाण्डव[1.2.5]ानीकं[1.2.6] व्यूढं[1.2.7] दुर्योधन[1.2.8]स्तदा[1.2.9]।\nआचार्य[1.2.10]मुपसंगम्य[1.2.11] राजा[1.2.12] वचन[1.2.13]मब्रवीत्[1.2.14]॥",
       "wordTranslations": [
@@ -68,7 +68,7 @@ export const chapter1 = {
     },
     "3": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772252079/gita-audio/dv3fckadgvrwsz37tuqz.mp3","fileName":"ElevenLabs_2026-02-28T04_13_06_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.264,3.421,4.034,5.194,5.919,7.001,7.417,7.858]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772252079/gita-audio/dv3fckadgvrwsz37tuqz.mp3", "fileName": "ElevenLabs_2026-02-28T04_13_06_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 1.264, 3.421, 4.034, 5.194, 5.919, 7.001, 7.417, 7.858] }
       },
       "sanskrit": "पश्य[1.3.1]ैतां[1.3.2] पाण्डुपुत्राणा[1.3.3]माचार्य[1.3.4] महतीं[1.3.5] चमूम्[1.3.6]।\nव्यूढां[1.3.7] द्रुपदपुत्रेण[1.3.8] तव[1.3.9] शिष्येण[1.3.10] धीमता[1.3.11]॥",
       "wordTranslations": [
@@ -99,7 +99,7 @@ export const chapter1 = {
     },
     "4": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772252364/gita-audio/byp3pl7bcigkboxfofua.mp3","fileName":"ElevenLabs_2026-02-28T04_18_29_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.565,1.258,2.268,2.835,3.706,4.67,5.796,6.746]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772252364/gita-audio/byp3pl7bcigkboxfofua.mp3", "fileName": "ElevenLabs_2026-02-28T04_18_29_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.565, 1.258, 2.268, 2.835, 3.706, 4.67, 5.796, 6.746] }
       },
       "sanskrit": "अत्र[1.4.1] शूरा[1.4.2] महेष्वासा[1.4.3] भीम[1.4.4]ार्जुन[1.4.5]समा[1.4.6] युधि[1.4.7]।\nयुयुधानो[1.4.8] विराट[1.4.9]श्च[1.4.10] द्रुपद[1.4.11]श्च[1.4.12] महारथः[1.4.13]॥",
       "wordTranslations": [
@@ -128,7 +128,7 @@ export const chapter1 = {
     },
     "5": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772255357/gita-audio/gzzhsrtoftypim9se4bp.mp3","fileName":"ElevenLabs_2026-02-28T05_04_20_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,2.457,3.339,4.587,5.802,6.719]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772255357/gita-audio/gzzhsrtoftypim9se4bp.mp3", "fileName": "ElevenLabs_2026-02-28T05_04_20_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 2.457, 3.339, 4.587, 5.802, 6.719] }
       },
       "sanskrit": "धृष्टकेतु[1.5.1]श्चेकितानः[1.5.2] काशिराज[1.5.3]श्च[1.5.4] वीर्यवान्[1.5.5]।\nपुरुजित्[1.5.6]कुन्तिभोज[1.5.7]श्च[1.5.8] शैव्य[1.5.9]श्च[1.5.10] नरपुङ्गवः[1.5.11]॥",
       "wordTranslations": [
@@ -155,7 +155,7 @@ export const chapter1 = {
     },
     "6": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772255665/gita-audio/uryohmjq3odblzb4jdex.mp3","fileName":"ElevenLabs_2026-02-28T05_12_34_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.572,2.8,3.758,4.946,5.81,6.995,7.401,7.745]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772255665/gita-audio/uryohmjq3odblzb4jdex.mp3", "fileName": "ElevenLabs_2026-02-28T05_12_34_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 1.572, 2.8, 3.758, 4.946, 5.81, 6.995, 7.401, 7.745] }
       },
       "sanskrit": "युधामन्यु[1.6.1]श्च[1.6.2] विक्रान्त[1.6.3] उत्तमौजा[1.6.4]श्च[1.6.5] वीर्यवान्[1.6.6]।\nसौभद्रो[1.6.7] द्रौपदेया[1.6.8]श्च[1.6.9] सर्व[1.6.10] एव[1.6.11] महारथाः[1.6.12]॥",
       "wordTranslations": [
@@ -183,7 +183,7 @@ export const chapter1 = {
     },
     "7": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772255833/gita-audio/nk6o89zmsozzhqs7spwr.mp3","fileName":"ElevenLabs_2026-02-28T05_16_11_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.592,1.144,1.892,2.318,2.762,3.782,4.963,5.525,6.142,7.011,7.301,7.819]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772255833/gita-audio/nk6o89zmsozzhqs7spwr.mp3", "fileName": "ElevenLabs_2026-02-28T05_16_11_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.592, 1.144, 1.892, 2.318, 2.762, 3.782, 4.963, 5.525, 6.142, 7.011, 7.301, 7.819] }
       },
       "sanskrit": "अस्माकं[1.7.1] तु[1.7.2] विशिष्टा[1.7.3] ये[1.7.4] तान्[1.7.11]निबोध[1.7.5] द्विजोत्तम[1.7.6]।\nनायका[1.7.7] मम[1.7.8] सैन्यस्य[1.7.9] संज्ञार्थं[1.7.10] तान्[1.7.11] ब्रवीमि[1.7.12] ते[1.7.13]॥",
       "wordTranslations": [
@@ -212,7 +212,7 @@ export const chapter1 = {
     },
     "8": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772255980/gita-audio/agrjuww7hgz1txca6o3j.mp3","fileName":"ElevenLabs_2026-02-28T05_18_46_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.449,1.034,1.76,2.23,3.464,4.304,5.118,6.579]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772255980/gita-audio/agrjuww7hgz1txca6o3j.mp3", "fileName": "ElevenLabs_2026-02-28T05_18_46_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.449, 1.034, 1.76, 2.23, 3.464, 4.304, 5.118, 6.579] }
       },
       "sanskrit": "भवान्[1.8.1] भीष्म[1.8.2]श्च[1.8.3] कर्ण[1.8.4]श्च[1.8.5] कृप[1.8.6]श्च[1.8.7] समितिञ्जयः[1.8.8]।\nअश्वत्थामा[1.8.9] विकर्ण[1.8.10]श्च[1.8.11] सौमदत्ति[1.8.12]स्तथ[1.8.13]ैव[1.8.14] च[1.8.14]॥",
       "wordTranslations": [
@@ -242,7 +242,7 @@ export const chapter1 = {
     },
     "9": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772256075/gita-audio/mcloxmvqmccmobeizoq4.mp3","fileName":"ElevenLabs_2026-02-28T05_20_32_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.45,0.832,1.291,1.727,2.342,3.111,5.428,6.886]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772256075/gita-audio/mcloxmvqmccmobeizoq4.mp3", "fileName": "ElevenLabs_2026-02-28T05_20_32_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.45, 0.832, 1.291, 1.727, 2.342, 3.111, 5.428, 6.886] }
       },
       "sanskrit": "अन्ये[1.9.1] च[1.9.2] बहवः[1.9.3] शूरा[1.9.4] मदर्थे[1.9.5] त्यक्तजीविताः[1.9.6]।\nनानाशस्त्रप्रहरणाः[1.9.7] सर्वे[1.9.8] युद्धविशारदाः[1.9.9]॥",
       "wordTranslations": [
@@ -267,7 +267,7 @@ export const chapter1 = {
     },
     "10": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772256207/gita-audio/utvf0zkdega8ksaaqv10.mp3","fileName":"ElevenLabs_2026-02-28T05_22_33_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.315,2.368,3.089,4.936,5.674,6.685,7.361]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772256207/gita-audio/utvf0zkdega8ksaaqv10.mp3", "fileName": "ElevenLabs_2026-02-28T05_22_33_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 1.315, 2.368, 3.089, 4.936, 5.674, 6.685, 7.361] }
       },
       "sanskrit": "अपर्याप्तं[1.10.1] तदस्माकं[1.10.2] बलं[1.10.3] भीष्मा[1.10.4]भिरक्षितम्[1.10.5]।\nपर्याप्तं[1.10.6] त्विदमेतेषां[1.10.7-8] बलं[1.10.9] भीमा[1.10.10]भिरक्षितम्[1.10.11]॥",
       "wordTranslations": [
@@ -294,7 +294,7 @@ export const chapter1 = {
     },
     "11": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772256312/gita-audio/e4tbfnoftwci0sgjhzc8.mp3","fileName":"ElevenLabs_2026-02-28T05_24_32_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.636,1.181,1.892,3.703,5.869,6.321,6.73,6.905]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772256312/gita-audio/e4tbfnoftwci0sgjhzc8.mp3", "fileName": "ElevenLabs_2026-02-28T05_24_32_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.636, 1.181, 1.892, 3.703, 5.869, 6.321, 6.73, 6.905] }
       },
       "sanskrit": "अयनेषु[1.11.1] च[1.11.2] सर्वेषु[1.11.3] यथाभाग[1.11.4]मवस्थिताः[1.11.5]।\nभीष्म[1.11.6]मेवाभिरक्षन्तु[1.11.7] भवन्तः[1.11.8] सर्व[1.11.9] एव[1.11.10] हि[1.11.11]॥",
       "wordTranslations": [
@@ -321,7 +321,7 @@ export const chapter1 = {
     },
     "12": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772256459/gita-audio/nb8nevqae08v9bbpbinc.mp3","fileName":"ElevenLabs_2026-02-28T05_26_58_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.776,1.398,2.321,2.95,4.04,4.874,5.874,6.358,6.847]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772256459/gita-audio/nb8nevqae08v9bbpbinc.mp3", "fileName": "ElevenLabs_2026-02-28T05_26_58_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.776, 1.398, 2.321, 2.95, 4.04, 4.874, 5.874, 6.358, 6.847] }
       },
       "sanskrit": "तस्य[1.12.1] संजनयन्[1.12.2] हर्षं[1.12.3] कुरुवृद्धः[1.12.4] पितामहः[1.12.5]।\nसिंहनादं[1.12.6] विनद्योच्चैः[1.12.7] शंखं[1.12.8] दध्मौ[1.12.9] प्रतापवान्[1.12.10]॥",
       "wordTranslations": [
@@ -347,7 +347,7 @@ export const chapter1 = {
     },
     "13": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772256546/gita-audio/uyqnxsxlbmvcponfvj5k.mp3","fileName":"ElevenLabs_2026-02-28T05_28_35_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.794,1.542,2.308,4.367,5.938,6.228]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772256546/gita-audio/uyqnxsxlbmvcponfvj5k.mp3", "fileName": "ElevenLabs_2026-02-28T05_28_35_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.794, 1.542, 2.308, 4.367, 5.938, 6.228] }
       },
       "sanskrit": "ततः[1.13.1] शंख[1.13.2]श्च[1.13.3] भेर्य[1.13.4]श्च[1.13.5] पणवानकगोमुखाः[1.13.6-7]।\nसहस[1.13.8]ैव[1.13.9]ाभ्यहन्यन्त[1.13.9] स[1.13.10] शब्द[1.13.11]स्तुमुलो[1.13.12]ऽभवत्[1.13.13]॥",
       "wordTranslations": [
@@ -376,7 +376,7 @@ export const chapter1 = {
     },
     "14": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772256660/gita-audio/pqoifjcnvn78gqrdynnn.mp3","fileName":"ElevenLabs_2026-02-28T05_29_58_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.993,2.601,3.163,3.775,4.93,5.612,6.513,7.207,7.67]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772256660/gita-audio/pqoifjcnvn78gqrdynnn.mp3", "fileName": "ElevenLabs_2026-02-28T05_29_58_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.993, 2.601, 3.163, 3.775, 4.93, 5.612, 6.513, 7.207, 7.67] }
       },
       "sanskrit": "ततः[1.14.1] श्वेतैर्[1.14.2]हयैर्[1.14.3]युक्ते[1.14.4] महति[1.14.5] स्यन्दने[1.14.6] स्थितौ[1.14.7]।\nमाधवः[1.14.8] पाण्डव[1.14.9]श्च[1.14.10]ैव[1.14.11] दिव्यौ[1.14.12] शंखौ[1.14.13] प्रदध्मतुः[1.14.14]॥",
       "wordTranslations": [
@@ -410,7 +410,7 @@ export const chapter1 = {
     },
     "15": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772256783/gita-audio/kspxdaonl0kqcxtjb412.mp3","fileName":"ElevenLabs_2026-02-28T05_32_22_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.853,1.757,2.504,3.629,4.152,4.719,5.141,5.947]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772256783/gita-audio/kspxdaonl0kqcxtjb412.mp3", "fileName": "ElevenLabs_2026-02-28T05_32_22_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.853, 1.757, 2.504, 3.629, 4.152, 4.719, 5.141, 5.947] }
       },
       "sanskrit": "पाञ्चजन्यं[1.15.1] हृषीकेशो[1.15.2] देवदत्तं[1.15.3] धनञ्जयः[1.15.4]।\nपौण्ड्रं[1.15.5] दध्मौ[1.15.6] महाशंखं[1.15.7] भीमकर्मा[1.15.8] वृकोदरः[1.15.9]॥",
       "wordTranslations": [
@@ -435,7 +435,7 @@ export const chapter1 = {
     },
     "16": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772257019/gita-audio/gaqshb5hdydhc5csslrb.mp3","fileName":"ElevenLabs_2026-02-28T05_36_16_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.07,1.82,2.43,2.961,4.539,4.914,5.875]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772257019/gita-audio/gaqshb5hdydhc5csslrb.mp3", "fileName": "ElevenLabs_2026-02-28T05_36_16_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 1.07, 1.82, 2.43, 2.961, 4.539, 4.914, 5.875] }
       },
       "sanskrit": "अनन्तविजयं[1.16.1] राजा[1.16.2] कुन्ती[1.16.3] पुत्रो[1.16.4] युधिष्ठिरः[1.16.5]।\nनकुलः[1.16.6] सहदेव[1.16.7]श्च[1.16.8] सुघोष[1.16.9]मणिपुष्पकौ[1.16.10]॥",
       "wordTranslations": [
@@ -461,7 +461,7 @@ export const chapter1 = {
     },
     "17": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772257134/gita-audio/cpapwwjngm27cmt7itji.mp3","fileName":"ElevenLabs_2026-02-28T05_38_06_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.85,1.985,2.557,2.835,3.983,5.092,6.576]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772257134/gita-audio/cpapwwjngm27cmt7itji.mp3", "fileName": "ElevenLabs_2026-02-28T05_38_06_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.85, 1.985, 2.557, 2.835, 3.983, 5.092, 6.576] }
       },
       "sanskrit": "काश्य[1.17.1]श्च[1.17.2] परमेष्वासः[1.17.3] शिखण्डी[1.17.4] च[1.17.5] महारथः[1.17.6]।\nधृष्टद्युम्नो[1.17.7] विराट[1.17.8]श्च[1.17.9] सात्यकि[1.17.10]श्च[1.17.11]ापराजितः[1.17.11]॥",
       "wordTranslations": [
@@ -488,7 +488,7 @@ export const chapter1 = {
     },
     "18": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772257274/gita-audio/aiscgx2c9cqxcauhduyg.mp3","fileName":"ElevenLabs_2026-02-28T05_40_30_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.853,1.847,2.214,3.271,4.143,4.964,5.613]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772257274/gita-audio/aiscgx2c9cqxcauhduyg.mp3", "fileName": "ElevenLabs_2026-02-28T05_40_30_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.853, 1.847, 2.214, 3.271, 4.143, 4.964, 5.613] }
       },
       "sanskrit": "द्रुपदो[1.18.1] द्रौपदेया[1.18.2]श्च[1.18.3] सर्वशः[1.18.4] पृथिवीपते[1.18.5]।\nसौभद्र[1.18.6]श्च[1.18.7] महाबाहुः[1.18.8] शंखान्दध्मुः[1.18.9] पृथक्[1.18.10]पृथक्[1.18.10]॥",
       "wordTranslations": [
@@ -518,7 +518,7 @@ export const chapter1 = {
     },
     "19": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772257558/gita-audio/x9zwskr7umrdghmiwyx0.mp3","fileName":"ElevenLabs_2026-02-28T05_45_12_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.313,0.905,2.082,2.929,4.358,5.638,5.975,6.783,7.101]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772257558/gita-audio/x9zwskr7umrdghmiwyx0.mp3", "fileName": "ElevenLabs_2026-02-28T05_45_12_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.313, 0.905, 2.082, 2.929, 4.358, 5.638, 5.975, 6.783, 7.101] }
       },
       "sanskrit": "स[1.19.1] घोषो[1.19.2] धार्तराष्ट्राणां[1.19.3] हृदयानि[1.19.4] व्यदारयत्[1.19.5]।\nनभ[1.19.6]श्च[1.19.7] पृथिवीं[1.19.8] च[1.19.9]ैव[1.19.9] तुमुलो[1.19.10] व्यनुनादयन्[1.19.11]॥",
       "wordTranslations": [
@@ -549,7 +549,7 @@ export const chapter1 = {
     },
     "20": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772257759/gita-audio/s2el6m6edwwnwtv5uf4d.mp3","fileName":"ElevenLabs_2026-02-28T05_48_34_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.711,1.472,2.701,4.024,4.708,5.721,6.993]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772257759/gita-audio/s2el6m6edwwnwtv5uf4d.mp3", "fileName": "ElevenLabs_2026-02-28T05_48_34_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.711, 1.472, 2.701, 4.024, 4.708, 5.721, 6.993] }
       },
       "sanskrit": "अथ[1.20.1] व्यवस्थितान्[1.20.2]दृष्ट्वा[1.20.3] धार्तराष्ट्रान्[1.20.4] कपिध्वजः[1.20.5]।\nप्रवृत्ते[1.20.6] शस्त्रसम्पाते[1.20.7] धनुरुद्यम्य[1.20.8] पाण्डवः[1.20.9]॥",
       "wordTranslations": [
@@ -574,7 +574,7 @@ export const chapter1 = {
     },
     "21": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772264691/gita-audio/l1l37qzll0jkz14k3twy.mp3","fileName":"","timestamps":[0,0.606,1.375,2.338,3.301,4.657,5.093,8.034,8.783,9.215]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772264691/gita-audio/l1l37qzll0jkz14k3twy.mp3", "fileName": "", "timestamps": [0, 0.606, 1.375, 2.338, 3.301, 4.657, 5.093, 8.034, 8.783, 9.215] }
       },
       "sanskrit": "हृषीकेशं[1.21.1] तदा[1.21.2] वाक्य[1.21.3]मिद[1.21.4]माह[1.21.5] महीपते[1.21.6]।\nअर्जुन[1.21.7] उवाच[1.21.8]\nसेनयो[1.21.9]रुभयो[1.21.10]र्मध्ये[1.21.11] रथं[1.21.12] स्थापय[1.21.13] मे[1.21.14]ऽच्युत[1.21.15]॥",
       "wordTranslations": [
@@ -609,7 +609,7 @@ export const chapter1 = {
     },
     "22": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772264842/gita-audio/zylmdsbmyhnukciiv7r4.mp3","fileName":"ElevenLabs_2026-02-28T07_46_41_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,2.402,5.052,5.639,6.307,7.139]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772264842/gita-audio/zylmdsbmyhnukciiv7r4.mp3", "fileName": "ElevenLabs_2026-02-28T07_46_41_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 2.402, 5.052, 5.639, 6.307, 7.139] }
       },
       "sanskrit": "याव[1.22.1]देतान्निरीक्षे[1.22.2]ऽहं[1.22.3] योद्धुकामान्[1.22.4]अवस्थितान्[1.22.5]।\nकै[1.22.6]र्मया[1.22.7] सह[1.22.8] योद्धव्य[1.22.9]मस्मिन्[1.22.10] रणसमुद्यमे[1.22.11]॥",
       "wordTranslations": [
@@ -636,7 +636,7 @@ export const chapter1 = {
     },
     "23": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772264974/gita-audio/mxeqabfwvmsrivnr4mde.mp3","fileName":"ElevenLabs_2026-02-28T07_48_41_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.975,2.91,3.828,5.933,6.586,8.609]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772264974/gita-audio/mxeqabfwvmsrivnr4mde.mp3", "fileName": "ElevenLabs_2026-02-28T07_48_41_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 1.975, 2.91, 3.828, 5.933, 6.586, 8.609] }
       },
       "sanskrit": "योत्स्यमानान्[1.23.1]अवेक्षे[1.23.2]ऽहं[1.23.3] य[1.23.4] एते[1.23.5]ऽत्र[1.23.6] समागताः[1.23.7]।\nधार्तराष्ट्रस्य[1.23.8] दुर्बुद्धे[1.23.9]र्युद्धे[1.23.10] प्रियचिकीर्षवः[1.23.11]॥",
       "wordTranslations": [
@@ -663,7 +663,7 @@ export const chapter1 = {
     },
     "24": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772265401/gita-audio/cghgrdtz9ek06mnjbcrk.mp3","fileName":"ElevenLabs_2026-02-28T07_55_00_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.624,1.679,3.066,4.192,5.181,6.079,8.128,9.044]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772265401/gita-audio/cghgrdtz9ek06mnjbcrk.mp3", "fileName": "ElevenLabs_2026-02-28T07_55_00_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.624, 1.679, 3.066, 4.192, 5.181, 6.079, 8.128, 9.044] }
       },
       "sanskrit": "सञ्जय[1.24.1] उवाच[1.24.2]\nएव[1.24.3]मुक्तो[1.24.3] हृषीकेशो[1.24.4] गुडाकेशेन[1.24.5] भारत[1.24.6]।\nसेनयो[1.24.7]रुभयो[1.24.8]र्मध्ये[1.24.9] स्थापयित्वा[1.24.10] रथोत्तमम्[1.24.11]॥",
       "wordTranslations": [
@@ -690,7 +690,7 @@ export const chapter1 = {
     },
     "25": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772268443/gita-audio/mfzwgrxi1rpqnld7rnrn.mp3","fileName":"ElevenLabs_2026-02-28T08_46_40_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,2.151,2.808,3.553,4.836,5.509,5.801,7.384,8.08]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772268443/gita-audio/mfzwgrxi1rpqnld7rnrn.mp3", "fileName": "ElevenLabs_2026-02-28T08_46_40_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 2.151, 2.808, 3.553, 4.836, 5.509, 5.801, 7.384, 8.08] }
       },
       "sanskrit": "भीष्मद्रोणप्रमुखतः[1.25.1] सर्वेषां[1.25.2] च[1.25.3] महीक्षिताम्[1.25.4]।\nउवाच[1.25.5] पार्थ[1.25.6] पश्य[1.25.7]ैतान्[1.25.7] समवेतान्[1.25.8] कुरून्[1.25.9]इति[1.25.9]॥",
       "wordTranslations": [
@@ -715,7 +715,7 @@ export const chapter1 = {
     },
     "26": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772268575/gita-audio/plzvobbte7tufwjjwkiq.mp3","fileName":"ElevenLabs_2026-02-28T08_48_35_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.868,2.708,3.253,4.547]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772268575/gita-audio/plzvobbte7tufwjjwkiq.mp3", "fileName": "ElevenLabs_2026-02-28T08_48_35_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 1.868, 2.708, 3.253, 4.547] }
       },
       "sanskrit": "तत्रा[1.26.1]पश्यत्[1.26.2]स्थितान्[1.26.3] पार्थः[1.26.4] पितॄन्[1.26.5]अथ[1.26.6] पितामहान्[1.26.7]।\nआचार्यान्[1.26.8]मातुलान्[1.26.9]भ्रातॄन्[1.26.10]पुत्रान्[1.26.11]पौत्रान्[1.26.12]सखीं[1.26.13]स्तथा[1.26.14]॥",
       "wordTranslations": [
@@ -749,7 +749,7 @@ export const chapter1 = {
     },
     "27": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772268732/gita-audio/mlhikd2ia4vcaxgdx5n5.mp3","fileName":"ElevenLabs_2026-02-28T08_51_04_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.707,2.261,4.391,5.251,5.81,6.992,10.087,10.999,11.477]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772268732/gita-audio/mlhikd2ia4vcaxgdx5n5.mp3", "fileName": "ElevenLabs_2026-02-28T08_51_04_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.707, 2.261, 4.391, 5.251, 5.81, 6.992, 10.087, 10.999, 11.477] }
       },
       "sanskrit": "श्वशुरान्[1.27.1] सुहृद[1.27.2]श्च[1.27.3]ैव[1.27.4] सेनयो[1.27.5]रुभयो[1.27.6]रपि[1.27.7]।\nतान्[1.27.8]समीक्ष्य[1.27.9] स[1.27.10] कौन्तेयः[1.27.11] सर्वान्[1.27.12]बन्धून्[1.27.13]अवस्थितान्[1.27.14]॥\nकृपया[1.27.15] परया[1.27.16]विष्टो[1.27.17] विषीदन्[1.27.18]निद[1.27.19]मब्रवीत्[1.27.20]।",
       "wordTranslations": [
@@ -785,7 +785,7 @@ export const chapter1 = {
     },
     "28": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772268998/gita-audio/fqg0lkqwia2p114kjzwj.mp3","fileName":"ElevenLabs_2026-02-28T08_55_59_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.471,1.395,3.055,3.927,4.955,5.624,7.89,8.274,8.649,8.961,9.532,9.835]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772268998/gita-audio/fqg0lkqwia2p114kjzwj.mp3", "fileName": "ElevenLabs_2026-02-28T08_55_59_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.471, 1.395, 3.055, 3.927, 4.955, 5.624, 7.89, 8.274, 8.649, 8.961, 9.532, 9.835] }
       },
       "sanskrit": "अर्जुन[1.28.1] उवाच[1.28.2]\nदृष्ट्व[1.28.3]ेमं[1.28.4] स्वजनं[1.28.5] कृष्ण[1.28.6] युयुत्सुं[1.28.7] समुपस्थितम्[1.28.8]।\nसीदन्ति[1.28.9] मम[1.28.10] गात्राणि[1.28.11] मुखं[1.28.12] च[1.28.13] परिशुष्यति[1.28.14]॥",
       "wordTranslations": [
@@ -819,7 +819,7 @@ export const chapter1 = {
     },
     "29": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772269163/gita-audio/hueydhe288kcgdppbrmv.mp3","fileName":"ElevenLabs_2026-02-28T08_58_35_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.059,1.413,2.154,2.992,4.223,5.089,6.269,7.859]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772269163/gita-audio/hueydhe288kcgdppbrmv.mp3", "fileName": "ElevenLabs_2026-02-28T08_58_35_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 1.059, 1.413, 2.154, 2.992, 4.223, 5.089, 6.269, 7.859] }
       },
       "sanskrit": "वेपथु[1.29.1]श्च[1.29.2] शरीरे[1.29.3] मे[1.29.4] रोमहर्ष[1.29.5]श्च[1.29.6] जायते[1.29.7]।\nगाण्डीवं[1.29.8] स्रंसते[1.29.9] हस्तात्[1.29.10]त्वक्[1.29.11]च[1.29.12]ैव[1.29.13] परिदह्यते[1.29.14]॥",
       "wordTranslations": [
@@ -849,7 +849,7 @@ export const chapter1 = {
     },
     "30": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772269451/gita-audio/d8ksltr4pvhdwl8wh32s.mp3","fileName":"ElevenLabs_2026-02-28T09_03_24_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.535,0.722,2.27,2.697,2.914,3.466,3.826,5.803,5.976,6.388,6.935]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772269451/gita-audio/d8ksltr4pvhdwl8wh32s.mp3", "fileName": "ElevenLabs_2026-02-28T09_03_24_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.535, 0.722, 2.27, 2.697, 2.914, 3.466, 3.826, 5.803, 5.976, 6.388, 6.935] }
       },
       "sanskrit": "न[1.30.1] च[1.30.2] शक्नोम्य[1.30.3]वस्थातुं[1.30.4] भ्रमतीव[1.30.5-6] च[1.30.7] मे[1.30.8] मनः[1.30.9]।\nनिमित्तानि[1.30.10] च[1.30.11] पश्यामि[1.30.12] विपरीतानि[1.30.13] केशव[1.30.14]॥",
       "wordTranslations": [
@@ -879,7 +879,7 @@ export const chapter1 = {
     },
     "31": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772269554/gita-audio/l0ms5c2xfv7bjbln7xnr.mp3","fileName":"ElevenLabs_2026-02-28T09_05_17_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.293,0.483,2.405,2.844,5.262,5.445,5.736,6.346,6.826,7.534,7.718,8.097,8.36]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772269554/gita-audio/l0ms5c2xfv7bjbln7xnr.mp3", "fileName": "ElevenLabs_2026-02-28T09_05_17_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.293, 0.483, 2.405, 2.844, 5.262, 5.445, 5.736, 6.346, 6.826, 7.534, 7.718, 8.097, 8.36] }
       },
       "sanskrit": "न[1.31.1] च[1.31.2] श्रेयो[1.31.3]ऽनुपश्यामि[1.31.4] हत्वा[1.31.5] स्वजन[1.31.6]माहवे[1.31.7]।\nन[1.31.8] काङ्क्षे[1.31.9] विजयं[1.31.10] कृष्ण[1.31.11] न[1.31.12] च[1.31.13] राज्यं[1.31.14] सुखानि[1.31.15] च[1.31.16]॥",
       "wordTranslations": [
@@ -915,7 +915,7 @@ export const chapter1 = {
     },
     "32": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772269673/gita-audio/alipgad1cud3gbpukfts.mp3","fileName":"ElevenLabs_2026-02-28T09_07_02_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.444,1.038,1.69,3.436,3.869,4.967,7.251,7.795,9.082,9.253,9.632,10.51,11.078]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772269673/gita-audio/alipgad1cud3gbpukfts.mp3", "fileName": "ElevenLabs_2026-02-28T09_07_02_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.444, 1.038, 1.69, 3.436, 3.869, 4.967, 7.251, 7.795, 9.082, 9.253, 9.632, 10.51, 11.078] }
       },
       "sanskrit": "किं[1.32.1] नो[1.32.2] राज्येन[1.32.3] गोविन्द[1.32.4] किं[1.32.5] भोगैर्[1.32.6]जीवितेन[1.32.7] वा[1.32.8]।\nयेषा[1.32.9]मर्थे[1.32.10] काङ्क्षितं[1.32.11] नो[1.32.12] राज्यं[1.32.13] भोगाः[1.32.14] सुखानि[1.32.15] च[1.32.16]॥",
       "wordTranslations": [
@@ -951,7 +951,7 @@ export const chapter1 = {
     },
     "33": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772270178/gita-audio/wbpzgsjkwlwd8bmg06ip.mp3","fileName":"ElevenLabs_2026-02-28T09_15_34_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.378,1.19,2.531,3.003,4.196,5.629,6.123,6.83,7.52,8.792]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772270178/gita-audio/wbpzgsjkwlwd8bmg06ip.mp3", "fileName": "ElevenLabs_2026-02-28T09_15_34_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.378, 1.19, 2.531, 3.003, 4.196, 5.629, 6.123, 6.83, 7.52, 8.792] }
       },
       "sanskrit": "त[1.33.1] इमे[1.33.2]ऽवस्थिता[1.33.3] युद्धे[1.33.4] प्राणांस्[1.33.5]त्यक्त्वा[1.33.6] धनानि[1.33.7] च[1.33.8]।\nआचार्याः[1.33.9] पितरः[1.33.10] पुत्रा[1.33.11]स्तथ[1.33.12]ैव[1.33.13] च[1.33.14] पितामहाः[1.33.15]॥",
       "wordTranslations": [
@@ -982,7 +982,7 @@ export const chapter1 = {
     },
     "34": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772270509/gita-audio/tawro28uhx5c2ss1kgmd.mp3","fileName":"ElevenLabs_2026-02-28T09_20_33_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.705,1.743,2.409,3.676,5.498,6.815,8.121,8.671]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772270509/gita-audio/tawro28uhx5c2ss1kgmd.mp3", "fileName": "ElevenLabs_2026-02-28T09_20_33_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.705, 1.743, 2.409, 3.676, 5.498, 6.815, 8.121, 8.671] }
       },
       "sanskrit": "मातुलाः[1.34.1] श्वशुराः[1.34.2] पौत्राः[1.34.3] श्यालाः[1.34.4] सम्बन्धिन[1.34.5]स्तथा[1.34.6]।\nएतान्[1.34.7]न[1.34.8] हन्तुम्[1.34.9]इच्छामि[1.34.10] घ्नतो[1.34.11]ऽपि[1.34.12] मधुसूदन[1.34.13]॥",
       "wordTranslations": [
@@ -1011,7 +1011,7 @@ export const chapter1 = {
     },
     "35": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772270613/gita-audio/xcfhn1splkx32bkvqmm7.mp3","fileName":"ElevenLabs_2026-02-28T09_22_46_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.38,1.249,2.423,2.866,3.086,4.262,6.225,6.916,7.147,8.727]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772270613/gita-audio/xcfhn1splkx32bkvqmm7.mp3", "fileName": "ElevenLabs_2026-02-28T09_22_46_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.38, 1.249, 2.423, 2.866, 3.086, 4.262, 6.225, 6.916, 7.147, 8.727] }
       },
       "sanskrit": "अपि[1.35.1] त्रैलोक्यराज्यस्य[1.35.2] हेतोः[1.35.3] किं[1.35.4] नु[1.35.4] महीकृते[1.35.5]।\nनिहत्य[1.35.6] धार्तराष्ट्रान्[1.35.7]नः[1.35.8] का[1.35.9] प्रीतिः[1.35.10] स्याज्[1.35.11]जनार्दन[1.35.12]॥",
       "wordTranslations": [
@@ -1039,7 +1039,7 @@ export const chapter1 = {
     },
     "36": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772270829/gita-audio/ol69h46x7slgcg1vzizs.mp3","fileName":"ElevenLabs_2026-02-28T09_24_49__s50_v3.mp3","timestamps":[0,2.272,4.9,8.18,8.526,9.13,9.549]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772270829/gita-audio/ol69h46x7slgcg1vzizs.mp3", "fileName": "ElevenLabs_2026-02-28T09_24_49__s50_v3.mp3", "timestamps": [0, 2.272, 4.9, 8.18, 8.526, 9.13, 9.549] }
       },
       "sanskrit": "पाप[1.36.1]मेव[1.36.2]ाश्रयेद्[1.36.3]अस्मान्[1.36.4] हत्व[1.36.5]ैतान्[1.36.6]आततायिनः[1.36.7]।\nतस्मान्[1.36.8]न[1.36.9]ार्हा[1.36.9] वयं[1.36.10] हन्तुं[1.36.11] धार्तराष्ट्रान्[1.36.12] सबान्धवान्[1.36.13]॥",
       "wordTranslations": [
@@ -1068,7 +1068,7 @@ export const chapter1 = {
     },
     "37": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772270984/gita-audio/kbxoah9lvkwz828rzjsj.mp3","fileName":"ElevenLabs_2026-02-28T09_29_04_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.383,0.852,1.157,1.608,1.906,2.346,4.457,6.443,6.827,7.375]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772270984/gita-audio/kbxoah9lvkwz828rzjsj.mp3", "fileName": "ElevenLabs_2026-02-28T09_29_04_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.383, 0.852, 1.157, 1.608, 1.906, 2.346, 4.457, 6.443, 6.827, 7.375] }
       },
       "sanskrit": "स्वजनं[1.37.1] हि[1.37.2] कथं[1.37.3] हत्वा[1.37.4] सुखिनः[1.37.5] स्याम[1.37.6] माधव[1.37.7]।\nयद्यप्य[1.37.8]ेते[1.37.9] न[1.37.10] पश्यन्ति[1.37.11] लोभोपहतचेतसः[1.37.12]॥",
       "wordTranslations": [
@@ -1096,7 +1096,7 @@ export const chapter1 = {
     },
     "38": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772271117/gita-audio/ymm0bugpdvucggldrayz.mp3","fileName":"ElevenLabs_2026-02-28T09_30_48_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.384,1.653,2.628,3.094,4.821,6.053,6.378,7.142]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772271117/gita-audio/ymm0bugpdvucggldrayz.mp3", "fileName": "ElevenLabs_2026-02-28T09_30_48_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 1.384, 1.653, 2.628, 3.094, 4.821, 6.053, 6.378, 7.142] }
       },
       "sanskrit": "कुलक्षयकृतं[1.38.1] दोषं[1.38.2] मित्रद्रोहे[1.38.3] च[1.38.4] पातकम्[1.38.5]।\nकथं[1.38.6] न[1.38.7] ज्ञेय[1.38.8]मस्माभिः[1.38.9] पाप[1.38.10]ादस्मान्[1.38.11]निवर्तितुम्[1.38.12]॥",
       "wordTranslations": [
@@ -1124,7 +1124,7 @@ export const chapter1 = {
     },
     "39": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772271540/gita-audio/w1bskou07noqh2heybxb.mp3","fileName":"ElevenLabs_2026-02-28T09_38_01_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.911,1.586,2.346,3.931,4.893,5.347,6.455]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772271540/gita-audio/w1bskou07noqh2heybxb.mp3", "fileName": "ElevenLabs_2026-02-28T09_38_01_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.911, 1.586, 2.346, 3.931, 4.893, 5.347, 6.455] }
       },
       "sanskrit": "कुलक्षये[1.39.1] प्रणश्यन्ति[1.39.2] कुलधर्माः[1.39.3] सनातनाः[1.39.4]।\nधर्मे[1.39.5] नष्टे[1.39.6] कुलं[1.39.7] कृत्स्न[1.39.8]मधर्मो[1.39.9]ऽभिभवत्य्[1.39.10]उत[1.39.11]॥",
       "wordTranslations": [
@@ -1151,7 +1151,7 @@ export const chapter1 = {
     },
     "40": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772271646/gita-audio/ic0bci8cgid0btub5f4c.mp3","fileName":"ElevenLabs_2026-02-28T09_40_10_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,2.044,2.897,4.085,5.253,5.791,6.745,7.466]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772271646/gita-audio/ic0bci8cgid0btub5f4c.mp3", "fileName": "ElevenLabs_2026-02-28T09_40_10_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 2.044, 2.897, 4.085, 5.253, 5.791, 6.745, 7.466] }
       },
       "sanskrit": "अधर्मा[1.40.1]भिभवात्[1.40.2]कृष्ण[1.40.3] प्रदुष्यन्ति[1.40.4] कुलस्त्रियः[1.40.5]।\nस्त्रीषु[1.40.6] दुष्टासु[1.40.7] वार्ष्णेय[1.40.8] जायते[1.40.9] वर्णसंकरः[1.40.10]॥",
       "wordTranslations": [
@@ -1177,7 +1177,7 @@ export const chapter1 = {
     },
     "41": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772271746/gita-audio/athpcfzgtnroagufyh1f.mp3","fileName":"ElevenLabs_2026-02-28T09_41_54_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.569,1.901,2.705,3.634,5.834,6.301,6.834,7.405]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772271746/gita-audio/athpcfzgtnroagufyh1f.mp3", "fileName": "ElevenLabs_2026-02-28T09_41_54_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.569, 1.901, 2.705, 3.634, 5.834, 6.301, 6.834, 7.405] }
       },
       "sanskrit": "संकरो[1.41.1] नरकाय[1.41.2]ैव[1.41.3] कुलघ्नानां[1.41.4] कुलस्य[1.41.5] च[1.41.6]।\nपतन्ति[1.41.7] पितरो[1.41.8] ह्य[1.41.9]ेषां[1.41.10] लुप्त[1.41.11]पिण्ड[1.41.12]ोदक[1.41.13]क्रियाः[1.41.14]॥",
       "wordTranslations": [
@@ -1207,7 +1207,7 @@ export const chapter1 = {
     },
     "42": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772271927/gita-audio/gdag9ngktjrczqxasd2n.mp3","fileName":"ElevenLabs_2026-02-28T09_43_30_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.187,2.716,4.723,6.894,8.125,8.926]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772271927/gita-audio/gdag9ngktjrczqxasd2n.mp3", "fileName": "ElevenLabs_2026-02-28T09_43_30_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 1.187, 2.716, 4.723, 6.894, 8.125, 8.926] }
       },
       "sanskrit": "दोषैर्[1.42.1]एतैः[1.42.2] कुलघ्नानां[1.42.3] वर्णसंकरकारकैः[1.42.4]।\nउत्साद्यन्ते[1.42.5] जातिधर्माः[1.42.6] कुलधर्मा[1.42.7]श्च[1.42.8] शाश्वताः[1.42.9]॥",
       "wordTranslations": [
@@ -1232,7 +1232,7 @@ export const chapter1 = {
     },
     "43": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772272041/gita-audio/ls0zxgkq0kf6dlemmamt.mp3","fileName":"ElevenLabs_2026-02-28T09_46_10_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,1.234,2.403,3.586,5.213,6.299]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772272041/gita-audio/ls0zxgkq0kf6dlemmamt.mp3", "fileName": "ElevenLabs_2026-02-28T09_46_10_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 1.234, 2.403, 3.586, 5.213, 6.299] }
       },
       "sanskrit": "उत्सन्न[1.43.1]कुलधर्माणां[1.43.2] मनुष्याणां[1.43.3] जनार्दन[1.43.4]।\nनरके[1.43.5]ऽनियतं[1.43.6] वासो[1.43.7] भवती[1.43.8]त्य[1.43.9]नुशुश्रुम[1.43.10]॥",
       "wordTranslations": [
@@ -1258,7 +1258,7 @@ export const chapter1 = {
     },
     "44": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772272178/gita-audio/rgm2ahk3fvbc4uitgong.mp3","fileName":"ElevenLabs_2026-02-28T09_48_55_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.352,0.554,1.508,2.074,2.483,4.509,5.769,7.026]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772272178/gita-audio/rgm2ahk3fvbc4uitgong.mp3", "fileName": "ElevenLabs_2026-02-28T09_48_55_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.352, 0.554, 1.508, 2.074, 2.483, 4.509, 5.769, 7.026] }
       },
       "sanskrit": "अहो[1.44.1] बत[1.44.2] महत्[1.44.3]पापं[1.44.4] कर्तुं[1.44.5] व्यवसिता[1.44.6] वयम्[1.44.7]।\nयद्[1.44.8]राज्यसुखलोभेन[1.44.9] हन्तुं[1.44.10] स्वजन[1.44.11]मुद्यताः[1.44.12]॥",
       "wordTranslations": [
@@ -1286,7 +1286,7 @@ export const chapter1 = {
     },
     "45": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772272300/gita-audio/kvdr3aaimzxqgko4mr1f.mp3","fileName":"ElevenLabs_2026-02-28T09_51_05_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.383,2.128,2.89,4.931,5.387,6.026,6.625]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772272300/gita-audio/kvdr3aaimzxqgko4mr1f.mp3", "fileName": "ElevenLabs_2026-02-28T09_51_05_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.383, 2.128, 2.89, 4.931, 5.387, 6.026, 6.625] }
       },
       "sanskrit": "यदि[1.45.1] माम्[1.45.2]अप्रतीकार[1.45.3]मशस्त्रं[1.45.4] शस्त्रपाणयः[1.45.5]।\nधार्तराष्ट्रा[1.45.6] रणे[1.45.7] हन्यु[1.45.8]स्तन्[1.45.9]मे[1.45.10] क्षेमतरं[1.45.11] भवेत्[1.45.12]॥",
       "wordTranslations": [
@@ -1314,7 +1314,7 @@ export const chapter1 = {
     },
     "46": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772272457/gita-audio/ilathrtmae7glenrkjz7.mp3","fileName":"ElevenLabs_2026-02-28T09_53_34_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.465,1.881,2.409,3.591,3.935,5.527,6.567,7.012,7.522]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772272457/gita-audio/ilathrtmae7glenrkjz7.mp3", "fileName": "ElevenLabs_2026-02-28T09_53_34_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.465, 1.881, 2.409, 3.591, 3.935, 5.527, 6.567, 7.012, 7.522] }
       },
       "sanskrit": "सञ्जय[1.46.1] उवाच[1.46.2]\nएव[1.46.3]मुक्त्व[1.46.4]ार्जुनः[1.46.5] संख्ये[1.46.6] रथोपस्थ[1.46.7] उपाविशत्[1.46.8]।\nविसृज्य[1.46.9] सशरं[1.46.10] चापं[1.46.11] शोकसंविग्नमानसः[1.46.12]॥",
       "wordTranslations": [
@@ -1346,7 +1346,7 @@ export const chapter1 = {
     },
     "47": {
       "audioData": {
-        "sanskrit": {"url":"https://res.cloudinary.com/dlgsndalc/video/upload/v1772272569/gita-audio/pjdaqmc2qz29t4hkxe0j.mp3","fileName":"ElevenLabs_2026-02-28T09_55_19_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3","timestamps":[0,0.917,1.624,2.538,3.565,5.362,6.735,7.918,9.889,11.918,12.287]}
+        "sanskrit": { "url": "https://res.cloudinary.com/dlgsndalc/video/upload/v1772272569/gita-audio/pjdaqmc2qz29t4hkxe0j.mp3", "fileName": "ElevenLabs_2026-02-28T09_55_19_Rudra - Warm, Calm and Natural_pvc_sp100_s50_sb75_v3.mp3", "timestamps": [0, 0.917, 1.624, 2.538, 3.565, 5.362, 6.735, 7.918, 9.889, 11.918, 12.287] }
       },
       "sanskrit": "ॐ[1.47.1] तत्[1.47.1] सत्[1.47.1] इति[1.47.2] श्रीमद्भगवद्गीतासूपनिषत्सु[1.47.3-4] ब्रह्मविद्यायां[1.47.5] योगशास्त्रे[1.47.6] श्रीकृष्णार्जुनसंवादे[1.47.7] अर्जुनविषादयोगो[1.47.8] नाम[1.47.9] प्रथमो[1.47.10]ऽध्यायः[1.47.10]॥",
       "wordTranslations": [

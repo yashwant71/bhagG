@@ -850,5 +850,39 @@ export const explanations = [
     "termHindi": "अंबा",
     "desc": "A princess who vowed revenge on (Bhishma)[exp_bhishma] and was reborn as (Shikhandi)[exp_shikhandi] to fulfill that vow.",
     "descHindi": "एक राजकुमारी जिसने (भीष्म)[exp_bhishma] से बदला लेने की प्रतिज्ञा की और उस प्रतिज्ञा को पूरा करने के लिए (शिखण्डी)[exp_shikhandi] के रूप में पुनर्जन्म लिया।"
+  },
+
+
+
+  {
+    "id": "exp_kurma_analogy",
+    "term": "Tortoise Analogy",
+    "termHindi": "कछुआ (कूर्म) दृष्टान्त",
+    "desc": "An analogy used to describe how a sage completely withdraws their senses from worldly objects.",
+    "descHindi": "एक दृष्टांत जिसका उपयोग यह बताने के लिए किया जाता है कि एक ज्ञानी पुरुष किस प्रकार सांसारिक विषयों से अपनी इंद्रियों को पूरी तरह समेट लेता है।",
+    "descDetail": "Just as a tortoise (Kurma) naturally draws its limbs into its shell for protection, a Yogi of stable mind (Sthitaprajna) consciously withdraws their senses from the external sense-objects to remain protected and established in the inner Self.",
+    "descDetailHindi": "जिस प्रकार एक कछुआ (कूर्म) अपनी सुरक्षा के लिए स्वाभाविक रूप से अपने अंगों को अपने खोल में खींच लेता है, उसी प्रकार एक स्थितप्रज्ञ योगी बाहरी विषयों से अपनी इंद्रियों को सचेत रूप से समेट लेता है ताकि वह अपनी अंतरात्मा में स्थिर और सुरक्षित रह सके।"
+  },
+  {
+    "id": "exp_rasa",
+    "term": "Rasa (Relish / Taste)",
+    "termHindi": "रस (आसक्ति)",
+    "desc": "The subtle inner taste, lingering desire, or attachment for worldly pleasures.",
+    "descHindi": "सांसारिक सुखों के प्रति सूक्ष्म आंतरिक स्वाद, लालसा या आसक्ति।",
+    "descDetail": "Physical restraint or fasting can force the senses away from their objects, but the psychological craving (Rasa) remains. This deep-rooted subtle attachment is completely eradicated only when one experiences the higher, infinite joy of realizing the Supreme (God).",
+    "descDetailHindi": "शारीरिक संयम या उपवास इंद्रियों को उनके विषयों से दूर कर सकता है, लेकिन मनोवैज्ञानिक लालसा (रस) बनी रहती है। यह गहरी सूक्ष्म आसक्ति केवल तभी पूरी तरह से नष्ट होती है जब कोई परमेश्वर (परमात्मा) को प्राप्त करने के उच्च और अनंत आनंद का अनुभव करता है।"
+  },
+  {
+    "id": "exp_pramathini",
+    "term": "Turbulent Senses",
+    "termHindi": "प्रमथन स्वभाव वाली इन्द्रियाँ",
+    "desc": "The inherently restless, powerful, and agitating nature of the human senses.",
+    "descHindi": "मानव इंद्रियों का अंतर्निहित चंचल, शक्तिशाली और व्याकुल करने वाला स्वभाव।",
+    "descDetail": "The senses are described as 'Pramathini' (turbulent) because they have the sheer force to violently sweep away the discrimination and self-control of even a highly intelligent and striving seeker.",
+    "descDetailHindi": "इंद्रियों को 'प्रमाथीनि' (मथने वाली) कहा गया है क्योंकि उनमें इतनी शक्ति होती है कि वे यत्न करने वाले एक अत्यंत बुद्धिमान साधक के विवेक और आत्म-नियंत्रण को भी बलपूर्वक हर कर ले जाती हैं।"
   }
+
+
+
+
 ]

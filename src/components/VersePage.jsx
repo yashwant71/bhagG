@@ -292,22 +292,27 @@ const VersePage = () => {
   // Close tooltip when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
-      const isClickOnSanskritWord = e.target && typeof e.target.closest === 'function' && e.target.closest('.sanskrit-word')
-      const isClickOnTooltip = e.target && typeof e.target.closest === 'function' && e.target.closest('.word-tooltip')
-      const isClickOnTooltipMeaning = e.target && typeof e.target.closest === 'function' && e.target.closest('.tooltip-meaning')
+      const target = e.target
+      if (!target || typeof target.closest !== 'function') return
+
+      const isClickOnSanskritWord = target.closest('.sanskrit-word')
+      const isClickOnSanskritTooltip = target.closest('.word-tooltip') || target.closest('.tooltip-content-wrapper')
       
-      if (clickedWord && !isClickOnSanskritWord && !isClickOnTooltip && !isClickOnTooltipMeaning) {
+      const isClickOnTranslationReference = target.closest('.translation-word-reference')
+      const isClickOnTranslationTooltip = target.closest('.translation-word-tooltip')
+
+      if (clickedWord && !isClickOnSanskritWord && !isClickOnSanskritTooltip) {
         setClickedWord(null)
         setWordData(null)
         setToggledMeanings({})
       }
       
-      if (hoveredWord && !isClickOnSanskritWord && !isClickOnTooltip) {
+      if (hoveredWord && !isClickOnSanskritWord && !isClickOnSanskritTooltip) {
         setHoveredWord(null)
         setHoveredWordData(null)
       }
       
-      if (clickedTranslationWord && (!e.target || typeof e.target.closest !== 'function' || (!e.target.closest('.translation-word-reference') && !e.target.closest('.translation-word-tooltip')))) {
+      if (clickedTranslationWord && !isClickOnTranslationReference && !isClickOnTranslationTooltip) {
         setClickedTranslationWord(null)
         setTranslationWordData(null)
         setTranslationTooltipPosition(null)
@@ -900,17 +905,12 @@ const VersePage = () => {
     return null
   }
 
-  // Handle word hover for temporary tooltip (desktop only)
   const handleWordHover = (lineIndex, wordIndex, e) => {
+    // If we already have a persistent tooltip (clicked), don't show hover tooltips for others
+    if (clickedWord) return
+
     const wordKey = `${lineIndex}-${wordIndex}`
     const wordsData = getWordData(lineIndex, wordIndex)
-    
-    // If hovering over a different word, close any existing static tooltip
-    if (clickedWord && clickedWord !== wordKey) {
-      setClickedWord(null)
-      setWordData(null)
-      setToggledMeanings({})
-    }
     
     // Set new hover state immediately (no delay) for smooth transition between words
     if (wordsData) {

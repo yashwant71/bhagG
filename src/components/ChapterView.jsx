@@ -265,7 +265,13 @@ const ChapterView = () => {
   // Close tooltip when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (hoveredWord && (!e.target || typeof e.target.closest !== 'function' || (!e.target.closest('.translation-word-reference') && !e.target.closest('.translation-word-tooltip')))) {
+      const target = e.target
+      if (!target || typeof target.closest !== 'function') return
+
+      const isClickOnReference = target.closest('.translation-word-reference')
+      const isClickOnTooltip = target.closest('.translation-word-tooltip') || target.closest('.tooltip-content-wrapper')
+      
+      if (hoveredWord && !isClickOnReference && !isClickOnTooltip) {
         setHoveredWord(null)
         setHoveredWordData(null)
       }

@@ -1,16 +1,18 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { useFloating, autoUpdate, offset, flip, shift, useInteractions, useHover, useClick, useRole, useDismiss, safePolygon } from '@floating-ui/react'
-import { useParams, useRouter } from 'next/navigation'
+import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import { getAllChapterNumbers, getVerseNumbers, getChapter } from '../data/utils'
 import WordTooltipContent from './WordTooltipContent'
 import TranslationTextRenderer from './TranslationTextRenderer'
 import CommonHeader from './CommonHeader'
 import LoadingScreen from './LoadingScreen'
+import DivineEffects from './DivineEffects'
 import './VersePage.css'
 
 const VersePage = () => {
   const params = useParams()
   const router = useRouter()
+  const searchParams = useSearchParams()
   
   // Handle both catch-all route format and direct params
   const chapter = Array.isArray(params?.params) ? params.params[0] : (params?.chapter || params?.params?.[0])
@@ -25,7 +27,56 @@ const VersePage = () => {
       return 'english'
     }
   }
+
+  // Divine effects settings (toggles and sliders)
+  const getStoredDivineSettings = () => {
+    try {
+      const stored = localStorage.getItem('bg-divine-settings')
+      const defaultSettings = { 
+        showFlares: true, 
+        showStars: true, 
+        showMeteors: true, 
+        showFlowingStars: true,
+        flareIntensity: 0.8,
+        starDensity: 0.5,
+        flareScale: 1.5,
+        flareDensity: 0.45,
+        flareOffsetX: 0,
+        flareOffsetY: 0
+      }
+      return stored ? { ...defaultSettings, ...JSON.parse(stored) } : defaultSettings
+    } catch (error) {
+      return { 
+        showFlares: true, 
+        showStars: true, 
+        showMeteors: true, 
+        showFlowingStars: true,
+        flareIntensity: 0.8,
+        starDensity: 0.5,
+        flareScale: 1.5,
+        flareDensity: 0.45,
+        flareOffsetX: 0,
+        flareOffsetY: 0
+      }
+    }
+  }
   
+  const [divineSettings, setDivineSettings] = useState(getStoredDivineSettings)
+  const [showDivineSettings, setShowDivineSettings] = useState(false)
+  const [isSaving, setIsSaving] = useState(false)
+  
+  const updateDivineSetting = (key, value) => {
+    const newSettings = { ...divineSettings, [key]: value }
+    setDivineSettings(newSettings)
+    localStorage.setItem('bg-divine-settings', JSON.stringify(newSettings))
+  }
+
+  const handleSaveDefault = () => {
+    setIsSaving(true)
+    localStorage.setItem('bg-divine-settings', JSON.stringify(divineSettings))
+    setTimeout(() => setIsSaving(false), 1500)
+  }
+
   const [translation, setTranslation] = useState(getStoredLanguage)
   const [isLoaded, setIsLoaded] = useState(false)
   const [clickedWord, setClickedWord] = useState(null) // Track clicked word for persistent tooltip
@@ -906,13 +957,16 @@ const VersePage = () => {
   }
 
   const handleWordHover = (lineIndex, wordIndex, e) => {
-    // If we already have a persistent tooltip (clicked), don't show hover tooltips for others
-    if (clickedWord) return
-
     const wordKey = `${lineIndex}-${wordIndex}`
     const wordsData = getWordData(lineIndex, wordIndex)
     
-    // Set new hover state immediately (no delay) for smooth transition between words
+    // Fluid interaction: Clear any persistent tooltip when hovering a new word
+    if (clickedWord && clickedWord !== wordKey) {
+      setClickedWord(null)
+      setWordData(null)
+    }
+
+    // Set new hover state immediately
     if (wordsData) {
       setHoveredWord(wordKey)
       setHoveredWordData(wordsData)
@@ -1086,26 +1140,6 @@ const VersePage = () => {
       onTouchEnd={handleTouchEnd}
     >
       <div className="verse-background">
-        <div className="divine-ambient-glow"></div>
-        <div className="divine-particles">
-          {particleProps.map((props, i) => (
-            <div 
-              key={i} 
-              className="divine-particle"
-              style={{
-                '--left': props.left,
-                '--delay': props.delay,
-                '--duration': props.duration,
-                '--size': props.size,
-                '--drift': props.drift,
-                '--max-opacity': props.opacity,
-                '--y-end': props.yEnd,
-                '--blur': props.blur
-              }}
-            ></div>
-          ))}
-        </div>
-        <div className="divine-light-beams"></div>
       </div>
       
       {/* Mobile Swipe Tutorial - App-like Banner */}
@@ -1211,6 +1245,19 @@ const VersePage = () => {
         chapterNum={validChapterNum}
         translation={translation}
         onTranslationChange={updateTranslation}
+        rightContent={
+          searchParams.get('dev') === 'true' ? (
+            <button 
+              className={`divine-toggle-btn ${showDivineSettings ? 'active' : ''}`}
+              onClick={() => setShowDivineSettings(!showDivineSettings)}
+              aria-label="Divine effects settings"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+              </svg>
+            </button>
+          ) : null
+        }
       />
       
       <div className="verse-carousel-wrapper">
@@ -1408,7 +1455,167 @@ const VersePage = () => {
               </svg>
             </button>
           </div>
-        </div>
+
+      {/* Divine Settings Drawer - Only shown if ?dev=true */}
+      {searchParams.get('dev') === 'true' && showDivineSettings && (
+        <>
+          <div className="divine-drawer-overlay" onClick={() => setShowDivineSettings(false)}></div>
+          <div className="divine-drawer-panel">
+            <div className="divine-drawer-header">
+              <div className="header-title-group">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                <h3>Divine Effects</h3>
+              </div>
+              <button 
+                className="divine-drawer-close"
+                onClick={() => setShowDivineSettings(false)}
+                aria-label="Close settings"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="18" y1="6" x2="6" y2="18"/>
+                  <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+            </div>
+
+            <div className="divine-drawer-content">
+              <div className="setting-group-label">Visibility</div>
+              <div className="setting-item">
+                <span>Lens Flares</span>
+                <label className="switch">
+                  <input 
+                    type="checkbox" 
+                    checked={divineSettings.showFlares} 
+                    onChange={(e) => updateDivineSetting('showFlares', e.target.checked)}
+                  />
+                  <span className="slider"></span>
+                </label>
+              </div>
+              
+              <div className="setting-item">
+                <span>Starfield</span>
+                <label className="switch">
+                  <input 
+                    type="checkbox" 
+                    checked={divineSettings.showStars} 
+                    onChange={(e) => updateDivineSetting('showStars', e.target.checked)}
+                  />
+                  <span className="slider"></span>
+                </label>
+              </div>
+
+              <div className="setting-item">
+                <span>Shooting Stars</span>
+                <label className="switch">
+                  <input 
+                    type="checkbox" 
+                    checked={divineSettings.showMeteors} 
+                    onChange={(e) => updateDivineSetting('showMeteors', e.target.checked)}
+                  />
+                  <span className="slider"></span>
+                </label>
+              </div>
+
+              <div className="setting-item">
+                <span>Flowing Stars</span>
+                <label className="switch">
+                  <input 
+                    type="checkbox" 
+                    checked={divineSettings.showFlowingStars} 
+                    onChange={(e) => updateDivineSetting('showFlowingStars', e.target.checked)}
+                  />
+                  <span className="slider"></span>
+                </label>
+              </div>
+
+              <div className="setting-group-label">Glint Tuning</div>
+              <div className="setting-slider-item">
+                <div className="slider-header">
+                  <span>Intensity</span>
+                  <span>{Math.round(divineSettings.flareIntensity * 100)}%</span>
+                </div>
+                <input 
+                  type="range" min="0" max="1" step="0.1" 
+                  value={divineSettings.flareIntensity}
+                  onChange={(e) => updateDivineSetting('flareIntensity', parseFloat(e.target.value))}
+                />
+              </div>
+
+              <div className="setting-slider-item">
+                <div className="slider-header">
+                  <span>Scale</span>
+                  <span>{divineSettings.flareScale.toFixed(1)}x</span>
+                </div>
+                <input 
+                  type="range" min="0.5" max="3.0" step="0.1" 
+                  value={divineSettings.flareScale}
+                  onChange={(e) => updateDivineSetting('flareScale', parseFloat(e.target.value))}
+                />
+              </div>
+
+              <div className="setting-slider-item">
+                <div className="slider-header">
+                  <span>Density</span>
+                  <span>{Math.round(divineSettings.flareDensity * 100)}%</span>
+                </div>
+                <input 
+                  type="range" min="0.1" max="1" step="0.05" 
+                  value={divineSettings.flareDensity}
+                  onChange={(e) => updateDivineSetting('flareDensity', parseFloat(e.target.value))}
+                />
+              </div>
+
+              <div className="setting-group-label">Environment</div>
+              <div className="setting-slider-item">
+                <div className="slider-header">
+                  <span>Star Density</span>
+                  <span>{Math.round(divineSettings.starDensity * 100)}%</span>
+                </div>
+                <input 
+                  type="range" min="0.1" max="1" step="0.1" 
+                  value={divineSettings.starDensity}
+                  onChange={(e) => updateDivineSetting('starDensity', parseFloat(e.target.value))}
+                />
+              </div>
+
+              <div className="setting-group-label">Fine Adjustments</div>
+              <div className="setting-slider-item">
+                <div className="slider-header">
+                  <span>Horizontal Alignment</span>
+                  <span>{divineSettings.flareOffsetX}px</span>
+                </div>
+                <input 
+                  type="range" min="-40" max="40" step="1" 
+                  value={divineSettings.flareOffsetX}
+                  onChange={(e) => updateDivineSetting('flareOffsetX', parseInt(e.target.value))}
+                />
+              </div>
+
+              <div className="setting-slider-item">
+                <div className="slider-header">
+                  <span>Vertical Alignment</span>
+                  <span>{divineSettings.flareOffsetY}px</span>
+                </div>
+                <input 
+                  type="range" min="-40" max="40" step="1" 
+                  value={divineSettings.flareOffsetY}
+                  onChange={(e) => updateDivineSetting('flareOffsetY', parseInt(e.target.value))}
+                />
+              </div>
+
+              <button 
+                className={`save-default-btn ${isSaving ? 'saved' : ''}`}
+                onClick={handleSaveDefault}
+              >
+                {isSaving ? 'Config Saved' : 'Set as Permanent'}
+              </button>
+            </div>
+          </div>
+        </>
+      )}
+      </div>
       </div>
 
         {/* Translation Section - In Card */}
@@ -1438,7 +1645,7 @@ const VersePage = () => {
                       top: transY ?? 0,
                       left: transX ?? 0,
                       pointerEvents: 'auto',
-                      zIndex: 2000,
+                      zIndex: 3500,
                       visibility: (transX === null) ? 'hidden' : 'visible'
                     }}
                   >
@@ -1493,7 +1700,7 @@ const VersePage = () => {
             left: sanskritX ?? 0,
             pointerEvents: 'auto',
             visibility: (sanskritX === null) ? 'hidden' : 'visible',
-            zIndex: 1000
+            zIndex: 3500
           }}
         >
          <WordTooltipContent 
@@ -1577,6 +1784,20 @@ const VersePage = () => {
           )}
         </div>
       )}
+      {/* Final Divine Effects Layering: Stars behind, Flares on top */}
+      <DivineEffects 
+        animationsComplete={animationsComplete}
+        showFlares={divineSettings.showFlares}
+        showStars={divineSettings.showStars}
+        showMeteors={divineSettings.showMeteors}
+        showFlowingStars={divineSettings.showFlowingStars}
+        flareIntensity={divineSettings.flareIntensity}
+        starDensity={divineSettings.starDensity}
+        flareScale={divineSettings.flareScale}
+        flareDensity={divineSettings.flareDensity}
+        flareOffsetX={divineSettings.flareOffsetX}
+        flareOffsetY={divineSettings.flareOffsetY}
+      />
     </div>
   )
 }

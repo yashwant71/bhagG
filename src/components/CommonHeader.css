@@ -46,8 +46,8 @@
 
 .header-home-button:hover,
 .header-chapter-button:hover {
-  background: rgba(212, 175, 55, 0.1);
-  color: var(--gold-primary);
+  background: var(--divine-border-soft);
+  color: var(--divine-gold-primary);
 }
 
 .header-center {
@@ -74,7 +74,7 @@
 .language-selector-button {
   background: rgba(26, 26, 26, 0.5);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid var(--divine-border-soft);
   border-radius: 8px;
   width: 38px;
   height: 38px;
@@ -88,23 +88,23 @@
 }
 
 .language-selector-button:hover {
-  border-color: rgba(212, 175, 55, 0.4);
-  background: rgba(212, 175, 55, 0.1);
-  color: var(--gold-primary);
+  border-color: var(--divine-border-medium);
+  background: var(--divine-border-soft);
+  color: var(--divine-gold-primary);
 }
 
 .language-dropdown {
   position: absolute;
   top: calc(100% + 10px);
   right: 0;
-  background: rgba(20, 20, 20, 0.95);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: var(--divine-tooltip-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--divine-border-gold);
   border-radius: 10px;
   padding: 0.5rem;
   min-width: 140px;
   z-index: 1000;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
   animation: dropdownSlideIn 0.2s ease-out;
 }
 
@@ -137,12 +137,12 @@
 }
 
 .language-option:hover {
-  background: rgba(212, 175, 55, 0.1);
+  background: var(--divine-border-soft);
 }
 
 .language-option.active {
-  color: var(--gold-primary);
-  background: rgba(212, 175, 55, 0.15);
+  color: var(--divine-gold-primary);
+  background: var(--divine-border-soft);
   font-weight: 500;
 }
 
@@ -169,7 +169,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--gold-primary);
+  color: var(--divine-gold-primary);
   opacity: 0.8;
 }
 
@@ -195,8 +195,8 @@
 
 .chapter-dropdown-trigger:hover,
 .chapter-dropdown-trigger.active {
-  background: rgba(212, 175, 55, 0.1);
-  color: var(--gold-primary);
+  background: var(--divine-border-soft);
+  color: var(--divine-gold-primary);
   opacity: 1;
 }
 
@@ -212,14 +212,14 @@
   position: absolute;
   top: calc(100% + 10px);
   right: 0;
-  background: rgba(20, 20, 20, 0.95);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: var(--divine-tooltip-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--divine-border-gold);
   border-radius: 12px;
   padding: 0.6rem;
   min-width: 240px;
   z-index: 1000;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8);
   animation: dropdownSlideIn 0.2s ease-out;
 }
 
@@ -240,12 +240,12 @@
 }
 
 .chapter-option:hover {
-  background: rgba(212, 175, 55, 0.1);
+  background: var(--divine-border-soft);
 }
 
 .chapter-option.active {
-  color: var(--gold-primary);
-  background: rgba(212, 175, 55, 0.15);
+  color: var(--divine-gold-primary);
+  background: var(--divine-border-soft);
 }
 
 .chapter-option-info {

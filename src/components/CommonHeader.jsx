@@ -9,7 +9,8 @@ const CommonHeader = ({
   chapterNum, 
   translation, 
   onTranslationChange,
-  centerContent = null
+  centerContent = null,
+  rightContent = null
 }) => {
   const router = useRouter()
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false)
@@ -165,6 +166,8 @@ const CommonHeader = ({
               </div>
             )}
           </div>
+          
+          {rightContent}
         </div>
       </div>
     </header>

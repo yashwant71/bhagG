@@ -1,3 +1,23 @@
+:root {
+  /* Divine Gold Palette */
+  --divine-gold-primary: #ffe066;
+  --divine-gold-bright: #fffde0;
+  --divine-gold-soft: rgba(255, 224, 102, 0.6);
+  --divine-gold-aura: rgba(255, 180, 30, 0.6);
+  --divine-gold-core: rgba(255, 230, 80, 0.8);
+  
+  /* Ambient / Background / UI */
+  --divine-bg-inner: #2d1600;
+  --divine-bg-mid: #150900;
+  --divine-bg-outer: #040200;
+  --divine-tooltip-bg: #0c0a08; /* Clean obsidian black for tooltips */
+  
+  /* Functional Accents */
+  --divine-border-soft: rgba(212, 175, 55, 0.15);
+  --divine-border-medium: rgba(212, 175, 55, 0.3);
+  --divine-border-gold: rgba(212, 175, 55, 0.25);
+}
+
 .verse-page {
   min-height: 100vh;
   position: relative;
@@ -17,124 +37,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 50% 50%, #060504 0%, #000000 100%);
+  /* Deeper, more atmospheric spiritual gradient — richer blacks and deeper ambers */
+  background: radial-gradient(circle at 50% 32%, var(--divine-bg-inner) 0%, var(--divine-bg-mid) 48%, var(--divine-bg-outer) 100%);
   z-index: var(--z-background);
   pointer-events: none;
   overflow: hidden;
 }
 
-/* Moving ambient glow - even slower and subtler */
-.divine-ambient-glow {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: 
-    radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
-    radial-gradient(circle at 70% 60%, rgba(212, 175, 55, 0.02) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.01) 0%, transparent 70%);
-  animation: bgAmbientMove 30s ease-in-out infinite;
-  filter: blur(80px);
-}
 
-@keyframes bgAmbientMove {
-  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-  33% { transform: translate(-3%, 3%) scale(1.05) rotate(2deg); }
-  66% { transform: translate(3%, -3%) scale(0.95) rotate(-2deg); }
-}
-
-/* Divine fire glow at bottom - breathing animation */
-.verse-background::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 40%;
-  background: 
-    radial-gradient(ellipse at 50% 100%, rgba(255, 120, 0, 0.12) 0%, rgba(212, 175, 55, 0.06) 40%, transparent 80%),
-    radial-gradient(ellipse at 20% 100%, rgba(255, 60, 0, 0.07) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 100%, rgba(255, 140, 0, 0.08) 0%, transparent 60%);
-  filter: blur(50px);
-  animation: fireBreathing 12s ease-in-out infinite;
-  opacity: 0.7;
-}
-
-@keyframes fireBreathing {
-  0%, 100% { opacity: 0.5; transform: scaleY(1); }
-  50% { opacity: 0.9; transform: scaleY(1.08); }
-}
-
-/* Light beams - more subtle shimmer */
-.divine-light-beams {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent 0%,
-    transparent 10%,
-    rgba(212, 175, 55, 0.01) 12%,
-    transparent 14%,
-    transparent 20%
-  );
-  mask-image: radial-gradient(circle at 50% -20%, black 0%, transparent 80%);
-  -webkit-mask-image: radial-gradient(circle at 50% -20%, black 0%, transparent 80%);
-  animation: beamsShimmer 20s linear infinite;
-  opacity: 0.4;
-}
-
-@keyframes beamsShimmer {
-  0% { transform: translateX(-5%) rotate(0deg); }
-  100% { transform: translateX(5%) rotate(3deg); }
-}
-
-/* Particles */
-.divine-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  perspective: 1000px;
-}
-
-.divine-particle {
-  position: absolute;
-  width: var(--size, 2px);
-  height: var(--size, 2px);
-  background: var(--gold-bright);
-  border-radius: 50%;
-  opacity: 0;
-  box-shadow: 0 0 8px var(--gold-primary), 0 0 16px var(--gold-primary);
-  animation: particleFloat var(--duration, 15s) linear infinite;
-  animation-delay: var(--delay, 0s);
-  left: var(--left, 50%);
-  top: 100%;
-  filter: blur(var(--blur, 0.5px));
-  will-change: transform, opacity;
-}
-
-@keyframes particleFloat {
-  0% {
-    transform: translateY(10vh) translateX(0) scale(0);
-    opacity: 0;
-  }
-  15% {
-    opacity: var(--max-opacity, 0.5);
-    transform: translateY(0vh) translateX(calc(var(--drift, 10px) * 0.3)) scale(1);
-  }
-  85% {
-    opacity: var(--max-opacity, 0.5);
-  }
-  100% {
-    transform: translateY(var(--y-end, -110vh)) translateX(var(--drift, 20px)) scale(0);
-    opacity: 0;
-  }
-}
 
 
 
@@ -174,18 +84,6 @@
   gap: 0.25rem;
 }
 
-.focused-pretext {
-  font-size: 0.75rem;
-  color: var(--text-accent);
-  opacity: 0.5;
-  font-style: italic;
-  text-align: center;
-  max-width: 85%;
-  line-height: 1.4;
-  margin-bottom: 0.25rem;
-  animation: fadeIn 1s ease-out 0.2s both;
-}
-
 /* Carousel transition styles */
 .verse-container.swipe-left,
 .verse-container.swipe-right {
@@ -219,13 +117,6 @@
   }
 }
 
-/* Pretext styles (Moved to header, but kept these as fallback/utility) */
-.pretext-spacer {
-  flex: 1;
-}
-
-/* Tooltip and Interaction styles remain... */
-
 /* Sanskrit Section - Primary Focus, No Card - Fixed Position */
 .sanskrit-section {
   width: 100%;
@@ -239,34 +130,6 @@
   justify-content: center;
 }
 
-/* Navigation arrows - Removed, now using verse-number-container controls */
-
-/* Dynamic divine aura behind Sanskrit text */
-.sanskrit-section::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120%;
-  height: 120%;
-  min-height: 400px;
-  background: 
-    radial-gradient(ellipse at center, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.05) 40%, transparent 80%),
-    radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.08) 0%, transparent 60%);
-  border-radius: 50%;
-  filter: blur(60px);
-  z-index: -1;
-  pointer-events: none;
-  animation: divineAuraPulse 10s ease-in-out infinite;
-  opacity: 1;
-}
-
-@keyframes divineAuraPulse {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
-  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
-}
-
 .sanskrit-words-container {
   width: 100%;
   display: flex;
@@ -276,41 +139,57 @@
   position: relative;
 }
 
+.focused-pretext {
+  font-size: 0.65rem;
+  color: var(--divine-gold-primary);
+  opacity: 0.45;
+  font-style: italic;
+  text-align: center;
+  max-width: 85%;
+  line-height: 1.4;
+  margin-bottom: -4px;
+  animation: fadeIn 1s ease-out 0.2s both;
+}
+
 .sanskrit-line {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.4rem;
-  line-height: 1.5;
+  gap: 0.3rem; 
+  line-height: 1.25; 
 }
 
 .sanskrit-word {
-  font-family: 'Noto Sans Devanagari', serif;
-  font-size: 2.2rem;
-  font-weight: 400;
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.85rem; 
+  font-weight: 500; 
+  letter-spacing: 0.3px; 
   display: inline-block;
   position: relative;
-  padding-bottom: 6px;
-  -webkit-text-stroke: 1.2px rgba(212, 175, 55, 0.4);
-  color: var(--text-secondary);
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 0px transparent !important;
+  color: var(--divine-gold-primary);
+  text-shadow: none !important;
   background: transparent;
   opacity: 0;
   transform: translateY(-150px);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: default;
   user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+}
+
+.sanskrit-word:hover {
+  color: var(--divine-gold-bright) !important;
+  text-shadow: 0 0 18px var(--divine-gold-aura), 0 0 8px var(--divine-gold-core) !important;
+  transform: translateY(-150px) scale(1.02);
+  transition: all 0.3s ease-out;
+  cursor: pointer;
 }
 
 .sanskrit-word.audio-active {
-  color: var(--gold-bright) !important;
-  -webkit-text-stroke: 1.2px var(--gold-primary) !important;
-  text-shadow: 0 0 15px var(--gold-primary);
-  transform: scale(1.05);
+  color: var(--divine-gold-bright) !important;
+  text-shadow: 0 0 22px var(--divine-gold-aura), 0 0 12px var(--divine-gold-core) !important;
+  transform: scale(1.06);
   transition: all 0.2s ease-out;
   z-index: 10;
   opacity: 1 !important;
@@ -323,14 +202,9 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(to right, transparent, var(--gold-bright), transparent);
-  box-shadow: 0 0 15px var(--gold-primary);
+  background: linear-gradient(to right, transparent, var(--divine-gold-bright), transparent);
+  box-shadow: 0 0 15px var(--divine-gold-aura);
   opacity: 1;
-}
-
-.sanskrit-word.has-translation {
-  cursor: pointer;
-  position: relative;
 }
 
 .sanskrit-word.has-translation::after {
@@ -340,7 +214,7 @@
   left: 5%;
   width: 90%;
   height: 2px;
-  background: var(--gold-30);
+  background: var(--divine-border-medium);
   border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0.6;
@@ -350,10 +224,10 @@
 .sanskrit-word.has-translation.tooltip-active::after,
 .sanskrit-word.has-translation.tooltip-hover::after {
   height: 3px;
-  background: var(--gold-bright);
+  background: var(--divine-gold-bright);
   opacity: 1;
   bottom: 0px;
-  box-shadow: 0 0 10px var(--gold-50), 0 0 5px var(--gold-30);
+  box-shadow: 0 0 10px var(--divine-gold-aura), 0 0 5px var(--divine-gold-soft);
 }
 
 .sanskrit-word.has-translation:not(.animations-complete) {
@@ -501,31 +375,32 @@
   opacity: 0;
 }
 
-/* Tooltip container - Base styles shared by both types of tooltips */
+/* Unified Divine Tooltip System - Synchronized Shloka & Translation Styles */
 .word-tooltip,
 .translation-word-tooltip {
   position: absolute;
-  background-color: #1e190f !important;
+  background-color: var(--divine-tooltip-bg) !important;
   opacity: 1 !important;
   color: var(--text-tooltip);
-  padding: 0.8rem !important; /* Uniform padding on all sides */
+  padding: 0.8rem !important; 
   border-radius: var(--radius-md);
   font-size: var(--font-sm);
   font-weight: 400;
-  z-index: var(--z-tooltip);
-  border: 1.2px solid var(--border-gold-medium);
-  box-shadow: var(--shadow-xl);
+  z-index: 3500 !important; /* Unified elevation */
+  border: 1.2px solid var(--divine-border-gold) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
   pointer-events: auto;
   font-family: 'Inter', sans-serif;
   animation: tooltipFadeIn 0.2s ease-out forwards;
   -webkit-text-stroke: 0 !important;
-  -webkit-text-fill-color: var(--text-tooltip) !important;
+  -webkit-text-fill-color: var(--divine-gold-primary) !important;
   text-shadow: none !important;
   text-decoration: none !important;
   letter-spacing: 0.2px;
   line-height: 1.35;
   width: fit-content;
   min-width: auto;
+  backdrop-filter: blur(20px);
   max-width: min(480px, calc(100vw - 2rem));
   white-space: normal;
   word-wrap: break-word;
@@ -565,7 +440,7 @@
 
 .tooltip-word-box {
   background: rgba(255, 215, 0, 0.05);
-  border: 1px solid var(--gold-20);
+  border: 1px solid var(--divine-border-soft);
   border-radius: 5px;
   padding: 0.3rem 0.55rem;
   display: flex;
@@ -596,7 +471,7 @@
 .tooltip-word-divider-line {
   width: 100%;
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--gold-25), transparent);
+  background: linear-gradient(to right, transparent, var(--divine-border-medium), transparent);
   margin: 1px 0;
 }
 
@@ -1092,9 +967,7 @@
   box-shadow: inset 0 -4px 10px -4px rgba(212, 175, 55, 0.3);
 }
 
-.translation-word-tooltip {
-  z-index: var(--z-tooltip-high);
-}
+/* Redundant translation-word-tooltip block removed for CSS consolidation */
 
 .tooltip-word-data {
   margin-bottom: 0;
@@ -1109,16 +982,16 @@
 .tooltip-word-sanskrit {
   font-family: 'Noto Sans Devanagari', sans-serif;
   font-size: 1.05rem;
-  color: var(--text-tooltip-sanskrit);
+  color: var(--divine-gold-primary);
   font-weight: 500;
   line-height: 1;
   position: relative;
-  top: 1.5px; /* Offset to visually align the shirorekha with latin x-height */
+  top: 1.5px; 
 }
 
 .tooltip-word-transliteration {
   font-size: 0.85rem;
-  color: var(--yellow-70);
+  color: rgba(255, 224, 102, 0.7);
   font-style: italic;
   line-height: 1;
   opacity: 0.8;
@@ -1126,15 +999,15 @@
 }
 
 .tooltip-word-divider {
-  color: var(--gold-primary);
-  opacity: 0.3;
+  color: var(--divine-gold-primary);
+  opacity: 0.25;
   font-weight: 200;
   margin: 0 0.2rem;
   font-size: 0.8rem;
 }
 
 .tooltip-word-translation {
-  color: var(--text-tooltip);
+  color: var(--divine-gold-bright);
   font-size: 0.95rem;
   line-height: 1.2;
 }
@@ -1158,16 +1031,16 @@
   cursor: pointer;
   transition: all 0.2s ease;
   padding: 0.25rem 0.5rem;
-  background: rgba(var(--gold-primary-rgb), 0.04);
+  background: rgba(212, 175, 55, 0.04);
   border-radius: 4px;
 }
 
 .tooltip-explanation-item.clickable:hover {
-  background: rgba(var(--gold-primary-rgb), 0.08);
+  background: rgba(212, 175, 55, 0.08);
 }
 
 .tooltip-explanation-item.clickable:hover .tooltip-explanation-term {
-  color: #fff;
+  color: var(--divine-gold-bright);
 }
 
 .tooltip-explanation-header {
@@ -1269,11 +1142,11 @@
 
   .sanskrit-word {
     font-size: 2rem;
-    -webkit-text-stroke: 1.2px #b8941f;
+    -webkit-text-stroke: 1.2px var(--divine-border-gold);
   }
   
   .sanskrit-word:hover {
-    -webkit-text-stroke: 1.5px #e5c84a;
+    -webkit-text-stroke: 1.5px var(--divine-gold-primary);
   }
 
   .sanskrit-line {
@@ -1370,11 +1243,11 @@
 
   .sanskrit-word {
     font-size: 1.3rem;
-    -webkit-text-stroke: 1px #b8941f;
+    -webkit-text-stroke: 1px var(--divine-border-gold);
   }
   
   .sanskrit-word:hover {
-    -webkit-text-stroke: 1.3px #e5c84a;
+    -webkit-text-stroke: 1.3px var(--divine-gold-primary);
   }
 
   .translation-card {
@@ -1852,17 +1725,17 @@
 
 .tooltip-word-data.has-explanation {
   cursor: pointer !important;
-  background: rgba(var(--gold-primary-rgb), 0.08);
-  border: 1px solid var(--gold-20);
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid var(--divine-border-soft);
   padding: 0.35rem 0.6rem;
   border-radius: var(--radius-md);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tooltip-word-data.has-explanation:hover {
-  background: rgba(var(--gold-primary-rgb), 0.15);
-  border-color: var(--gold-primary);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--gold-20);
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--divine-gold-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transform: translateY(-1px);
 }
 
@@ -2234,9 +2107,280 @@
   letter-spacing: 1px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 480px) {
-  /* Action buttons now handled in primary mobile media query */
+/* Divine Toggle Button (in Header) */
+.divine-toggle-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  color: var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 8px;
+}
+
+.divine-toggle-btn:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--gold-primary);
+  color: var(--gold-bright);
+  transform: rotate(30deg);
+}
+
+.divine-toggle-btn.active {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--gold-primary);
+  color: var(--gold-bright);
 }
 
 
+/* Divine Drawer Panel (Drawer Mode) */
+.divine-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 4000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.divine-drawer-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 90%;
+  max-width: 320px;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.98);
+  backdrop-filter: blur(25px);
+  border-left: 1px solid rgba(212, 175, 55, 0.3);
+  z-index: 4001;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0 30px rgba(0, 0, 0, 0.6);
+  animation: slideInRight 0.3s ease-out;
+}
+
+.divine-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.header-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold-bright);
+}
+
+.header-title-group h3 {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.divine-drawer-close {
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-accent);
+  transition: all 0.2s ease;
+}
+
+.divine-drawer-close:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+.divine-drawer-content {
+  padding: 1.5rem;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-30) transparent;
+}
+
+.setting-group-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold-50);
+  letter-spacing: 1.5px;
+  margin-top: 0.5rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  padding-bottom: 4px;
+}
+
+/* Rest of the original settings styles remain the same below this... */
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.settings-header h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gold-bright);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--gold-20);
+  padding-bottom: 8px;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.setting-slider-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-accent);
+  opacity: 0.8;
+}
+
+/* Switch styling */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--gold-primary);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--gold-primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+/* Range slider styling */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: var(--gold-bright);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.save-default-btn {
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-bright);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.save-default-btn:hover {
+  background: var(--gold-primary);
+  color: #000;
+}
+
+.save-default-btn.saved {
+  background: #27ae60;
+  border-color: #2ecc71;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .divine-settings-control {
+    bottom: 100px;
+    right: 15px;
+  }
+}

@@ -2,8 +2,9 @@ import { getVerse, getChapter } from '../../../src/data/utils'
 
 export async function generateMetadata({ params }) {
   try {
-    const chapter = params?.params?.[0]
-    const verse = params?.params?.[1]
+    const resolvedParams = await params;
+    const chapter = resolvedParams?.params?.[0]
+    const verse = resolvedParams?.params?.[1]
     
     if (!chapter || !verse) {
       return {

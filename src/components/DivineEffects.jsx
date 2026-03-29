@@ -27,7 +27,8 @@ const DivineEffects = ({
   flareDensity = 0.45,
   flareOffsetX = 0,
   flareOffsetY = 0,
-  animationsComplete = false
+  animationsComplete = false,
+  translation = 'english'
 }) => {
   const bgCanvasRef = useRef(null);
   const flrCanvasRef = useRef(null);
@@ -377,7 +378,7 @@ const DivineEffects = ({
     } else {
       flaresRef.current = [];
     }
-  }, [animationsComplete, showFlares, active, flareIntensity, flareScale, flareDensity]);
+  }, [animationsComplete, showFlares, active, flareIntensity, flareScale, flareDensity, translation]);
 
   // Track scrolling to update flares
   useEffect(() => {

@@ -1,7 +1,7 @@
 import { getChapter } from '../../../../src/data/utils';
 
 export async function GET(request, { params }) {
-    const chapterId = params.id;
+    const { id: chapterId } = await params;
     const { searchParams } = new URL(request.url);
     const limit = parseInt(searchParams.get('limit') || '10');
     const offset = parseInt(searchParams.get('offset') || '0');

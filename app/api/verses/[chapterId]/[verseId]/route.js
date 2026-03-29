@@ -1,7 +1,7 @@
 import { getVerse, getChapter, getNextVerseNumber, getPrevVerseNumber } from '../../../../../src/data/utils';
 
 export async function GET(request, { params }) {
-    const { chapterId, verseId } = params;
+    const { chapterId, verseId } = await params;
     const chapterVerseKey = `${chapterId}.${verseId}`;
 
     const verse = getVerse(chapterId, verseId);

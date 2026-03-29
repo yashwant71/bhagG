@@ -220,17 +220,20 @@
   border-bottom-color: var(--gold-primary);
 }
 
-/* Tooltip styling */
+/* Tooltip styling - Synchronized with VersePage.css */
 .translation-word-tooltip {
   background-color: #0c0a08 !important; /* Unified peak Obsidian contrast */
   opacity: 1 !important;
-  border: 1.5px solid var(--divine-gold-primary); /* Shloka-consistent gold border */
+  border: 1px solid rgba(212, 175, 55, 0.2) !important; /* Reduced width and brightness */
   border-radius: 12px;
-  padding: 0.75rem;
-  max-width: 300px;
+  padding: 1rem !important;
+  width: fit-content;
+  min-width: 200px;
+  max-width: min(480px, calc(100vw - 2rem));
   z-index: 10000;
   box-shadow: 0 15px 45px rgba(0, 0, 0, 1), 0 0 15px rgba(212, 175, 55, 0.15);
   pointer-events: auto;
+  backdrop-filter: blur(25px);
   animation: tooltipFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 

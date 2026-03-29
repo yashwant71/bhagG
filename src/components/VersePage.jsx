@@ -270,19 +270,6 @@ const VersePage = () => {
     }
   }
 
-  // Scroll Verse Focus Area into center of viewport when verse loads
-  useEffect(() => {
-    if (isLoaded && verseFocusAreaRef.current) {
-      // Delay slightly to allow the "fall from above" animation to start
-      const timer = setTimeout(() => {
-        verseFocusAreaRef.current.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'center' 
-        })
-      }, 100)
-      return () => clearTimeout(timer)
-    }
-  }, [isLoaded, animationKey])
 
   // Check if swipe tutorial should be shown on first visit
   useEffect(() => {
@@ -1804,6 +1791,7 @@ const VersePage = () => {
         flareDensity={divineSettings.flareDensity}
         flareOffsetX={divineSettings.flareOffsetX}
         flareOffsetY={divineSettings.flareOffsetY}
+        translation={translation}
       />
     </div>
   )

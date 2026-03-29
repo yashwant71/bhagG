@@ -90,12 +90,12 @@ const ChapterView = () => {
       
       if (initial) {
         setChapterData(data)
-        setVerses(data.verses)
+        setVerses(data?.verses || [])
       } else {
-        setVerses(prev => [...prev, ...data.verses])
+        setVerses(prev => [...prev, ...(data?.verses || [])])
       }
       
-      setHasMore(data.hasMore)
+      setHasMore(!!data?.hasMore)
       setPageOffset(currentOffset + 10)
     } catch (error) {
       console.error('Failed to fetch chapter data:', error)
@@ -332,7 +332,7 @@ const ChapterView = () => {
         
         {/* Verses List */}
         <div className="verses-list">
-          {verses.map((verse, index) => {
+          {(verses || []).map((verse, index) => {
             const verseNum = verse.number
             const verseText = translation === 'english' ? verse.english?.text : verse.hindi?.text
             const parsedText = parseTranslationText(verseText || '', verse)

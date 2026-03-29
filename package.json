@@ -12,11 +12,14 @@
     "@floating-ui/react": "^0.27.17",
     "@tailwindcss/postcss": "^4.1.18",
     "cloudinary": "^2.9.0",
+    "clsx": "^2.1.1",
     "dom-to-image-more": "^3.7.2",
+    "framer-motion": "^12.38.0",
     "html2canvas": "^1.4.1",
     "next": "^16.1.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",

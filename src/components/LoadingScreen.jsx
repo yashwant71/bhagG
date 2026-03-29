@@ -15,7 +15,7 @@ const LoadingScreen = () => {
   }, [])
 
   return (
-    <div className="loading-screen-overlay">
+    <div className="loading-screen-overlay" suppressHydrationWarning>
       <div className="loading-background"></div>
       
       <div className="loading-content">

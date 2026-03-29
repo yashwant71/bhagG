@@ -7,6 +7,7 @@ import TranslationTextRenderer from './TranslationTextRenderer'
 import CommonHeader from './CommonHeader'
 import LoadingScreen from './LoadingScreen'
 import DivineEffects from './DivineEffects'
+import { CometCard } from './ui/CometCard'
 import './VersePage.css'
 
 const VersePage = () => {
@@ -99,6 +100,8 @@ const VersePage = () => {
   const [activeWordIndex, setActiveWordIndex] = useState(-1)
   const [isSnapshotting, setIsSnapshotting] = useState(false) // Snapshot animation state
   const [showSnapshotPreview, setShowSnapshotPreview] = useState(false) // Final preview before hiding
+  const [snapshotDataUrl, setSnapshotDataUrl] = useState(null)
+  const [showSnapshotModal, setShowSnapshotModal] = useState(false)
   const snapshotCardRef = useRef(null)
   const audioRef = useRef(null)
   // Floating UI for Sanskrit tooltips
@@ -402,18 +405,19 @@ const VersePage = () => {
     }
   }, [clickedTranslationWord, transRefs])
 
-  // Truly randomized particle properties
-  const particleProps = useMemo(() => {
-    return [...Array(60)].map((_, i) => ({
+  // Truly randomized particle properties - initialized on client to avoid hydration mismatch
+  const [particleProps, setParticleProps] = useState([])
+  useEffect(() => {
+    setParticleProps([...Array(60)].map((_, i) => ({
       left: `${Math.random() * 100}%`,
       delay: `${Math.random() * 20}s`,
       duration: `${15 + Math.random() * 20}s`,
       size: `${1 + Math.random() * 3.5}px`,
       drift: `${(Math.random() - 0.5) * 120}px`,
       opacity: 0.15 + Math.random() * 0.45,
-      yEnd: `${-60 - Math.random() * 60}vh`, // Dies at different heights
+      yEnd: `${-60 - Math.random() * 60}vh`, 
       blur: `${Math.random() * 1}px`
-    }))
+    })))
   }, [])
 
   const verse = verseData
@@ -725,13 +729,13 @@ const VersePage = () => {
     setIsSnapshotting(true);
     
     try {
-      // Import dom-to-image-more dynamically
-      const domtoimage = (await import('dom-to-image-more')).default;
+      // Switch to html2canvas for more robust cross-origin font support
+      const html2canvas = (await import('html2canvas')).default;
       
       const card = snapshotCardRef.current;
       if (!card) throw new Error('Snapshot card not found');
 
-      // Prepare for capture
+      // Prepare for capture - Move to a visible but off-screen location
       const container = card.parentElement;
       const originalStyle = container.style.cssText;
       
@@ -743,49 +747,55 @@ const VersePage = () => {
         display: block;
         opacity: 1;
         pointer-events: none;
-        z-index: -1000;
+        z-index: -2000;
+        width: 500px;
+        height: 700px;
       `;
 
-      // Small delay for layout
-      await new Promise(r => setTimeout(r, 400));
+      // Minimal delay for layout stabilization
+      await new Promise(r => setTimeout(r, 600));
 
-      // Use dom-to-image-more for better SVG/CSS support
-      const dataUrl = await domtoimage.toPng(card, {
+      const canvas = await html2canvas(card, {
         width: 500,
         height: 700,
-        style: {
-          display: 'flex',
-          visibility: 'visible'
-        }
+        scale: 2, // Double for high-DPI quality
+        useCORS: true,
+        backgroundColor: null,
+        logging: false
       });
+
+      const dataUrl = canvas.toDataURL('image/png');
 
       // Restore style
       container.style.cssText = originalStyle;
+      setSnapshotDataUrl(dataUrl);
 
-      // Download
-      const fileName = `Gita_Verse_${chapterVerseKey.replace('.', '_')}.png`;
-      const link = document.createElement('a');
-      link.href = dataUrl;
-      link.download = fileName;
-      document.body.appendChild(link);
-      
+      // Flash sequence
       setShowSnapshotPreview(true);
       
       setTimeout(() => {
-        link.click();
-        document.body.removeChild(link);
-        
-        setTimeout(() => {
-          setIsSnapshotting(false);
-          setShowSnapshotPreview(false);
-        }, 2200);
-      }, 100);
+        setIsSnapshotting(false);
+        setShowSnapshotPreview(false);
+        // Show the actual interactive modal
+        setShowSnapshotModal(true);
+      }, 1500);
 
     } catch (error) {
       console.error('Snapshot failed:', error);
       setIsSnapshotting(false);
       setShowSnapshotPreview(false);
     }
+  };
+
+  const saveSnapshotToGallery = () => {
+    if (!snapshotDataUrl) return;
+    const fileName = `Gita_Verse_${chapterVerseKey.replace('.', '_')}.png`;
+    const link = document.createElement('a');
+    link.href = snapshotDataUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   // Swipe handlers for mobile - works on whole screen
@@ -1131,6 +1141,7 @@ const VersePage = () => {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
+      suppressHydrationWarning
     >
       <div className="verse-background">
       </div>
@@ -1766,16 +1777,46 @@ const VersePage = () => {
       {isSnapshotting && (
         <div className={`snapshot-flash-overlay ${showSnapshotPreview ? 'active' : ''}`}>
           <div className="shutter-flash"></div>
-          {showSnapshotPreview && (
+          {showSnapshotPreview && snapshotDataUrl && (
             <div className="snapshot-preview-anim">
               <div className="preview-card-frame">
-                <div className="mini-sanskrit">
-                  {verse.sanskrit.split('\n')[0].replace(/\[.*?\]/g, '')}
-                </div>
+                <img src={snapshotDataUrl} alt="Snapshot Preview" className="mini-snapshot-preview" />
               </div>
-              <div className="snapshot-status-pill">Saving to Gallery...</div>
+              <div className="snapshot-status-pill">Rendering Wisdom...</div>
             </div>
           )}
+        </div>
+      )}
+
+      {/* Simplified Snapshot Modal */}
+      {showSnapshotModal && (
+        <div className="snapshot-modal-overlay">
+          <div className="snapshot-pure-preview">
+            <CometCard className="snapshot-comet-wrapper">
+              <div className="snapshot-image-container">
+                <img src={snapshotDataUrl} alt="Gita Verse Snapshot" className="final-snapshot-img" />
+              </div>
+            </CometCard>
+            
+            <button className="snapshot-floating-save-btn" onClick={() => {
+              saveSnapshotToGallery();
+              setShowSnapshotModal(false);
+            }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Save to Gallery
+            </button>
+            
+            <button className="snapshot-close-x" onClick={() => setShowSnapshotModal(false)} aria-label="Close">
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                 <line x1="18" y1="6" x2="6" y2="18"/>
+                 <line x1="6" y1="6" x2="18" y2="18"/>
+               </svg>
+            </button>
+          </div>
         </div>
       )}
       {/* Final Divine Effects Layering: Stars behind, Flares on top */}

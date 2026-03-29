@@ -593,11 +593,10 @@
 
 .verse-number-clickable:hover {
   opacity: 1;
-  background: rgba(212, 175, 55, 0.2);
+  background: rgba(212, 175, 55, 0.15);
   border-color: rgba(212, 175, 55, 0.5);
   color: var(--gold-bright);
-  transform: scale(1.05); /* Added subtle scale to match other icons */
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .verse-number-clickable:active {
@@ -930,11 +929,10 @@
 }
 
 .copy-button:hover {
-  background: rgba(35, 18, 7, 0.7);
+  background: rgba(212, 175, 55, 0.1);
   border-color: var(--gold-primary);
   color: var(--gold-bright);
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .copy-button:active {
@@ -1828,17 +1826,18 @@
 .premium-verse-card {
   width: 500px;
   height: 700px;
-  background: #0d0d0d;
+  background: radial-gradient(circle at 50% 40%, #1a0f00 0%, #0a0500 60%, #040200 100%);
   color: #fff;
-  padding: 40px 20px; /* Reduced horizontal padding */
+  padding: 45px 30px;
   display: flex;
   flex-direction: column;
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 18px;
-  border-bottom: 2px solid rgba(212, 175, 55, 0.5); /* Keep only bottom border */
-  box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 2.5px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 40px 100px rgba(0,0,0,1);
   font-family: 'Cormorant Garamond', serif;
 }
 
@@ -1861,10 +1860,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.12;
+  opacity: 0.25;
   background-image: 
-    radial-gradient(circle at 1px 1px, #d4af37 1px, transparent 0);
-  background-size: 20px 20px;
+    radial-gradient(circle at 12% 18%, #ffe066 1.5px, transparent 1.5px),
+    radial-gradient(circle at 82% 22%, #fff9e6 1.2px, transparent 1.2px),
+    radial-gradient(circle at 48% 42%, #d4af37 1px, transparent 1px),
+    radial-gradient(circle at 18% 78%, #fffde0 1.8px, transparent 1.8px),
+    radial-gradient(circle at 75% 85%, #d4af37 1px, transparent 1px),
+    radial-gradient(circle at 92% 55%, #ffe066 0.8px, transparent 0.8px),
+    radial-gradient(circle at 15px 15px, rgba(212, 175, 55, 0.04) 1px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 30px 30px;
   z-index: 1;
 }
 
@@ -1873,11 +1878,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 140%;
-  height: 140%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 60%);
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, rgba(212, 175, 55, 0.05) 45%, transparent 75%);
   z-index: 1;
   pointer-events: none;
+  filter: blur(40px);
 }
 
 .card-header {
@@ -2084,56 +2090,167 @@
 }
 
 .snapshot-flash-overlay.active .snapshot-preview-anim {
-  animation: preview-float 2.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation: preview-float 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
 }
 
 @keyframes preview-float {
   0% { opacity: 0; transform: scale(1.3) translateY(40px) rotate(2deg); }
-  20% { opacity: 1; transform: scale(1) translateY(0) rotate(0); }
-  80% { opacity: 1; transform: scale(0.95) translateY(-30px); }
-  100% { opacity: 0; transform: scale(0.8) translateY(-80px); }
+  30% { opacity: 1; transform: scale(1) translateY(0) rotate(0); }
+  85% { opacity: 1; transform: scale(0.9) translateY(-10px); }
+  100% { opacity: 0; transform: scale(0.7) translateY(-30px); }
 }
 
 .preview-card-frame {
-  width: 240px;
-  height: 336px;
+  width: 220px;
+  height: 308px;
   background: #0d0d0d;
-  border: 6px solid #d4af37;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.9);
+  border: 4px solid var(--divine-gold-primary);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.9), 0 0 40px rgba(212, 175, 55, 0.15);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  overflow: hidden;
   position: relative;
+  border-radius: 8px;
 }
 
-.preview-card-frame::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.preview-card-frame .mini-sanskrit {
-  font-family: 'Noto Sans Devanagari', serif;
-  color: #f8d448;
-  font-size: 1.1rem;
-  text-align: center;
-  line-height: 1.6;
+.mini-snapshot-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .snapshot-status-pill {
-  background: linear-gradient(135deg, #d4af37, #b8860b);
+  background: linear-gradient(135deg, var(--divine-gold-primary), var(--divine-gold-soft));
   color: #000;
   padding: 8px 24px;
   border-radius: 25px;
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+}
+
+/* New Snapshot Modal Styling */
+.snapshot-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  background: rgba(4, 2, 0, 0.75); /* Lowered opacity for better transparency */
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  z-index: 2000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  animation: fadeIn 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  overflow: hidden;
+}
+
+.snapshot-pure-preview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: min(2rem, 3vh);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  perspective: 2000px;
+  padding: 2vh;
+  box-sizing: border-box;
+}
+
+.snapshot-comet-wrapper {
+  width: min(90vw, 50vh); /* Truly dynamic: width capped by viewport width OR viewport height aspect ratio */
+  height: auto;
+  aspect-ratio: 5 / 7; /* Matches our 500x700 snapshot exactly */
+  box-shadow: 0 40px 120px rgba(0,0,0,1);
+  animation: cardEntering 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+@keyframes cardEntering {
+  from { opacity: 0; transform: scale(0.8) translateY(40px) rotateX(10deg); }
+  to { opacity: 1; transform: scale(1) translateY(0) rotateX(0); }
+}
+
+.snapshot-floating-save-btn {
+  background: linear-gradient(135deg, var(--divine-gold-primary), #d4af37);
+  color: #000;
+  padding: 1rem 2.5rem;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: btnComingIn 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.3s both;
+}
+
+@keyframes btnComingIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.snapshot-image-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  background: #050505;
+  display: flex;
+}
+
+.final-snapshot-img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.snapshot-floating-save-btn:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 20px 45px rgba(212, 175, 55, 0.4);
+}
+
+.snapshot-close-x {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.4);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.snapshot-close-x:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  transform: rotate(90deg);
 }
 
 /* Divine Toggle Button (in Header) */

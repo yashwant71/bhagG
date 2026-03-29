@@ -10,7 +10,7 @@
   --divine-bg-inner: #2d1600;
   --divine-bg-mid: #150900;
   --divine-bg-outer: #040200;
-  --divine-tooltip-bg: #0c0a08; /* Clean obsidian black for tooltips */
+  --divine-tooltip-bg: #0c0a08; /* Back to solid Obsidian black for maximum consistency and readability */
   
   /* Functional Accents */
   --divine-border-soft: rgba(212, 175, 55, 0.15);
@@ -140,14 +140,14 @@
 }
 
 .focused-pretext {
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   color: var(--divine-gold-primary);
-  opacity: 0.45;
+  opacity: 0.7; /* Increased for better legibility */
   font-style: italic;
   text-align: center;
   max-width: 85%;
-  line-height: 1.4;
-  margin-bottom: -4px;
+  line-height: 1.5;
+  margin-bottom: 2rem; /* Significant breathing room before Sanskrit */
   animation: fadeIn 1s ease-out 0.2s both;
 }
 
@@ -376,31 +376,26 @@
 }
 
 /* Unified Divine Tooltip System - Synchronized Shloka & Translation Styles */
-.word-tooltip,
-.translation-word-tooltip {
+.word-tooltip {
   position: absolute;
-  background-color: var(--divine-tooltip-bg) !important;
+  background-color: #0c0a08 !important; /* Direct solid color to ensure same look everywhere */
   opacity: 1 !important;
-  color: var(--text-tooltip);
-  padding: 0.8rem !important; 
-  border-radius: var(--radius-md);
-  font-size: var(--font-sm);
+  color: #f7e2a4; /* Matching the refined amber-gold text */
+  padding: 1rem !important; /* Increased padding for premium feel */
+  border-radius: 12px;
+  font-size: 0.9rem;
   font-weight: 400;
-  z-index: 3500 !important; /* Unified elevation */
-  border: 1.2px solid var(--divine-border-gold) !important;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  z-index: 9999 !important; /* Unified top-tier elevation for all tooltips */
+  border: 1px solid rgba(212, 175, 55, 0.2) !important; /* Subtle base border */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
   pointer-events: auto;
   font-family: 'Inter', sans-serif;
   animation: tooltipFadeIn 0.2s ease-out forwards;
-  -webkit-text-stroke: 0 !important;
-  -webkit-text-fill-color: var(--divine-gold-primary) !important;
-  text-shadow: none !important;
-  text-decoration: none !important;
   letter-spacing: 0.2px;
-  line-height: 1.35;
+  line-height: 1.4;
   width: fit-content;
-  min-width: auto;
-  backdrop-filter: blur(20px);
+  min-width: 200px; /* Ensure a minimum presence */
+  backdrop-filter: blur(25px);
   max-width: min(480px, calc(100vw - 2rem));
   white-space: normal;
   word-wrap: break-word;
@@ -415,14 +410,17 @@
   margin-bottom: 0 !important;
 }
 
-/* Static tooltip (clicked or hover-to-tooltip) */
+/* Static tooltip state (Active/Clicked) - Applied to both */
 .word-tooltip.tooltip-static {
-  border-color: var(--border-gold-strong);
+  background-color: #0c0a08 !important;
+  border: 1.5px solid #d4af37 !important; /* Stronger Gold border when active */
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 1), 0 0 20px rgba(212, 175, 55, 0.2);
 }
 
-/* Hover tooltip (temporary) - disappears on mouse leave */
+/* Hover tooltip state */
 .word-tooltip.tooltip-hover {
-  pointer-events: auto; /* Allow mouse enter to convert to static */
+  background-color: #0c0a08 !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
 }
 
 /* Word Boxes in Tooltip Header */
@@ -456,7 +454,7 @@
 .tooltip-word-box:hover {
   background: rgba(255, 215, 0, 0.12);
   border-color: var(--gold-primary);
-  transform: translateY(-1px);
+  transform: scale(1.04); /* Replaced translateY jump with subtle scale */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -593,8 +591,9 @@
   opacity: 1;
   background: rgba(212, 175, 55, 0.2);
   border-color: rgba(212, 175, 55, 0.5);
-  color: var(--text-secondary);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  color: var(--gold-bright);
+  transform: scale(1.05); /* Added subtle scale to match other icons */
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 .verse-number-clickable:active {
@@ -829,22 +828,47 @@
 }
 
 .translation-card {
-  background: linear-gradient(
-    to bottom,
-    rgba(15, 15, 15, 0.3) 0%,
-    rgba(5, 5, 5, 0.45) 100%
-  );
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(212, 175, 55, 0.12);
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-  padding: var(--spacing-2xl);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.03);
+  background: rgba(35, 18, 7, 0.45); /* More subtle, transparent mahogany */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.08); /* Minimalist border */
+  border-radius: 12px;
+  padding: 1.25rem 1.75rem;
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.5), /* Softer outer shadow */
+    inset 0 0 30px rgba(0, 0, 0, 0.3); /* Subtle inset feel */
   animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   position: relative;
+  margin-top: 1rem;
+}
+
+/* Gradient Borders - Fading from center outwards */
+.translation-card::before,
+.translation-card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: radial-gradient(
+    circle at 50%, 
+    rgba(212, 175, 55, 0.4) 0%, /* More subtle center glow */
+    rgba(212, 175, 55, 0.2) 45%, 
+    transparent 85%
+  );
+  pointer-events: none;
+}
+
+.translation-card::before {
+  top: 0;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.25); /* Adding subtle top glow */
+}
+
+.translation-card::after {
+  bottom: 0;
 }
 
 /* Ensure card maintains width constraint based on parent */
@@ -868,23 +892,19 @@
 }
 
 .translation-text {
-  font-size: var(--font-lg);
-  line-height: 1.75;
-  color: var(--text-translation);
-  font-weight: 450;
-  text-align: left; /* Left align to avoid justify spacing issues */
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* Clean, readable sans-serif */
+  font-size: 1.25rem;
+  line-height: 1.65;
+  color: #f7e2a4; /* Warm, pale amber/gold as seen in premium Gita designs */
+  font-weight: 400;
+  text-align: left;
+  font-family: 'Cormorant Garamond', serif;
   flex: 1;
   word-wrap: break-word;
   overflow-wrap: break-word;
   min-width: 0;
-  letter-spacing: 0.01em; /* Slightly increased for readability */
-  word-spacing: normal; /* Normal word spacing */
-  text-rendering: optimizeLegibility; /* Better text rendering */
-  hyphens: none; /* Disable automatic hyphenation */
-  -webkit-font-smoothing: antialiased; /* Better font rendering */
-  -moz-osx-font-smoothing: grayscale;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Subtle depth for readability */
+  letter-spacing: 0.02em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Copy button */
@@ -906,9 +926,11 @@
 }
 
 .copy-button:hover {
-  background: var(--gold-10);
-  border-color: var(--border-gold-strong);
-  color: var(--text-secondary);
+  background: rgba(35, 18, 7, 0.7);
+  border-color: var(--gold-primary);
+  color: var(--gold-bright);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
 }
 
 .copy-button:active {
@@ -921,14 +943,16 @@
 }
 
 .translation-meaning {
-  font-size: var(--font-md);
-  line-height: 1.6;
-  color: var(--text-meaning);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(255, 224, 102, 0.7); /* Softer gold for the secondary meaning */
   font-style: italic;
-  padding-left: var(--spacing-lg);
-  border-left: 2px solid var(--border-gold-strong);
-  font-weight: 350;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding-left: 1rem;
+  border-left: 1.5px solid rgba(255, 224, 102, 0.3);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* Hindi font styling */
@@ -951,20 +975,18 @@
   color: inherit;
   cursor: pointer;
   text-decoration: none !important;
-  border-bottom: 2.5px solid var(--gold-40);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 1px solid #f7e2a4; /* Clean solid underline from design */
+  transition: all 0.2s ease;
   position: relative;
   display: inline-block;
-  line-height: normal;
-  padding-bottom: 0px;
+  line-height: 1.05;
+  padding-bottom: 1px;
 }
 
 .translation-word-reference:hover,
 .translation-word-reference.active {
-  color: var(--gold-bright);
-  border-bottom-color: var(--gold-bright);
-  text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
-  box-shadow: inset 0 -4px 10px -4px rgba(212, 175, 55, 0.3);
+  color: #fff; /* Highlight to white on hover as seen in high-end Gita apps */
+  border-bottom-color: #fff;
 }
 
 /* Redundant translation-word-tooltip block removed for CSS consolidation */
@@ -1154,8 +1176,9 @@
   }
 
   .translation-card {
-    padding: 1.2rem;
-    border-radius: 0 0 10px 10px;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
   }
 
   .translation-wrapper {
@@ -1167,13 +1190,13 @@
   }
 
   .translation-text {
-    font-size: 0.9rem;
-    line-height: 1.55;
+    font-size: 1.1rem;
+    line-height: 1.5;
   }
 
   .translation-meaning {
-    font-size: 0.82rem;
-    padding-left: 0.9rem;
+    font-size: 0.85rem;
+    padding-left: 0.75rem;
   }
 
   .verse-number {
@@ -1251,10 +1274,9 @@
   }
 
   .translation-card {
-    padding: 1rem;
-    max-width: 100%;
-    min-width: unset;
-    border-radius: 0 0 8px 8px;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
   }
 
   .translation-wrapper {
@@ -1262,11 +1284,13 @@
   }
 
   .translation-text {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
+    line-height: 1.45;
   }
 
   .translation-meaning {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    padding-left: 0.65rem;
   }
 
   .verse-number {
@@ -1337,14 +1361,14 @@
   width: 90%;
   max-width: 400px;
   height: 100%;
-  background: rgba(20, 20, 20, 0.98);
-  backdrop-filter: blur(20px);
-  border-left: 1px solid rgba(212, 175, 55, 0.3);
-  z-index: 301;
+  background: #0c0a08 !important; /* Unified Obsidian Black */
+  backdrop-filter: blur(25px);
+  border-left: 1.5px solid var(--divine-gold-primary); /* Gold structural border */
+  z-index: 11000; /* Above regular tooltips but matching context */
   display: flex;
   flex-direction: column;
-  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
-  animation: slideInRight 0.3s ease-out;
+  box-shadow: -10px 0 50px rgba(0, 0, 0, 1), -15px 0 30px rgba(212, 175, 55, 0.05);
+  animation: slideInRight 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   overflow-y: auto;
 }
 
@@ -1447,10 +1471,10 @@
 }
 
 .nav-menu-verse:hover {
-  background: rgba(212, 175, 55, 0.15);
-  border-color: rgba(212, 175, 55, 0.4);
-  color: var(--text-secondary);
-  transform: translateY(-2px);
+  background: rgba(35, 18, 7, 0.85); /* Rich mahogany-amber hover */
+  border-color: var(--divine-gold-primary);
+  color: var(--gold-bright);
+  transform: scale(1.05); /* Premium scale instead of vertical jump */
 }
 
 .nav-menu-verse.active {
@@ -1733,10 +1757,10 @@
 }
 
 .tooltip-word-data.has-explanation:hover {
-  background: rgba(212, 175, 55, 0.15);
+  background: rgba(35, 18, 7, 0.82); /* Divinity-consistent mahogany-obsidian */
   border-color: var(--divine-gold-primary);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(212, 175, 55, 0.25);
+  transform: scale(1.02); /* Optimized for interaction stability */
 }
 
 .tooltip-explanation-item.active-view {
@@ -1761,10 +1785,10 @@
 .verse-copy-button:hover,
 .verse-nav-button:hover {
   opacity: 1;
-  background: rgba(40, 40, 40, 0.8);
+  background: rgba(35, 18, 7, 0.85); /* Rich mahogany-obsidian instead of muddy grey */
   border-color: var(--gold-bright);
-  transform: scale(1.1) translateY(-2px);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  transform: scale(1.05); /* Subtle scale, removed translateY 'jumping' */
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
   color: var(--gold-bright);
 }
 

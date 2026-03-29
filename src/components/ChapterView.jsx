@@ -7,8 +7,9 @@ import { getChapter, getVerseNumbers, getVerse, getAllChapterNumbers } from '../
 import WordTooltipContent from './WordTooltipContent'
 import TranslationTextRenderer from './TranslationTextRenderer'
 import CommonHeader from './CommonHeader'
+import DivineEffects from './DivineEffects'
 import './ChapterView.css'
-import './VersePage.css' // Reuse styles
+import './VersePage.css' // Reuse global tokens
 
 import LoadingScreen from './LoadingScreen'
 
@@ -48,6 +49,7 @@ const ChapterView = () => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [hoveredWord, setHoveredWord] = useState(null)
   const [hoveredWordData, setHoveredWordData] = useState(null)
+  const [toggledMeanings, setToggledMeanings] = useState({})
   const loadMoreRef = useRef(null)
   
   // Floating UI for Chapter tooltips
@@ -255,11 +257,27 @@ const ChapterView = () => {
     }
     
     setHoveredWord(refId)
-    setHoveredWordData({ wordData, explanation })
+    // Ensure wordData includes necessary fields locally if missing
+    setHoveredWordData({ 
+      wordData: wordData ? {
+        ...wordData,
+        english: wordData.english || wordData.translation, // Fallback for data variations
+        hindi: wordData.hindi || wordData.translationHindi
+      } : null, 
+      explanation 
+    })
     
     if (e.currentTarget) {
       refs.setReference(e.currentTarget)
     }
+  }
+
+  const handleMeaningClick = (wordId, e) => {
+    e.stopPropagation()
+    setToggledMeanings(prev => ({
+      ...prev,
+      [wordId]: !prev[wordId]
+    }))
   }
 
   // Close tooltip when clicking outside
@@ -274,6 +292,7 @@ const ChapterView = () => {
       if (hoveredWord && !isClickOnReference && !isClickOnTooltip) {
         setHoveredWord(null)
         setHoveredWordData(null)
+        setToggledMeanings({}) // Reset toggles when closing
       }
     }
     
@@ -291,6 +310,7 @@ const ChapterView = () => {
   
   return (
     <div className="chapter-view-page">
+      <DivineEffects animationsComplete={true} starDensity={0.85} />
       <div className="chapter-view-background"></div>
       
       <CommonHeader 
@@ -431,10 +451,12 @@ const ChapterView = () => {
         >
         <WordTooltipContent 
           key={hoveredWord}
-          words={hoveredWordData.wordData ? [hoveredWordData.wordData] : (hoveredWordData.explanation ? [{ ...hoveredWordData.explanation, english: hoveredWordData.explanation.term, hindi: hoveredWordData.explanation.termHindi, explanation: hoveredWordData.explanation }] : [])} 
+          words={hoveredWordData.wordData ? [hoveredWordData.wordData] : (hoveredWordData.explanation ? [{ ...hoveredWordData.explanation, english: hoveredWordData.explanation.term, hindi: hoveredWordData.explanation.termHindi, explanation: hoveredWordData.explanation, id: hoveredWordData.explanation.id }] : [])} 
           isTranslationMode={true} 
           translation={translation}
           chapterData={chapterData}
+          toggledMeanings={toggledMeanings}
+          onMeaningClick={handleMeaningClick}
         />
         </div>
       )}

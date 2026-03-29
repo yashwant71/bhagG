@@ -67,10 +67,12 @@ const CommonHeader = ({
             <button 
               className="header-chapter-button"
               onClick={() => router.push(`/chapter/${chapterNum}`)}
-              title={`Chapter ${chapterNum}: ${getChapter(chapterNum)?.chapterName}`}
+              title={`${translation === 'hindi' ? 'अध्याय' : 'Chapter'} ${chapterNum}: ${translation === 'hindi' ? (getChapter(chapterNum)?.chapterNameSanskrit || getChapter(chapterNum)?.chapterName) : (getChapter(chapterNum)?.chapterName)}`}
             >
-              <span className="chapter-label">Ch {chapterNum}</span>
-              <span className="chapter-name-header">{getChapter(chapterNum)?.chapterName}</span>
+              <span className="chapter-label">{translation === 'hindi' ? 'अध्याय' : 'Ch'} {chapterNum}</span>
+              <span className={`chapter-name-header ${translation === 'hindi' ? 'hindi-text' : ''}`}>
+                {translation === 'hindi' ? (getChapter(chapterNum)?.chapterNameSanskrit || getChapter(chapterNum)?.chapterName) : (getChapter(chapterNum)?.chapterName)}
+              </span>
             </button>
             <button 
               className={`chapter-dropdown-trigger ${showChapterDropdown ? 'active' : ''}`}
@@ -100,8 +102,10 @@ const CommonHeader = ({
                       }}
                     >
                       <div className="chapter-option-info">
-                        <span className="chapter-option-number">Chapter {chNum}</span>
-                        <span className="chapter-option-name">{chData?.chapterName}</span>
+                        <span className="chapter-option-number">{translation === 'hindi' ? 'अध्याय' : 'Chapter'} {chNum}</span>
+                        <span className={`chapter-option-name ${translation === 'hindi' ? 'hindi-text' : ''}`}>
+                          {translation === 'hindi' ? (chData?.chapterNameSanskrit || chData?.chapterName) : (chData?.chapterName)}
+                        </span>
                       </div>
                       {parseInt(chapterNum) === chNum && (
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

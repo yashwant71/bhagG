@@ -179,6 +179,21 @@ const VersePage = () => {
     }
   }, [verseData])
 
+  // Get all chapters and verses for navigation menu - Relocated to top of component to follow Rules of Hooks
+  const allChapters = getAllChapterNumbers()
+  const chaptersData = useMemo(() => {
+    return allChapters.map(chNum => {
+      const chapter = getChapter(chNum)
+      const verses = getVerseNumbers(chNum)
+      return {
+        number: chNum,
+        name: translation === 'hindi' ? (chapter?.chapterNameSanskrit || chapter?.chapterName) : (chapter?.chapterName || `Chapter ${chNum}`),
+        label: translation === 'hindi' ? `अध्याय ${chNum}` : `Chapter ${chNum}`,
+        verses: verses
+      }
+    })
+  }, [allChapters, translation])
+
   useEffect(() => {
     let interval;
     if (isPlaying && !isPaused && audioRef.current) {
@@ -350,7 +365,7 @@ const VersePage = () => {
       const isClickOnSanskritTooltip = target.closest('.word-tooltip') || target.closest('.tooltip-content-wrapper')
       
       const isClickOnTranslationReference = target.closest('.translation-word-reference')
-      const isClickOnTranslationTooltip = target.closest('.translation-word-tooltip')
+      const isClickOnTranslationTooltip = target.closest('.word-tooltip') || target.closest('.tooltip-content-wrapper')
 
       if (clickedWord && !isClickOnSanskritWord && !isClickOnSanskritTooltip) {
         setClickedWord(null)
@@ -1119,17 +1134,8 @@ const VersePage = () => {
     )
   }
 
-  // Get all chapters and verses for navigation menu
-  const allChapters = getAllChapterNumbers()
-  const chaptersData = allChapters.map(chNum => {
-    const chapter = getChapter(chNum)
-    const verses = getVerseNumbers(chNum)
-    return {
-      number: chNum,
-      name: chapter?.chapterName || `Chapter ${chNum}`,
-      verses: verses
-    }
-  })
+  // Verse validation and rendering below...
+
 
 
   return (
@@ -1178,7 +1184,7 @@ const VersePage = () => {
           <div className="nav-menu-overlay" onClick={() => setShowNavMenu(false)}></div>
           <div className="nav-menu-panel">
             <div className="nav-menu-header">
-              <h3>Navigate to Verse</h3>
+              <h3>{translation === 'hindi' ? 'श्लोक पर जाएँ' : 'Navigate to Verse'}</h3>
               <button 
                 className="nav-menu-close"
                 onClick={() => setShowNavMenu(false)}
@@ -1201,8 +1207,8 @@ const VersePage = () => {
                     }}
                     style={{ cursor: 'pointer' }}
                   >
-                    <span className="nav-menu-chapter-number">Chapter {chapter.number}</span>
-                    <span className="nav-menu-chapter-name">{chapter.name}</span>
+                    <span className="nav-menu-chapter-number">{chapter.label}</span>
+                    <span className={`nav-menu-chapter-name ${translation === 'hindi' ? 'hindi-text' : ''}`}>{chapter.name}</span>
                   </div>
                   <div className="nav-menu-verses">
                     {chapter.verses.map(verseNum => {
@@ -1635,29 +1641,6 @@ const VersePage = () => {
                     />
                   )
                 })()}
-
-                {clickedTranslationWord && translationWordData && (
-                  <div 
-                    ref={transRefs.setFloating}
-                    className={`translation-word-tooltip ${(translationWordData.explanation || translationWordData.wordData?.explanation) ? 'has-explanation' : ''}`}
-                    style={{
-                      position: transStrategy,
-                      top: transY ?? 0,
-                      left: transX ?? 0,
-                      pointerEvents: 'auto',
-                      zIndex: 3500,
-                      visibility: (transX === null) ? 'hidden' : 'visible'
-                    }}
-                  >
-                      <WordTooltipContent 
-                        key={clickedTranslationWord}
-                        words={translationWordData.wordData ? [translationWordData.wordData] : (translationWordData.explanation ? [{ ...translationWordData.explanation, english: translationWordData.explanation.term, hindi: translationWordData.explanation.termHindi, explanation: translationWordData.explanation }] : [])} 
-                        isTranslationMode={true} 
-                        translation={translation}
-                        chapterData={chapterData}
-                      />
-                  </div>
-                )}
               </div>
               <button 
                 className="copy-button"
@@ -1700,7 +1683,7 @@ const VersePage = () => {
             left: sanskritX ?? 0,
             pointerEvents: 'auto',
             visibility: (sanskritX === null) ? 'hidden' : 'visible',
-            zIndex: 3500
+            zIndex: 10000
           }}
         >
          <WordTooltipContent 
@@ -1712,6 +1695,30 @@ const VersePage = () => {
             toggledMeanings={toggledMeanings}
             onMeaningClick={handleMeaningClick}
           />
+        </div>
+      )}
+
+      {/* Translation Word Tooltip Instance - Placed at root level to guarantee Z-Index priority */}
+      {clickedTranslationWord && translationWordData && (
+        <div 
+          ref={transRefs.setFloating}
+          className={`word-tooltip tooltip-static ${(translationWordData.explanation || translationWordData.wordData?.explanation) ? 'has-explanation' : ''}`}
+          style={{
+            position: transStrategy,
+            top: transY ?? 0,
+            left: transX ?? 0,
+            pointerEvents: 'auto',
+            zIndex: 10000,
+            visibility: (transX === null) ? 'hidden' : 'visible'
+          }}
+        >
+            <WordTooltipContent 
+              key={clickedTranslationWord}
+              words={translationWordData.wordData ? [translationWordData.wordData] : (translationWordData.explanation ? [{ ...translationWordData.explanation, english: translationWordData.explanation.term, hindi: translationWordData.explanation.termHindi, explanation: translationWordData.explanation }] : [])} 
+              isTranslationMode={true} 
+              translation={translation}
+              chapterData={chapterData}
+            />
         </div>
       )}
 

@@ -1,7 +1,7 @@
 .chapter-view-page {
   min-height: 100vh;
   position: relative;
-  background: #000000;
+  background: #0c0a08 !important; /* Unified peak Obsidian contrast */
   padding: 0;
 }
 
@@ -11,10 +11,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
-  z-index: 0;
+  /* Synced specifically with VersePage for perfect parity */
+  background: radial-gradient(circle at 50% 32%, var(--divine-bg-inner) 0%, var(--divine-bg-mid) 48%, var(--divine-bg-outer) 100%);
+  opacity: 1; 
+  z-index: -1; /* Layer behind stars and text for depth */
   pointer-events: none;
 }
 
@@ -62,8 +62,8 @@
 .chapter-name {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--gold-primary);
-  font-weight: 400;
+  color: var(--divine-gold-primary);
+  font-weight: 500;
   margin-bottom: 0.5rem;
   line-height: 1.3;
 }
@@ -71,8 +71,8 @@
 .chapter-name-sanskrit {
   font-family: 'Noto Sans Devanagari', serif;
   font-size: clamp(1.2rem, 3vw, 1.6rem);
-  color: var(--text-accent);
-  opacity: 0.6;
+  color: var(--divine-gold-bright);
+  opacity: 0.7;
   font-weight: 400;
 }
 
@@ -82,9 +82,9 @@
 }
 
 .verse-card {
-  background: rgba(26, 26, 26, 0.2);
+  background: rgba(18, 14, 10, 0.45); /* Mahogany-tinted dark background */
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.12); /* Brighter gold border */
   border-radius: 12px;
   padding: 0;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -93,8 +93,8 @@
 }
 
 .verse-card:hover {
-  border-color: rgba(212, 175, 55, 0.15);
-  background: rgba(26, 26, 26, 0.3);
+  /* Cards are no longer clickable, so we removed the 'popping' animation to ensure UI stability as requested */
+  border-color: rgba(212, 175, 55, 0.25); 
 }
 
 .verse-card-layout {
@@ -161,21 +161,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(212, 175, 55, 0.04);
-  border-left: 1px solid rgba(212, 175, 55, 0.1);
-  color: var(--gold-primary);
-  opacity: 0.7;
+  background: rgba(35, 18, 7, 0.65); /* Mahogany-amber base */
+  border-left: 1.5px solid rgba(212, 175, 55, 0.1);
+  color: var(--divine-gold-primary);
+  opacity: 1; /* Full clarity */
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
-.verse-card-right:hover .arrow-indicator,
-.verse-card-right:active .arrow-indicator {
-  background: var(--gold-primary);
-  color: #000;
-  border-left-color: var(--gold-bright);
-  opacity: 1;
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+.verse-card-right:hover .arrow-indicator {
+  background: rgba(212, 175, 55, 0.1) !important; /* Subtle amber glow */
+  color: var(--divine-gold-primary) !important;
+  border-left-color: var(--divine-gold-primary);
+  box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.05);
 }
 
 .arrow-indicator svg {
@@ -224,15 +222,16 @@
 
 /* Tooltip styling */
 .translation-word-tooltip {
-  background-color: #1e190f !important;
+  background-color: #0c0a08 !important; /* Unified peak Obsidian contrast */
   opacity: 1 !important;
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  border-radius: 8px;
+  border: 1.5px solid var(--divine-gold-primary); /* Shloka-consistent gold border */
+  border-radius: 12px;
   padding: 0.75rem;
   max-width: 300px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 1), 0 0 15px rgba(212, 175, 55, 0.15);
   pointer-events: auto;
-  animation: tooltipFadeIn 0.2s ease-out forwards;
+  animation: tooltipFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .tooltip-word-data {
@@ -288,11 +287,11 @@
 }
 
 .nav-button {
-  background: rgba(26, 26, 26, 0.5);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  background: rgba(18, 14, 10, 0.65); /* Darker Obsidian button background */
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(212, 175, 55, 0.15);
   border-radius: 12px;
-  padding: 1rem 1.5rem;
+  padding: 1.25rem 1.75rem;
   color: var(--text-primary);
   cursor: pointer;
   display: flex;
@@ -305,9 +304,10 @@
 }
 
 .nav-button:hover:not(.disabled) {
-  background: rgba(35, 30, 20, 0.8);
-  border-color: var(--gold-primary);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  background: rgba(35, 18, 7, 0.85); /* Mahogany-amber glow on hover */
+  border-color: var(--divine-gold-primary);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 10px rgba(212, 175, 55, 0.1);
+  transform: translateY(-2px);
 }
 
 .nav-button.disabled {

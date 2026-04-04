@@ -3,12 +3,14 @@
 // Import chapters
 import { chapter1 } from './chapter1'
 import { chapter2 } from './chapter2'
+import { chapter3 } from './chapter3'
 import { explanations } from './explanation'
 
 // Chapter registry
 const chapters = {
   1: chapter1,
-  2: chapter2
+  2: chapter2,
+  3: chapter3
 }
 
 // Helper function to get a chapter by number

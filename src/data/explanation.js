@@ -994,6 +994,145 @@ export const explanations = [
     "descDetailHindi": "सत्त्व, राजस और तमस गुणों का समावेश।"
   },
 
+
+  {
+    "id": "exp_karma",
+    "term": "Karma",
+    "termHindi": "कर्म",
+    "desc": "Action, work, or prescribed duty. In a broader spiritual sense, it refers to the universal principle of cause and effect.",
+    "descHindi": "शास्त्र विहित कर्तव्य, क्रिया या कार्य। व्यापक आध्यात्मिक अर्थ में, यह कारण और प्रभाव के सार्वभौमिक नियम को भी दर्शाता है।"
+  },
+  {
+    "id": "exp_jnana",
+    "term": "Jnana",
+    "termHindi": "ज्ञान",
+    "desc": "True spiritual knowledge, wisdom, and the realization of the ultimate reality (the Self and the Supreme).",
+    "descHindi": "सच्चा आध्यात्मिक ज्ञान, विवेक और परम सत्य (आत्मा और परमात्मा) का वास्तविक बोध।"
+  },
+  {
+    "id": "exp_karma_yoga",
+    "term": "Karma Yoga",
+    "termHindi": "कर्म योग",
+    "desc": "The spiritual discipline of selfless action, where duties are performed without attachment to the fruits or results, offered entirely to the Divine.",
+    "descHindi": "निष्काम कर्म का आध्यात्मिक मार्ग, जहाँ फलों की आसक्ति के बिना और ईश्वर को समर्पित होकर कर्तव्यों का पालन किया जाता है।"
+  },
+  {
+    "id": "exp_jnana_yoga",
+    "term": "Jnana Yoga (Sankhya Yoga)",
+    "termHindi": "ज्ञान योग (सांख्य योग)",
+    "desc": "The spiritual path of knowledge, intellect, and contemplation, leading to the realization of the absolute distinction between the eternal soul and the temporary material body.",
+    "descHindi": "ज्ञान, बुद्धि और चिंतन का आध्यात्मिक मार्ग, जो शाश्वत आत्मा और नश्वर भौतिक शरीर के बीच पूर्ण भेद का बोध कराता है।"
+  },
+  {
+    "id": "exp_prajapati",
+    "term": "Prajapati (Brahma)",
+    "termHindi": "प्रजापति (ब्रह्मा)",
+    "desc": "The Creator of the universe. In the context of the Gita, the deity who created mankind along with the cosmic law of Yajna (Sacrifice).",
+    "descHindi": "ब्रह्मांड के रचयिता। गीता के संदर्भ में, वह देव जिन्होंने प्रजा (मनुष्य) की रचना यज्ञ (त्याग/बलिदान) के सार्वभौमिक नियम के साथ की।"
+  },
+  {
+    "id": "exp_yajna",
+    "term": "Yajna",
+    "termHindi": "यज्ञ",
+    "desc": "Sacrifice, selfless service, or sacred ritual. In a broader sense, any action performed as a pure offering to the Divine or for the welfare of the world, without selfish motives.",
+    "descHindi": "त्याग, नि:स्वार्थ सेवा या पवित्र अनुष्ठान। व्यापक अर्थ में, कोई भी कर्म जो स्वार्थ के बिना, ईश्वर को अर्पण के रूप में या विश्व कल्याण के लिए किया जाता है।"
+  },
+  {
+    "id": "exp_janaka",
+    "term": "King Janaka",
+    "termHindi": "राजा जनक",
+    "desc": "An ancient, highly revered king known for attaining supreme spiritual enlightenment while simultaneously managing the vast responsibilities of ruling a kingdom. He is the ultimate example of a Karma Yogi.",
+    "descHindi": "एक प्राचीन और अत्यंत पूजनीय राजा, जिन्हें राज्य के विशाल दायित्वों को निभाते हुए भी परम आध्यात्मिक ज्ञान प्राप्त करने के लिए जाना जाता है। वे कर्मयोगी का सर्वोच्च उदाहरण हैं।"
+  },
+  {
+    "id": "exp_bharata",
+    "term": "Bharata",
+    "termHindi": "भारत",
+    "desc": "A descendant of the great King Bharata. In the Gita, this term is often used by Sri Krishna to address Arjuna affectionately and remind him of his noble lineage.",
+    "descHindi": "महान राजा भरत का वंशज। गीता में, इस नाम का प्रयोग प्रायः श्रीकृष्ण द्वारा अर्जुन को प्रेमपूर्वक संबोधित करने और उन्हें उनके महान वंश की याद दिलाने के लिए किया गया है।"
+  },
+  {
+    "id": "exp_prakriti",
+    "term": "Prakriti",
+    "termHindi": "प्रकृति",
+    "desc": "Primordial material nature, the original source of the material world consisting of the three Gunas (modes).",
+    "descHindi": "आदिम भौतिक प्रकृति, जो तीन गुणों (सत्त्व, रजस और तमस) से बनी है और भौतिक संसार का मूल स्रोत है।",
+    "descDetail": "Prakriti is the basic cosmic material that is the root of all physical beings and elements. It operates mechanically through the three Gunas (Sattva, Rajas, Tamas) which govern the material creation, senses, and the mind.",
+    "descDetailHindi": "प्रकृति वह मूल ब्रह्मांडीय पदार्थ है जो सभी भौतिक प्राणियों और तत्त्वों का आधार है। यह यंत्रवत् अपने तीन गुणों (सत्त्व, रजस, तमस) के माध्यम से कार्य करती है, जो भौतिक सृष्टि, इंद्रियों और मन को नियंत्रित करते हैं।"
+  },
+  {
+    "id": "exp_lokasangraha",
+    "term": "Lokasangraha",
+    "termHindi": "लोकसंग्रह",
+    "desc": "The maintenance, welfare, and holding together of the world order.",
+    "descHindi": "विश्व व्यवस्था का रखरखाव, समाज का मार्गदर्शन या लोक-कल्याण।",
+    "descDetail": "Lokasangraha means performing duties and actions without selfish attachment purely to set a noble example for society and to ensure its moral and spiritual upliftment.",
+    "descDetailHindi": "लोकसंग्रह का अर्थ है बिना किसी स्वार्थ और आसक्ति के अपने कर्तव्यों का पालन करना, ताकि समाज के सामने एक श्रेष्ठ आदर्श प्रस्तुत किया जा सके और उसका नैतिक तथा आध्यात्मिक उत्थान सुनिश्चित हो सके।"
+  },
+  {
+    "id": "exp_mahabaho",
+    "term": "Mahabaho",
+    "termHindi": "महाबाहु",
+    "desc": "Mighty-armed, an epithet often used to address Arjuna, highlighting his strength and capability as a warrior.",
+    "descHindi": "महान या लंबी भुजाओं वाला, यह विशेषण प्रायः अर्जुन के लिए प्रयोग किया जाता है, जो उनकी वीरता और सामर्थ्य को दर्शाता है।",
+    "descDetail": "Calling Arjuna 'Mahabaho' signifies his immense physical strength, his supreme capability to conquer enemies, and his power to uphold righteousness on the battlefield.",
+    "descDetailHindi": "अर्जुन को 'महाबाहु' कहने का अर्थ उनकी अपार शारीरिक शक्ति, शत्रुओं पर विजय प्राप्त करने की उनकी असीम क्षमता और युद्ध के मैदान में धर्म की रक्षा करने की उनकी ताकत को दर्शाना है।"
+  }, {
+    "id": "exp_kama",
+    "term": "Kama",
+    "termHindi": "काम",
+    "desc": "Lust, worldly desire, or intense longing for sense gratification.",
+    "descHindi": "वासना, सांसारिक इच्छा, या इंद्रिय सुख के लिए तीव्र लालसा।",
+    "descDetail": "In the Gita, Kama is identified as the root cause of sin and the all-devouring enemy of spiritual wisdom. When frustrated, it turns into anger (Krodha), leading to delusion and the destruction of the intellect.",
+    "descDetailHindi": "गीता में, काम को पाप का मूल कारण और आध्यात्मिक ज्ञान का सर्वभक्षी शत्रु बताया गया है। जब यह पूरा नहीं होता, तो क्रोध में बदल जाता है, जिससे मोह उत्पन्न होता है और अंततः बुद्धि का नाश हो जाता है।"
+  },
+  {
+    "id": "exp_rajas",
+    "term": "Rajas / Rajo-Guna",
+    "termHindi": "रजोगुण",
+    "desc": "The mode of passion, activity, and boundless desire, one of the three Gunas (qualities) of material nature.",
+    "descHindi": "जुनून, गतिविधि और असीमित इच्छाओं का गुण, जो भौतिक प्रकृति के तीन गुणों में से एक है।",
+    "descDetail": "Rajas drives a person toward worldly achievements, greed, and restlessness. It binds the soul through attachment to fruitive actions and is the direct source of lust (Kama) and anger (Krodha).",
+    "descDetailHindi": "रजोगुण व्यक्ति को सांसारिक उपलब्धियों, लालच और बेचैनी की ओर धकेलता है। यह फल की इच्छा वाले कर्मों के प्रति आसक्ति के माध्यम से आत्मा को बांधता है और यही काम (वासना) तथा क्रोध का प्रत्यक्ष स्रोत है।"
+  },
+  {
+    "id": "exp_jnana",
+    "term": "Jnana",
+    "termHindi": "ज्ञान",
+    "desc": "Transcendental knowledge or the theoretical understanding of the Absolute Truth (Nirguna Brahma).",
+    "descHindi": "पारलौकिक ज्ञान या परम सत्य (निर्गुण ब्रह्म) की सैद्धांतिक समझ।",
+    "descDetail": "Jnana refers to the intellectual and scriptural realization that the true Self (Atman) is distinct from the material body and is eternal.",
+    "descDetailHindi": "ज्ञान का अर्थ है वह बौद्धिक और शास्त्रीय बोध जिसके अनुसार वास्तविक स्वरूप (आत्मा) भौतिक शरीर से भिन्न और शाश्वत है।"
+  },
+  {
+    "id": "exp_vijnana",
+    "term": "Vijnana",
+    "termHindi": "विज्ञान",
+    "desc": "Realized experiential knowledge, or practical realization of manifest Divinity (Sakar Brahma).",
+    "descHindi": "अनुभवात्मक ज्ञान, या सगुण ब्रह्म (ईश्वर के प्रकट रूप) का व्यावहारिक बोध।",
+    "descDetail": "While Jnana is theoretical understanding, Vijnana is the direct, internalized experience of God and spiritual truths in everyday life and meditation.",
+    "descDetailHindi": "जहाँ 'ज्ञान' एक सैद्धांतिक समझ है, वहीं 'विज्ञान' दैनिक जीवन और ध्यान में ईश्वर और आध्यात्मिक सत्यों का प्रत्यक्ष, आंतरिक अनुभव है।"
+  },
+  {
+    "id": "exp_bharatarshabha",
+    "term": "Bharatarshabha",
+    "termHindi": "भरतर्षभ",
+    "desc": "An epithet for Arjuna meaning 'Best of the Bharatas' (the descendant of King Bharata).",
+    "descHindi": "अर्जुन के लिए प्रयुक्त एक विशेषण जिसका अर्थ है 'भरत वंशियों में श्रेष्ठ' (राजा भरत के वंशज)।",
+    "descDetail": "Krishna uses this name to remind Arjuna of his great, heroic heritage, encouraging him to act nobly and fight the internal enemies like lust and anger, just as his ancestors fought external foes.",
+    "descDetailHindi": "श्रीकृष्ण इस नाम का उपयोग अर्जुन को उनकी महान और वीर विरासत की याद दिलाने के लिए करते हैं, जिससे वे प्रेरित होकर काम और क्रोध जैसे आंतरिक शत्रुओं से उसी प्रकार लड़ें जैसे उनके पूर्वजों ने बाहरी शत्रुओं से युद्ध किया था।"
+  },
+  {
+    "id": "exp_svadharma",
+    "term": "Svadharma",
+    "termHindi": "स्वधर्म",
+    "desc": "One's prescribed duty, determined by one's own nature, abilities, and stage in life.",
+    "descHindi": "व्यक्ति का अपना निर्धारित कर्तव्य, जो उसके स्वभाव, योग्यताओं और जीवन के चरण (वर्णाश्रम) द्वारा तय होता है।",
+    "descDetail": "The Gita strongly emphasizes performing one's own duty (Svadharma) rather than imitating someone else's, because acting in alignment with one's inherent nature promotes spiritual purification and avoids social chaos.",
+    "descDetailHindi": "गीता किसी अन्य के कर्तव्य की नकल करने के बजाय अपने स्वयं के कर्तव्य (स्वधर्म) का पालन करने पर बहुत जोर देती है, क्योंकि अपनी अंतर्निहित प्रकृति के अनुरूप कार्य करने से आध्यात्मिक शुद्धि होती है और सामाजिक अराजकता से बचा जा सकता है।"
+  }
+
+
 ]
 
 

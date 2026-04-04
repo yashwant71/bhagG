@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import ContextPage from '../src/components/ContextPage'
+import CinematicIntro from '../src/components/CinematicIntro'
 
 export default function Home() {
   const router = useRouter()
@@ -10,5 +10,5 @@ export default function Home() {
     router.push('/chapter/1')
   }
 
-  return <ContextPage onNext={handleNext} />
+  return <CinematicIntro onNext={handleNext} />
 }

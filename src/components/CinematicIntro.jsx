@@ -70,10 +70,25 @@ export default function CinematicIntro({ onNext }) {
   const [cur, setCur] = useState(0)
   const [isActive, setIsActive] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
+  const [hasCompletedIntro, setHasCompletedIntro] = useState(false)
+  const [lastRead, setLastRead] = useState(null)
   const fxLayerRef = useRef(null)
   const geomCanvasRef = useRef(null)
 
   useEffect(() => {
+    // Check local storage for intro completion and last read verse
+    try {
+      const completed = localStorage.getItem('bg-intro-completed') === 'true'
+      const lastReadData = localStorage.getItem('bg-last-read')
+      
+      setHasCompletedIntro(completed)
+      if (lastReadData) {
+        setLastRead(JSON.parse(lastReadData))
+      }
+    } catch (err) {
+      console.error('Failed to read local storage:', err)
+    }
+
     buildScene(0)
   }, [])
 
@@ -226,11 +241,22 @@ export default function CinematicIntro({ onNext }) {
           <div className="sanskrit-trans" style={{ display: s.sktrans ? 'block' : 'none' }}>{s.sktrans}</div>
           <div className="headline" dangerouslySetInnerHTML={{ __html: wrapWords(s.headline) }}></div>
           <div className="body">{s.body}</div>
-          {s.cta && (
-            <button className="btn-enter" onClick={onNext}>
-              Enter the wisdom
-            </button>
-          )}
+          
+          <div className="cta-row">
+            {s.cta ? (
+              <button className="btn-enter" onClick={() => onNext()}>
+                Enter the wisdom
+              </button>
+            ) : cur === 0 && (
+              <div className="intro-actions">
+                {lastRead && (String(lastRead.chapter) !== '1' || String(lastRead.verse) !== '1') && (
+                  <button className="btn-continue" onClick={() => onNext(`/verse/${lastRead.chapter}/${lastRead.verse}`)}>
+                    Continue from {lastRead.chapter}:{lastRead.verse}
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -245,7 +271,12 @@ export default function CinematicIntro({ onNext }) {
             ></div>
           ))}
         </div>
-        <button className="nav-btn" onClick={next} disabled={cur === scenes.length - 1} style={{ visibility: cur === scenes.length - 1 ? 'hidden' : 'visible' }}>Next →</button>
+        <div className="nav-actions">
+          {hasCompletedIntro && cur < scenes.length - 1 && (
+            <button className="btn-skip-nav" onClick={() => onNext('/verse/1/1')}>Skip Intro</button>
+          )}
+          <button className="nav-btn" onClick={next} disabled={cur === scenes.length - 1} style={{ visibility: cur === scenes.length - 1 ? 'hidden' : 'visible' }}>Next →</button>
+        </div>
       </div>
     </div>
   )

@@ -345,6 +345,18 @@ const VersePage = () => {
     return () => clearTimeout(timer)
   }, [validChapterNum, verseNum])
 
+  // Save last read verse and intro completion flag
+  useEffect(() => {
+    if (validChapterNum && verseNum) {
+      try {
+        localStorage.setItem('bg-last-read', JSON.stringify({ chapter: validChapterNum, verse: verseNum }))
+        localStorage.setItem('bg-intro-completed', 'true')
+      } catch (err) {
+        console.error('Failed to save last read:', err)
+      }
+    }
+  }, [validChapterNum, verseNum])
+
   // Close tooltip when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {

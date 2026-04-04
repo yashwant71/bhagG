@@ -6,8 +6,8 @@ import CinematicIntro from '../src/components/CinematicIntro'
 export default function Home() {
   const router = useRouter()
 
-  const handleNext = () => {
-    router.push('/chapter/1')
+  const handleNext = (target = '/verse/1/1') => {
+    router.push(target)
   }
 
   return <CinematicIntro onNext={handleNext} />
